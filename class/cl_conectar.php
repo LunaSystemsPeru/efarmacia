@@ -1,8 +1,8 @@
 <?php
 date_default_timezone_set('America/Los_Angeles');
 
-$servidor = "localhost";
-$bd = "gestion_farmacia";
+$servidor = "192.168.1.9";
+$bd = "lsp_farmacia";
 $usu = "root_lsp";
 $pass = "root/*123";
 $puerto = "3306";

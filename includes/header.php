@@ -154,6 +154,11 @@
                         <i class="pe-7s-upload pe-rotate-90"></i>
                     </a>
                 </li>
+                <li class="dropdown">
+                    <a href="reg_venta.php">
+                        <i class="pe-7s-upload pe-rotate-90"></i>
+                    </a>
+                </li>
             </ul>
         </div>
     </nav>

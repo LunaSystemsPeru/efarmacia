@@ -124,7 +124,7 @@ $despatch->setDetails([$detail]);
 
 // Envio a SUNAT.
 $util->setRucEmpresa($c_empresa->getRuc());
-$see = $util->getSee(SunatEndpoints::GUIA_PRODUCCION);
+$see = $util->getSee(SunatEndpoints::GUIA_BETA);
 
 $res = $see->send($despatch);
 $util->writeXml($despatch, $see->getFactory()->getLastXml());

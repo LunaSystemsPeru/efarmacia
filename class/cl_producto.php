@@ -304,5 +304,22 @@ class cl_producto
         $fila = $resultado->fetch_all(MYSQLI_ASSOC);
         return $fila;
     }
+    function actualizar_productos()
+    {
+        global $conn;
+        $query = "update producto set id_producto = '$this->id_producto', 
+                    id_empresa = '$this->id_empresa', 
+                    nombre = '$this->nombre',
+                      principio_activo = '$this->principio_activo',
+                      id_laboratorio = '$this->id_laboratorio',
+                      id_presentacion = '$this->id_presentacion',
+                      costo = '$this->costo',
+                      precio = '$this->precio'
+                    where id_producto = '$this->id_producto'
+                        and id_empresa = '$this->id_empresa'";
+        echo $query ;
+        $resultado = $conn->query($query);
+        return true;
 
+    }
 }

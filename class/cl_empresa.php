@@ -17,6 +17,13 @@ class cl_empresa
     private $direccion;
     private $telefono;
     private $email;
+    private $user_sol;
+    private $clave_sol;
+    private $logo;
+    private $ubigeo;
+    private $distrito;
+    private $provincia;
+    private $departamento;
     private $estado;
 
     /**
@@ -25,6 +32,120 @@ class cl_empresa
     public function __construct()
     {
     }
+
+    /**
+     * @return mixed
+     */
+    public function getUserSol()
+    {
+        return $this->user_sol;
+    }
+
+    /**
+     * @param mixed $user_sol
+     */
+    public function setUserSol($user_sol)
+    {
+        $this->user_sol = $user_sol;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getClaveSol()
+    {
+        return $this->clave_sol;
+    }
+
+    /**
+     * @param mixed $clave_sol
+     */
+    public function setClaveSol($clave_sol)
+    {
+        $this->clave_sol = $clave_sol;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLogo()
+    {
+        return $this->logo;
+    }
+
+    /**
+     * @param mixed $logo
+     */
+    public function setLogo($logo)
+    {
+        $this->logo = $logo;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUbigeo()
+    {
+        return $this->ubigeo;
+    }
+
+    /**
+     * @param mixed $ubigeo
+     */
+    public function setUbigeo($ubigeo)
+    {
+        $this->ubigeo = $ubigeo;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDistrito()
+    {
+        return $this->distrito;
+    }
+
+    /**
+     * @param mixed $distrito
+     */
+    public function setDistrito($distrito)
+    {
+        $this->distrito = $distrito;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getProvincia()
+    {
+        return $this->provincia;
+    }
+
+    /**
+     * @param mixed $provincia
+     */
+    public function setProvincia($provincia)
+    {
+        $this->provincia = $provincia;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDepartamento()
+    {
+        return $this->departamento;
+    }
+
+    /**
+     * @param mixed $departamento
+     */
+    public function setDepartamento($departamento)
+    {
+        $this->departamento = $departamento;
+    }
+
+
 
     /**
      * @return mixed
@@ -199,6 +320,13 @@ class cl_empresa
                 $this->telefono = $fila['telefono'];
                 $this->email = $fila['email'];
                 $this->estado = $fila['estado'];
+                $this->user_sol=$fila['user_sol'];
+                $this->clave_sol=$fila['clave_sol'];
+                $this->logo=$fila['logo'];
+                $this->ubigeo=$fila['ubigeo'];
+                $this->distrito=$fila['distrito'];
+                $this->provincia=$fila['provincia'];
+                $this->departamento=$fila['departamento'];
             }
         }
         return $existe;
