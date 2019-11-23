@@ -1,6 +1,6 @@
 <?php
 session_start();
-$_SESSION['productos_venta'] = "";
+$_SESSION['productos_venta'] = array();
 
 require 'class/cl_documentos_empresa.php';
 

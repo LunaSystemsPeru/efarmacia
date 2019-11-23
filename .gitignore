@@ -1,0 +1,5 @@
+/.idea/
+/greenter/*
+!/greenter/generates/
+!/greenter/src/
+!/greenter/resources/

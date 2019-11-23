@@ -192,7 +192,7 @@ class cl_venta_productos
     function ver_productos()
     {
         global $conn;
-        $query = "select p.nombre, p.principio_activo, l.nombre as laboratorio, p2.nombre as presentacion, vp.vcto, vp.lote, vp.cantidad, vp.costo, vp.precio "
+        $query = "select p.id_producto, p.nombre, p.principio_activo, l.nombre as laboratorio, p2.nombre as presentacion, vp.vcto, vp.lote, vp.cantidad, vp.costo, vp.precio "
             . "from venta_producto vp "
             . "inner join producto p on vp.id_producto = p.id_producto and vp.id_empresa = p.id_empresa  "
             . "inner join laboratorio l on p.id_laboratorio = l.id_laboratorio "

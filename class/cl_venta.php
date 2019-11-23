@@ -241,7 +241,7 @@ class cl_venta
     {
         global $conn;
         $query = "insert into venta values ('" . $this->id_venta . "', '" . $this->periodo . "', '" . $this->id_empresa . "', '" . $this->fecha . "', '" . $this->id_documento . "', '" . $this->serie . "', "
-            . "'" . $this->numero . "', '" . $this->id_cliente . "', '" . $this->total . "', '0', '0', 'NOW()', '" . $this->id_usuario . "')";
+            . "'" . $this->numero . "', '" . $this->id_cliente . "', '" . $this->total . "', '0', '0', NOW(), '" . $this->id_usuario . "')";
         //echo $query;
         $resultado = $conn->query($query);
         if (!$resultado) {
@@ -258,14 +258,25 @@ class cl_venta
     {
         $existe = false;
         global $conn;
-        $query = "select * from venta where id_documento = '" . $this->id_documento . "'";
+        $query = "SELECT * 
+                  FROM venta 
+                  WHERE id_venta = $this->id_venta 
+                        AND periodo='" . $this->periodo. "' 
+                        AND id_empresa= $this->id_empresa";
         $resultado = $conn->query($query);
+
         if ($resultado->num_rows > 0) {
             $existe = true;
             while ($fila = $resultado->fetch_assoc()) {
-                $this->nombre = $fila['nombre'];
-                $this->abreviatura = $fila['abreviatura'];
-                $this->cod_sunat = $fila['cod_sunat'];
+                $this->fecha=$fila["fecha"];
+                $this->id_documento=$fila["id_documento"];
+                $this->serie=$fila["serie"];
+                $this->numero=$fila["numero"];
+                $this->id_cliente=$fila["id_cliente"];
+                $this->total=$fila["total"];
+                $this->pagado=$fila["pagado"];
+                $this->estado=$fila["estado"];
+                $this->id_usuario=$fila["id_usuario"];
             }
         }
         return $existe;

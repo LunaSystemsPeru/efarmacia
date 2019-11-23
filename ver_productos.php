@@ -122,7 +122,7 @@ $title = "Ver Productos - Farmacia - Luna Systems Peru";
                                     <td class="text-right"><?php echo $fila['precio']?></td>
                                     <td class="text-center"><?php echo $fila['vcto'] . " | " . $fila['lote']?></td>
                                     <td class="text-center">
-                                        <button class="btn btn-success btn-sm" title="Editar Producto"><i class="fa fa-edit"></i></button>
+                                        <a href="<?php echo "mod_producto.php?id_producto=" . $fila['id_producto']. "&id_empresa=" . $_SESSION['id_empresa']; ?>"><button class="btn btn-success btn-sm" title="Editar Producto"><i class="fa fa-edit"></i></button></a>
                                         <button class="btn btn-info btn-sm" title="Ver historial de Lotes"><i class="fa fa-bar-chart-o"></i></button>
                                         <button class="btn btn-info btn-sm" title="Ver Kardex"><i class="fa fa-bars"></i></button>
                                     </td>
