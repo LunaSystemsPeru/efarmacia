@@ -15,35 +15,37 @@ use Greenter\Ws\Services\SunatEndpoints;
 
 require __DIR__ . '/../vendor/autoload.php';
 
-require __DIR__ . '/../../models/Venta.php';
-require __DIR__ . '/../../models/Cliente.php';
-require __DIR__ . '/../../models/Empresa.php';
-require __DIR__ . '/../../models/ProductoVenta.php';
-require __DIR__ . '/../../models/VentaSunat.php';
+require __DIR__ . '/../../class/cl_venta.php';
+require __DIR__ . '/../../class/cl_cliente.php';
+require __DIR__ . '/../../class/cl_empresa.php';
+require __DIR__ . '/../../class/cl_venta_productos.php';
+require __DIR__ . '/../../class/cl_venta_sunat.php';
 
-require __DIR__ . '/../../tools/NumerosaLetras.php';
+require __DIR__ . '/../../class_varios/NumerosaLetras.php';
 require __DIR__ . '/../../greenter/generate_qr/class/GenerarQr.php';
 
 $util = Util::getInstance();
 
-$c_venta = new Venta();
-$c_venta->setIdVenta(filter_input(INPUT_POST, 'id_venta'));
-$c_venta->obtenerDatos();
+$c_venta = new cl_venta();
+$c_venta->setIdVenta(filter_input(INPUT_GET, 'id_venta'));
+$c_venta->setIdEmpresa($_SESSION['id_empresa']);
+$c_venta->setPeriodo(filter_input(INPUT_GET, 'periodo'));
+$c_venta->obtener_datos();
 
-$c_cliente = new Cliente();
+$c_cliente = new cl_cliente();
 $c_cliente->setIdCliente($c_venta->getIdCliente());
-$c_cliente->obtenerDatos();
+$c_cliente->obtener_datos();
 
 $client = new Client();
 $client->setTipoDoc('6')
     ->setNumDoc($c_cliente->getDocumento())
-    ->setRznSocial($c_cliente->getDatos())
+    ->setRznSocial($c_cliente->getNombre())
     ->setAddress((new Address())
         ->setDireccion($c_cliente->getDireccion()));
 
-$c_empresa = new Empresa();
+$c_empresa = new cl_empresa();
 $c_empresa->setIdEmpresa($c_venta->getIdEmpresa());
-$c_empresa->obtenerDatos();
+$c_empresa->obtener_datos();
 
 $util->setRuc($c_empresa->getRuc());
 $util->setClave($c_empresa->getClaveSol());
@@ -87,10 +89,12 @@ $invoice
     ->setMtoImpVenta(number_format($c_venta->getTotal(), 2, ".", ""))
     ->setCompany($empresa);
 
-$c_productos = new ProductoVenta();
+$c_productos = new cl_venta_productos();
 $c_productos->setIdVenta($c_venta->getIdVenta());
+$c_productos->setPeriodo($c_venta->getPeriodo());
+$c_productos->setIdEmpresa($c_venta->getIdEmpresa());
 
-$items = $c_productos->verFilas();
+$items = $c_productos->ver_productos();
 
 $array_items = array();
 
@@ -142,13 +146,15 @@ $c_generar->generar_qr();
 $url_qr = $dominio . "/greenter/generate_qr/temp/" . $nombre_archivo . ".png";
 
 // Envio a SUNAT.
-$see = $util->getSee(SunatEndpoints::FE_PRODUCCION);
+$see = $util->getSee(SunatEndpoints::FE_BETA);
 //$res = $see->send($invoice);
 $see->GenerarXML($invoice);
 $util->writeXml($invoice, $see->getFactory()->getLastXml());
 
-$c_hash = new VentaSunat();
+$c_hash = new cl_venta_sunat();
 $c_hash->setIdVenta($c_venta->getIdVenta());
+$c_hash->setPeriodo($c_venta->getPeriodo());
+$c_hash->setIdEmpresa($c_venta->getIdEmpresa());
 $c_hash->setHash($hash);
 $c_hash->setNombreXml($invoice->getName());
 $c_hash->insertar();

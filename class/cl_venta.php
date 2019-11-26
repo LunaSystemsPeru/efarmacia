@@ -294,4 +294,25 @@ class cl_venta
         $fila = $resultado->fetch_all(MYSQLI_ASSOC);
         return $fila;
     }
+
+
+    public function verDocumentosResumen()
+    {
+        $sql = "SELECT v.id_venta, v.fecha, ds.cod_sunat, ds.abreviatura, v.serie, v.numero, c.documento, c.nombre, v.total, v.estado, v.id_documento, v.enviado_sunat, v.estado
+        FROM venta AS v 
+            INNER JOIN documentos_sunat ds ON v.id_tido = ds.id_tido
+            INNER JOIN cliente c ON v.id_cliente = c.id_cliente 
+        where v.id_empresa = '$this->id_empresa' and v.fecha = '$this->fecha' and v.id_tido in (1,3)";
+        return $this->conectar->get_Cursor($sql);
+    }
+
+    public function verFacturasResumen()
+    {
+        $sql = "select v.id_venta, v.fecha, ds.cod_sunat, ds.abreviatura, v.serie, v.numero, c.documento, c.datos, v.total, v.estado, v.id_tido, v.enviado_sunat, v.estado
+        from ventas as v 
+            inner join documentos_sunat ds on v.id_tido = ds.id_tido
+            inner join clientes c on v.id_cliente = c.id_cliente 
+        where v.id_empresa = '$this->id_empresa' and v.fecha = '$this->fecha' and v.id_tido = 2 ";
+        return $this->conectar->get_Cursor($sql);
+    }
 }
