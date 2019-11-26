@@ -1,4 +1,5 @@
 <?php
+session_start();
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
 date_default_timezone_set('America/Lima');
@@ -102,7 +103,7 @@ foreach ($items as $value) {
     $item = new SaleDetail();
     $item->setCodProducto($value['id_producto'])
         ->setUnidad('NIU')
-        ->setDescripcion($value['descripcion'])
+        ->setDescripcion($value['nombre'])
         ->setCantidad($value['cantidad'])
         ->setMtoValorUnitario(number_format($value['precio'] / 1.18, 2, '.', ''))
         ->setMtoValorVenta(number_format($value['precio'] * $value['cantidad'] / 1.18, 2, '.', ''))
@@ -131,7 +132,7 @@ $invoice->setLegends([
 
 $nombre_archivo = $invoice->getName();
 $hash = $util->getHash($invoice);
-$dominio = "http://" . $_SERVER["HTTP_HOST"] . "/clientes/efacturacion/";
+$dominio = "http://" . $_SERVER["HTTP_HOST"] . "/clientes/farmacia/";
 $nombre_xml = $dominio . "/greenter/files/" . $invoice->getName() . ".xml";
 
 

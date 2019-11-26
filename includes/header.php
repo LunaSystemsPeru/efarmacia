@@ -150,7 +150,7 @@
                     </a>
                 </li>
                 <li class="dropdown">
-                    <a href="script_consulta/logout.php">
+                    <a href="procesos/logout.php">
                         <i class="pe-7s-upload pe-rotate-90"></i>
                     </a>
                 </li>
