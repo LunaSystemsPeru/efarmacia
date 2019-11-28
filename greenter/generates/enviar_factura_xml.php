@@ -9,8 +9,8 @@ use Greenter\Ws\Services\SunatEndpoints;
 
 require __DIR__ . '/../vendor/autoload.php';
 
-require __DIR__ . '/../../models/Venta.php';
-require __DIR__ . '/../../models/Empresa.php';
+require __DIR__ . '/../../class/cl_venta.php';
+require __DIR__ . '/../../class/cl_empresa.php';
 
 $util = Util::getInstance();
 
@@ -19,22 +19,22 @@ $fecha = filter_input(INPUT_POST, 'fecha');
 
 if ($id_empresa) {
 
-    $c_empresa = new Empresa();
+    $c_empresa = new cl_empresa();
     $c_empresa->setIdEmpresa($id_empresa);
-    $c_empresa->obtenerDatos();
+    $c_empresa->obtener_datos();
 
     //definir valor por defecto para ruc de empresa
     $util->setRuc($c_empresa->getRuc());
     $util->setClave($c_empresa->getClaveSol());
     $util->setUsuario($c_empresa->getUserSol());
 
-    $c_venta = new Venta();
+    $c_venta = new cl_venta();
     $c_venta->setIdEmpresa($id_empresa);
     $c_venta->setFecha($fecha);
 
 //parametros de archivos xml
     $url = $_SERVER["HTTP_HOST"];
-    $dominio = "http://" . $url . "/clientes/efacturacion/";
+    $dominio = "http://" . $url . "/clientes/farmacia/";
 
     $see = $util->getSee(SunatEndpoints::FE_BETA);
 

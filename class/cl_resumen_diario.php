@@ -115,15 +115,24 @@ class cl_resumen_diario
 
     public function obtenerId()
     {
-        $sql = "select ifnull(max(id_resumen_diario) + 1, 1) as codigo 
-            from resumen_diario";
-        $this->id = $this->conectar->get_valor_query($sql, 'codigo');
+        global $conn;
+        $query = "select ifnull(max(id_resumen_diario) + 1, 1) as codigo 
+                from resumen_diario ";
+        $resultado = $conn->query($query);
+        if ($resultado->num_rows > 0) {
+            while ($fila = $resultado->fetch_assoc()) {
+                $this->id_resumen_diario= $fila ['codigo'];
+            }
+        }
+
     }
 
     public function insertar()
     {
+        global $conn;
         $sql = "insert into resumen_diario 
-        values ('$this->id', '$this->id_empresa', '$this->fecha', '$this->ticket', '$this->cantidad', '$this->tipo')";
-        return $this->conectar->ejecutar_idu($sql);
+        values ('$this->id_resumen_diario', '$this->id_empresa', '$this->fecha', '$this->ticket', '$this->cantidad_items', '$this->tipo')";
+        echo $sql;
+        return $conn->query($sql);
     }
 }

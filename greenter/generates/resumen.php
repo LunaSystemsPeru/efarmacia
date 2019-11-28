@@ -19,9 +19,8 @@ require __DIR__ . '/../../class/cl_ventas_referencias.php';
 
 $util = Util::getInstance();
 
-$id_empresa = filter_input(INPUT_POST, 'id_empresa');
-$fecha = filter_input(INPUT_POST, 'fecha');
-
+$id_empresa = filter_input(INPUT_GET, 'id_empresa');
+$fecha = filter_input(INPUT_GET, 'fecha');
 if ($id_empresa) {
 
 //inicar clases del sistema
@@ -41,6 +40,7 @@ if ($id_empresa) {
 
     $resultado_empresa = $c_venta->verDocumentosResumen();
 
+    //print_r ($resultado_empresa);
 
     $contar_items = 0;
     $array_items = array();
@@ -86,14 +86,16 @@ if ($id_empresa) {
             ->setMtoOtrosCargos(0)
             ->setMtoIGV($igv);
 
-        if ($fila['id_tido'] == 3) {
+        if ($fila['id_documento'] == 5) {
             //si es nota de credito
             $c_referencia->setIdNota($fila['id_venta']);
             $c_referencia->obtenerDatos();
             //obtener el i dde la venta amarrada
+
             $c_venta_afecta = new cl_venta();
             $c_venta_afecta->setIdVenta($c_referencia->getIdVenta());
             $c_venta_afecta->obtener_datos();
+
 
             //obtener laa serie y el numero y mostrar
             $item->setDocReferencia($c_venta_afecta->getSerie() . "-" . $c_venta_afecta->getNumero());
@@ -101,7 +103,7 @@ if ($id_empresa) {
 
         $array_items[] = $item;
     }
-
+    //print_r($array_items);
 
     $empresa = new Company();
     $empresa->setRuc($c_empresa->getRuc())
@@ -128,7 +130,7 @@ if ($id_empresa) {
 
 //variables generales
     $nombre_archivo = $sum->getName();
-    $dominio = "http://" . $_SERVER["HTTP_HOST"] . "/clientes/efacturacion/";
+    $dominio = "http://" . $_SERVER["HTTP_HOST"] . "/clientes/farmacia/";
     $nombre_xml = $dominio . "/greenter/files/" . $sum->getName() . ".xml";
     $nombre_zip_respuesta = $dominio . "/greenter/files/R-" . $sum->getName() . ".zip";
 
@@ -160,8 +162,8 @@ if ($id_empresa) {
 
                 $descripcion = $cdr->getDescription();
 
-                $util->showResponse($sum, $cdr);
-                //   $respuesta = $util->showResponse($sum, $cdr);
+                //$util->showResponse($sum, $cdr);
+                echo "res: " .   $respuesta = $util->showResponse($sum, $cdr);
 
             } else {
                 echo $util->getErrorResponse($result->getError());
@@ -201,7 +203,7 @@ if ($id_empresa) {
             "success" => false,
             "resultado" => "ERROR AL ENVIAR - NO HAY ITEMS"
         );
-        echo json_encode($respuesta);
+        echo  json_encode($respuesta);
     }
 
 

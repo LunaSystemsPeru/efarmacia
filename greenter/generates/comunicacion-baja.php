@@ -11,15 +11,15 @@ use Greenter\Ws\Services\SunatEndpoints;
 
 require __DIR__ . '/../vendor/autoload.php';
 
-require __DIR__ . '/../../models/Empresa.php';
-require __DIR__ . '/../../models/VentaAnulada.php';
+require __DIR__ . '/../../class/cl_empresa.php';
+require __DIR__ . '/../../class/cl_ventas_anuladas.php';
 
 $util = Util::getInstance();
 
 $id_empresa = filter_input(INPUT_POST, 'id_empresa');
 $fecha = filter_input(INPUT_POST, 'fecha');
 
-$cl_anulados = new VentaAnulada();
+$cl_anulados = new cl_ventas_anuladas();
 $cl_anulados->setFecha($fecha);
 $a_anulados = $cl_anulados->verFacturasAnuladas($id_empresa);
 
@@ -36,9 +36,9 @@ foreach ($a_anulados as $value) {
     $contar_items++;
 }
 
-$c_empresa = new Empresa();
+$c_empresa = new cl_empresa();
 $c_empresa->setIdEmpresa($id_empresa);
-$c_empresa->obtenerDatos();
+$c_empresa->obtener_datos();
 
 $util->setRuc($c_empresa->getRuc());
 $util->setClave($c_empresa->getClaveSol());

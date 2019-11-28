@@ -227,8 +227,8 @@ class cl_venta
     public function obtener_codigo()
     {
         global $conn;
-        $query = "select ifnull(max(id_venta) + 1, 1) as codigo "
-            . "from venta where periodo = '" . $this->periodo . "' and id_empresa = '" . $this->id_empresa . "'";
+        $query = "select ifnull(max(id_venta) + 1, 1) as codigo 
+                from venta where periodo = '" . $this->periodo . "' and id_empresa = '" . $this->id_empresa . "'";
         $resultado = $conn->query($query);
         if ($resultado->num_rows > 0) {
             while ($fila = $resultado->fetch_assoc()) {
@@ -241,7 +241,7 @@ class cl_venta
     {
         global $conn;
         $query = "insert into venta values ('" . $this->id_venta . "', '" . $this->periodo . "', '" . $this->id_empresa . "', '" . $this->fecha . "', '" . $this->id_documento . "', '" . $this->serie . "', "
-            . "'" . $this->numero . "', '" . $this->id_cliente . "', '" . $this->total . "', '0', '0', NOW(), '" . $this->id_usuario . "')";
+            . "'" . $this->numero . "', '" . $this->id_cliente . "', '" . $this->total . "', '0', '0', NOW(), '" . $this->id_usuario . "', '0')";
         //echo $query;
         $resultado = $conn->query($query);
         if (!$resultado) {
@@ -260,9 +260,9 @@ class cl_venta
         global $conn;
         $query = "SELECT * 
                   FROM venta 
-                  WHERE id_venta = $this->id_venta 
-                        AND periodo='" . $this->periodo. "' 
-                        AND id_empresa= $this->id_empresa";
+                  WHERE id_venta = '$this->id_venta'
+                        AND periodo='$this->periodo' 
+                        AND id_empresa= '$this->id_empresa'";
         $resultado = $conn->query($query);
 
         if ($resultado->num_rows > 0) {
@@ -298,21 +298,23 @@ class cl_venta
 
     public function verDocumentosResumen()
     {
-        $sql = "SELECT v.id_venta, v.fecha, ds.cod_sunat, ds.abreviatura, v.serie, v.numero, c.documento, c.nombre, v.total, v.estado, v.id_documento, v.enviado_sunat, v.estado
+        global $conn;
+        $query = "SELECT v.id_venta, v.fecha, ds.cod_sunat, ds.abreviatura, v.serie, v.numero, c.documento, c.nombre, v.total, v.estado, v.id_documento, v.enviado_sunat, v.estado
         FROM venta AS v 
             INNER JOIN documentos_sunat ds ON v.id_documento = ds.id_documento
-            INNER JOIN cliente c ON v.id_cliente = c.id_cliente 
-        where v.id_empresa = '$this->id_empresa' and v.fecha = '$this->fecha' and v.id_documento in (1,3)";
-        return $this->conectar->get_Cursor($sql);
+            INNER JOIN cliente c ON v.id_cliente = c.id_cliente AND  c.id_empresa=v.id_empresa
+        where v.id_empresa = '$this->id_empresa' and v.fecha = '$this->fecha' and v.id_documento in (2,5)";
+        return $conn->query($query);
     }
 
     public function verFacturasResumen()
     {
-        $sql = "SELECT v.id_venta, v.fecha, ds.cod_sunat, ds.abreviatura, v.serie, v.numero, c.documento, c.nombre, v.total, v.estado, v.id_documento, v.enviado_sunat, v.estado
+        global $conn;
+        $query = "SELECT v.id_venta, v.fecha, ds.cod_sunat, ds.abreviatura, v.serie, v.numero, c.documento, c.nombre, v.total, v.estado, v.id_documento, v.enviado_sunat, v.estado
         from venta as v 
             inner join documentos_sunat ds ON v.id_documento = ds.id_documento
-            inner join cliente c on v.id_cliente = c.id_cliente 
-        where v.id_empresa = '$this->id_empresa' and v.fecha = '$this->fecha' and v.id_documento = 2 ";
-        return $this->conectar->get_Cursor($sql);
+            inner join cliente c on v.id_cliente = c.id_cliente AND  c.id_empresa=v.id_empresa
+        where v.id_empresa = '$this->id_empresa' and v.fecha = '$this->fecha' and v.id_documento = 3 ";
+        return $conn->query($query);
     }
 }

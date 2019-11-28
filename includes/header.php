@@ -37,6 +37,13 @@
         </div>
         <div class="navbar-right">
             <ul class="nav navbar-nav no-borders">
+
+                <li class="dropdown">
+                    <a href="reg_venta.php">
+                        <i class="pe-7s-calculator pe-rotate-90"></i>
+                    </a>
+                </li>
+
                 <li class="dropdown">
                     <a class="dropdown-toggle" href="#" data-toggle="dropdown">
                         <i class="pe-7s-speaker"></i>
@@ -60,6 +67,7 @@
                         <li class="summary"><a href="#">See all notifications</a></li>
                     </ul>
                 </li>
+
                 <li class="dropdown">
                     <a class="dropdown-toggle" href="#" data-toggle="dropdown">
                         <i class="pe-7s-keypad"></i>
@@ -154,11 +162,7 @@
                         <i class="pe-7s-upload pe-rotate-90"></i>
                     </a>
                 </li>
-                <li class="dropdown">
-                    <a href="reg_venta.php">
-                        <i class="pe-7s-upload pe-rotate-90"></i>
-                    </a>
-                </li>
+
             </ul>
         </div>
     </nav>

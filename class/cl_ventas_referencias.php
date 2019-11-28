@@ -1,5 +1,6 @@
 <?php
 
+include 'cl_conectar.php';
 
 class cl_ventas_referencias
 {
@@ -66,18 +67,20 @@ class cl_ventas_referencias
 
     public function obtenerDatos()
     {
+        global $conn;
         $sql = "select * 
         from ventas_referencias 
         where id_venta = '$this->id_nota'";
-        $fila = $this->conectar->get_Row($sql);
+        $fila = $conn->query($sql)->fetch_assoc();
         $this->id_venta = $fila['id_referencia'];
         $this->id_motivo = $fila['id_motivo'];
     }
 
     public function insertar()
     {
+        global $conn;
         $sql = "insert into ventas_referencias 
         values ('$this->id_nota', '$this->id_venta', '$this->id_motivo')";
-        return $this->conectar->ejecutar_idu($sql);
+        return $conn->query($sql);
     }
 }

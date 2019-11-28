@@ -1,10 +1,11 @@
 <?php
-session_start();
+
 ini_set('session.cache_expire', 200000);
 ini_set('session.cache_limiter', 'none');
 ini_set('session.cookie_lifetime', 2000000);
-ini_set('session.gc_maxlifetime', 200000); //el mas importante 
+ini_set('session.gc_maxlifetime', 200000); //el mas importante
 
+session_start();
 require '../class/cl_usuario.php';
 require '../class/cl_empresa.php';
 

@@ -17,7 +17,7 @@ require '../../models/Empresa.php';
 
 $c_empresa = new Empresa();
 //variables publicas
-$url = "http://" . $_SERVER["HTTP_HOST"] . "/clientes/efacturacion/";
+$url = "http://" . $_SERVER["HTTP_HOST"] . "/clientes/farmacia/";
 $fecha = date("Y-m-d");
 //$fecha = '2019-11-06';
 
