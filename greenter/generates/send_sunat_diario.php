@@ -13,16 +13,16 @@ error_reporting(E_ALL);
 ini_set('display_errors', '1');
 date_default_timezone_set('America/Lima');
 
-require '../../models/Empresa.php';
+require '../../class/cl_empresa.php';
 
-$c_empresa = new Empresa();
+$c_empresa = new cl_empresa();
 //variables publicas
 $url = "http://" . $_SERVER["HTTP_HOST"] . "/clientes/farmacia/";
 $fecha = date("Y-m-d");
 //$fecha = '2019-11-06';
 
 //recorrer lista de empresas
-$array_empresas = $c_empresa->verFilas();
+$array_empresas = $c_empresa->ver_empresas();
 foreach ($array_empresas as $fila) {
     echo $fila['id_empresa'] . " nombre " . $fila['razon_social'] . PHP_EOL;
     $id_empresa = $fila['id_empresa'];

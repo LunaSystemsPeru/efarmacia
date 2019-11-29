@@ -104,6 +104,7 @@ class cl_documentos_empresa
         $existe = false;
         global $conn;
         $query = "select * from documentos_empresa where id_documento = '" . $this->id_documento . "' and id_empresa = '" . $this->id_empresa . "'";
+        echo $query;
         $resultado = $conn->query($query);
         if ($resultado->num_rows > 0) {
             $existe = true;

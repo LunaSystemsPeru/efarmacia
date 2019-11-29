@@ -29,11 +29,13 @@ $title = "Registro de Venta de Mercaderia - Farmacia - Luna Systems Peru";
     <link rel="stylesheet" href="vendor/animate.css/animate.css"/>
     <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.css"/>
     <link rel="stylesheet" href="vendor/datatables.net-bs/css/dataTables.bootstrap.min.css"/>
-
+    <link href="vendor/toast/build/jquery.toast.min.css" rel="stylesheet">
     <!-- App styles -->
     <link rel="stylesheet" href="fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css"/>
     <link rel="stylesheet" href="fonts/pe-icon-7-stroke/css/helper.css"/>
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="vendor/sweetalert/lib/sweet-alert.css">
+
     <link rel="stylesheet"
           href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/themes/base/minified/jquery-ui.min.css"
           type="text/css"/>
@@ -183,10 +185,19 @@ $title = "Registro de Venta de Mercaderia - Farmacia - Luna Systems Peru";
                                         <?php
                                         $a_mis_documentos = $c_mis_documentos->ver_documentos();
                                         foreach ($a_mis_documentos as $fila) {
-                                            echo '<option value="'.$fila['id_documento'].'">'.$fila['nombre'].'</option>';
+                                            echo '<option onchange="obtenerDatos()"  value="'.$fila['id_documento'].'">'.$fila['nombre'].'</option>';
                                         }
                                         ?>
                                     </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">S - N</label>
+                                <div class="col-lg-3">
+                                    <input type="text"  name="input_serie" class="form-control text-center"  readonly>
+                                </div>
+                                <div class="col-lg-5">
+                                    <input type="text"  name="input_numero" class="form-control text-center"  readonly>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -200,21 +211,21 @@ $title = "Registro de Venta de Mercaderia - Farmacia - Luna Systems Peru";
                             <div class="form-group">
                                 <label class="col-lg-2 control-label">Cliente</label>
                                 <div class="col-lg-6">
-                                    <input type="text" class="form-control text-center" Placeholder="Nro Documento" id="input_doc_cliente" name="input_doc_cliente" readonly required>
+                                    <input type="text" class="form-control text-center" Placeholder="Nro Documento" id="input_documento_cliente" name="input_doc_cliente"  required>
                                 </div>
                                 <div class="col-lg-1">
-                                    <a class="btn btn-success" type="button" href="reg_cliente.php" target="_blank">Crear cliente</a>
+                                    <button onclick="comprobarCliente()" class="btn btn-success" type="button" >Comprobar</button>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-lg-12">
-                                    <input type="text" placeholder="buscar cliente" class="form-control" id="input_cliente" name="input_cliente">
+                                    <input type="text" placeholder="Nombre Cliente" class="form-control" id="input_cliente" name="input_cliente" >
                                     <input type="hidden" id="hidden_id_cliente" name="hidden_id_cliente" value="0">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-lg-12">
-                                    <input type="text" placeholder="Direccion" class="form-control" id="input_direccion" name="input_direccion" readonly="true">
+                                    <input type="text" placeholder="Direccion" class="form-control" id="input_direccion" name="input_direccion" >
                                 </div>
                             </div>
                             <div class="form-group">
@@ -259,16 +270,20 @@ $title = "Registro de Venta de Mercaderia - Farmacia - Luna Systems Peru";
 <script src="vendor/datatables.net-buttons/js/buttons.print.min.js"></script>
 <script src="vendor/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
 <script src="vendor/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+<script src="vendor/toast/build/jquery.toast.min.js"></script>
+<script src="scripts/ventas.functions.js"></script>
+<script src="scripts/validar-documento-cliente.js"></script>
+
+<script src="vendor/sweetalert/lib/sweet-alert.min.js"></script>
+
 <!-- App scripts -->
 <script src="scripts/homer.js"></script>
 <script lang="javascript">
-    function cargar_editar_proveedor() {
-        window.open("mod_proveedor.php?id=" + $("#input_id_proveedor").val());
-    }
+
 </script>
 
 <script lang="javascript">
-    $(function () {
+   /* $(function () {
         //autocomplete
         $("#input_cliente").autocomplete({
             source: "ajax_post/buscar_clientes.php",
@@ -302,99 +317,14 @@ $title = "Registro de Venta de Mercaderia - Farmacia - Luna Systems Peru";
                 $('#input_cventa').focus();
             }
         });
-    });
+    });*/
 </script>
+
 
 <script>
-    function enviar_formulario() {
-        var id_cliente = $("#hidden_id_cliente").val();
-        var total = $("#hidden_total").val();
-        var contar_filas = $("#tabla-detalle tr").length;
-        console.log(contar_filas);
-        //enviar form
-        if (id_cliente !== "" && total > 0 && contar_filas > 1) {
-            document.frm_venta.submit();
-        } else {
-            alert("FALTA COMPLETAR DATOS");
-        }
-    }
 
-    function addProductos() {
-        $.ajax({
-            data: {
-                input_id_producto: $('#hidden_id_producto').val(),
-                input_descripcion_producto: $('#hidden_descripcion_producto').val(),
-                input_costo_producto: $('#hidden_costo').val(),
-                input_precio_producto: $('#input_precio').val(),
-                input_cantidad_producto: $('#input_cventa').val(),
-                input_lote_producto: $('#input_lote').val(),
-                input_vcto_producto: $('#input_vencimiento').val()
-            },
-            url: 'ajax_post/add_productos_ventas.php',
-            type: 'GET',
-            //dataType: 'json',
-            beforeSend: function () {
-                //$('#body_detalle_pedido').html("");
-                $('table tbody').html("");
-            },
-            success: function (r) {
-                //alert(r);
-                $('table tbody').append(r);
-                clean();
-                //$('#body_detalle_pedido').html(r);
-            },
-            error: function () {
-                alert('Ocurrio un error en el servidor ..');
-                $('table tbody').html("");
-                //$('#body_detalle_pedido').html("");
-            }
-        });
-    }
-
-    function eliminar_item(id_producto) {
-        $.ajax({
-            data: {
-                input_id_producto: id_producto
-            },
-            url: 'ajax_post/del_productos_venta.php',
-            type: 'GET',
-            //dataType: 'json',
-            beforeSend: function () {
-                //$('#body_detalle_pedido').html("");
-                $('table tbody').html("");
-            },
-            success: function (r) {
-                //alert(r);
-                $('table tbody').append(r);
-                clean();
-                //$('#body_detalle_pedido').html(r);
-            },
-            error: function () {
-                alert('Ocurrio un error en el servidor ..');
-                $('table tbody').html("");
-                //$('#body_detalle_pedido').html("");
-            }
-        });
-    }
-
-    function clean() {
-        $('#hidden_id_producto').val('');
-        $('#input_producto').val('');
-        $('#hidden_costo').val('0.00');
-        $('#input_precio').val('0.00');
-        $('#input_lote').val('');
-        $('#input_vencimiento').val('');
-        $('#input_cactual').val('');
-        $('#input_cventa').val('');
-        $('#hidden_descripcion_producto').val('');
-        $('#btn_add_producto').prop("disabled", true);
-        $('#btn_guardar_formulario').prop("disabled", false);
-        $('#input_cventa').prop("readonly", true);
-        $('#input_costo').prop("readonly", true);
-        $('#input_precio').prop("readonly", true);
-        $('#input_producto').focus();
-    }
 </script>
+
 
 </body>
 
