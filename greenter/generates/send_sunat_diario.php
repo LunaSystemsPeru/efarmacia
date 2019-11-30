@@ -33,6 +33,7 @@ foreach ($array_empresas as $fila) {
         'id_empresa' => $id_empresa,
         'fecha' => $fecha
     ];
+    print_r($post);
 
     $ch_factura = curl_init();
     curl_setopt($ch_factura, CURLOPT_URL, $ruta);

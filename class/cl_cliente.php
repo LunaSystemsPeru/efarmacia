@@ -198,7 +198,7 @@ class cl_cliente
             //echo "Entered data successfully";
             $grabado = true;
         }
-        $conn->close();
+
         return $grabado;
     }
 

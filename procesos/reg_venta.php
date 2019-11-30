@@ -5,15 +5,44 @@ require '../class/cl_venta.php';
 require '../class/cl_venta_productos.php';
 require '../class/cl_venta_cobros.php';
 require '../class/cl_documentos_empresa.php';
+require '../class_varios/SendCurlVenta.php';
 require '../class/cl_varios.php';
+require '../class/cl_cliente.php';
 
 $c_venta = new cl_venta();
 $c_detalle = new cl_venta_productos();
 $c_cobros = new cl_venta_cobros();
 $c_varios = new cl_varios();
 $c_mis_documentos = new cl_documentos_empresa();
+$c_cliente=new cl_cliente();
+$sendCurlVenta=new SendCurlVenta();
 
-$c_venta->setIdEmpresa($_SESSION['id_empresa']);
+$id_empresa = $_SESSION['id_empresa'];
+
+$c_cliente->setIdEmpresa($id_empresa);
+$c_cliente->setDocumento(filter_input(INPUT_POST, 'input_doc_cliente'));
+$c_cliente->setNombre(filter_input(INPUT_POST, 'input_cliente'));
+$c_cliente->setDireccion(filter_input(INPUT_POST, 'input_direccion'));
+
+if ($c_cliente->getDocumento() == "") {
+    $c_cliente->setDocumento("SD" . $c_varios->generarCodigo(5));
+    $c_cliente->obtener_codigo();
+    $c_cliente->insertar();
+} else {
+    if (!$c_cliente->buscar_documento()) {
+        $c_cliente->obtener_codigo();
+        $c_cliente->setTotalPagado(0);
+        $c_cliente->setTelefono(0);
+        $c_cliente->setTotalVenta(0);
+        $c_cliente->setUltimaVenta(date("Y-m-d"));
+        $c_cliente->insertar();
+    }
+}
+
+
+
+$c_venta->setIdEmpresa($id_empresa);
+
 $fecha = filter_input(INPUT_POST, 'input_fecha');
 $c_venta->setPeriodo($c_varios->anio_de_fecha($fecha) . $c_varios->zerofill($c_varios->mes_de_fecha($fecha), 2));
 $c_venta->setFecha($fecha);
@@ -25,7 +54,7 @@ $c_mis_documentos->obtener_datos();
 
 $c_venta->setSerie($c_mis_documentos->getSerie());
 $c_venta->setNumero($c_mis_documentos->getNumero());
-$c_venta->setIdCliente(filter_input(INPUT_POST, 'hidden_id_cliente'));
+$c_venta->setIdCliente($c_cliente->getIdCliente());
 $c_venta->setTotal(filter_input(INPUT_POST, 'hidden_total'));
 $c_venta->setIdUsuario($_SESSION['id_usuario']);
 $c_venta->obtener_codigo();
@@ -53,6 +82,10 @@ if ($c_venta->insertar()) {
     $c_cobros->obtener_codigo();
     $c_cobros->insertar();
 
+    $sendCurlVenta->setIdTido($c_mis_documentos->getIdDocumento());
+    $sendCurlVenta->setIdVenta($c_venta->getIdVenta());
+    $sendCurlVenta->setPeriodo($c_varios->fecha_periodo($c_venta->getFecha()));
+    echo $sendCurlVenta->enviar_json();
 
     header("Location: ../ver_ventas.php");
 

@@ -181,12 +181,17 @@ $title = "Registro de Venta de Mercaderia - Farmacia - Luna Systems Peru";
                             <div class="form-group">
                                 <label class="col-md-2 control-label">Doc.</label>
                                 <div class="col-md-9">
-                                    <select class="form-control" name="select_documento" id="select_documento">
+                                    <select onchange="obtenerDatos()" class="form-control" name="select_documento" id="select_documento">
                                         <?php
                                         $a_mis_documentos = $c_mis_documentos->ver_documentos();
                                         foreach ($a_mis_documentos as $fila) {
-                                            echo '<option onchange="obtenerDatos()"  value="'.$fila['id_documento'].'">'.$fila['nombre'].'</option>';
+                                            echo '<option   value="'.$fila['id_documento'].'">'.$fila['nombre'].'</option>';
                                         }
+                                        if (isset($a_mis_documentos[0]))
+                                        $c_mis_documentos->setIdDocumento($a_mis_documentos[0]["id_documento"]);
+
+
+                                        $c_mis_documentos->obtener_datos();
                                         ?>
                                     </select>
                                 </div>
@@ -194,10 +199,10 @@ $title = "Registro de Venta de Mercaderia - Farmacia - Luna Systems Peru";
                             <div class="form-group">
                                 <label class="col-lg-2 control-label">S - N</label>
                                 <div class="col-lg-3">
-                                    <input type="text"  name="input_serie" class="form-control text-center"  readonly>
+                                    <input id="input_serie" type="text"   class="form-control text-center" value="<?php echo $c_mis_documentos->getSerie();?>"  readonly>
                                 </div>
                                 <div class="col-lg-5">
-                                    <input type="text"  name="input_numero" class="form-control text-center"  readonly>
+                                    <input id="input_numero" type="text"  class="form-control text-center" value="<?php echo $c_mis_documentos->getNumero();?>"  readonly>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -214,7 +219,7 @@ $title = "Registro de Venta de Mercaderia - Farmacia - Luna Systems Peru";
                                     <input type="text" class="form-control text-center" Placeholder="Nro Documento" id="input_documento_cliente" name="input_doc_cliente"  required>
                                 </div>
                                 <div class="col-lg-1">
-                                    <button onclick="comprobarCliente()" class="btn btn-success" type="button" >Comprobar</button>
+                                    <button id="button_comprobar" onclick="comprobarCliente()" class="btn btn-success" type="button" >Comprobar</button>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -283,7 +288,7 @@ $title = "Registro de Venta de Mercaderia - Farmacia - Luna Systems Peru";
 </script>
 
 <script lang="javascript">
-   /* $(function () {
+    $(function () {
         //autocomplete
         $("#input_cliente").autocomplete({
             source: "ajax_post/buscar_clientes.php",
@@ -317,7 +322,7 @@ $title = "Registro de Venta de Mercaderia - Farmacia - Luna Systems Peru";
                 $('#input_cventa').focus();
             }
         });
-    });*/
+    });
 </script>
 
 

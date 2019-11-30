@@ -1,8 +1,8 @@
 <?php
-session_start();
-error_reporting(E_ALL);
 ini_set('display_errors', '1');
 date_default_timezone_set('America/Lima');
+error_reporting(E_ALL);
+
 
 //ini_set('default_socket_timeout', 600);
 
@@ -25,16 +25,20 @@ require __DIR__ . '/../../class/cl_venta_sunat.php';
 require __DIR__ . '/../../class_varios/NumerosaLetras.php';
 require __DIR__ . '/../../greenter/generate_qr/class/GenerarQr.php';
 
+
+
+
 $util = Util::getInstance();
 
 $c_venta = new cl_venta();
-$c_venta->setIdVenta(filter_input(INPUT_GET, 'id_venta'));
-$c_venta->setIdEmpresa($_SESSION['id_empresa']);
-$c_venta->setPeriodo(filter_input(INPUT_GET, 'periodo'));
+$c_venta->setIdVenta(filter_input(INPUT_POST, 'id_venta'));
+$c_venta->setIdEmpresa(filter_input(INPUT_POST, 'id_empresa'));
+$c_venta->setPeriodo(filter_input(INPUT_POST, 'periodo'));
 $c_venta->obtener_datos();
 
 $c_cliente = new cl_cliente();
 $c_cliente->setIdCliente($c_venta->getIdCliente());
+$c_cliente->setIdEmpresa($c_venta->getIdEmpresa());
 $c_cliente->obtener_datos();
 
 $client = new Client();

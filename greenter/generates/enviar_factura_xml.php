@@ -12,10 +12,11 @@ require __DIR__ . '/../vendor/autoload.php';
 require __DIR__ . '/../../class/cl_venta.php';
 require __DIR__ . '/../../class/cl_empresa.php';
 
+
 $util = Util::getInstance();
 
-$id_empresa = filter_input(INPUT_POST, 'id_empresa');
-$fecha = filter_input(INPUT_POST, 'fecha');
+$id_empresa = filter_input(INPUT_GET, 'id_empresa');
+$fecha = filter_input(INPUT_GET, 'fecha');
 
 if ($id_empresa) {
 
@@ -65,6 +66,8 @@ if ($id_empresa) {
                 $mensaje = $mensaje . "archivo recibido por sunat " . $cdr->getDescription() . PHP_EOL;
 
                 $c_venta->setIdVenta($fila['id_venta']);
+                $c_venta->setIdEmpresa($id_empresa);
+                $c_venta->setPeriodo($fila["periodo"]);
                 $c_venta->actualizar_envio();
             } else {
                 $mensaje = $mensaje . "error al recibir el archivo " . PHP_EOL;

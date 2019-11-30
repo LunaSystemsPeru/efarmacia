@@ -1,17 +1,32 @@
 function obtenerDatos() {
+    var datoSelect=$("#select_documento").val();
+
+    if (datoSelect!=1){
+        $('#input_documento_cliente').prop("disabled", false);
+        $('#input_cliente').prop("disabled", false);
+        $('#input_direccion').prop("disabled", false);
+        $('#button_comprobar').prop("disabled", false);
+
+    }else{
+        $('#input_documento_cliente').prop("disabled", true);
+        $('#input_cliente').prop("disabled", true);
+        $('#input_direccion').prop("disabled", true);
+        $('#button_comprobar').prop("disabled", true);
+    }
     var parametros = {
-        "idtido": $("#select_documento").val()
+        "idtido": datoSelect
     };
 
     $.ajax({
         data: parametros,
-        url: '../procesos/obtener_documento_sunat.php',
+        url: './procesos/obtener_documento_sunat.php',
         type: 'get',
         beforeSend: function () {
             $("#input_serie").val("");
             $("#input_numero").val("");
         },
         success: function (response) {
+            console.log(response)
             var json = JSON.parse(response);
             $("#input_serie").val(json.serie);
             $("#input_numero").val(json.numero);
@@ -25,7 +40,7 @@ function obtenerDatos() {
 function comprobarCliente() {
     var documento_venta = $("#select_documento").val();
     var documento_cliente = $("#input_documento_cliente").val();
-    if (documento_venta == 1) {
+    if (documento_venta == 2) {
         if (documento_cliente.length == 8) {
             validarDocumento();
         } else {
@@ -171,12 +186,11 @@ function clean() {
 }
 
 function enviar_formulario() {
-    var id_cliente = $("#hidden_id_cliente").val();
     var total = $("#hidden_total").val();
     var contar_filas = $("#tabla-detalle tr").length;
     console.log(contar_filas);
     //enviar form
-    if (id_cliente !== "" && total > 0 && contar_filas > 1) {
+    if (total > 0 && contar_filas > 1) {
         document.frm_venta.submit();
     } else {
         alert("FALTA COMPLETAR DATOS");
