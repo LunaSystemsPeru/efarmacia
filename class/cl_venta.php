@@ -299,7 +299,7 @@ class cl_venta
     public function verDocumentosResumen()
     {
         global $conn;
-        $query = "SELECT v.id_venta, v.fecha, ds.cod_sunat, ds.abreviatura, v.serie, v.numero, c.documento, c.nombre, v.total, v.estado, v.id_documento, v.enviado_sunat, v.estado
+        $query = "SELECT v.id_venta, v.periodo, v.fecha, ds.cod_sunat, ds.abreviatura, v.serie, v.numero, c.documento, c.nombre, v.total, v.estado, v.id_documento, v.enviado_sunat, v.estado
         FROM venta AS v 
             INNER JOIN documentos_sunat ds ON v.id_documento = ds.id_documento
             INNER JOIN cliente c ON v.id_cliente = c.id_cliente AND  c.id_empresa=v.id_empresa
@@ -310,11 +310,21 @@ class cl_venta
     public function verFacturasResumen()
     {
         global $conn;
-        $query = "SELECT v.id_venta, v.fecha, ds.cod_sunat, ds.abreviatura, v.serie, v.numero, c.documento, c.nombre, v.total, v.estado, v.id_documento, v.enviado_sunat, v.estado
+        $query = "SELECT v.id_venta,v.periodo, v.fecha, ds.cod_sunat, ds.abreviatura, v.serie, v.numero, c.documento, c.nombre, v.total, v.estado, v.id_documento, v.enviado_sunat, v.estado
         from venta as v 
             inner join documentos_sunat ds ON v.id_documento = ds.id_documento
             inner join cliente c on v.id_cliente = c.id_cliente AND  c.id_empresa=v.id_empresa
         where v.id_empresa = '$this->id_empresa' and v.fecha = '$this->fecha' and v.id_documento = 3 ";
+        return $conn->query($query);
+    }
+
+    public function actualizar_envio()
+    {
+        global $conn;
+        $query = "update venta 
+        set enviado_sunat = 1 
+        where id_venta = '$this->id_venta'";
+        echo $query;
         return $conn->query($query);
     }
 }

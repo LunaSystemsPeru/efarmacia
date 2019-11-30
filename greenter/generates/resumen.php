@@ -101,6 +101,11 @@ if ($id_empresa) {
             $item->setDocReferencia($c_venta_afecta->getSerie() . "-" . $c_venta_afecta->getNumero());
         }
 
+        $c_venta->setIdEmpresa($id_empresa);
+        $c_venta->setPeriodo($fila["periodo"]);
+        $c_venta->setIdVenta($fila["id_venta"]);
+        $c_venta->actualizar_envio();
+
         $array_items[] = $item;
     }
     //print_r($array_items);
@@ -164,6 +169,8 @@ if ($id_empresa) {
 
                 //$util->showResponse($sum, $cdr);
                 echo "res: " .   $respuesta = $util->showResponse($sum, $cdr);
+
+
 
             } else {
                 echo $util->getErrorResponse($result->getError());

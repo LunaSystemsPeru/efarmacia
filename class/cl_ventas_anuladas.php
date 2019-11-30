@@ -109,12 +109,16 @@ class cl_ventas_anuladas
 
     public function verFacturasAnuladas($id_empresa)
     {
+        global $conn;
+
         $sql = "SELECT v.id_venta, v.fecha, va.fecha AS fecha_anulado, ds.cod_sunat, ds.abreviatura, v.serie, v.numero, c.documento, c.nombre, v.total, v.estado, v.id_documento, v.enviado_sunat, v.estado
         FROM ventas_anuladas AS va 
             INNER JOIN venta AS v ON v.id_venta = va.venta_id_venta 
             INNER JOIN documentos_sunat ds ON v.id_documento = ds.id_documento
             INNER JOIN cliente c ON v.id_cliente = c.id_cliente 
         where v.id_empresa = '$id_empresa' and v.fecha = '$this->fecha' and v.id_documento = 3 ";
-        return $this->conectar->get_Cursor($sql);
+        $resultado = $conn->query($sql);
+        $fila = $resultado->fetch_all(MYSQLI_ASSOC);
+        return $fila;
     }
 }

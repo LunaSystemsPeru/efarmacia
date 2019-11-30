@@ -108,43 +108,34 @@ $title = "Registro de Venta de Mercaderia - Farmacia - Luna Systems Peru";
                                     <input class="form-control" id="input_producto" name="input_producto">
                                     <input type="hidden" name="hidden_id_producto" id="hidden_id_producto"/>
                                     <input type="hidden" name="hidden_costo" id="hidden_costo"/>
-                                    <input type="hidden" name="hidden_descripcion_producto"
-                                           id="hidden_descripcion_producto"/>
+                                    <input type="hidden" name="hidden_descripcion_producto" id="hidden_descripcion_producto"/>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-2 control-label">Cant. Actual</label>
                                 <div class="col-md-2">
-                                    <input type="text" class="form-control text-center" id="input_cactual"
-                                           name="input_cactual" readonly>
+                                    <input type="text" class="form-control text-center" id="input_cactual" name="input_cactual" readonly>
                                 </div>
                                 <label class="col-md-2 control-label">Lote</label>
                                 <div class="col-md-2">
-                                    <input type="text" class="form-control text-center" id="input_lote"
-                                           name="input_lote" readonly>
+                                    <input type="text" class="form-control text-center" id="input_lote" name="input_lote" readonly>
                                 </div>
                                 <label class="col-md-1 control-label">Fecha Vcto.</label>
                                 <div class="col-md-3">
-                                    <input type="text" class="form-control text-center" id="input_vencimiento"
-                                           name="input_vencimiento" readonly>
+                                    <input type="text" class="form-control text-center" id="input_vencimiento" name="input_vencimiento" readonly>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-2 control-label">Cant. Venta</label>
                                 <div class="col-md-2">
-                                    <input type="number" value="1" class="form-control text-center" id="input_cventa"
-                                           name="input_cventa" required readonly>
+                                    <input type="number" value="1" class="form-control text-center" id="input_cventa" name="input_cventa" required readonly>
                                 </div>
                                 <label class="col-md-2 control-label">Precio Venta</label>
                                 <div class="col-md-2">
-                                    <input type="text" class="form-control text-right" id="input_precio"
-                                           name="input_precio" required readonly>
+                                    <input type="text" class="form-control text-right" id="input_precio" name="input_precio" required readonly>
                                 </div>
                                 <div class="col-md-2 col-md-offset-1">
-                                    <button type="button" class="btn btn-success btn-sm" id="btn_add_producto"
-                                            onclick="addProductos()" disabled="true"><i class="fa fa-plus"></i> Agregar
-                                        Item
-                                    </button>
+                                    <button type="button" class="btn btn-success btn-sm" id="btn_add_producto" onclick="addProductos()" disabled="true"><i class="fa fa-plus"></i> Agregar Item</button>
                                 </div>
                             </div>
 
@@ -180,24 +171,27 @@ $title = "Registro de Venta de Mercaderia - Farmacia - Luna Systems Peru";
 
             <div class="col-md-4">
                 <div class="widget padding-0 white-bg">
-                    <div class="bg-primary pv-15 text-center "
-                         style="height: 90px; text-align: center; padding-top: 3px">
+                    <div class="bg-primary pv-15 text-center " style="height: 90px; text-align: center; padding-top: 3px">
                         <h1 class="mv-0 font-400" id="lbl_suma_pedido">S/ 0.00</h1>
                         <div class="text-uppercase">Suma Pedido</div>
                     </div>
                     <br>
                     <div class="padding-20 text-center">
-                        <form role="form" class="form-horizontal" name="frm_venta" id="frm_venta" method="post"
-                              action="procesos/reg_venta.php">
+                        <form role="form" class="form-horizontal" name="frm_venta" id="frm_venta" method="post" action="procesos/reg_venta.php">
                             <div class="form-group">
                                 <label class="col-md-2 control-label">Doc.</label>
                                 <div class="col-md-9">
-                                    <select class="form-control" name="select_documento" id="select_documento">
+                                    <select onchange="obtenerDatos()" class="form-control" name="select_documento" id="select_documento">
                                         <?php
                                         $a_mis_documentos = $c_mis_documentos->ver_documentos();
                                         foreach ($a_mis_documentos as $fila) {
-                                            echo '<option onchange="obtenerDatos()"  value="' . $fila['id_documento'] . '">' . $fila['nombre'] . '</option>';
+                                            echo '<option   value="'.$fila['id_documento'].'">'.$fila['nombre'].'</option>';
                                         }
+                                        if (isset($a_mis_documentos[0]))
+                                        $c_mis_documentos->setIdDocumento($a_mis_documentos[0]["id_documento"]);
+
+
+                                        $c_mis_documentos->obtener_datos();
                                         ?>
                                     </select>
                                 </div>
@@ -205,18 +199,16 @@ $title = "Registro de Venta de Mercaderia - Farmacia - Luna Systems Peru";
                             <div class="form-group">
                                 <label class="col-lg-2 control-label">S - N</label>
                                 <div class="col-lg-3">
-                                    <input type="text" name="input_serie" class="form-control text-center" readonly>
+                                    <input id="input_serie" type="text"   class="form-control text-center" value="<?php echo $c_mis_documentos->getSerie();?>"  readonly>
                                 </div>
                                 <div class="col-lg-5">
-                                    <input type="text" name="input_numero" class="form-control text-center" readonly>
+                                    <input id="input_numero" type="text"  class="form-control text-center" value="<?php echo $c_mis_documentos->getNumero();?>"  readonly>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-lg-2 control-label">Fecha</label>
                                 <div class="col-lg-6">
-                                    <input type="text" placeholder="dd/mm/aaaa" name="input_fecha"
-                                           class="form-control text-center" value="<?php echo date("Y-m-d"); ?>"
-                                           readonly>
+                                    <input type="text" placeholder="dd/mm/aaaa" name="input_fecha" class="form-control text-center" value="<?php echo date("Y-m-d"); ?>" readonly>
                                 </div>
                             </div>
                             <div id="error_documento">
@@ -224,34 +216,27 @@ $title = "Registro de Venta de Mercaderia - Farmacia - Luna Systems Peru";
                             <div class="form-group">
                                 <label class="col-lg-2 control-label">Cliente</label>
                                 <div class="col-lg-6">
-                                    <input type="text" class="form-control text-center" Placeholder="Nro Documento"
-                                           id="input_documento_cliente" name="input_doc_cliente" required>
+                                    <input type="text" class="form-control text-center" Placeholder="Nro Documento" id="input_documento_cliente" name="input_doc_cliente"  required>
                                 </div>
                                 <div class="col-lg-1">
-                                    <button onclick="comprobarCliente()" class="btn btn-success" type="button">
-                                        Comprobar
-                                    </button>
+                                    <button id="button_comprobar" onclick="comprobarCliente()" class="btn btn-success" type="button" >Comprobar</button>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-lg-12">
-                                    <input type="text" placeholder="Nombre Cliente" class="form-control"
-                                           id="input_cliente" name="input_cliente">
+                                    <input type="text" placeholder="Nombre Cliente" class="form-control" id="input_cliente" name="input_cliente" >
                                     <input type="hidden" id="hidden_id_cliente" name="hidden_id_cliente" value="0">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-lg-12">
-                                    <input type="text" placeholder="Direccion" class="form-control" id="input_direccion"
-                                           name="input_direccion">
+                                    <input type="text" placeholder="Direccion" class="form-control" id="input_direccion" name="input_direccion" >
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-lg-12">
                                     <input type="hidden" id="hidden_total" name="hidden_total">
-                                    <button type="button" class="btn btn-lg btn-primary" id="btn_finalizar_pedido"
-                                            disabled onclick="enviar_formulario()">Guardar
-                                    </button>
+                                    <button type="button" class="btn btn-lg btn-primary" id="btn_finalizar_pedido" disabled onclick="enviar_formulario()">Guardar</button>
                                 </div>
                             </div>
                         </form>
@@ -298,6 +283,9 @@ $title = "Registro de Venta de Mercaderia - Farmacia - Luna Systems Peru";
 
 <!-- App scripts -->
 <script src="scripts/homer.js"></script>
+<script lang="javascript">
+
+</script>
 
 <script lang="javascript">
     $(function () {
@@ -336,7 +324,15 @@ $title = "Registro de Venta de Mercaderia - Farmacia - Luna Systems Peru";
         });
     });
 </script>
+
+
+<script>
+
+</script>
+
+
 </body>
+
 </html>
 
 
