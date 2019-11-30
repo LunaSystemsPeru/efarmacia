@@ -176,6 +176,7 @@ $title = "Ver Ventas - Farmacia - Luna Systems Peru";
             <div class="col-lg-12">
                 <div class="hpanel">
                     <div class="panel-body">
+                    <div class="table-responsive">
                         <table id="tabla-ingresos" class="table table-striped table-bordered table-hover">
                             <thead>
                             <tr>
@@ -215,6 +216,7 @@ $title = "Ver Ventas - Farmacia - Luna Systems Peru";
                             ?>
                             </tbody>
                         </table>
+                    </div>
                     </div>
                 </div>
             </div>

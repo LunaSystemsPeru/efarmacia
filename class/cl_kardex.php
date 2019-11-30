@@ -72,11 +72,14 @@ class cl_kardex
     function ver_kardex_diario()
     {
         global $conn;
-        $query = "select p.nombre, kp.lote, kp.vcto, kp.c_ingresa, kp.c_sale, kp.cu_sale, kp.cu_ingresa, km.nombre as movimiento, kp.id_registro, kp.serie_doc, kp.numero_doc "
-            . "from kardex_producto kp "
-            . "inner join producto p on p.id_producto = kp.id_producto and p.id_empresa = kp.id_empresa "
-            . "inner join kardex_movimiento km on km.id_movimiento = kp.id_movimiento "
-            . "where kp.id_empresa = '" . $this->id_empresa . "' and kp.fecha = '" . $this->fecha . "'";
+        $query = "select kp.id_kardex, kp.id_producto, p.nombre, pr.nombre as presentacion, lb.nombre as laboratorio, kp.lote, kp.vcto, kp.id_registro, km.nombre as movimiento, ds.abreviatura as doc_sunat, kp.serie_doc, kp.numero_doc, kp.c_ingresa, kp.c_sale, kp.cu_ingresa, kp.cu_sale 
+        from kardex_producto as kp
+        inner join producto as p on p.id_producto = kp.id_producto and p.id_empresa = kp.id_empresa
+        inner join laboratorio as lb on lb.id_laboratorio = p.id_laboratorio
+        inner join presentacion as pr on pr.id_presentacion = p.id_presentacion
+        inner join kardex_movimiento as km on km.id_movimiento = kp.id_movimiento
+        inner join documentos_sunat as ds on ds.id_documento = kp.id_documento
+        where kp.id_empresa = '$this->id_empresa' and kp.fecha = '$this->fecha'";
         $resultado = $conn->query($query);
         $fila = $resultado->fetch_all(MYSQLI_ASSOC);
         return $fila;

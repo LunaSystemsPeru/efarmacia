@@ -126,15 +126,15 @@ $title = "Ver Kardex Diario - Farmacia - Luna Systems Peru";
                                 ?>
                                 <tr>
                                     <td><?php echo $item ?></td>
-                                    <td><?php echo $fila['nombre'] ?></td>
+                                    <td><?php echo $fila['nombre'] . " - " . $fila['presentacion'] . " - " . $fila['laboratorio'] ?></td>
                                     <td><?php echo $fila['lote'] . " | " . $fila['vcto'] ?></td>
                                     <td class="text-center"><?php echo $fila['movimiento'] ?></td>
                                     <td class="text-center"><?php echo $fila['id_registro'] ?></td>
-                                    <td class="text-center"><?php echo $fila['serie_doc'] . " - " . $fila['numero_doc'] ?></td>
+                                    <td class="text-center"><?php echo $fila['doc_sunat'] . " / " . $fila['serie_doc'] . " - " . $fila['numero_doc'] ?></td>
                                     <td class="text-right"><?php echo $fila['c_ingresa'] ?></td>
                                     <td class="text-right"><?php echo $fila['c_sale']  ?></td>
-                                    <td class="text-right"><?php echo $fila['cu_ingresa'] * $fila['c_ingresa'] ?></td>
-                                    <td class="text-right"><?php echo $fila['cu_sale'] * $fila['c_sale'] ?></td>
+                                    <td class="text-right"><?php echo number_format($fila['cu_ingresa'] * $fila['c_ingresa'], 2) ?></td>
+                                    <td class="text-right"><?php echo number_format($fila['cu_sale'] * $fila['c_sale'],2) ?></td>
                                 </tr>
                                 <?php
                                 $item++;
