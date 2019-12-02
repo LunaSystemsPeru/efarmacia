@@ -208,7 +208,7 @@ $title = "Registro de Venta de Mercaderia - Farmacia - Luna Systems Peru";
                             <div class="form-group">
                                 <label class="col-lg-2 control-label">Fecha</label>
                                 <div class="col-lg-6">
-                                    <input type="text" placeholder="dd/mm/aaaa" name="input_fecha" class="form-control text-center" value="<?php echo date("Y-m-d"); ?>" readonly>
+                                    <input id="input_fecha" type="text" placeholder="dd/mm/aaaa" name="input_fecha" class="form-control text-center" value="<?php echo date("Y-m-d"); ?>" readonly>
                                 </div>
                             </div>
                             <div id="error_documento">

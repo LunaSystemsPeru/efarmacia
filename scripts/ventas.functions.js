@@ -184,14 +184,63 @@ function clean() {
     $('#input_precio').prop("readonly", true);
     $('#input_producto').focus();
 }
-
+function isJsonStructure(str) {
+    if (typeof str !== 'string') return false;
+    try {
+        const result = JSON.parse(str);
+        const type = Object.prototype.toString.call(result);
+        return type === '[object Object]'
+            || type === '[object Array]';
+    } catch (err) {
+        return false;
+    }
+}
 function enviar_formulario() {
     var total = $("#hidden_total").val();
     var contar_filas = $("#tabla-detalle tr").length;
-    console.log(contar_filas);
+   // console.log(contar_filas);
     //enviar form
     if (total > 0 && contar_filas > 1) {
-        document.frm_venta.submit();
+
+
+        $.ajax({
+            type: "POST",
+            url: "procesos/reg_venta.php",
+            data: $("#frm_venta").serialize(),
+            success: function(data)
+            {
+                console.log("{"+data+"}");
+
+                if (isJsonStructure("{"+data+"}")){
+                    var obj = JSON.parse("{"+data+"}");
+                    swal({
+                        title: "Venta Registrada",
+                        text: "El documento de venta se registro con exito!",
+                        type: "success",
+                        showCancelButton: false,
+                        //cancelButtonClass: 'btn-secondary ',
+                        confirmButtonColor: "#DD6B55",
+                        confirmButtonText: "Ver Ticket",
+                        //cancelButtonText: "No, cancel plx!",
+                        closeOnConfirm: false,
+                        //closeOnCancel: false
+                    }, function (isConfirm) {
+                        if (isConfirm) {
+
+                            window.location.href = 'ver_preimpresion_venta.php?id_venta=' + obj.venta;
+                        }
+                    });
+                }else{
+                    swal("Error en el servidor,  contacte con soporte");
+                }
+            }
+        });
+
+
+        /*$c_cliente->setDocumento(filter_input(INPUT_POST, 'input_doc_cliente'));
+        $c_cliente->setNombre(filter_input(INPUT_POST, 'input_cliente'));
+        $c_cliente->setDireccion(filter_input(INPUT_POST, 'input_direccion'));*/
+        //document.frm_venta.submit();
     } else {
         alert("FALTA COMPLETAR DATOS");
     }

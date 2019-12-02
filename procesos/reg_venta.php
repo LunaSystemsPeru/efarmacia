@@ -16,7 +16,6 @@ $c_varios = new cl_varios();
 $c_mis_documentos = new cl_documentos_empresa();
 $c_cliente=new cl_cliente();
 $sendCurlVenta=new SendCurlVenta();
-
 $id_empresa = $_SESSION['id_empresa'];
 
 $c_cliente->setIdEmpresa($id_empresa);
@@ -44,6 +43,7 @@ if ($c_cliente->getDocumento() == "") {
 $c_venta->setIdEmpresa($id_empresa);
 
 $fecha = filter_input(INPUT_POST, 'input_fecha');
+
 $c_venta->setPeriodo($c_varios->anio_de_fecha($fecha) . $c_varios->zerofill($c_varios->mes_de_fecha($fecha), 2));
 $c_venta->setFecha($fecha);
 $c_venta->setIdDocumento(filter_input(INPUT_POST, 'select_documento'));
@@ -85,8 +85,8 @@ if ($c_venta->insertar()) {
     $sendCurlVenta->setIdTido($c_mis_documentos->getIdDocumento());
     $sendCurlVenta->setIdVenta($c_venta->getIdVenta());
     $sendCurlVenta->setPeriodo($c_varios->fecha_periodo($c_venta->getFecha()));
-    echo $sendCurlVenta->enviar_json();
-
-    header("Location: ../ver_ventas.php");
+    $sendCurlVenta->enviar_json();
+    echo "\"venta\":" . $c_venta->getIdVenta() ;
+   // header("Location: ../ver_ventas.php");
 
 }
