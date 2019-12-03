@@ -32,6 +32,7 @@ function validarDocumento () {
                 $("#input_datos_cliente").prop('readonly', true);
                 $("#input_cliente").val(json.datos);
                 $("#input_direccion").val(json.direccion);
+                $('#btn_finalizar_pedido').focus()
             }
             if (success === "existe") {
                // $("#btn_guardar").prop('disabled', true);

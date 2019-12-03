@@ -107,7 +107,7 @@ foreach ($items as $value) {
     $item = new SaleDetail();
     $item->setCodProducto($value['id_producto'])
         ->setUnidad('NIU')
-        ->setDescripcion($value['nombre'])
+        ->setDescripcion($value['nombre'] . "-" . $value["laboratorio"] . "-" . $value["presentacion"])
         ->setCantidad($value['cantidad'])
         ->setMtoValorUnitario(number_format($value['precio'] / 1.18, 2, '.', ''))
         ->setMtoValorVenta(number_format($value['precio'] * $value['cantidad'] / 1.18, 2, '.', ''))

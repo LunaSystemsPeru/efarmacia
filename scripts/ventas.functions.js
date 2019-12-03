@@ -209,10 +209,10 @@ function enviar_formulario() {
             data: $("#frm_venta").serialize(),
             success: function(data)
             {
-                console.log("{"+data+"}");
+                console.log(data);
 
-                if (isJsonStructure("{"+data+"}")){
-                    var obj = JSON.parse("{"+data+"}");
+                if (isJsonStructure(data)){
+                    var obj = JSON.parse(data);
                     swal({
                         title: "Venta Registrada",
                         text: "El documento de venta se registro con exito!",
@@ -227,7 +227,7 @@ function enviar_formulario() {
                     }, function (isConfirm) {
                         if (isConfirm) {
 
-                            window.location.href = 'ver_preimpresion_venta.php?id_venta=' + obj.venta;
+                            window.location.href = 'ver_preimpresion_venta.php?id_venta=' + obj.venta+ "&periodo="+obj.periodo;
                         }
                     });
                 }else{
@@ -250,57 +250,3 @@ function cargar_editar_proveedor() {
     window.open("mod_proveedor.php?id=" + $("#input_id_proveedor").val());
 }
 
-
-function enviar_datos() {
-    var parametros = {
-        datos_cliente: $('#input_datos_cliente').val(),
-        documento_cliente: $('#input_documento_cliente').val(),
-        direccion_cliente: $('#input_direccion_cliente').val(),
-        total_pedido: $('#input_total_pedido').val(),
-        documento_venta: $('#select_documento').val(),
-    };
-    $.ajax({
-        data: parametros, //datos que se envian a traves de ajax
-        url: '../controller/reg_venta.php', //archivo que recibe la peticion
-        type: 'post', //método de envio
-        beforeSend: function () {
-            $("#resultado").html("Procesando, espere por favor...");
-        },
-        success: function (response) { //una vez que el archivo recibe el request lo procesa y lo devuelve
-            $("#resultado").html(response);
-            var json_response = JSON.parse(response);
-            if (response.valor == 0) {
-                swal({
-                    title: "Error al Registrar",
-                    text: response,
-                    type: "error",
-                    showCancelButton: false,
-                    //cancelButtonClass: 'btn-secondary ',
-                    confirmButtonColor: "#DD6B55",
-                    //confirmButtonText: "Ver Ticket",
-                    cancelButtonText: "No, cancel plx!",
-                    closeOnConfirm: true,
-                    closeOnCancel: true
-                });
-            } else {
-                swal({
-                    title: "Venta Registrada",
-                    text: "El documento de venta se registro con exito!",
-                    type: "success",
-                    showCancelButton: false,
-                    //cancelButtonClass: 'btn-secondary ',
-                    confirmButtonColor: "#DD6B55",
-                    confirmButtonText: "Ver Ticket",
-                    //cancelButtonText: "No, cancel plx!",
-                    closeOnConfirm: false,
-                    //closeOnCancel: false
-                }, function (isConfirm) {
-                    if (isConfirm) {
-
-                        window.location.href = 'ver_preimpresion_venta.php?id_venta=' + json_response.valor;
-                    }
-                });
-            }
-        }
-    });
-}

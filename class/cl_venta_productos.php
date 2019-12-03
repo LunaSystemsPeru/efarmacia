@@ -192,12 +192,12 @@ class cl_venta_productos
     function ver_productos()
     {
         global $conn;
-        $query = "select p.id_producto, p.nombre, p.principio_activo, l.nombre as laboratorio, p2.nombre as presentacion, vp.vcto, vp.lote, vp.cantidad, vp.costo, vp.precio "
-            . "from venta_producto vp "
-            . "inner join producto p on vp.id_producto = p.id_producto and vp.id_empresa = p.id_empresa  "
-            . "inner join laboratorio l on p.id_laboratorio = l.id_laboratorio "
-            . "inner join presentacion p2 on p.id_presentacion = p2.id_presentacion "
-            . "where vp.id_venta = '" . $this->id_venta . "' and vp.periodo = '" . $this->periodo . "' and vp.id_empresa = '" . $this->id_empresa . "'";
+        $query = "SELECT p.id_producto, p.nombre, p.principio_activo, l.nombre AS laboratorio, p2.nombre AS presentacion, vp.vcto, vp.lote, vp.cantidad, vp.costo, vp.precio 
+                FROM venta_producto vp 
+                    INNER JOIN producto p ON vp.id_producto = p.id_producto AND vp.id_empresa = p.id_empresa  
+                    INNER JOIN laboratorio l ON p.id_laboratorio = l.id_laboratorio 
+                    INNER JOIN presentacion p2 ON p.id_presentacion = p2.id_presentacion
+                where vp.id_venta = '" . $this->id_venta . "' and vp.periodo = '" . $this->periodo . "' and vp.id_empresa = '" . $this->id_empresa . "'";
         $resultado = $conn->query($query);
         $fila = $resultado->fetch_all(MYSQLI_ASSOC);
         return $fila;
