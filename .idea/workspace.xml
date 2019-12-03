@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5b395cbc-96dc-4691-a1a8-7f746dc06881" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="5b395cbc-96dc-4691-a1a8-7f746dc06881" name="Default Changelist" comment="se agrego nuevas claces y modificacion con resumen">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e38338ef-1afa-4f78-9ae7-6a318cb0d26d.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -13,7 +13,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/greenter/composer.json</pharConfigPath>
     <execution>
       <executable />
@@ -32,20 +32,6 @@
     </option>
     <expand />
     <select />
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>hidden</find>
-      <find>lbl_s</find>
-      <find>error_ruc</find>
-      <find>btn_comp</find>
-      <find>enviar</find>
-      <find>America</find>
-      <find>input_ccomp</find>
-    </findStrings>
-    <dirStrings>
-      <dir>C:\xampp\htdocs\farmacia</dir>
-    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -70,7 +56,11 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1TzIDAo9hTJxV14yHMrm34duB5L" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
@@ -83,15 +73,16 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\efarmacia" />
-      <recent name="C:\xampp\htdocs\farmacia\ajax_post" />
-      <recent name="C:\xampp\htdocs\farmacia\class_session" />
-      <recent name="C:\xampp\htdocs\farmacia" />
-      <recent name="C:\xampp\htdocs\farmacia\modals_php" />
+      <recent name="C:\xampp\htdocs\clientes\farmacia" />
+      <recent name="C:\xampp\htdocs\clientes\farmacia\class_varios" />
+      <recent name="C:\xampp\htdocs\clientes\farmacia\procesos" />
+      <recent name="C:\xampp\htdocs\clientes\farmacia\vendor\toastr\build" />
+      <recent name="C:\xampp\htdocs\clientes\farmacia\scripts" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -104,6 +95,21 @@
           <option name="name" value="StatusDashboardGroupingRule" />
         </RuleState>
       </list>
+    </option>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="allServicesViewState">
+      <serviceView>
+        <treeState>
+          <expand>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@b2361513" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+          </expand>
+          <select />
+        </treeState>
+      </serviceView>
     </option>
   </component>
   <component name="SvnConfiguration">
@@ -122,8 +128,70 @@
       <workItem from="1552936117345" duration="14195000" />
       <workItem from="1553009139363" duration="9214000" />
       <workItem from="1574456377189" duration="354000" />
-      <workItem from="1574456791898" duration="280000" />
+      <workItem from="1574456791898" duration="12421000" />
+      <workItem from="1574699879456" duration="48000" />
+      <workItem from="1574700171892" duration="4904000" />
+      <workItem from="1574741390597" duration="2651000" />
+      <workItem from="1574784344520" duration="5899000" />
+      <workItem from="1574877785159" duration="14724000" />
+      <workItem from="1574973766912" duration="4339000" />
+      <workItem from="1574982095911" duration="129000" />
+      <workItem from="1575057210876" duration="16722000" />
+      <workItem from="1575074126261" duration="17000" />
+      <workItem from="1575303536134" duration="7660000" />
+      <workItem from="1575318410975" duration="669000" />
+      <workItem from="1575404693862" duration="338000" />
     </task>
+    <task id="LOCAL-00001" summary="se integro el grentes y se agrego  modificar producto">
+      <created>1574468653196</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1574468653196</updated>
+    </task>
+    <task id="LOCAL-00002" summary="se agrego nuevas claces y modificacion con resumen">
+      <created>1574744704767</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1574744704767</updated>
+    </task>
+    <task id="LOCAL-00003" summary="se corrigio los errores en el Query SQL, de modifico los archivos el generador de greenter">
+      <created>1574789933822</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1574789933822</updated>
+    </task>
+    <task id="LOCAL-00004" summary="se modifico el generador del greeanter, y se trabaja en el registro de ventas">
+      <created>1574899398518</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1574899398518</updated>
+    </task>
+    <task id="LOCAL-00005" summary="en progreso">
+      <created>1575060487276</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1575060487276</updated>
+    </task>
+    <task id="LOCAL-00006" summary="se testio y se corrigio por completo la factura y boleta y el envio y generador de cada uno, se modifico la parte de registro de ventas">
+      <created>1575073625043</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1575073625043</updated>
+    </task>
+    <task id="LOCAL-00007" summary="validacion en la venta con registro, falta la parte de visualizar el sistema, ver preimprecios_venta">
+      <created>1575310891984</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1575310891984</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -141,5 +209,18 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="se integro el grentes y se agrego  modificar producto" />
+    <MESSAGE value="se agrego nuevas claces y modificacion con resumen" />
+    <MESSAGE value="se corrigio los errores en el Query SQL, de modifico los archivos el generador de greenter" />
+    <MESSAGE value="se modifico el generador del greeanter, y se trabaja en el registro de ventas" />
+    <MESSAGE value="en progreso" />
+    <MESSAGE value="se testio y se corrigio por completo la factura y boleta y el envio y generador de cada uno, se modifico la parte de registro de ventas" />
+    <MESSAGE value="validacion en la venta con registro, falta la parte de visualizar el sistema, ver preimprecios_venta" />
+    <option name="LAST_COMMIT_MESSAGE" value="validacion en la venta con registro, falta la parte de visualizar el sistema, ver preimprecios_venta" />
   </component>
 </project>
