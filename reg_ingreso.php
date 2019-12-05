@@ -4,7 +4,7 @@ session_start();
 if (is_null($_SESSION['id_empresa'])) {
     header("Location: login.php");
 }
-$_SESSION['productos_ingreso'] = "";
+$_SESSION['productos_ingreso'] = array();
 
 require 'class/cl_documentos_sunat.php';
 $c_documentos = new cl_documentos_sunat();
