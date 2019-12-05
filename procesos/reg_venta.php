@@ -24,8 +24,12 @@ $c_cliente->setNombre(filter_input(INPUT_POST, 'input_cliente'));
 $c_cliente->setDireccion(filter_input(INPUT_POST, 'input_direccion'));
 
 if ($c_cliente->getDocumento() == "") {
-    $c_cliente->setDocumento("SD" . $c_varios->generarCodigo(5));
     $c_cliente->obtener_codigo();
+    $c_cliente->setDocumento("SD" . $c_varios->generarCodigo(5));
+    $c_cliente->setTotalPagado(0);
+    $c_cliente->setTelefono(0);
+    $c_cliente->setTotalVenta(0);
+    $c_cliente->setUltimaVenta(date("Y-m-d"));
     $c_cliente->insertar();
 } else {
     if (!$c_cliente->buscar_documento()) {

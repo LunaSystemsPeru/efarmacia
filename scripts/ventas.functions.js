@@ -198,11 +198,18 @@ function isJsonStructure(str) {
 function enviar_formulario() {
     var total = $("#hidden_total").val();
     var contar_filas = $("#tabla-detalle tr").length;
+    var selectOption= $("#select_documento").val();
+    var num_documento= $("#input_documento_cliente").val();
+    var direccion= $("#input_direccion").val();
+    var nombreCliente= $("#input_cliente").val();
+    var condicion=true;
    // console.log(contar_filas);
     //enviar form
-    if (total > 0 && contar_filas > 1) {
-
-
+    //console.log(num_documento.length + "<>" + direccion.length+ "<>" +nombreCliente);
+    if (selectOption==3){
+        condicion=(num_documento.length==11&&direccion.length>0&&nombreCliente.length>2);
+    }
+    if (total > 0 && contar_filas > 1 && condicion) {
         $.ajax({
             type: "POST",
             url: "procesos/reg_venta.php",
@@ -210,7 +217,6 @@ function enviar_formulario() {
             success: function(data)
             {
                 console.log(data);
-
                 if (isJsonStructure(data)){
                     var obj = JSON.parse(data);
                     swal({
