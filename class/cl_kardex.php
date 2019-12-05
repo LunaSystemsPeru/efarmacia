@@ -84,4 +84,18 @@ class cl_kardex
         $fila = $resultado->fetch_all(MYSQLI_ASSOC);
         return $fila;
     }
+
+    function ver_kardex_producto()
+    {
+        global $conn;
+        $query = "select kp.id_kardex, kp.fecha, kp.id_producto, kp.lote, kp.vcto, kp.id_registro, km.nombre as movimiento, ds.abreviatura as doc_sunat, kp.serie_doc, kp.numero_doc, kp.c_ingresa, kp.c_sale, kp.cu_ingresa, kp.cu_sale 
+        from kardex_producto as kp
+        inner join kardex_movimiento as km on km.id_movimiento = kp.id_movimiento
+        inner join documentos_sunat as ds on ds.id_documento = kp.id_documento
+        where kp.id_empresa = '$this->id_empresa' and kp.id_producto = '$this->id_producto' 
+        order by kp.fecha asc";
+        $resultado = $conn->query($query);
+        $fila = $resultado->fetch_all(MYSQLI_ASSOC);
+        return $fila;
+    }
 }

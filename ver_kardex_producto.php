@@ -5,10 +5,30 @@ if (is_null($_SESSION['id_empresa'])) {
     header("Location: login.php");
 }
 
+require 'class/cl_kardex.php';
 require 'class/cl_producto.php';
+require 'class/cl_presentacion.php';
+require 'class/cl_laboratorio.php';
+
 $c_producto = new cl_producto();
-$c_producto->setIdEmpresa($_SESSION['id_empresa']);
-$title = "Ver Productos - Farmacia - Luna Systems Peru";
+$c_kardex = new cl_kardex();
+
+$c_kardex->setIdEmpresa($_SESSION['id_empresa']);
+$c_kardex->setIdProducto(filter_input(INPUT_GET, 'id_producto'));
+
+$c_producto->setIdProducto($c_kardex->getIdProducto());
+$c_producto->setIdEmpresa($c_kardex->getIdEmpresa());
+$c_producto->obtener_datos();
+
+$c_presentacion = new cl_presentacion();
+$c_presentacion->setIdPresentacion($c_producto->getIdPresentacion());
+$c_presentacion->obtener_datos();
+
+$c_laboratorio = new cl_laboratorio();
+$c_laboratorio->setIdLaboratorio($c_producto->getIdLaboratorio());
+$c_laboratorio->obtener_datos();
+
+$title = "Ver Kardex Producto - Farmacia - Luna Systems Peru";
 ?>
 <!DOCTYPE html>
 <html>
@@ -88,7 +108,7 @@ $title = "Ver Productos - Farmacia - Luna Systems Peru";
                     </ol>
                 </div>
                 <h2 class="font-light m-b-xs">
-                    Mis Productos
+                    <?php echo $c_producto->getNombre() . " - " . $c_presentacion->getNombre() . " - " . $c_laboratorio->getNombre()?>
                 </h2>
             </div>
         </div>
@@ -101,57 +121,48 @@ $title = "Ver Productos - Farmacia - Luna Systems Peru";
         <div class="row">
             <div class="col-lg-12">
                 <div class="hpanel">
+                    <div class="panel-heading">
+                        listar Kardex
+                    </div>
                     <div class="panel-body">
-                        <table id="table-productos" class="table table-striped table-bordered table-hover">
+                        <table id="tabla-clientes" class="table table-striped table-bordered table-hover">
                             <thead>
                             <tr>
                                 <th>Id.</th>
-                                <th>Descripcion</th>
-                                <th>Principio Activo</th>
-                                <th>Cantidad.</th>
-                                <th>P. Vta.</th>
-                                <th>Lote Actual</th>
-                                <th>Estado</th>
-                                <th>Acciones</th>
+                                <th>Fecha</th>
+                                <th>Lote</th>
+                                <th>Tipo</th>
+                                <th>Registro</th>
+                                <th>Documento</th>
+                                <th>C. Ingresa</th>
+                                <th>C. Sale</th>
+                                <th>Tot. Ingresa</th>
+                                <th>Tot. Sale</th>
                             </tr>
                             </thead>
                             <tbody>
                             <?php
-                            $a_productos = $c_producto->ver_productos();
-                            foreach ($a_productos as $fila) {
-                                if ($fila['cantidad'] < 1) {
-                                    $color_texto = "text-info font-bold";
-                                    $label_estado = '<label class="label label-info">sin Stock</label>';
-                                } else {
-                                    if ($fila['faltantes'] >= 90) {
-                                        $color_texto = "text-primary";
-                                        $label_estado = '<label class="label label-success">Normal</label>';
-                                    } else if ($fila['faltantes'] < 90 && $fila['faltantes'] > 5) {
-                                        $color_texto = "text-warning font-bold";
-                                        $label_estado = '<label class=" label label-warning">por Vencer</label>';
-                                    } else {
-                                        $color_texto = "text-danger font-bold";
-                                        $label_estado = '<label class="label label-danger">Vencido</label>';
-                                    }
-                                }
+                            $a_kardex = $c_kardex->ver_kardex_producto();
+                            $item = 1;
+                            foreach ($a_kardex as $fila) {
                                 ?>
                                 <tr>
-                                    <td><?php echo $fila['id_producto']?></td>
-                                    <td ><p class="<?php echo $color_texto?>"><?php echo $fila['nombre'] . " - " . $fila['npresentacion'] . " - " . $fila['nlaboratorio']?></p></td>
-                                    <td><p class="<?php echo $color_texto?>"><?php echo $fila['principio_activo']?></p></td>
-                                    <td class="text-right"><p class="<?php echo $color_texto?>"><?php echo $fila['cantidad']?></p></td>
-                                    <td class="text-right"><p class="<?php echo $color_texto?>"><?php echo $fila['precio']?></p></td>
-                                    <td class="text-center"><p class="<?php echo $color_texto?>"><?php echo $fila['vcto'] . " | " . $fila['lote']?></p></td>
-                                    <td class="text-center"><?php echo $label_estado?></td>
-                                    <td class="text-center">
-                                        <a href="<?php echo "mod_producto.php?id_producto=" . $fila['id_producto']. "&id_empresa=" . $_SESSION['id_empresa']; ?>"><button class="btn btn-success btn-sm" title="Editar Producto"><i class="fa fa-edit"></i></button></a>
-                                        <button class="btn btn-info btn-sm" title="Ver historial de Lotes"><i class="fa fa-bar-chart-o"></i></button>
-                                        <a href="ver_kardex_producto.php?id_producto=<?php echo $fila['id_producto'] ?>" class="btn btn-info btn-sm" title="Ver Kardex"><i class="fa fa-bars"></i></a>
-                                    </td>
+                                    <td><?php echo $item ?></td>
+                                    <td><?php echo $fila['fecha'] ?></td>
+                                    <td><?php echo $fila['lote'] . " | " . $fila['vcto'] ?></td>
+                                    <td class="text-center"><?php echo $fila['movimiento'] ?></td>
+                                    <td class="text-center"><?php echo $fila['id_registro'] ?></td>
+                                    <td class="text-center"><?php echo $fila['doc_sunat'] . " / " . $fila['serie_doc'] . " - " . $fila['numero_doc'] ?></td>
+                                    <td class="text-right"><?php echo $fila['c_ingresa'] ?></td>
+                                    <td class="text-right"><?php echo $fila['c_sale']  ?></td>
+                                    <td class="text-right"><?php echo number_format($fila['cu_ingresa'] * $fila['c_ingresa'], 2) ?></td>
+                                    <td class="text-right"><?php echo number_format($fila['cu_sale'] * $fila['c_sale'],2) ?></td>
                                 </tr>
                                 <?php
+                                $item++;
                             }
                             ?>
+
                             </tbody>
                         </table>
                     </div>
@@ -196,14 +207,13 @@ $title = "Ver Productos - Farmacia - Luna Systems Peru";
     $(function () {
 
         // Initialize Example 1
-        $('#table-productos').dataTable({
-            "order": [[1, "asc"]],
+        $('#tabla-clientes').dataTable({
             dom: "<'row'<'col-sm-4'l><'col-sm-4 text-center'B><'col-sm-4'f>>tp",
-            "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+            "lengthMenu": [[50, 100, 200, -1], [50, 100, 200, "All"]],
             buttons: [
                 {extend: 'copy', className: 'btn-sm'},
-                {extend: 'csv', title: 'mis_productos', className: 'btn-sm'},
-                {extend: 'pdf', title: 'mis_productos', className: 'btn-sm'},
+                {extend: 'csv', title: 'Kardex_diario', className: 'btn-sm'},
+                {extend: 'pdf', title: 'Kardex_diario', className: 'btn-sm'},
                 {extend: 'print', className: 'btn-sm'}
             ]
         });
@@ -211,6 +221,7 @@ $title = "Ver Productos - Farmacia - Luna Systems Peru";
     });
 
 </script>
+
 </body>
 
 </html>

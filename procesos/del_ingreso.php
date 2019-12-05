@@ -24,3 +24,4 @@ if ($c_detalle->eliminar() ) {
         header("Location: ../ver_ingresos.php");
     }
 }
+
