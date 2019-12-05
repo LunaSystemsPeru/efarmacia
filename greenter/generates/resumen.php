@@ -12,35 +12,35 @@ use Greenter\Ws\Services\SunatEndpoints;
 require __DIR__ . '/../vendor/autoload.php';
 
 //cargar clases del sistema
-require __DIR__ . '/../../models/Empresa.php';
-require __DIR__ . '/../../models/Venta.php';
-require __DIR__ . '/../../models/ResumenDiario.php';
-require __DIR__ . '/../../models/VentaReferencia.php';
+require __DIR__ . '/../../class/cl_empresa.php';
+require __DIR__ . '/../../class/cl_venta.php';
+require __DIR__ . '/../../class/cl_resumen_diario.php';
+require __DIR__ . '/../../class/cl_ventas_referencias.php';
 
 $util = Util::getInstance();
 
-$id_empresa = filter_input(INPUT_POST, 'id_empresa');
-$fecha = filter_input(INPUT_POST, 'fecha');
-
+$id_empresa = filter_input(INPUT_GET, 'id_empresa');
+$fecha = filter_input(INPUT_GET, 'fecha');
 if ($id_empresa) {
 
 //inicar clases del sistema
-    $c_empresa = new Empresa();
+    $c_empresa = new cl_empresa();
     $c_empresa->setIdEmpresa($id_empresa);
-    $c_empresa->obtenerDatos();
+    $c_empresa->obtener_datos();
 
     $util->setRuc($c_empresa->getRuc());
     $util->setClave($c_empresa->getClaveSol());
     $util->setUsuario($c_empresa->getUserSol());
 
-    $c_venta = new Venta();
+    $c_venta = new cl_venta();
     $c_venta->setIdEmpresa($id_empresa);
     $c_venta->setFecha($fecha);
 
-    $c_referencia = new VentaReferencia();
+    $c_referencia = new cl_ventas_referencias();
 
     $resultado_empresa = $c_venta->verDocumentosResumen();
 
+    //print_r ($resultado_empresa);
 
     $contar_items = 0;
     $array_items = array();
@@ -86,22 +86,29 @@ if ($id_empresa) {
             ->setMtoOtrosCargos(0)
             ->setMtoIGV($igv);
 
-        if ($fila['id_tido'] == 3) {
+        if ($fila['id_documento'] == 5) {
             //si es nota de credito
             $c_referencia->setIdNota($fila['id_venta']);
             $c_referencia->obtenerDatos();
             //obtener el i dde la venta amarrada
-            $c_venta_afecta = new Venta();
+
+            $c_venta_afecta = new cl_venta();
             $c_venta_afecta->setIdVenta($c_referencia->getIdVenta());
-            $c_venta_afecta->obtenerDatos();
+            $c_venta_afecta->obtener_datos();
+
 
             //obtener laa serie y el numero y mostrar
             $item->setDocReferencia($c_venta_afecta->getSerie() . "-" . $c_venta_afecta->getNumero());
         }
 
+        $c_venta->setIdEmpresa($id_empresa);
+        $c_venta->setPeriodo($fila["periodo"]);
+        $c_venta->setIdVenta($fila["id_venta"]);
+        $c_venta->actualizar_envio();
+
         $array_items[] = $item;
     }
-
+    //print_r($array_items);
 
     $empresa = new Company();
     $empresa->setRuc($c_empresa->getRuc())
@@ -128,7 +135,7 @@ if ($id_empresa) {
 
 //variables generales
     $nombre_archivo = $sum->getName();
-    $dominio = "http://" . $_SERVER["HTTP_HOST"] . "/clientes/efacturacion/";
+    $dominio = "http://" . $_SERVER["HTTP_HOST"] . "/clientes/farmacia/";
     $nombre_xml = $dominio . "/greenter/files/" . $sum->getName() . ".xml";
     $nombre_zip_respuesta = $dominio . "/greenter/files/R-" . $sum->getName() . ".zip";
 
@@ -140,11 +147,11 @@ if ($id_empresa) {
         $util->writeXml($sum, $see->getFactory()->getLastXml());
 
 //lenar resumen diario;
-        $c_resumen = new ResumenDiario();
+        $c_resumen = new cl_resumen_diario();
         $c_resumen->obtenerId();
         $c_resumen->setIdEmpresa($c_empresa->getIdEmpresa());
         $c_resumen->setFecha($fecha);
-        $c_resumen->setCantidad($contar_items);
+        $c_resumen->setCantidadItems($contar_items);
         $c_resumen->setTipo(1);
 
         if ($res->isSuccess()) {
@@ -160,8 +167,10 @@ if ($id_empresa) {
 
                 $descripcion = $cdr->getDescription();
 
-                $util->showResponse($sum, $cdr);
-                //   $respuesta = $util->showResponse($sum, $cdr);
+                //$util->showResponse($sum, $cdr);
+                echo "res: " .   $respuesta = $util->showResponse($sum, $cdr);
+
+
 
             } else {
                 echo $util->getErrorResponse($result->getError());
@@ -201,7 +210,7 @@ if ($id_empresa) {
             "success" => false,
             "resultado" => "ERROR AL ENVIAR - NO HAY ITEMS"
         );
-        echo json_encode($respuesta);
+        echo  json_encode($respuesta);
     }
 
 

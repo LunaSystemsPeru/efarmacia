@@ -122,4 +122,23 @@ class cl_venta_sunat
         return $grabado;
     }
 
+    public function obtener_datos() {
+        $existe = false;
+        global $conn;
+        $query = "select * from ventas_sunat 
+                    WHERE id_venta= '$this->id_venta' AND 
+                          periodo= '$this->periodo'   AND 
+                          id_empresa='$this->id_empresa'";
+        $resultado = $conn->query($query);
+        if ($resultado->num_rows > 0) {
+            $existe = true;
+            while ($fila = $resultado->fetch_assoc()) {
+                $this->hash=$fila["hash"];
+                $this->nombre_xml=$fila["nombre_xml"];
+            }
+        }
+        return $existe;
+    }
+
+
 }

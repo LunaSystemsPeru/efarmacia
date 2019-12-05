@@ -1,4 +1,15 @@
 <?php
+session_start();
+
+require 'class/cl_usuario.php';
+$c_usuario = new cl_usuario();
+
+if (filter_input(INPUT_GET, 'id_usuario')) {
+    $c_usuario->setIdEmpresa($_SESSION['id_empresa']);
+    $c_usuario->setIdUsuario(filter_input(INPUT_GET, 'id_usuario'));
+    $c_usuario->obtener_datos();
+}
+
 $title = "Registro de Usuario - Farmacia - Luna Systems Peru";
 ?>
 <!DOCTYPE html>
@@ -71,10 +82,10 @@ $title = "Registro de Usuario - Farmacia - Luna Systems Peru";
                     <ol class="hbreadcrumb breadcrumb">
                         <li><a href="index.php">Dashboard</a></li>
                         <li>
-                            <span>Ventas</span>
+                            <span>Empresa</span>
                         </li>
                         <li class="active">
-                            <span>Empresa</span>
+                            <span>Usuarios</span>
                         </li>
                     </ol>
                 </div>
@@ -92,96 +103,62 @@ $title = "Registro de Usuario - Farmacia - Luna Systems Peru";
         <div class="row">
             <div class="col-lg-12">
                 <div class="hpanel">
-                    <div class="panel-heading">
-                        <div class="panel-tools">
-                            <a class="showhide"><i class="fa fa-chevron-up"></i></a>
-                            <a class="closebox"><i class="fa fa-times"></i></a>
+                    <form class="form-horizontal" name="frm_reg_usuario" id="frm_reg_usuario" action="procesos/reg_usuario.php" method="post">
+                        <div class="panel-heading">
+                            <div class="panel-tools">
+                                <a class="showhide"><i class="fa fa-chevron-up"></i></a>
+                                <a class="closebox"><i class="fa fa-times"></i></a>
+                            </div>
+                            Datos Generales
                         </div>
-                        Datos Generales
-                    </div>
-                    <div class="panel-body">
-                        <form class="form-horizontal" name="frm_reg_usuario" id="frm_reg_usuario"
-                              action="registrar/reg_usuario.php" method="post">
-
-                            <p class="bord-btm pad-ver text-main text-bold">Datos Generales</p>
-                            <fieldset>
-
-
-                                <div class="form-group">
-                                    <label class="col-lg-2 control-label">DNI: </label>
-                                    <div class="col-lg-2">
-                                        <input type="text" class="form-control text-center"
-                                               name="input_dni" id="input_dni"
-                                               max-lenght="11" required/>
-                                    </div>
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">DATOS DEL USUARIO: </label>
+                                <div class="col-lg-10">
+                                    <input type="text" class="form-control" name="input_datos"
+                                           id="input_datos" max-lenght="245" value="<?php echo $c_usuario->getNombre()?>" required/>
                                 </div>
+                            </div>
 
-                                <div class="form-group">
-                                    <label class="col-lg-2 control-label">NOMBRES: </label>
-                                    <div class="col-lg-8">
-                                        <input type="text" class="form-control" name="input_nombres"
-                                               id="input_nombres" max-lenght="45" required/>
-                                    </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">TELEFONO: </label>
+                                <div class="col-lg-3">
+                                    <input type="text" class="form-control" name="input_telefono"
+                                           id="input_telefono" max-lenght="9" value="<?php echo $c_usuario->getTelefono()?>" required/>
                                 </div>
+                            </div>
 
-                                <div class="form-group">
-                                    <label class="col-lg-2 control-label">APELLIDO PATERNO: </label>
-                                    <div class="col-lg-8">
-                                        <input type="text" class="form-control" name="input_ape_pate"
-                                               id="input_ape_pate" max-lenght="45" required/>
-                                    </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">EMAIL: </label>
+                                <div class="col-lg-8">
+                                    <input type="email" class="form-control" name="input_email"
+                                           id="input_email" max-lenght="240" value="<?php echo $c_usuario->getEmail()?>" required/>
                                 </div>
+                            </div>
 
-                                <div class="form-group">
-                                    <label class="col-lg-2 control-label">APELLIDO MATERNO: </label>
-                                    <div class="col-lg-8">
-                                        <input type="text" class="form-control" name="input_ape_mate"
-                                               id="input_ape_mate" max-lenght="45" required/>
-                                    </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">USUARIO: </label>
+                                <div class="col-lg-3">
+                                    <input type="text" class="form-control" name="input_nick"
+                                           id="input_nick" max-lenght="9" value="<?php echo $c_usuario->getUsername()?>" required//>
                                 </div>
+                            </div>
 
-                                <div class="form-group">
-                                    <label class="col-lg-2 control-label">TELEFONO: </label>
-                                    <div class="col-lg-8">
-                                        <input type="text" class="form-control" name="input_telefono"
-                                               id="input_telefono" max-lenght="9" required/>
-                                    </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">CONTRASEÑA: </label>
+                                <div class="col-lg-3">
+                                    <input type="text" class="form-control" name="input_contrasena"
+                                           id="input_contrasena" max-lenght="45" value="<?php echo $c_usuario->getPassword()?>" required//>
                                 </div>
-
-                                <div class="form-group">
-                                    <label class="col-lg-2 control-label">NICK: </label>
-                                    <div class="col-lg-8">
-                                        <input type="text" class="form-control" name="input_nick"
-                                               id="input_nick" max-lenght="9" required//>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label class="col-lg-2 control-label">CONTRASEÑA: </label>
-                                    <div class="col-lg-8">
-                                        <input type="text" class="form-control" name="input_contraseña"
-                                               id="input_contraseña" max-lenght="45" required//>
-                                    </div>
-                                </div>
-
-                            </fieldset>
-                        </form>
-                        <br>
-
-                        <br>
-                        <div id="resultados">
-
+                            </div>
+                            <input type="hidden" value="<?php echo $c_usuario->getIdUsuario()?>" name="hidden_id_usuario" />
                         </div>
-                        </fieldset>
 
-
-                    </div>
-
-                    <div class="panel-footer text-right">
-                        <button class="btn btn-primary" type="submit" id="registrar_usuario"
-                                onclick="enviar_formulario()">Guardar
-                        </button>
-                    </div>
+                        <div class="panel-footer text-right">
+                            <button class="btn btn-primary" type="submit" id="registrar_usuario" >Guardar
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
 
@@ -205,16 +182,6 @@ $title = "Registro de Usuario - Farmacia - Luna Systems Peru";
 <script src="vendor/metisMenu/dist/metisMenu.min.js"></script>
 <script src="vendor/iCheck/icheck.min.js"></script>
 <script src="vendor/sparkline/index.js"></script>
-<!-- DataTables -->
-<script src="vendor/datatables/media/js/jquery.dataTables.min.js"></script>
-<script src="vendor/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
-<!-- DataTables buttons scripts -->
-<script src="vendor/pdfmake/build/pdfmake.min.js"></script>
-<script src="vendor/pdfmake/build/vfs_fonts.js"></script>
-<script src="vendor/datatables.net-buttons/js/buttons.html5.min.js"></script>
-<script src="vendor/datatables.net-buttons/js/buttons.print.min.js"></script>
-<script src="vendor/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
-<script src="vendor/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
 <!-- App scripts -->
 <script src="scripts/homer.js"></script>
 

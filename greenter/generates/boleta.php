@@ -1,7 +1,4 @@
 <?php
-if (!isset($_SESSION)){
-    session_start();
-}
 
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
@@ -30,9 +27,9 @@ $util = Util::getInstance();
 
 $c_venta = new cl_venta();
 
-$c_venta->setIdVenta(filter_input(INPUT_GET, 'id_venta'));
-$c_venta->setIdEmpresa($_SESSION['id_empresa']);
-$c_venta->setPeriodo(filter_input(INPUT_GET, 'periodo'));
+$c_venta->setIdVenta(filter_input(INPUT_POST, 'id_venta'));
+$c_venta->setIdEmpresa(filter_input(INPUT_POST, 'id_empresa'));
+$c_venta->setPeriodo(filter_input(INPUT_POST, 'periodo'));
 $c_venta->obtener_datos();
 
 //matar proceso si no hay datos

@@ -104,6 +104,7 @@ class cl_documentos_empresa
         $existe = false;
         global $conn;
         $query = "select * from documentos_empresa where id_documento = '" . $this->id_documento . "' and id_empresa = '" . $this->id_empresa . "'";
+
         $resultado = $conn->query($query);
         if ($resultado->num_rows > 0) {
             $existe = true;
@@ -118,11 +119,11 @@ class cl_documentos_empresa
 
     function ver_documentos() {
         global $conn;
-        $query = "select de.id_documento, ds.nombre, de.serie, de.numero "
-            . "from documentos_empresa de "
-            . "inner join documentos_sunat ds on de.id_documento = ds.id_documento "
-            . "where de.id_empresa = '" . $this->id_empresa . "' "
-            . "order by ds.nombre asc";
+        $query = "select de.id_documento, ds.nombre, de.serie, de.numero 
+            from documentos_empresa de 
+            inner join documentos_sunat ds on de.id_documento = ds.id_documento 
+            where de.id_empresa = '" . $this->id_empresa . "' 
+            order by ds.nombre asc";
         $resultado = $conn->query($query);
         $fila = $resultado->fetch_all(MYSQLI_ASSOC);
         return $fila;

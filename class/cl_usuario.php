@@ -200,8 +200,8 @@ class cl_usuario
     public function insertar()
     {
         global $conn;
-        $query = "insert into usuario values ('" . $this->id_usuario . "', '" . $this->id_empresa . "', '" . $this->nombre . "', '" . $this->username . "', "
-            . "'" . $this->password . "', 'now()', 'now()', '" . $this->telefono . "', '" . $this->email . "', '1')";
+        $query = "insert into usuario values ('" . $this->id_usuario . "', '" . $this->id_empresa . "', '" . $this->nombre . "', '" . $this->username . "', 
+            '" . $this->password . "', now(), now(), '" . $this->telefono . "', '" . $this->email . "', '1')";
         $resultado = $conn->query($query);
         if (!$resultado) {
             die('Could not enter data in usuario: ' . mysqli_error($conn));
@@ -209,7 +209,22 @@ class cl_usuario
             //echo "Entered data successfully";
             $grabado = true;
         }
-        $conn->close();
+        return $grabado;
+    }
+
+    public function modificar()
+    {
+        global $conn;
+        $query = "update usuario 
+        set nombre =  '$this->nombre', username = '$this->username', password = '$this->password', telefono = '$this->telefono', email = '$this->email' 
+        where id_empresa = '$this->id_empresa' and id_usuario = '$this->id_usuario'";
+        $resultado = $conn->query($query);
+        if (!$resultado) {
+            die('Could not enter data in usuario: ' . mysqli_error($conn));
+        } else {
+            //echo "Entered data successfully";
+            $grabado = true;
+        }
         return $grabado;
     }
 
@@ -254,8 +269,9 @@ class cl_usuario
     function ver_usuarios()
     {
         global $conn;
-        $query = "select * from usuario "
-            . "order by nombre asc";
+        $query = "select * from usuario 
+            where id_empresa = '$this->id_empresa' 
+            order by nombre asc";
         $resultado = $conn->query($query);
         $fila = $resultado->fetch_all(MYSQLI_ASSOC);
         return $fila;

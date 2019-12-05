@@ -29,11 +29,13 @@ $title = "Registro de Venta de Mercaderia - Farmacia - Luna Systems Peru";
     <link rel="stylesheet" href="vendor/animate.css/animate.css"/>
     <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.css"/>
     <link rel="stylesheet" href="vendor/datatables.net-bs/css/dataTables.bootstrap.min.css"/>
-
+    <link href="vendor/toast/build/jquery.toast.min.css" rel="stylesheet">
     <!-- App styles -->
     <link rel="stylesheet" href="fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css"/>
     <link rel="stylesheet" href="fonts/pe-icon-7-stroke/css/helper.css"/>
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="vendor/sweetalert/lib/sweet-alert.css">
+
     <link rel="stylesheet"
           href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/themes/base/minified/jquery-ui.min.css"
           type="text/css"/>
@@ -126,11 +128,11 @@ $title = "Registro de Venta de Mercaderia - Farmacia - Luna Systems Peru";
                             <div class="form-group">
                                 <label class="col-md-2 control-label">Cant. Venta</label>
                                 <div class="col-md-2">
-                                    <input type="number" value="1" class="form-control text-center" id="input_cventa" name="input_cventa" required readonly>
+                                    <input onkeypress="nextElement(event,'btn_add_producto')" type="number" value="1" class="form-control text-center" id="input_cventa" name="input_cventa" required readonly>
                                 </div>
                                 <label class="col-md-2 control-label">Precio Venta</label>
                                 <div class="col-md-2">
-                                    <input type="text" class="form-control text-right" id="input_precio" name="input_precio" required readonly>
+                                    <input type="text" class="form-control text-right" id="input_precio" name="input_precio" readonly>
                                 </div>
                                 <div class="col-md-2 col-md-offset-1">
                                     <button type="button" class="btn btn-success btn-sm" id="btn_add_producto" onclick="addProductos()" disabled="true"><i class="fa fa-plus"></i> Agregar Item</button>
@@ -179,20 +181,34 @@ $title = "Registro de Venta de Mercaderia - Farmacia - Luna Systems Peru";
                             <div class="form-group">
                                 <label class="col-md-2 control-label">Doc.</label>
                                 <div class="col-md-9">
-                                    <select class="form-control" name="select_documento" id="select_documento">
+                                    <select onchange="obtenerDatos()" class="form-control" name="select_documento" id="select_documento">
                                         <?php
                                         $a_mis_documentos = $c_mis_documentos->ver_documentos();
                                         foreach ($a_mis_documentos as $fila) {
-                                            echo '<option value="'.$fila['id_documento'].'">'.$fila['nombre'].'</option>';
+                                            echo '<option   value="'.$fila['id_documento'].'">'.$fila['nombre'].'</option>';
                                         }
+                                        if (isset($a_mis_documentos[0]))
+                                        $c_mis_documentos->setIdDocumento($a_mis_documentos[0]["id_documento"]);
+
+
+                                        $c_mis_documentos->obtener_datos();
                                         ?>
                                     </select>
                                 </div>
                             </div>
                             <div class="form-group">
+                                <label class="col-lg-2 control-label">S - N</label>
+                                <div class="col-lg-3">
+                                    <input id="input_serie" type="text"   class="form-control text-center" value="<?php echo $c_mis_documentos->getSerie();?>"  readonly>
+                                </div>
+                                <div class="col-lg-5">
+                                    <input id="input_numero" type="text"  class="form-control text-center" value="<?php echo $c_mis_documentos->getNumero();?>"  readonly>
+                                </div>
+                            </div>
+                            <div class="form-group">
                                 <label class="col-lg-2 control-label">Fecha</label>
                                 <div class="col-lg-6">
-                                    <input type="text" placeholder="dd/mm/aaaa" name="input_fecha" class="form-control text-center" value="<?php echo date("Y-m-d"); ?>" readonly>
+                                    <input id="input_fecha" type="text" placeholder="dd/mm/aaaa" name="input_fecha" class="form-control text-center" value="<?php echo date("Y-m-d"); ?>" readonly>
                                 </div>
                             </div>
                             <div id="error_documento">
@@ -200,21 +216,21 @@ $title = "Registro de Venta de Mercaderia - Farmacia - Luna Systems Peru";
                             <div class="form-group">
                                 <label class="col-lg-2 control-label">Cliente</label>
                                 <div class="col-lg-6">
-                                    <input type="text" class="form-control text-center" Placeholder="Nro Documento" id="input_doc_cliente" name="input_doc_cliente" readonly required>
+                                    <input type="text" class="form-control text-center" onkeypress="nextElement(event,'button_comprobar')" Placeholder="Nro Documento" id="input_documento_cliente" name="input_doc_cliente"  required>
                                 </div>
                                 <div class="col-lg-1">
-                                    <a class="btn btn-success" type="button" href="reg_cliente.php" target="_blank">Crear cliente</a>
+                                    <button id="button_comprobar" onclick="comprobarCliente()" class="btn btn-success" type="button" >Comprobar</button>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-lg-12">
-                                    <input type="text" placeholder="buscar cliente" class="form-control" id="input_cliente" name="input_cliente">
+                                    <input type="text" placeholder="Nombre Cliente" class="form-control" id="input_cliente" name="input_cliente" >
                                     <input type="hidden" id="hidden_id_cliente" name="hidden_id_cliente" value="0">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-lg-12">
-                                    <input type="text" placeholder="Direccion" class="form-control" id="input_direccion" name="input_direccion" readonly="true">
+                                    <input type="text" placeholder="Direccion" class="form-control" id="input_direccion" name="input_direccion" >
                                 </div>
                             </div>
                             <div class="form-group">
@@ -259,12 +275,16 @@ $title = "Registro de Venta de Mercaderia - Farmacia - Luna Systems Peru";
 <script src="vendor/datatables.net-buttons/js/buttons.print.min.js"></script>
 <script src="vendor/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
 <script src="vendor/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+<script src="vendor/toast/build/jquery.toast.min.js"></script>
+<script src="scripts/ventas.functions.js"></script>
+<script src="scripts/validar-documento-cliente.js"></script>
+
+<script src="vendor/sweetalert/lib/sweet-alert.min.js"></script>
+
 <!-- App scripts -->
 <script src="scripts/homer.js"></script>
 <script lang="javascript">
-    function cargar_editar_proveedor() {
-        window.open("mod_proveedor.php?id=" + $("#input_id_proveedor").val());
-    }
+
 </script>
 
 <script lang="javascript">
@@ -305,96 +325,14 @@ $title = "Registro de Venta de Mercaderia - Farmacia - Luna Systems Peru";
     });
 </script>
 
+
 <script>
-    function enviar_formulario() {
-        var id_cliente = $("#hidden_id_cliente").val();
-        var total = $("#hidden_total").val();
-        var contar_filas = $("#tabla-detalle tr").length;
-        console.log(contar_filas);
-        //enviar form
-        if (id_cliente !== "" && total > 0 && contar_filas > 1) {
-            document.frm_venta.submit();
-        } else {
-            alert("FALTA COMPLETAR DATOS");
-        }
-    }
-
-    function addProductos() {
-        $.ajax({
-            data: {
-                input_id_producto: $('#hidden_id_producto').val(),
-                input_descripcion_producto: $('#hidden_descripcion_producto').val(),
-                input_costo_producto: $('#hidden_costo').val(),
-                input_precio_producto: $('#input_precio').val(),
-                input_cantidad_producto: $('#input_cventa').val(),
-                input_lote_producto: $('#input_lote').val(),
-                input_vcto_producto: $('#input_vencimiento').val()
-            },
-            url: 'ajax_post/add_productos_ventas.php',
-            type: 'GET',
-            //dataType: 'json',
-            beforeSend: function () {
-                //$('#body_detalle_pedido').html("");
-                $('table tbody').html("");
-            },
-            success: function (r) {
-                //alert(r);
-                $('table tbody').append(r);
-                clean();
-                //$('#body_detalle_pedido').html(r);
-            },
-            error: function () {
-                alert('Ocurrio un error en el servidor ..');
-                $('table tbody').html("");
-                //$('#body_detalle_pedido').html("");
-            }
-        });
-    }
-
-    function eliminar_item(id_producto) {
-        $.ajax({
-            data: {
-                input_id_producto: id_producto
-            },
-            url: 'ajax_post/del_productos_venta.php',
-            type: 'GET',
-            //dataType: 'json',
-            beforeSend: function () {
-                //$('#body_detalle_pedido').html("");
-                $('table tbody').html("");
-            },
-            success: function (r) {
-                //alert(r);
-                $('table tbody').append(r);
-                clean();
-                //$('#body_detalle_pedido').html(r);
-            },
-            error: function () {
-                alert('Ocurrio un error en el servidor ..');
-                $('table tbody').html("");
-                //$('#body_detalle_pedido').html("");
-            }
-        });
-    }
-
-    function clean() {
-        $('#hidden_id_producto').val('');
-        $('#input_producto').val('');
-        $('#hidden_costo').val('0.00');
-        $('#input_precio').val('0.00');
-        $('#input_lote').val('');
-        $('#input_vencimiento').val('');
-        $('#input_cactual').val('');
-        $('#input_cventa').val('');
-        $('#hidden_descripcion_producto').val('');
-        $('#btn_add_producto').prop("disabled", true);
-        $('#btn_guardar_formulario').prop("disabled", false);
-        $('#input_cventa').prop("readonly", true);
-        $('#input_costo').prop("readonly", true);
-        $('#input_precio').prop("readonly", true);
-        $('#input_producto').focus();
-    }
+function nextElement(e, idElement) {
+    if (e.keyCode==13)
+    $( "#"+idElement ).focus();
+}
 </script>
+
 
 </body>
 

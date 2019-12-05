@@ -1,10 +1,10 @@
 <?php
 date_default_timezone_set('America/Los_Angeles');
 
-$servidor = "lunasystemsperu.com";
+$servidor = "192.168.1.2";
 $bd = "lsp_farmacia";
-$usu = "root_lsp";
-$pass = "root/*123";
+$usu = "usr_farmacia";
+$pass = "U0xO13NxlQAfc15I";
 $puerto = "3306";
 $conn = new mysqli($servidor, $usu, $pass, $bd, $puerto);
 if ($conn->connect_error) {

@@ -9,32 +9,33 @@ use Greenter\Ws\Services\SunatEndpoints;
 
 require __DIR__ . '/../vendor/autoload.php';
 
-require __DIR__ . '/../../models/Venta.php';
-require __DIR__ . '/../../models/Empresa.php';
+require __DIR__ . '/../../class/cl_venta.php';
+require __DIR__ . '/../../class/cl_empresa.php';
+
 
 $util = Util::getInstance();
 
-$id_empresa = filter_input(INPUT_POST, 'id_empresa');
-$fecha = filter_input(INPUT_POST, 'fecha');
+$id_empresa = filter_input(INPUT_GET, 'id_empresa');
+$fecha = filter_input(INPUT_GET, 'fecha');
 
 if ($id_empresa) {
 
-    $c_empresa = new Empresa();
+    $c_empresa = new cl_empresa();
     $c_empresa->setIdEmpresa($id_empresa);
-    $c_empresa->obtenerDatos();
+    $c_empresa->obtener_datos();
 
     //definir valor por defecto para ruc de empresa
     $util->setRuc($c_empresa->getRuc());
     $util->setClave($c_empresa->getClaveSol());
     $util->setUsuario($c_empresa->getUserSol());
 
-    $c_venta = new Venta();
+    $c_venta = new cl_venta();
     $c_venta->setIdEmpresa($id_empresa);
     $c_venta->setFecha($fecha);
 
 //parametros de archivos xml
     $url = $_SERVER["HTTP_HOST"];
-    $dominio = "http://" . $url . "/clientes/efacturacion/";
+    $dominio = "http://" . $url . "/clientes/farmacia/";
 
     $see = $util->getSee(SunatEndpoints::FE_BETA);
 
@@ -65,6 +66,8 @@ if ($id_empresa) {
                 $mensaje = $mensaje . "archivo recibido por sunat " . $cdr->getDescription() . PHP_EOL;
 
                 $c_venta->setIdVenta($fila['id_venta']);
+                $c_venta->setIdEmpresa($id_empresa);
+                $c_venta->setPeriodo($fila["periodo"]);
                 $c_venta->actualizar_envio();
             } else {
                 $mensaje = $mensaje . "error al recibir el archivo " . PHP_EOL;

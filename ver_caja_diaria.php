@@ -103,8 +103,8 @@ $title = "Caja Diaria - Farmacia - Luna Systems Peru";
                     <div class="panel-heading">
                         <?php if (!$existe_caja) { ?>
                             <button type="button" data-toggle="modal" data-target="#modal_reg_apertura"
-                                    class="btn btn-warning" alt="Aperturar Caja" title="Aperturar Caja"><i
-                                        class="fa fa-money"></i> Abrir Caja
+                                    class="btn btn-warning" alt="Aperturar Caja" title="Aperturar Caja">
+                                <i class="fa fa-money"></i> Abrir Caja
                             </button>
                         <?php } ?>
                         <?php if ($existe_caja) { ?>
@@ -217,7 +217,9 @@ $title = "Caja Diaria - Farmacia - Luna Systems Peru";
                                 <div class="panel panel-default collapsed">
                                     <div class="panel-heading">
                                         <span><i class="fa fa-subway"></i> Ver Movimientos</span>
-                                        <button type="button" data-toggle="modal" data-target="#modal_reg_movimiento" class="btn btn-warning col-lg-offset-2" alt="Añadir Movimiento" title="Añadir Movimiento"><i
+                                        <button type="button" data-toggle="modal" data-target="#modal_reg_movimiento"
+                                                class="btn btn-warning col-lg-offset-2" alt="Añadir Movimiento"
+                                                title="Añadir Movimiento"><i
                                                     class="fa fa-money"></i> Agregar Movimiento
                                         </button>
                                     </div>
@@ -321,7 +323,8 @@ $title = "Caja Diaria - Farmacia - Luna Systems Peru";
                             <div class="form-group">
                                 <label class="col-lg-2 control-label">Monto</label>
                                 <div class="col-lg-10">
-                                    <input type="number" step="0.01" placeholder="S/ " name="input_apertura" id="input_apertura"
+                                    <input type="number" step="0.01" placeholder="S/ " name="input_apertura"
+                                           id="input_apertura"
                                            class="form-control" required="true">
                                 </div>
                             </div>
@@ -334,6 +337,7 @@ $title = "Caja Diaria - Farmacia - Luna Systems Peru";
                 </div>
             </div>
         </div>
+
     </div>
 
 
@@ -344,6 +348,7 @@ $title = "Caja Diaria - Farmacia - Luna Systems Peru";
     <?php include("includes/footer.php"); ?>
 
 </div>
+
 
 <!-- Vendor scripts -->
 <script src="vendor/jquery/dist/jquery.min.js"></script>
