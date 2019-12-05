@@ -31,6 +31,8 @@ $title = "Ver Ventas - Farmacia - Luna Systems Peru";
     <!-- App styles -->
     <link rel="stylesheet" href="fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css"/>
     <link rel="stylesheet" href="fonts/pe-icon-7-stroke/css/helper.css"/>
+    <link rel="stylesheet" href="vendor/sweetalert/lib/sweet-alert.css">
+    <link href="vendor/toast/build/jquery.toast.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet"
           href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/themes/base/minified/jquery-ui.min.css"
@@ -194,6 +196,12 @@ $title = "Ver Ventas - Farmacia - Luna Systems Peru";
                             <?php
                             $a_ventas = $c_venta->ver_ventas();
                             foreach ($a_ventas as $fila) {
+                                $estado="";
+                                if ($fila['estado']==1){
+                                    $estado="<label class='label label-success'>Pagado</label>";
+                                }else{
+                                    $estado="<label class='label label-danger'>Anulado</label>";
+                                }
                                 ?>
                                 <tr>
                                     <td>
@@ -207,12 +215,26 @@ $title = "Ver Ventas - Farmacia - Luna Systems Peru";
                                     <td class="text-right"><?php echo number_format($fila['total'], 2)?></td>
                                     <td class="text-right"><?php echo number_format($fila['pagado'], 2)?></td>
                                     <td class="text-center">
-                                        <label class="label label-success"> Pagado</label>
+                                        <?php echo $estado;?>
                                     </td>
                                     <td class="text-center">
+
+
+                                        <?php
+                                        if ($fila['estado']==1){?>
+                                            <button class="btn btn-info btn-sm" title="Ver Detalle" onclick="obtener_detalle('<?php echo $fila['id_venta']?>', '<?php echo $fila['periodo']?>')"><i class="fa fa-eye-slash"></i></button>
+                                            <button onclick="anular_venta(<?php echo $fila["id_venta"] . "," . $fila["periodo"];?>)" class="btn btn-danger btn-sm" title="Anular Documento"><i class="fa fa-close"></i></button>
+
+                                            <?php
+                                        }elseif ($fila['estado']==2){?>
+
                                         <button class="btn btn-info btn-sm" title="Ver Detalle" onclick="obtener_detalle('<?php echo $fila['id_venta']?>', '<?php echo $fila['periodo']?>')"><i class="fa fa-eye-slash"></i></button>
+                                        <?php }
+
+                                        ?>
+
                                         <!--<button class="btn btn-success btn-sm" title="Ver Pagos"><i class="fa fa-money"></i></button>-->
-                                        <button class="btn btn-danger btn-sm" title="Anular Documento"><i class="fa fa-close"></i></button>
+
                                     </td>
                                 </tr>
                                 <?php
@@ -272,6 +294,8 @@ $title = "Ver Ventas - Farmacia - Luna Systems Peru";
 <script src="vendor/datatables.net-buttons/js/buttons.print.min.js"></script>
 <script src="vendor/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
 <script src="vendor/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+<script src="vendor/toast/build/jquery.toast.min.js"></script>
+<script src="vendor/sweetalert/lib/sweet-alert.min.js"></script>
 <!-- App scripts -->
 <script src="scripts/homer.js"></script>
 
@@ -315,6 +339,29 @@ $title = "Ver Ventas - Farmacia - Luna Systems Peru";
             }
         });
     }
+
+
+    function anular_venta(id_venta,periodo) {
+
+        swal({
+            title: "Anular Venta",
+            text: "Esta seguro de ANULAR este documento?",
+            type: "warning",
+            showCancelButton: true,
+            //cancelButtonClass: 'btn-secondary ',
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "Anular",
+            cancelButtonText: "No, cancelar!",
+            closeOnConfirm: false,
+            closeOnCancel: true
+        }, function (isConfirm) {
+            if (isConfirm) {
+                window.location.href = 'procesos/del_venta.php?id_venta=' + id_venta+ '&periodo=' +periodo;
+            }
+        });
+    }
+
+
 </script>
 
 

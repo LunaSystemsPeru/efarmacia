@@ -223,6 +223,23 @@ class cl_venta
         $this->id_usuario = $id_usuario;
     }
 
+    public function anular()
+    {
+        global $conn;
+        $query = "update venta 
+        set estado = '2'   
+        where id_venta = '$this->id_venta' and id_empresa = '$this->id_empresa' and periodo = '$this->periodo'";
+        //echo $query;
+        $resultado = $conn->query($query);
+        if (!$resultado) {
+            die('Could not enter data in venta: ' . mysqli_error($conn));
+        } else {
+            //echo "Entered data successfully";
+            $grabado = true;
+        }
+        return $grabado;
+    }
+
 
     public function obtener_codigo()
     {

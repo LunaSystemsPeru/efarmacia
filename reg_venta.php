@@ -296,7 +296,7 @@ $title = "Registro de Venta de Mercaderia - Farmacia - Luna Systems Peru";
             select: function (event, ui) {
                 event.preventDefault();
                 $('#hidden_id_cliente').val(ui.item.id);
-                $('#input_doc_cliente').val(ui.item.ruc);
+                $('#input_documento_cliente').val(ui.item.ruc);
                 $('#input_cliente').val(ui.item.razon_social);
                 $('#input_direccion').val(ui.item.direccion);
             }
