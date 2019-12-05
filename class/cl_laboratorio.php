@@ -48,7 +48,7 @@ class cl_laboratorio
      */
     public function setNombre($nombre)
     {
-        $this->nombre = $nombre;
+        $this->nombre = strtoupper($nombre);
     }
 
     public function obtener_codigo()
@@ -71,6 +71,23 @@ class cl_laboratorio
         $resultado = $conn->query($query);
         if (!$resultado) {
             die('Could not enter data in laboratorio: ' . mysqli_error($conn));
+        } else {
+            //echo "Entered data successfully";
+            $grabado = true;
+        }
+        $conn->close();
+        return $grabado;
+    }
+
+    public function modificar()
+    {
+        global $conn;
+        $query = "update laboratorio 
+        set nombre = '$this->nombre' 
+        where id_laboratorio = '$this->id_laboratorio'";
+        $resultado = $conn->query($query);
+        if (!$resultado) {
+            die('Could not modify data in laboratorio: ' . mysqli_error($conn));
         } else {
             //echo "Entered data successfully";
             $grabado = true;

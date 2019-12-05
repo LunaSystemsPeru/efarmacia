@@ -189,6 +189,23 @@ class cl_ingreso_productos
         return $grabado;
     }
 
+    public function eliminar()
+    {
+        global $conn;
+        $query = "delete from ingreso_producto 
+        where periodo = '$this->periodo' and id_ingreso = '$this->id_ingreso' and id_empresa = '$this->id_empresa'";
+        echo $query;
+        $resultado = $conn->query($query);
+        if (!$resultado) {
+            die('Could not enter data in ingreso_producto: ' . mysqli_error($conn));
+        } else {
+            //echo "Entered data successfully";
+            $grabado = true;
+        }
+        $conn->close();
+        return $grabado;
+    }
+
     function ver_productos()
     {
         global $conn;

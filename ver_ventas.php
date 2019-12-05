@@ -1,6 +1,10 @@
 <?php
 session_start();
 
+if (is_null($_SESSION['id_empresa'])) {
+    header("Location: login.php");
+}
+
 require 'class/cl_venta.php';
 $c_venta = new cl_venta();
 $c_venta->setIdEmpresa($_SESSION['id_empresa']);

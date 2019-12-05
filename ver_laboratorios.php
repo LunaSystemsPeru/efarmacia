@@ -1,5 +1,10 @@
 <?php
 session_start();
+
+if (is_null($_SESSION['id_empresa'])) {
+    header("Location: login.php");
+}
+
 require 'class/cl_laboratorio.php';
 $c_laboratorio = new cl_laboratorio();
 
@@ -153,7 +158,7 @@ $title = "Ver Laboratorios de Productos - Farmacia - Luna Systems Peru";
                                     <td><?php echo $fila['id_laboratorio'] ?></td>
                                     <td><?php echo $fila['nombre'] ?></td>
                                     <td class="text-center">
-                                        <button class="btn btn-success btn-sm" title="Editar"><i class="fa fa-edit"></i></button>
+                                        <button class="btn btn-success btn-sm" title="Editar" onclick="obtener_datos(<?php echo $fila['id_laboratorio']?>)"><i class="fa fa-edit"></i></button>
                                     </td>
                                 </tr>
                                 <?php
@@ -165,6 +170,14 @@ $title = "Ver Laboratorios de Productos - Farmacia - Luna Systems Peru";
                 </div>
             </div>
 
+        </div>
+
+        <div class="modal fade" id="modalmodificar" tabindex="-1" role="dialog"
+             aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content" id="resultado_modal">
+                </div>
+            </div>
         </div>
     </div>
 
@@ -216,6 +229,24 @@ $title = "Ver Laboratorios de Productos - Farmacia - Luna Systems Peru";
         });
 
     });
+
+    function obtener_datos (id_laboratorio) {
+        var parametros = {
+            id_laboratorio: id_laboratorio
+        };
+        $.ajax({
+            data: parametros, //datos que se envian a traves de ajax
+            url: 'modals_php/m_mod_laboratorio.php', //archivo que recibe la peticion
+            type: 'post', //método de envio
+            beforeSend: function () {
+                $("#resultado_modal").html("");
+            },
+            success: function (response) { //una vez que el archivo recibe el request lo procesa y lo devuelve
+                $("#resultado_modal").html(response);
+                $("#modalmodificar").modal('toggle');
+            }
+        });
+    }
 
 </script>
 

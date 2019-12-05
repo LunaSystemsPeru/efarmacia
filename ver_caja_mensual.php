@@ -1,6 +1,10 @@
 <?php
 session_start();
 
+if (is_null($_SESSION['id_empresa'])) {
+    header("Location: login.php");
+}
+
 require 'class/cl_caja_diaria.php';
 $c_caja = new cl_caja_diaria();
 $c_caja->setIdEmpresa($_SESSION['id_empresa']);

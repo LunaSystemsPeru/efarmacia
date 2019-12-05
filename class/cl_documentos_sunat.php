@@ -52,7 +52,7 @@ class cl_documentos_sunat
      */
     public function setNombre($nombre)
     {
-        $this->nombre = $nombre;
+        $this->nombre = strtoupper($nombre);
     }
 
     /**
