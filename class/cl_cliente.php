@@ -72,7 +72,7 @@ class cl_cliente
      */
     public function setNombre($nombre)
     {
-        $this->nombre = $nombre;
+        $this->nombre = utf8_decode(strtoupper($nombre));
     }
 
     /**
@@ -88,7 +88,7 @@ class cl_cliente
      */
     public function setDireccion($direccion)
     {
-        $this->direccion = $direccion;
+        $this->direccion = strtoupper($direccion);
     }
 
     /**

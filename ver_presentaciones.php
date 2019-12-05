@@ -7,6 +7,7 @@ if (is_null($_SESSION['id_empresa'])) {
 
 require 'class/cl_presentacion.php';
 $c_presentacion = new cl_presentacion();
+
 $title = "Ver Presentacion de Productos - Farmacia - Luna Systems Peru";
 ?>
 <!DOCTYPE html>
