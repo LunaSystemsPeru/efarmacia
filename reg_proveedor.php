@@ -1,4 +1,9 @@
 <?php
+session_start();
+
+if (is_null($_SESSION['id_empresa'])) {
+    header("Location: login.php");
+}
 $title = "Registro de Proveedor - Farmacia - Luna Systems Peru";
 ?>
 <!DOCTYPE html>

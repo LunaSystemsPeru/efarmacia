@@ -1,5 +1,10 @@
 <?php
 session_start();
+
+if (is_null($_SESSION['id_empresa'])) {
+    header("Location: login.php");
+}
+
 require 'class/cl_proveedor.php';
 $c_proveedor = new cl_proveedor();
 $c_proveedor->setIdEmpresa($_SESSION['id_empresa']);

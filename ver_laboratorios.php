@@ -1,5 +1,10 @@
 <?php
 session_start();
+
+if (is_null($_SESSION['id_empresa'])) {
+    header("Location: login.php");
+}
+
 require 'class/cl_laboratorio.php';
 $c_laboratorio = new cl_laboratorio();
 
