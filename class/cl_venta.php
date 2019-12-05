@@ -285,11 +285,12 @@ class cl_venta
     function ver_ventas()
     {
         global $conn;
-        $query = "select v.periodo, v.id_venta, v.fecha, ds.abreviatura, v.serie, v.numero, c.documento, c.nombre, v.total, v.pagado, v.estado "
-            . "from venta v "
-            . "inner join documentos_sunat ds on v.id_documento = ds.id_documento "
-            . "inner join cliente c on v.id_cliente = c.id_cliente and v.id_empresa = c.id_empresa "
-            . "where v.id_empresa = '".$this->id_empresa."'";
+        $query = "select v.periodo, v.id_venta, v.fecha, ds.abreviatura, v.serie, v.numero, c.documento, c.nombre, v.total, v.pagado, v.estado, u.username 
+            from venta v 
+            inner join documentos_sunat ds on v.id_documento = ds.id_documento 
+            inner join cliente c on v.id_cliente = c.id_cliente and v.id_empresa = c.id_empresa 
+            inner join usuario u on v.id_empresa = u.id_empresa
+            where v.id_empresa = '$this->id_empresa'";
         $resultado = $conn->query($query);
         $fila = $resultado->fetch_all(MYSQLI_ASSOC);
         return $fila;

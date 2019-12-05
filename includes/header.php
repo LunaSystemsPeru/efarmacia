@@ -45,6 +45,11 @@
                 </li>
 
                 <li class="dropdown">
+                    <a href="reg_venta.php">
+                        <i class="pe-7s-cart"></i>
+                    </a>
+                </li>
+                <li class="dropdown">
                     <a class="dropdown-toggle" href="#" data-toggle="dropdown">
                         <i class="pe-7s-speaker"></i>
                     </a>

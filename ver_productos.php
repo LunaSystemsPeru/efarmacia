@@ -17,7 +17,7 @@ $title = "Ver Productos - Farmacia - Luna Systems Peru";
     <title><?php echo $title; ?></title>
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <!--<link rel="shortcut icon" type="image/ico" href="favicon.ico" />-->
+    <link rel="shortcut icon" type="image/ico" href="images/favicon.ico" />
 
     <!-- Vendor styles -->
     <link rel="stylesheet" href="vendor/fontawesome/css/font-awesome.css"/>
@@ -106,6 +106,7 @@ $title = "Ver Productos - Farmacia - Luna Systems Peru";
                                 <th>Cantidad.</th>
                                 <th>P. Vta.</th>
                                 <th>Lote Actual</th>
+                                <th>Estado</th>
                                 <th>Acciones</th>
                             </tr>
                             </thead>
@@ -113,14 +114,30 @@ $title = "Ver Productos - Farmacia - Luna Systems Peru";
                             <?php
                             $a_productos = $c_producto->ver_productos();
                             foreach ($a_productos as $fila) {
+                                if ($fila['cantidad'] < 1) {
+                                    $color_texto = "text-info font-bold";
+                                    $label_estado = '<label class="label label-info">sin Stock</label>';
+                                } else {
+                                    if ($fila['faltantes'] >= 90) {
+                                        $color_texto = "text-primary";
+                                        $label_estado = '<label class="label label-success">Normal</label>';
+                                    } else if ($fila['faltantes'] < 90 && $fila['faltantes'] > 5) {
+                                        $color_texto = "text-warning font-bold";
+                                        $label_estado = '<label class=" label label-warning">por Vencer</label>';
+                                    } else {
+                                        $color_texto = "text-danger font-bold";
+                                        $label_estado = '<label class="label label-danger">Vencido</label>';
+                                    }
+                                }
                                 ?>
                                 <tr>
                                     <td><?php echo $fila['id_producto']?></td>
-                                    <td><?php echo $fila['nombre'] . " - " . $fila['npresentacion'] . " - " . $fila['nlaboratorio']?></td>
-                                    <td><?php echo $fila['principio_activo']?></td>
-                                    <td class="text-right"><?php echo $fila['cantidad']?></td>
-                                    <td class="text-right"><?php echo $fila['precio']?></td>
-                                    <td class="text-center"><?php echo $fila['vcto'] . " | " . $fila['lote']?></td>
+                                    <td ><p class="<?php echo $color_texto?>"><?php echo $fila['nombre'] . " - " . $fila['npresentacion'] . " - " . $fila['nlaboratorio']?></p></td>
+                                    <td><p class="<?php echo $color_texto?>"><?php echo $fila['principio_activo']?></p></td>
+                                    <td class="text-right"><p class="<?php echo $color_texto?>"><?php echo $fila['cantidad']?></p></td>
+                                    <td class="text-right"><p class="<?php echo $color_texto?>"><?php echo $fila['precio']?></p></td>
+                                    <td class="text-center"><p class="<?php echo $color_texto?>"><?php echo $fila['vcto'] . " | " . $fila['lote']?></p></td>
+                                    <td class="text-center"><?php echo $label_estado?></td>
                                     <td class="text-center">
                                         <a href="<?php echo "mod_producto.php?id_producto=" . $fila['id_producto']. "&id_empresa=" . $_SESSION['id_empresa']; ?>"><button class="btn btn-success btn-sm" title="Editar Producto"><i class="fa fa-edit"></i></button></a>
                                         <button class="btn btn-info btn-sm" title="Ver historial de Lotes"><i class="fa fa-bar-chart-o"></i></button>

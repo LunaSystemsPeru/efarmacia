@@ -19,7 +19,7 @@ $title = "Ver Ventas - Farmacia - Luna Systems Peru";
     <title><?php echo $title; ?></title>
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <!--<link rel="shortcut icon" type="image/ico" href="favicon.ico" />-->
+    <link rel="shortcut icon" type="image/ico" href="images/favicon.ico" />
 
     <!-- Vendor styles -->
     <link rel="stylesheet" href="vendor/fontawesome/css/font-awesome.css"/>
@@ -180,9 +180,9 @@ $title = "Ver Ventas - Farmacia - Luna Systems Peru";
                         <table id="tabla-ingresos" class="table table-striped table-bordered table-hover">
                             <thead>
                             <tr>
-                                <th width="11%">Fecha</th>
+                                <th width="10%">Documento</th>
+                                <th width="8%">Fecha</th>
                                 <th width="30%">Cliente</th>
-                                <th width="15%">Documento</th>
                                 <th width="11%">Usuario</th>
                                 <th width="10%">Total</th>
                                 <th width="10%">Cobrado</th>
@@ -196,10 +196,14 @@ $title = "Ver Ventas - Farmacia - Luna Systems Peru";
                             foreach ($a_ventas as $fila) {
                                 ?>
                                 <tr>
+                                    <td>
+                                        <a target="_blank" href="reports/documento_venta.php?id_venta=<?php echo $fila['id_venta']?>&periodo=<?php echo $fila['periodo']?>" >
+                                            <?php echo $fila['abreviatura'] . " | " . $fila['serie']. " - " . $fila['numero']?>
+                                        </a>
+                                    </td>
                                     <td class="text-center"><?php echo $fila['fecha']?></td>
                                     <td><?php echo $fila['documento'] . " | " . $fila['nombre']?></td>
-                                    <td><?php echo $fila['abreviatura'] . " | " . $fila['serie']. " - " . $fila['numero']?></td>
-                                    <td class="text-center">loyangureng</td>
+                                    <td class="text-center"><?php echo $fila['username']?></td>
                                     <td class="text-right"><?php echo number_format($fila['total'], 2)?></td>
                                     <td class="text-right"><?php echo number_format($fila['pagado'], 2)?></td>
                                     <td class="text-center">
@@ -276,7 +280,8 @@ $title = "Ver Ventas - Farmacia - Luna Systems Peru";
     $(function () {
 
         // Initialize Example 1
-        $('#tabla-ingresos').dataTable({
+        $('#tabla-ingresos').dataTable(
+            {order: [[1, "desc"], [0, "desc"]],
             dom: "<'row'<'col-sm-4'l><'col-sm-4 text-center'B><'col-sm-4'f>>tp",
             "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
             buttons: [

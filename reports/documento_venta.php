@@ -219,7 +219,7 @@ $pdf->Ln(3);
 $y = $pdf->GetY();
 $pdf->Line(10, $y, 200, $y);
 $pdf->Ln(2);
-$pdf->MultiCell(190, 4, utf8_decode("Representacion Impresa de la " . $c_tido->getNombre() . " ELECTRONICA, visite efacturacion.lunasystemsperu.com"), 0, 'C');
+$pdf->MultiCell(190, 4, utf8_decode("Representacion Impresa de la " . $c_tido->getNombre() . " ELECTRONICA, visite efarmacia.lunasystemsperu.com"), 0, 'C');
 $pdf->MultiCell(190, 4, utf8_decode("Resumen: " . $c_recibido->getHash()), 0, 'C');
 
 $nombre_archivo = $c_recibido->getNombreXml() . ".pdf";

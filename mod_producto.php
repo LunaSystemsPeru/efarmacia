@@ -1,5 +1,10 @@
 <?php
 session_start();
+
+if (is_null($_SESSION['id_empresa'])) {
+    header("Location: login.php");
+}
+
 require 'class/cl_laboratorio.php';
 require 'class/cl_presentacion.php';
 require 'class/cl_producto.php';
@@ -31,7 +36,7 @@ $cl_producto->obtener_datos();
     <title><?php echo $title; ?></title>
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <!--<link rel="shortcut icon" type="image/ico" href="favicon.ico" />-->
+    <link rel="shortcut icon" type="image/ico" href="images/favicon.ico" />
 
     <!-- Vendor styles -->
     <link rel="stylesheet" href="vendor/fontawesome/css/font-awesome.css"/>
