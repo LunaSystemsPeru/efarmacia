@@ -177,7 +177,6 @@ class cl_ingreso_productos
         global $conn;
         $query = "insert into ingreso_producto values ('" . $this->periodo . "', '" . $this->id_ingreso . "', '" . $this->id_empresa . "', '" . $this->id_producto . "', '" . $this->lote . "', '" . $this->vencimiento . "', "
             . "'" . $this->cantidad . "', '" . $this->costo . "', '" . $this->venta . "')";
-        echo $query;
         $resultado = $conn->query($query);
         if (!$resultado) {
             die('Could not enter data in ingreso_producto: ' . mysqli_error($conn));
@@ -185,7 +184,6 @@ class cl_ingreso_productos
             //echo "Entered data successfully";
             $grabado = true;
         }
-        $conn->close();
         return $grabado;
     }
 
@@ -194,7 +192,6 @@ class cl_ingreso_productos
         global $conn;
         $query = "delete from ingreso_producto 
         where periodo = '$this->periodo' and id_ingreso = '$this->id_ingreso' and id_empresa = '$this->id_empresa'";
-        echo $query;
         $resultado = $conn->query($query);
         if (!$resultado) {
             die('Could not enter data in ingreso_producto: ' . mysqli_error($conn));
@@ -202,7 +199,6 @@ class cl_ingreso_productos
             //echo "Entered data successfully";
             $grabado = true;
         }
-        $conn->close();
         return $grabado;
     }
 

@@ -93,7 +93,6 @@ class cl_presentacion
             //echo "Entered data successfully";
             $grabado = true;
         }
-        $conn->close();
         return $grabado;
     }
 

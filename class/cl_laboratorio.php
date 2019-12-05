@@ -75,7 +75,6 @@ class cl_laboratorio
             //echo "Entered data successfully";
             $grabado = true;
         }
-        $conn->close();
         return $grabado;
     }
 
@@ -92,7 +91,6 @@ class cl_laboratorio
             //echo "Entered data successfully";
             $grabado = true;
         }
-        $conn->close();
         return $grabado;
     }
 

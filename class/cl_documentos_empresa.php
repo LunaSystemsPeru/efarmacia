@@ -96,7 +96,6 @@ class cl_documentos_empresa
             //echo "Entered data successfully";
             $grabado = true;
         }
-        $conn->close();
         return $grabado;
     }
 

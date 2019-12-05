@@ -342,7 +342,6 @@ class cl_venta
         $query = "update venta 
         set enviado_sunat = 1 
         where id_venta = '$this->id_venta'";
-        echo $query;
         return $conn->query($query);
     }
 }
