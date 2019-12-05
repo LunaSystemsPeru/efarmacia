@@ -163,7 +163,6 @@ class cl_proveedor
             //echo "Entered data successfully";
             $grabado = true;
         }
-        $conn->close();
         return $grabado;
     }
 

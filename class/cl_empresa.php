@@ -300,7 +300,6 @@ class cl_empresa
             //echo "Entered data successfully";
             $grabado = true;
         }
-        $conn->close();
         return $grabado;
     }
 

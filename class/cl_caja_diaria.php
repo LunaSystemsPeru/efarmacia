@@ -246,7 +246,6 @@ class cl_caja_diaria
             //echo "Entered data successfully";
             $grabado = true;
         }
-        $conn->close();
         return $grabado;
     }
 

@@ -33,6 +33,7 @@ $title = "Ver Ingresos de Mercaderia - Farmacia - Luna Systems Peru";
     <link rel="stylesheet" href="vendor/animate.css/animate.css"/>
     <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.css"/>
     <link rel="stylesheet" href="vendor/datatables.net-bs/css/dataTables.bootstrap.min.css"/>
+    <link rel="stylesheet" href="vendor/sweetalert/lib/sweet-alert.css">
 
     <!-- App styles -->
     <link rel="stylesheet" href="fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css"/>
@@ -206,7 +207,7 @@ $title = "Ver Ingresos de Mercaderia - Farmacia - Luna Systems Peru";
                                     <td class="text-right"><?php echo number_format($fila['total'], 2)?></td>
                                     <td class="text-center">
                                         <button class="btn btn-info btn-sm" title="Ver Documento" onclick="obtener_detalle('<?php echo $fila['id_ingreso']?>', '<?php echo $fila['periodo']?>')"><i class="fa fa-eye"></i></button>
-                                        <button class="btn btn-danger btn-sm" title="Eliminar Documento"><i class="fa fa-close"></i></button>
+                                        <button class="btn btn-danger btn-sm" title="Eliminar Documento" onclick="eliminar('<?php echo $fila['id_ingreso']?>', '<?php echo $fila['periodo']?>')"><i class="fa fa-close"></i></button>
                                     </td>
                                 </tr>
                                 <?php
@@ -264,6 +265,7 @@ $title = "Ver Ingresos de Mercaderia - Farmacia - Luna Systems Peru";
 <script src="vendor/datatables.net-buttons/js/buttons.print.min.js"></script>
 <script src="vendor/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
 <script src="vendor/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+<script src="vendor/sweetalert/lib/sweet-alert.min.js"></script>
 <!-- App scripts -->
 <script src="scripts/homer.js"></script>
 
@@ -303,6 +305,26 @@ $title = "Ver Ingresos de Mercaderia - Farmacia - Luna Systems Peru";
             },
             success: function (response) { //una vez que el archivo recibe el request lo procesa y lo devuelve
                 $("#modal_detalle").html(response);
+            }
+        });
+    }
+
+    function eliminar (id_ingreso,periodo) {
+
+        swal({
+            title: "Anular Ingreso",
+            text: "Esta seguro de ANULAR este documento?",
+            type: "warning",
+            showCancelButton: true,
+            //cancelButtonClass: 'btn-secondary ',
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "Anular",
+            cancelButtonText: "No, cancelar!",
+            closeOnConfirm: false,
+            closeOnCancel: true
+        }, function (isConfirm) {
+            if (isConfirm) {
+                window.location.href = 'procesos/del_ingreso.php?id_ingreso=' + id_ingreso+ '&periodo=' +periodo;
             }
         });
     }

@@ -264,7 +264,6 @@ class cl_producto
             //echo "Entered data successfully";
             $grabado = true;
         }
-        $conn->close();
         return $grabado;
     }
 
@@ -319,7 +318,6 @@ class cl_producto
                         precio = '$this->precio'
                     where id_producto = '$this->id_producto'
                       and id_empresa = '$this->id_empresa'";
-        echo $query;
         $resultado = $conn->query($query);
         return true;
 
