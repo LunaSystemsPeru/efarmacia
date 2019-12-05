@@ -308,7 +308,8 @@ class cl_empresa
     {
         $existe = false;
         global $conn;
-        $query = "select * from empresa where id_empresa = '" . $this->id_empresa . "'";
+        $query = "select * from empresa 
+        where id_empresa = '" . $this->id_empresa . "'";
         $resultado = $conn->query($query);
         if ($resultado->num_rows > 0) {
             $existe = true;

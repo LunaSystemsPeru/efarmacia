@@ -38,6 +38,11 @@
         <div class="navbar-right">
             <ul class="nav navbar-nav no-borders">
                 <li class="dropdown">
+                    <a href="reg_venta.php">
+                        <i class="pe-7s-cart"></i>
+                    </a>
+                </li>
+                <li class="dropdown">
                     <a class="dropdown-toggle" href="#" data-toggle="dropdown">
                         <i class="pe-7s-speaker"></i>
                     </a>
@@ -150,12 +155,7 @@
                     </a>
                 </li>
                 <li class="dropdown">
-                    <a href="script_consulta/logout.php">
-                        <i class="pe-7s-upload pe-rotate-90"></i>
-                    </a>
-                </li>
-                <li class="dropdown">
-                    <a href="reg_venta.php">
+                    <a href="procesos/logout.php">
                         <i class="pe-7s-upload pe-rotate-90"></i>
                     </a>
                 </li>

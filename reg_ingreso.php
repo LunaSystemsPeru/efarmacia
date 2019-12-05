@@ -19,7 +19,7 @@ $title = "Registro de Ingreso de Mercaderia - Farmacia - Luna Systems Peru";
     <title><?php echo $title; ?></title>
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <!--<link rel="shortcut icon" type="image/ico" href="favicon.ico" />-->
+    <link rel="shortcut icon" type="image/ico" href="images/favicon.ico" />
 
     <!-- Vendor styles -->
     <link rel="stylesheet" href="vendor/fontawesome/css/font-awesome.css"/>
@@ -111,10 +111,10 @@ $title = "Registro de Ingreso de Mercaderia - Farmacia - Luna Systems Peru";
                                     </select>
                                 </div>
                                 <div class="col-md-2">
-                                    <input class="form-control text-center" value="" id="input_serie" name="input_serie" required>
+                                    <input class="form-control text-center" value="" id="input_serie" name="input_serie" placeholder="Serie" required>
                                 </div>
                                 <div class="col-md-2">
-                                    <input class="form-control text-center" value="" id="input_numero" name="input_numero" required>
+                                    <input class="form-control text-center" value="" id="input_numero" name="input_numero" placeholder="Numero" required>
                                 </div>
                                 <label class="col-md-1 control-label">Fecha</label>
                                 <div class="col-md-3">
@@ -124,7 +124,7 @@ $title = "Registro de Ingreso de Mercaderia - Farmacia - Luna Systems Peru";
                             <div class="form-group">
                                 <label class="col-md-1 control-label">Proveedor</label>
                                 <div class="col-md-2">
-                                    <input class="form-control text-center" value="" id="input_ruc_proveedor" name="input_ruc_proveedor" required>
+                                    <input class="form-control text-center" value="" id="input_ruc_proveedor" name="input_ruc_proveedor" placeholder="Ingrese RUC" required>
                                     <input type="hidden" id="hidden_id_proveedor" name="hidden_id_proveedor">
                                 </div>
                                 <div class="col-md-7">
@@ -174,7 +174,7 @@ $title = "Registro de Ingreso de Mercaderia - Farmacia - Luna Systems Peru";
                             <div class="form-group">
                                 <label class="col-md-1 control-label">Buscar</label>
                                 <div class="col-md-9">
-                                    <input class="form-control" id="input_producto" name="input_producto">
+                                    <input class="form-control" id="input_producto" name="input_producto" placeholder="Ingrese Medicamento">
                                     <input type="hidden" name="hidden_id_producto" id="hidden_id_producto"/>
                                     <input type="hidden" name="hidden_descripcion_producto" id="hidden_descripcion_producto"/>
                                 </div>

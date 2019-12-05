@@ -1,6 +1,10 @@
 <?php
 session_start();
 
+if (is_null($_SESSION['id_empresa'])) {
+    header("Location: login.php");
+}
+
 $title = "Registro de Cliente - Farmacia - Luna Systems Peru";
 ?>
 <!DOCTYPE html>
@@ -15,7 +19,7 @@ $title = "Registro de Cliente - Farmacia - Luna Systems Peru";
     <title><?php echo $title; ?></title>
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <!--<link rel="shortcut icon" type="image/ico" href="favicon.ico" />-->
+    <link rel="shortcut icon" type="image/ico" href="images/favicon.ico" />
 
     <!-- Vendor styles -->
     <link rel="stylesheet" href="vendor/fontawesome/css/font-awesome.css"/>

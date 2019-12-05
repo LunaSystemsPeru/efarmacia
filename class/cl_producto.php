@@ -77,7 +77,7 @@ class cl_producto
      */
     public function setNombre($nombre)
     {
-        $this->nombre = $nombre;
+        $this->nombre = strtoupper($nombre);
     }
 
     /**
@@ -295,29 +295,31 @@ class cl_producto
     function ver_productos()
     {
         global $conn;
-        $query = "select p.id_producto, p.nombre, p.principio_activo, pr.nombre as npresentacion, l.nombre as nlaboratorio, p.cantidad, p.precio, p.lote, p.vcto "
-            . "from producto as p "
-            . "inner join laboratorio as l on p.id_laboratorio = l.id_laboratorio "
-            . "inner join presentacion pr on p.id_presentacion = pr.id_presentacion "
-            . "where p.id_empresa = '" . $this->id_empresa . "'";
+        $query = "select p.id_producto, p.nombre, p.principio_activo, pr.nombre as npresentacion, l.nombre as nlaboratorio, p.cantidad, p.precio, p.lote, p.vcto, DATEDIFF(p.vcto, current_date()) as faltantes 
+        from producto as p 
+        inner join laboratorio as l on p.id_laboratorio = l.id_laboratorio 
+        inner join presentacion pr on p.id_presentacion = pr.id_presentacion 
+        where p.id_empresa = '$this->id_empresa'";
         $resultado = $conn->query($query);
         $fila = $resultado->fetch_all(MYSQLI_ASSOC);
         return $fila;
     }
+
     function actualizar_productos()
     {
         global $conn;
-        $query = "update producto set id_producto = '$this->id_producto', 
-                    id_empresa = '$this->id_empresa', 
-                    nombre = '$this->nombre',
-                      principio_activo = '$this->principio_activo',
-                      id_laboratorio = '$this->id_laboratorio',
-                      id_presentacion = '$this->id_presentacion',
-                      costo = '$this->costo',
-                      precio = '$this->precio'
+        $query = "update producto 
+                    set id_producto = '$this->id_producto',
+                        id_empresa = '$this->id_empresa', 
+                        nombre = '$this->nombre',
+                        principio_activo = '$this->principio_activo',
+                        id_laboratorio = '$this->id_laboratorio',
+                        id_presentacion = '$this->id_presentacion',
+                        costo = '$this->costo',
+                        precio = '$this->precio'
                     where id_producto = '$this->id_producto'
-                        and id_empresa = '$this->id_empresa'";
-        echo $query ;
+                      and id_empresa = '$this->id_empresa'";
+        echo $query;
         $resultado = $conn->query($query);
         return true;
 
