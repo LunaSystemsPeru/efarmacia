@@ -218,6 +218,22 @@ class cl_ingreso
         return $grabado;
     }
 
+    public function eliminar()
+    {
+        global $conn;
+        $query = "delete from ingreso 
+        where id_ingreso = '$this->id_ingreso' and periodo = '$this->periodo' and id_empresa = '$this->id_empresa'";
+        $resultado = $conn->query($query);
+        if (!$resultado) {
+            die('Could not delete data in ingreso: ' . mysqli_error($conn));
+        } else {
+            //echo "Entered data successfully";
+            $grabado = true;
+        }
+        //$conn->close();
+        return $grabado;
+    }
+
     public function obtener_datos()
     {
         $existe = false;
