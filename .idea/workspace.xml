@@ -1,49 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5b395cbc-96dc-4691-a1a8-7f746dc06881" name="Default Changelist" comment="al dia">
-      <change afterPath="$PROJECT_DIR$/images/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/procesos/logout.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e38338ef-1afa-4f78-9ae7-6a318cb0d26d.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/e38338ef-1afa-4f78-9ae7-6a318cb0d26d.xml" afterDir="false" />
+    <list default="true" id="5b395cbc-96dc-4691-a1a8-7f746dc06881" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/class/cl_conectar.php" beforeDir="false" afterPath="$PROJECT_DIR$/class/cl_conectar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/class/cl_empresa.php" beforeDir="false" afterPath="$PROJECT_DIR$/class/cl_empresa.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/class/cl_producto.php" beforeDir="false" afterPath="$PROJECT_DIR$/class/cl_producto.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/logo_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mod_producto.php" beforeDir="false" afterPath="$PROJECT_DIR$/mod_producto.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/procesos/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/procesos/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/procesos/reg_proveedor.php" beforeDir="false" afterPath="$PROJECT_DIR$/procesos/reg_proveedor.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reg_ajuste.php" beforeDir="false" afterPath="$PROJECT_DIR$/reg_ajuste.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reg_cliente.php" beforeDir="false" afterPath="$PROJECT_DIR$/reg_cliente.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reg_compra.php" beforeDir="false" afterPath="$PROJECT_DIR$/reg_compra.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reg_compra_clasificacion.php" beforeDir="false" afterPath="$PROJECT_DIR$/reg_compra_clasificacion.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reg_empresa.php" beforeDir="false" afterPath="$PROJECT_DIR$/reg_empresa.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reg_ingreso.php" beforeDir="false" afterPath="$PROJECT_DIR$/reg_ingreso.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reg_producto.php" beforeDir="false" afterPath="$PROJECT_DIR$/reg_producto.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reg_proveedor.php" beforeDir="false" afterPath="$PROJECT_DIR$/reg_proveedor.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reg_usuario.php" beforeDir="false" afterPath="$PROJECT_DIR$/reg_usuario.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reg_venta.php" beforeDir="false" afterPath="$PROJECT_DIR$/reg_venta.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ver_ajustes.php" beforeDir="false" afterPath="$PROJECT_DIR$/ver_ajustes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ver_caja_diaria.php" beforeDir="false" afterPath="$PROJECT_DIR$/ver_caja_diaria.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ver_caja_mensual.php" beforeDir="false" afterPath="$PROJECT_DIR$/ver_caja_mensual.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ver_clientes.php" beforeDir="false" afterPath="$PROJECT_DIR$/ver_clientes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ver_compras.php" beforeDir="false" afterPath="$PROJECT_DIR$/ver_compras.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ver_documentos_sunat.php" beforeDir="false" afterPath="$PROJECT_DIR$/ver_documentos_sunat.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ver_ingresos.php" beforeDir="false" afterPath="$PROJECT_DIR$/ver_ingresos.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ver_kardex_diario.php" beforeDir="false" afterPath="$PROJECT_DIR$/ver_kardex_diario.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ver_laboratorios.php" beforeDir="false" afterPath="$PROJECT_DIR$/ver_laboratorios.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ver_mis_documentos.php" beforeDir="false" afterPath="$PROJECT_DIR$/ver_mis_documentos.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ver_presentaciones.php" beforeDir="false" afterPath="$PROJECT_DIR$/ver_presentaciones.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ver_productos.php" beforeDir="false" afterPath="$PROJECT_DIR$/ver_productos.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ver_proveedores.php" beforeDir="false" afterPath="$PROJECT_DIR$/ver_proveedores.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ver_salidas.php" beforeDir="false" afterPath="$PROJECT_DIR$/ver_salidas.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ver_usuarios.php" beforeDir="false" afterPath="$PROJECT_DIR$/ver_usuarios.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ver_ventas.php" beforeDir="false" afterPath="$PROJECT_DIR$/ver_ventas.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +14,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ComposerSettings">
+    <pharConfigPath>$PROJECT_DIR$/greenter/composer.json</pharConfigPath>
     <execution>
       <executable />
     </execution>
@@ -72,6 +36,25 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="MERGE" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/greenter/vendor/mikehaertl/php-shellcommand" />
+      <path value="$PROJECT_DIR$/greenter/vendor/mikehaertl/phpwkhtmltopdf" />
+      <path value="$PROJECT_DIR$/greenter/vendor/composer" />
+      <path value="$PROJECT_DIR$/greenter/vendor/twig/twig" />
+      <path value="$PROJECT_DIR$/greenter/vendor/bacon/bacon-qr-code" />
+      <path value="$PROJECT_DIR$/greenter/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/greenter/vendor/greenter/ws" />
+      <path value="$PROJECT_DIR$/greenter/vendor/greenter/xmldsig" />
+      <path value="$PROJECT_DIR$/greenter/vendor/greenter/data" />
+      <path value="$PROJECT_DIR$/greenter/vendor/greenter/htmltopdf" />
+      <path value="$PROJECT_DIR$/greenter/vendor/greenter/greenter" />
+      <path value="$PROJECT_DIR$/greenter/vendor/greenter/report" />
+      <path value="$PROJECT_DIR$/greenter/vendor/greenter/xml" />
+      <path value="$PROJECT_DIR$/greenter/vendor/greenter/core" />
+      <path value="$PROJECT_DIR$/greenter/vendor/mikehaertl/php-tmpfile" />
+    </include_path>
   </component>
   <component name="ProjectId" id="1U7fUi6FEsVUptWKXjL0Epvjn0P" />
   <component name="ProjectLevelVcsManager">
@@ -141,7 +124,8 @@
       <workItem from="1553009139363" duration="9214000" />
       <workItem from="1574523577638" duration="4768000" />
       <workItem from="1574712583520" duration="72000" />
-      <workItem from="1575504514060" duration="180000" />
+      <workItem from="1575504514060" duration="2085000" />
+      <workItem from="1575578417316" duration="285000" />
     </task>
     <task id="LOCAL-00001" summary="al dia">
       <created>1574523705306</created>
@@ -150,7 +134,28 @@
       <option name="project" value="LOCAL" />
       <updated>1574523705306</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="al dia">
+      <created>1575504706164</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1575504706164</updated>
+    </task>
+    <task id="LOCAL-00003" summary="al dia">
+      <created>1575578467248</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1575578467248</updated>
+    </task>
+    <task id="LOCAL-00004" summary="ignore">
+      <created>1575578525421</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1575578525421</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -170,14 +175,38 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="al dia" />
-    <option name="LAST_COMMIT_MESSAGE" value="al dia" />
+    <MESSAGE value="ignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="ignore" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1734" y="132" width="770" height="763" key="CommitChangelistDialog2" timestamp="1575504679677">
+    <state x="1718" y="178" width="802" height="672" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1575505056324">
       <screen x="1440" y="132" width="1366" height="768" />
     </state>
-    <state x="1734" y="132" width="770" height="763" key="CommitChangelistDialog2/0.25.1440.875/1440.132.1366.768@1440.132.1366.768" timestamp="1575504679677" />
+    <state x="1718" y="178" width="802" height="672" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.25.1440.875/1440.132.1366.768@1440.132.1366.768" timestamp="1575505056324" />
+    <state x="310" y="25" width="770" height="800" key="CommitChangelistDialog2" timestamp="1575578525250">
+      <screen x="0" y="25" width="1440" height="875" />
+    </state>
+    <state x="1734" y="132" width="770" height="763" key="CommitChangelistDialog2/0.25.1440.875/1440.132.1366.768@1440.132.1366.768" timestamp="1575504705625" />
+    <state x="310" y="25" width="770" height="800" key="CommitChangelistDialog2/0.25.1440.875@0.25.1440.875" timestamp="1575578525250" />
+    <state x="1836" y="235" width="566" height="558" key="MultipleFileMergeDialog" timestamp="1575504727534">
+      <screen x="1440" y="132" width="1366" height="768" />
+    </state>
+    <state x="1836" y="235" width="566" height="558" key="MultipleFileMergeDialog/0.25.1440.875/1440.132.1366.768@1440.132.1366.768" timestamp="1575504727534" />
+    <state x="1943" y="442" width="351" height="143" key="NewPhpFileDialog" timestamp="1575505875985">
+      <screen x="1440" y="132" width="1366" height="768" />
+    </state>
+    <state x="1943" y="442" width="351" height="143" key="NewPhpFileDialog/0.25.1440.875/1440.132.1366.768@1440.132.1366.768" timestamp="1575505875985" />
+    <state x="315" y="199" width="802" height="523" key="Vcs.Push.Dialog.v2" timestamp="1575578471854">
+      <screen x="0" y="25" width="1440" height="875" />
+    </state>
+    <state x="315" y="199" width="802" height="523" key="Vcs.Push.Dialog.v2/0.25.1440.875@0.25.1440.875" timestamp="1575578471854" />
+    <state x="1928" y="436" width="382" height="155" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1575504711770">
+      <screen x="1440" y="132" width="1366" height="768" />
+    </state>
+    <state x="1928" y="436" width="382" height="155" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.25.1440.875/1440.132.1366.768@1440.132.1366.768" timestamp="1575504711770" />
   </component>
 </project>
