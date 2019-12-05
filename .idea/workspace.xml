@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5b395cbc-96dc-4691-a1a8-7f746dc06881" name="Default Changelist" comment="se agrego nuevas claces y modificacion con resumen">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e38338ef-1afa-4f78-9ae7-6a318cb0d26d.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/procesos/reg_venta.php" beforeDir="false" afterPath="$PROJECT_DIR$/procesos/reg_venta.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/ventas.functions.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/ventas.functions.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -70,7 +69,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../efacturacion" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -78,11 +77,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\clientes\farmacia" />
+      <recent name="C:\xampp\htdocs\clientes\farmacia\images" />
       <recent name="C:\xampp\htdocs\clientes\farmacia\class_varios" />
+      <recent name="C:\xampp\htdocs\clientes\farmacia" />
       <recent name="C:\xampp\htdocs\clientes\farmacia\procesos" />
       <recent name="C:\xampp\htdocs\clientes\farmacia\vendor\toastr\build" />
-      <recent name="C:\xampp\htdocs\clientes\farmacia\scripts" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -140,7 +139,8 @@
       <workItem from="1575074126261" duration="17000" />
       <workItem from="1575303536134" duration="7660000" />
       <workItem from="1575318410975" duration="669000" />
-      <workItem from="1575404693862" duration="338000" />
+      <workItem from="1575404693862" duration="8878000" />
+      <workItem from="1575577329493" duration="2238000" />
     </task>
     <task id="LOCAL-00001" summary="se integro el grentes y se agrego  modificar producto">
       <created>1574468653196</created>
@@ -191,7 +191,21 @@
       <option name="project" value="LOCAL" />
       <updated>1575310891984</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="se agrego nuevas claces y modificacion con resumen">
+      <created>1575405179982</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1575405179982</updated>
+    </task>
+    <task id="LOCAL-00009" summary="se agrego la funcionalidad de mostrar el documento a imprimir">
+      <created>1575414346400</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1575414346400</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -215,12 +229,13 @@
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="se integro el grentes y se agrego  modificar producto" />
-    <MESSAGE value="se agrego nuevas claces y modificacion con resumen" />
     <MESSAGE value="se corrigio los errores en el Query SQL, de modifico los archivos el generador de greenter" />
     <MESSAGE value="se modifico el generador del greeanter, y se trabaja en el registro de ventas" />
     <MESSAGE value="en progreso" />
     <MESSAGE value="se testio y se corrigio por completo la factura y boleta y el envio y generador de cada uno, se modifico la parte de registro de ventas" />
     <MESSAGE value="validacion en la venta con registro, falta la parte de visualizar el sistema, ver preimprecios_venta" />
-    <option name="LAST_COMMIT_MESSAGE" value="validacion en la venta con registro, falta la parte de visualizar el sistema, ver preimprecios_venta" />
+    <MESSAGE value="se agrego nuevas claces y modificacion con resumen" />
+    <MESSAGE value="se agrego la funcionalidad de mostrar el documento a imprimir" />
+    <option name="LAST_COMMIT_MESSAGE" value="se agrego la funcionalidad de mostrar el documento a imprimir" />
   </component>
 </project>
