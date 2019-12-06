@@ -2,7 +2,7 @@
     <div id="navigation">
         <div class="profile-picture">
             <a href="index.php">
-                <img src="images/logo.png" class="img-circle m-b" alt="Gestion de Farmacia" width="100em">
+                <img src="images/logo.png" class=" m-b" alt="Gestion de Farmacia" width="105em">
             </a>
 
             <div class="stats-label text-color">
