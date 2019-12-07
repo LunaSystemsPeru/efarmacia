@@ -5,6 +5,11 @@ if (is_null($_SESSION['id_empresa'])) {
     header("Location: login.php");
 }
 
+require 'class/cl_compra.php';
+
+$c_compra = new cl_compra();
+$c_compra->setIdEmpresa($_SESSION['id_empresa']);
+
 $title = "Ver Documentos de Compras - Farmacia - Luna Systems Peru";
 ?>
 <!DOCTYPE html>
@@ -136,19 +141,26 @@ $title = "Ver Documentos de Compras - Farmacia - Luna Systems Peru";
                                         </tr>
                                     </thead>
                                     <tbody>
+                                    <?php
+                                    $a_compras = $c_compra->verFilas();
+                                    foreach ($a_compras as $fila) {
+                                        ?>
                                         <tr>
-                                            <td>201903001</td>
-                                            <td class="text-center">2019-03-15</td>
-                                            <td>10469932091 | OYANGUREN GIRON LUIS ENRIQUE</td>
-                                            <td>FT | F001-25</td>
-                                            <td class="text-center">loyangureng</td>
-                                            <td class="text-right">570.00</td>
-                                            <td class="text-right">570.00</td>
+                                            <td><?php echo $fila['periodo'] . $fila['id_compra']?></td>
+                                            <td class="text-center"><?php echo $fila['fecha']?></td>
+                                            <td><?php echo $fila['documento'] . " | ".$fila['nombre']?></td>
+                                            <td><?php echo $fila['abreviatura'] . " | " .  $fila['serie']. " - " .  $fila['numero']?></td>
+                                            <td class="text-center"><?php echo $fila['username']?></td>
+                                            <td class="text-right"><?php echo number_format($fila['total'],2)?></td>
+                                            <td class="text-right"><?php echo number_format($fila['pagado'],2 )?></td>
                                             <td class="text-center">
                                                 <button class="btn btn-info btn-sm" title="Ver Documento"><i class="fa fa-eye-slash"></i></button>
                                                 <button class="btn btn-danger btn-sm" title="Eliminar Documento"><i class="fa fa-close"></i></button>
                                             </td>
                                         </tr>
+                                    <?php
+                                    }
+                                    ?>
                                     </tbody>
                                 </table>
                             </div>

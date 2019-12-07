@@ -1,7 +1,7 @@
 <?php
 date_default_timezone_set('America/Los_Angeles');
 
-$servidor = "localhost";
+$servidor = "192.168.1.248";
 $bd = "lsp_farmacia";
 $usu = "usr_farmacia";
 $pass = "U0xO13NxlQAfc15I";
@@ -10,4 +10,3 @@ $conn = new mysqli($servidor, $usu, $pass, $bd, $puerto);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-?> 

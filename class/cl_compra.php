@@ -6,21 +6,20 @@
  * Time: 06:58 PM
  */
 
+require 'cl_conectar.php';
+
 class cl_compra
 {
     private $id_empresa;
     private $periodo;
     private $id_compra;
     private $fecha;
-    private $fecha_vcto;
     private $id_documento;
     private $serie;
     private $numero;
     private $id_proveedor;
     private $total;
     private $pagado;
-    private $estado;
-    private $id_clasificacion;
     private $id_usuario;
 
     /**
@@ -92,22 +91,6 @@ class cl_compra
     public function setFecha($fecha)
     {
         $this->fecha = $fecha;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getFechaVcto()
-    {
-        return $this->fecha_vcto;
-    }
-
-    /**
-     * @param mixed $fecha_vcto
-     */
-    public function setFechaVcto($fecha_vcto)
-    {
-        $this->fecha_vcto = $fecha_vcto;
     }
 
     /**
@@ -209,38 +192,6 @@ class cl_compra
     /**
      * @return mixed
      */
-    public function getEstado()
-    {
-        return $this->estado;
-    }
-
-    /**
-     * @param mixed $estado
-     */
-    public function setEstado($estado)
-    {
-        $this->estado = $estado;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getIdClasificacion()
-    {
-        return $this->id_clasificacion;
-    }
-
-    /**
-     * @param mixed $id_clasificacion
-     */
-    public function setIdClasificacion($id_clasificacion)
-    {
-        $this->id_clasificacion = $id_clasificacion;
-    }
-
-    /**
-     * @return mixed
-     */
     public function getIdUsuario()
     {
         return $this->id_usuario;
@@ -254,5 +205,18 @@ class cl_compra
         $this->id_usuario = $id_usuario;
     }
 
+
+    public function verFilas()
+    {
+        global $conn;
+        $query = "select c.id_compra, c.periodo, p.documento, p.nombre, c.fecha, ds.abreviatura, c.numero, c.serie, c.total, c.pagado, u.username 
+        from compra as c 
+        inner join documentos_sunat ds on c.id_documento = ds.id_documento 
+        inner join proveedor p on c.id_proveedor = p.id_proveedor and c.id_empresa = p.id_empresa
+        inner join usuario u on c.id_usuario = u.id_usuario and c.id_empresa = u.id_empresa
+        where c.id_empresa = '$this->id_empresa' and c.pagado < c.total";
+        $resultado = $conn->query($query);
+        return $resultado->fetch_all(MYSQLI_ASSOC);
+    }
 
 }
