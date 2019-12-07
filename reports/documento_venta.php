@@ -85,7 +85,7 @@ $r = 100;
 $g = 100;
 $b = 100;
 
-$pdf->Image('../images/' . $imagen, 10, 10, 25, 25);
+$pdf->Image('../images/' . $imagen, f10, 10, 36, 20);
 $pdf->Ln(5);
 $pdf->SetFont('Arial', '', 10);
 $pdf->SetTextColor(0, 0, 0);
@@ -109,13 +109,13 @@ $pdf->SetTextColor(00, 00, 0);
 $pdf->Cell(60, 6, $serie . "-" . $numero, 0, 1, 'C');
 
 $pdf->SetY(10);
-$pdf->SetX(40);
+$pdf->SetX(53);
 $pdf->SetFont('Arial', 'B', 9);
 $pdf->Cell(110, 4, $c_empresa->getRazonSocial(), 0, 1, 'L');
-$pdf->SetX(40);
+$pdf->SetX(53);
 $pdf->SetFont('Arial', '', 9);
 $pdf->MultiCell(75, 4, $c_empresa->getDireccion(), 0, "L");
-$pdf->SetX(40);
+$pdf->SetX(53);
 $pdf->Cell(75, 4, "Telefono: " . $c_empresa->getTelefono() , 0, 1, 'L');
 
 $pdf->SetY(36);
