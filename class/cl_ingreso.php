@@ -207,6 +207,7 @@ class cl_ingreso
         global $conn;
         $query = "insert into ingreso values ('" . $this->periodo . "', '" . $this->id_ingreso . "', '" . $this->id_empresa . "', '" . $this->fecha . "', '" . $this->id_documento . "', '" . $this->serie . "', "
             . "'" . $this->numero . "', '" . $this->id_proveedor . "', '" . $this->id_usuario . "', '" . $this->total . "')";
+        echo  $query;
         $resultado = $conn->query($query);
         if (!$resultado) {
             die('Could not enter data in ingreso: ' . mysqli_error($conn));

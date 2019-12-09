@@ -4,8 +4,12 @@ session_start();
 if (is_null($_SESSION['id_empresa'])) {
     header("Location: login.php");
 }
-
+require 'class/cl_salida.php';
 $title = "Ver Salidas de Mercaderia - Farmacia - Luna Systems Peru";
+
+$c_salida=new cl_salida();
+
+$c_salida->setIdEmpresa($_SESSION['id_empresa']);
 ?>
 <!DOCTYPE html>
 <html>
@@ -131,25 +135,29 @@ $title = "Ver Salidas de Mercaderia - Farmacia - Luna Systems Peru";
                                             <th width="10%">Id.</th>
                                             <th width="11%">Fecha</th>
                                             <th width="30%">Proveedor</th>
-                                            <th width="15%">Documento</th>
                                             <th width="11%">Usuario</th>
                                             <th width="10%">Total</th>
                                             <th width="11%">Acciones</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>201903001</td>
-                                            <td class="text-center">2019-03-15</td>
-                                            <td>10469932091 | OYANGUREN GIRON LUIS ENRIQUE</td>
-                                            <td>FT | F001-25</td>
-                                            <td class="text-center">loyangureng</td>
-                                            <td class="text-right">570.00</td>
-                                            <td class="text-center">
-                                                <button class="btn btn-info btn-sm" title="Ver Documento"><i class="fa fa-eye-slash"></i></button>
-                                                <button class="btn btn-danger btn-sm" title="Eliminar Documento"><i class="fa fa-close"></i></button>
-                                            </td>
-                                        </tr>
+                                    <?php
+                                    $listaSalidas= $c_salida->ver_salidas();
+                                    foreach ($listaSalidas as $salida){
+                                       echo '<tr>';
+                                       echo     '<td>'. $salida["id_salida"] .'</td>';
+                                       echo     '<td class="text-center">'. $salida["fecha"] .'</td>';
+                                       echo     '<td>'. $salida["documento"] .' | '. $salida["proveedor"] .'</td>';
+                                       echo     '<td class="text-center">'. $salida["usuario"] .'</td>';
+                                       echo     '<td class="text-right">'. $salida["total"] .'</td>';
+                                       echo     '<td class="text-center">';
+                                       echo         '<button class="btn btn-info btn-sm" title="Ver Documento"><i class="fa fa-eye-slash"></i></button>';
+                                       echo         '<button class="btn btn-danger btn-sm" title="Eliminar Documento"><i class="fa fa-close"></i></button>';
+                                       echo     '</td>';
+                                       echo '</tr>';
+
+                                          }
+                                         ?>
                                     </tbody>
                                 </table>
                             </div>
