@@ -29,4 +29,6 @@ foreach ($array as $value) {
     $("#input_subtotal").val("<?php echo number_format($subtotal / 1.18, 2, '.', ',') ?>");
     $("#input_igv").val("<?php echo number_format(($subtotal /1.18 * 0.18), 2, '.', ',') ?>");
     $("#input_total").val("<?php echo number_format(($subtotal), 2, '.', ',') ?>");
+    $("#input_total_hidden").val("<?php echo $subtotal; ?>");
+
 </script>

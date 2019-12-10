@@ -16,7 +16,7 @@ $c_ingreso->setSerie(filter_input(INPUT_POST, 'input_serie'));
 $c_ingreso->setNumero(filter_input(INPUT_POST, 'input_numero'));
 $c_ingreso->setIdEmpresa($_SESSION['id_empresa']);
 $c_ingreso->setIdUsuario($_SESSION['id_usuario']);
-$c_ingreso->setTotal(filter_input(INPUT_POST, 'input_total'));
+$c_ingreso->setTotal(filter_input(INPUT_POST, 'input_total_hidden'));
 $c_ingreso->setIdProveedor(filter_input(INPUT_POST, 'hidden_id_proveedor'));
 $c_ingreso->setPeriodo($c_varios->anio_de_fecha($fecha) . $c_varios->zerofill($c_varios->mes_de_fecha($fecha), 2));
 $c_ingreso->obtener_codigo();
