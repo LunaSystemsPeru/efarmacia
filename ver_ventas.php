@@ -6,6 +6,10 @@ if (is_null($_SESSION['id_empresa'])) {
 }
 
 require 'class/cl_venta.php';
+require 'class/cl_varios.php';
+
+$c_varios = new cl_varios();
+
 $c_venta = new cl_venta();
 $c_venta->setIdEmpresa($_SESSION['id_empresa']);
 
@@ -23,7 +27,7 @@ $title = "Ver Ventas - Farmacia - Luna Systems Peru";
     <title><?php echo $title; ?></title>
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <link rel="shortcut icon" type="image/ico" href="images/favicon.ico" />
+    <link rel="shortcut icon" type="image/ico" href="images/favicon.ico"/>
 
     <!-- Vendor styles -->
     <link rel="stylesheet" href="vendor/fontawesome/css/font-awesome.css"/>
@@ -182,71 +186,65 @@ $title = "Ver Ventas - Farmacia - Luna Systems Peru";
             <div class="col-lg-12">
                 <div class="hpanel">
                     <div class="panel-body">
-                    <div class="table-responsive">
-                        <table id="tabla-ingresos" class="table table-striped table-bordered table-hover">
-                            <thead>
-                            <tr>
-                                <th width="10%">Documento</th>
-                                <th width="8%">Fecha</th>
-                                <th width="30%">Cliente</th>
-                                <th width="11%">Usuario</th>
-                                <th width="10%">Total</th>
-                                <th width="10%">Cobrado</th>
-                                <th width="10%">Estado</th>
-                                <th width="11%">Acciones</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <?php
-                            $a_ventas = $c_venta->ver_ventas();
-                            foreach ($a_ventas as $fila) {
-                                $estado="";
-                                if ($fila['estado']==1){
-                                    $estado="<label class='label label-success'>Pagado</label>";
-                                }else{
-                                    $estado="<label class='label label-danger'>Anulado</label>";
-                                }
-                                ?>
+                        <div class="table-responsive">
+                            <table id="tabla-ingresos" class="table table-striped table-hover">
+                                <thead>
                                 <tr>
-                                    <td>
-                                        <a target="_blank" href="reports/documento_venta.php?id_venta=<?php echo $fila['id_venta']?>&periodo=<?php echo $fila['periodo']?>" >
-                                            <?php echo $fila['abreviatura'] . " | " . $fila['serie']. " - " . $fila['numero']?>
-                                        </a>
-                                    </td>
-                                    <td class="text-center"><?php echo $fila['fecha']?></td>
-                                    <td><?php echo $fila['documento'] . " | " . $fila['nombre']?></td>
-                                    <td class="text-center"><?php echo $fila['username']?></td>
-                                    <td class="text-right"><?php echo number_format($fila['total'], 2)?></td>
-                                    <td class="text-right"><?php echo number_format($fila['pagado'], 2)?></td>
-                                    <td class="text-center">
-                                        <?php echo $estado;?>
-                                    </td>
-                                    <td class="text-center">
+                                    <th width="10%">Documento</th>
+                                    <th width="8%">Fecha</th>
+                                    <th width="30%">Cliente</th>
+                                    <th width="11%">Usuario</th>
+                                    <th width="10%">Total</th>
+                                    <th width="10%">Estado</th>
+                                    <th width="11%">Acciones</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <?php
+                                $a_ventas = $c_venta->ver_ventas();
+                                foreach ($a_ventas as $fila) {
+                                    $estado = "";
+                                    if ($fila['estado'] == 1) {
+                                        $estado = "<label class='label label-success'>Pagado</label>";
+                                    } else {
+                                        $estado = "<label class='label label-danger'>Anulado</label>";
+                                    }
+                                    ?>
+                                    <tr>
+                                        <td>
+                                            <a target="_blank" href="reports/documento_venta.php?id_venta=<?php echo $fila['id_venta'] ?>&periodo=<?php echo $fila['periodo'] ?>">
+                                                <?php echo $fila['abreviatura'] . " | " . $fila['serie'] . " - " . $c_varios->zerofill($fila['numero'], 3) ?>
+                                            </a>
+                                        </td>
+                                        <td class="text-center"><?php echo $fila['fecha'] ?></td>
+                                        <td><?php echo $fila['documento'] . " | " . $fila['nombre'] ?></td>
+                                        <td class="text-center"><?php echo $fila['username'] ?></td>
+                                        <td class="text-right"><?php echo number_format($fila['total'], 2) ?></td>
+                                        <td class="text-center">
+                                            <?php echo $estado; ?>
+                                        </td>
+                                        <td class="text-center">
 
-
-                                        <?php
-                                        if ($fila['estado']==1){?>
-                                            <button class="btn btn-info btn-sm" title="Ver Detalle" onclick="obtener_detalle('<?php echo $fila['id_venta']?>', '<?php echo $fila['periodo']?>')"><i class="fa fa-eye-slash"></i></button>
-                                            <button onclick="anular_venta(<?php echo $fila["id_venta"] . "," . $fila["periodo"];?>)" class="btn btn-danger btn-sm" title="Anular Documento"><i class="fa fa-close"></i></button>
 
                                             <?php
-                                        }elseif ($fila['estado']==2){?>
+                                            if ($fila['estado'] == 1) {
+                                                ?>
+                                                <button class="btn btn-info btn-sm" title="Ver Detalle" onclick="obtener_detalle('<?php echo $fila['id_venta'] ?>', '<?php echo $fila['periodo'] ?>')"><i class="fa fa-eye-slash"></i></button>
+                                                <button onclick="anular_venta(<?php echo $fila["id_venta"] . "," . $fila["periodo"]; ?>)" class="btn btn-danger btn-sm" title="Anular Documento"><i class="fa fa-close"></i></button>
+                                                <?php
+                                            }
+                                            ?>
 
-                                        <button class="btn btn-info btn-sm" title="Ver Detalle" onclick="obtener_detalle('<?php echo $fila['id_venta']?>', '<?php echo $fila['periodo']?>')"><i class="fa fa-eye-slash"></i></button>
-                                        <?php }
+                                            <!--<button class="btn btn-success btn-sm" title="Ver Pagos"><i class="fa fa-money"></i></button>-->
 
-                                        ?>
-
-                                        <!--<button class="btn btn-success btn-sm" title="Ver Pagos"><i class="fa fa-money"></i></button>-->
-
-                                    </td>
-                                </tr>
-                                <?php
-                            }
-                            ?>
-                            </tbody>
-                        </table>
-                    </div>
+                                        </td>
+                                    </tr>
+                                    <?php
+                                }
+                                ?>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -256,15 +254,15 @@ $title = "Ver Ventas - Farmacia - Luna Systems Peru";
         <div class="modal fade" id="modal_ver_detalle" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                        <div class="color-line"></div>
-                        <div class="modal-header text-center">
-                            <h4 class="modal-title">Ver detalle de venta</h4>
-                        </div>
-                        <div class="modal-body" id="modal_detalle">
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                        </div>
+                    <div class="color-line"></div>
+                    <div class="modal-header text-center">
+                        <h4 class="modal-title">Ver detalle de venta</h4>
+                    </div>
+                    <div class="modal-body" id="modal_detalle">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -309,16 +307,17 @@ $title = "Ver Ventas - Farmacia - Luna Systems Peru";
 
         // Initialize Example 1
         $('#tabla-ingresos').dataTable(
-            {order: [[1, "desc"], [0, "desc"]],
-            dom: "<'row'<'col-sm-4'l><'col-sm-4 text-center'B><'col-sm-4'f>>tp",
-            "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
-            buttons: [
-                {extend: 'copy', className: 'btn-sm'},
-                {extend: 'csv', title: 'Ventas', className: 'btn-sm'},
-                {extend: 'pdf', title: 'Ventas', className: 'btn-sm'},
-                {extend: 'print', className: 'btn-sm'}
-            ]
-        });
+            {
+                order: [[1, "desc"], [0, "desc"]],
+                dom: "<'row'<'col-sm-4'l><'col-sm-4 text-center'B><'col-sm-4'f>>tp",
+                "lengthMenu": [[50, 100, 200, -1], [50, 100, 200, "All"]],
+                buttons: [
+                    {extend: 'copy', className: 'btn-sm'},
+                    {extend: 'csv', title: 'Ventas', className: 'btn-sm'},
+                    {extend: 'pdf', title: 'Ventas', className: 'btn-sm'},
+                    {extend: 'print', className: 'btn-sm'}
+                ]
+            });
 
     });
 
@@ -345,7 +344,7 @@ $title = "Ver Ventas - Farmacia - Luna Systems Peru";
     }
 
 
-    function anular_venta(id_venta,periodo) {
+    function anular_venta(id_venta, periodo) {
 
         swal({
             title: "Anular Venta",
@@ -360,7 +359,7 @@ $title = "Ver Ventas - Farmacia - Luna Systems Peru";
             closeOnCancel: true
         }, function (isConfirm) {
             if (isConfirm) {
-                window.location.href = 'procesos/del_venta.php?id_venta=' + id_venta+ '&periodo=' +periodo;
+                window.location.href = 'procesos/del_venta.php?id_venta=' + id_venta + '&periodo=' + periodo;
             }
         });
     }
