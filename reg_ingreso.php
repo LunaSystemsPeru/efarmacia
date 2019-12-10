@@ -122,7 +122,7 @@ $title = "Registro de Ingreso de Mercaderia - Farmacia - Luna Systems Peru";
                                 </div>
                                 <label class="col-md-1 control-label">Fecha</label>
                                 <div class="col-md-3">
-                                    <input type="date" id="input_fecha" name="input_fecha" class="form-control text-center">
+                                    <input type="date" id="input_fecha" name="input_fecha" class="form-control text-center" value="<?php echo date("Y-m-d")?>">
                                 </div>
                             </div>
                             <div class="form-group">

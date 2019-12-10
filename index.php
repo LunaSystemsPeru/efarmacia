@@ -95,6 +95,22 @@ $title = "Inicio - Farmacia - Luna Systems Peru";
 
 
                 <div class="row">
+                    <div class="col-lg-6">
+                        <div class="hpanel">
+                            <div class="panel-heading">
+                                <div class="panel-tools">
+                                    <a class="showhide"><i class="fa fa-chevron-up"></i></a>
+                                    <a class="closebox"><i class="fa fa-times"></i></a>
+                                </div>
+                                Line type chart
+                            </div>
+                            <div class="panel-body">
+                                <div>
+                                    <canvas id="lineOptions" height="140"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
             </div>
@@ -119,15 +135,11 @@ $title = "Inicio - Farmacia - Luna Systems Peru";
         <!-- DataTables -->
         <script src="vendor/datatables/media/js/jquery.dataTables.min.js"></script>
         <script src="vendor/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
-        <!-- DataTables buttons scripts -->
-        <script src="vendor/pdfmake/build/pdfmake.min.js"></script>
-        <script src="vendor/pdfmake/build/vfs_fonts.js"></script>
-        <script src="vendor/datatables.net-buttons/js/buttons.html5.min.js"></script>
-        <script src="vendor/datatables.net-buttons/js/buttons.print.min.js"></script>
-        <script src="vendor/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
-        <script src="vendor/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+
+        <script src="vendor/chartjs/Chart.min.js"></script>
         <!-- App scripts -->
         <script src="scripts/homer.js"></script>
+        <script src="scripts/charts.js"></script>
 
     </body>
 

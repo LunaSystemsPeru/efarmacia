@@ -17,7 +17,7 @@ require '../../class/cl_empresa.php';
 
 $c_empresa = new cl_empresa();
 //variables publicas
-$url = "http://" . $_SERVER["HTTP_HOST"] . "/clientes/farmacia/";
+$url = "http://lunasystemsperu.com/clientes/farmacia/";
 $fecha = date("Y-m-d");
 //$fecha = '2019-11-06';
 

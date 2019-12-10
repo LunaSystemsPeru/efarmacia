@@ -10,4 +10,3 @@ $conn = new mysqli($servidor, $usu, $pass, $bd, $puerto);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-?> 

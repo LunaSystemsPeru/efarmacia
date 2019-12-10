@@ -117,7 +117,7 @@ class cl_resumen_diario
     {
         global $conn;
         $query = "select ifnull(max(id_resumen_diario) + 1, 1) as codigo 
-                from resumen_diario ";
+                from resumen_diario";
         $resultado = $conn->query($query);
         if ($resultado->num_rows > 0) {
             while ($fila = $resultado->fetch_assoc()) {
