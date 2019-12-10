@@ -14,13 +14,14 @@ require __DIR__ . '/../vendor/autoload.php';
 //cargar clases del sistema
 require __DIR__ . '/../../class/cl_empresa.php';
 require __DIR__ . '/../../class/cl_venta.php';
+require __DIR__ . '/../../class/cl_ventas_anuladas.php';
 require __DIR__ . '/../../class/cl_resumen_diario.php';
 require __DIR__ . '/../../class/cl_ventas_referencias.php';
 
 $util = Util::getInstance();
 
-$id_empresa = filter_input(INPUT_GET, 'id_empresa');
-$fecha = filter_input(INPUT_GET, 'fecha');
+$id_empresa = filter_input(INPUT_POST, 'id_empresa');
+$fecha = filter_input(INPUT_POST, 'fecha');
 if ($id_empresa) {
 
 //inicar clases del sistema
@@ -40,8 +41,15 @@ if ($id_empresa) {
 
     $resultado_empresa = $c_venta->verDocumentosResumen();
 
+    $c_anulada = new cl_ventas_anuladas();
+    $c_anulada->setIdEmpresa($id_empresa);
+    $c_anulada->setFecha($fecha);
+
+    $resultado_anuladas = $c_anulada->verResumenAnuladas();
+
     //print_r ($resultado_empresa);
 
+    //enviar documento del dia solo activos
     $contar_items = 0;
     $array_items = array();
     foreach ($resultado_empresa as $fila) {
@@ -63,7 +71,73 @@ if ($id_empresa) {
         if ($fila['estado'] == 1) {
             $estado = "1";
         }
-        if ($fila['estado'] == 3) {
+        if ($fila['estado'] == 2) {
+            $estado = "1";
+        }
+
+        //totales
+        $total = $fila['total'];
+        $subtotal = $total / 1.18;
+        $igv = $total / 1.18 * 0.18;
+
+
+        $item = new SummaryDetail();
+        $item->setTipoDoc($fila['cod_sunat'])
+            ->setSerieNro($fila['serie'] . "-" . $fila['numero'])
+            ->setEstado($estado)
+            ->setClienteTipo($tipo_doc)
+            ->setClienteNro($doc_cliente)
+            ->setTotal($total)
+            ->setMtoOperGravadas($subtotal)
+            ->setMtoOperInafectas(0)
+            ->setMtoOperExoneradas(0)
+            ->setMtoOtrosCargos(0)
+            ->setMtoIGV($igv);
+
+        if ($fila['id_documento'] == 5) {
+            //si es nota de credito
+            $c_referencia->setIdNota($fila['id_venta']);
+            $c_referencia->obtenerDatos();
+            //obtener el i dde la venta amarrada
+
+            $c_venta_afecta = new cl_venta();
+            $c_venta_afecta->setIdVenta($c_referencia->getIdVenta());
+            $c_venta_afecta->obtener_datos();
+
+
+            //obtener laa serie y el numero y mostrar
+            $item->setDocReferencia($c_venta_afecta->getSerie() . "-" . $c_venta_afecta->getNumero());
+        }
+
+        $c_venta->setIdEmpresa($id_empresa);
+        $c_venta->setPeriodo($fila["periodo"]);
+        $c_venta->setIdVenta($fila["id_venta"]);
+        $c_venta->actualizar_envio();
+
+        $array_items[] = $item;
+    }
+
+    //enviar documentos anulados en el dia
+    foreach ($resultado_anuladas as $fila) {
+        $contar_items++;
+        //tipo cliente
+        $doc_cliente = "00000000";
+        if (strlen($fila['documento']) == 8) {
+            $tipo_doc = 1;
+            $doc_cliente = $fila['documento'];
+        } else if (strlen($fila['documento']) == 11) {
+            $tipo_doc = 6;
+            $doc_cliente = $fila['documento'];
+        } else {
+            $tipo_doc = 0;
+        }
+
+        //estado
+        $estado = $fila['estado'];
+        if ($fila['estado'] == 1) {
+            $estado = "1";
+        }
+        if ($fila['estado'] == 2) {
             $estado = "3";
         }
 
@@ -108,6 +182,8 @@ if ($id_empresa) {
 
         $array_items[] = $item;
     }
+
+
     //print_r($array_items);
 
     $empresa = new Company();
@@ -141,7 +217,7 @@ if ($id_empresa) {
 
     if ($contar_items > 0) {
 // Envio a SUNAT.
-        $see = $util->getSee(SunatEndpoints::FE_BETA);
+        $see = $util->getSee(SunatEndpoints::FE_PRODUCCION);
 
         $res = $see->send($sum);
         $util->writeXml($sum, $see->getFactory()->getLastXml());
