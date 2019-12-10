@@ -1,22 +1,14 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: ANDY
- * Date: 14/03/2019
- * Time: 07:34 PM
- */
 
+include 'cl_conectar.php';
 class cl_salida
 {
-    private $id_empresa;
     private $id_salida;
-    private $periodo;
-    private $id_documento;
-    private $serie;
-    private $numero;
+    private $id_empresa;
+    private $fecha;
     private $id_proveedor;
     private $id_usuario;
-    private $fecha;
+    private $total;
 
     /**
      * cl_salida constructor.
@@ -28,17 +20,17 @@ class cl_salida
     /**
      * @return mixed
      */
-    public function getIdEmpresa()
+    public function getTotal()
     {
-        return $this->id_empresa;
+        return $this->total;
     }
 
     /**
-     * @param mixed $id_empresa
+     * @param mixed $total
      */
-    public function setIdEmpresa($id_empresa)
+    public function setTotal($total)
     {
-        $this->id_empresa = $id_empresa;
+        $this->total = $total;
     }
 
     /**
@@ -60,65 +52,33 @@ class cl_salida
     /**
      * @return mixed
      */
-    public function getPeriodo()
+    public function getIdEmpresa()
     {
-        return $this->periodo;
+        return $this->id_empresa;
     }
 
     /**
-     * @param mixed $periodo
+     * @param mixed $id_empresa
      */
-    public function setPeriodo($periodo)
+    public function setIdEmpresa($id_empresa)
     {
-        $this->periodo = $periodo;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getIdDocumento()
-    {
-        return $this->id_documento;
-    }
-
-    /**
-     * @param mixed $id_documento
-     */
-    public function setIdDocumento($id_documento)
-    {
-        $this->id_documento = $id_documento;
+        $this->id_empresa = $id_empresa;
     }
 
     /**
      * @return mixed
      */
-    public function getSerie()
+    public function getFecha()
     {
-        return $this->serie;
+        return $this->fecha;
     }
 
     /**
-     * @param mixed $serie
+     * @param mixed $fecha
      */
-    public function setSerie($serie)
+    public function setFecha($fecha)
     {
-        $this->serie = $serie;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getNumero()
-    {
-        return $this->numero;
-    }
-
-    /**
-     * @param mixed $numero
-     */
-    public function setNumero($numero)
-    {
-        $this->numero = $numero;
+        $this->fecha = $fecha;
     }
 
     /**
@@ -153,20 +113,55 @@ class cl_salida
         $this->id_usuario = $id_usuario;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getFecha()
+    public function obtener_codigo()
     {
-        return $this->fecha;
+        global $conn;
+        $query = "select ifnull(max(id_salida) + 1, 1) as codigo 
+                    from salidas where  id_empresa = '" . $this->id_empresa . "'";
+
+        $resultado = $conn->query($query);
+        if ($resultado->num_rows > 0)
+            while ($fila = $resultado->fetch_assoc()) {
+                $this->id_salida = $fila ['codigo'];
+
+        }
     }
 
-    /**
-     * @param mixed $fecha
-     */
-    public function setFecha($fecha)
+    public function insertar()
     {
-        $this->fecha = $fecha;
+        global $conn;
+        $query = "insert into salidas values ('$this->id_salida',
+             '$this->id_empresa',
+             '$this->fecha',
+             '$this->id_proveedor',
+             '$this->id_usuario',
+             '$this->total')";
+        $resultado = $conn->query($query);
+        echo $query;
+        if (!$resultado) {
+            die('Could not enter data in ingreso: ' . mysqli_error($conn));
+        } else {
+            //echo "Entered data successfully";
+            $grabado = true;
+        }
+        //$conn->close();
+        return $grabado;
     }
+
+    function ver_salidas()
+    {
+        global $conn;
+        $query = "SELECT sa.*, pro.nombre AS proveedor, pro.documento, us.nombre  AS usuario
+                    FROM salidas AS sa
+                        INNER JOIN proveedor AS pro ON pro.id_proveedor = sa.id_proveedor AND pro.id_empresa=sa.id_empresa
+                        INNER JOIN usuario AS us ON us.id_usuario= sa.id_usuario AND us.id_empresa= sa.id_empresa
+                    WHERE sa.id_empresa = '$this->id_empresa'
+                    ORDER BY sa.fecha ASC";
+
+        $resultado = $conn->query($query);
+        $fila = $resultado->fetch_all(MYSQLI_ASSOC);
+        return $fila;
+    }
+
 
 }
