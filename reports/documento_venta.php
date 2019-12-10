@@ -85,7 +85,7 @@ $r = 100;
 $g = 100;
 $b = 100;
 
-$pdf->Image('../images/' . $imagen, f10, 10, 36, 20);
+$pdf->Image('../images/' . $imagen, 10, 10, 36, 20);
 $pdf->Ln(5);
 $pdf->SetFont('Arial', '', 10);
 $pdf->SetTextColor(0, 0, 0);
