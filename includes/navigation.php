@@ -54,7 +54,9 @@
             <li>
                 <a href="#"><span class="nav-label">Caja y Bancos</span><span class="fa arrow"></span> </a>
                 <ul class="nav nav-second-level">
-                    <li><a href="ver_caja_mensual.php">Ver mi Caja</a></li>
+                    <li><a href="ver_caja_mensual.php">Ver mi Caja Mensual</a></li>
+                    <li><a href="ver_bancos.php">Ver Bancos</a></li>
+                    <li><a href="ver_tipo_gastos.php">Ver Tipo Gastos</a></li>
                     <li><a href="ver_gastos_anual.php">Ver Reporte Gastos Anual</a></li>
                 </ul>
             </li>

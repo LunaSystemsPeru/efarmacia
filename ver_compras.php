@@ -113,10 +113,12 @@ $title = "Ver Documentos de Compras - Farmacia - Luna Systems Peru";
                                     <div class="col-md-6 ">
                                         <form class="form-horizontal">
                                             <div class="form-group">
-                                                <div class="col-md-12">
+                                                <div class="col-md-5">
                                                     <select class="form-control">
                                                         <option>Seleccionar Año</option>
                                                     </select>
+                                                </div>
+                                                <div class="col-md-5"
                                                     <select class="form-control">
                                                         <option>Seleccionar Periodo</option>
                                                     </select>
