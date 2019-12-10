@@ -10,21 +10,10 @@ class cl_salida_producto
 {
 
     private $id_salida;
-    private $perido;
     private $id_empresa;
     private $id_producto;
     private $cantidad;
     private $costo;
-    private $venta;
-    private $lote;
-    private $vencimiento;
-
-    /**
-     * cl_salida_producto constructor.
-     */
-    public function __construct()
-    {
-    }
 
     /**
      * @return mixed
@@ -40,22 +29,6 @@ class cl_salida_producto
     public function setIdSalida($id_salida)
     {
         $this->id_salida = $id_salida;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getPerido()
-    {
-        return $this->perido;
-    }
-
-    /**
-     * @param mixed $perido
-     */
-    public function setPerido($perido)
-    {
-        $this->perido = $perido;
     }
 
     /**
@@ -122,52 +95,26 @@ class cl_salida_producto
         $this->costo = $costo;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getVenta()
+    public function insertar()
     {
-        return $this->venta;
-    }
+        global $conn;
+        $query = "INSERT INTO salidas_productos         
+                    VALUES ('$this->id_salida',
+                            '$this->id_empresa',
+                            '$this->id_producto',
+                            '$this->cantidad',
+                            '$this->costo')";
+        $resultado = $conn->query($query);
 
-    /**
-     * @param mixed $venta
-     */
-    public function setVenta($venta)
-    {
-        $this->venta = $venta;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getLote()
-    {
-        return $this->lote;
-    }
-
-    /**
-     * @param mixed $lote
-     */
-    public function setLote($lote)
-    {
-        $this->lote = $lote;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getVencimiento()
-    {
-        return $this->vencimiento;
-    }
-
-    /**
-     * @param mixed $vencimiento
-     */
-    public function setVencimiento($vencimiento)
-    {
-        $this->vencimiento = $vencimiento;
+        echo $query;
+        if (!$resultado) {
+            die('Could not enter data in salida: ' . mysqli_error($conn));
+        } else {
+            //echo "Entered data successfully";
+            $grabado = true;
+        }
+        //$conn->close();
+        return $grabado;
     }
 
 

@@ -143,6 +143,7 @@ $title = "Registro de Ingreso de Mercaderia - Farmacia - Luna Systems Peru";
                                 <label class="col-md-2 control-label">Total</label>
                                 <div class="col-md-2">
                                     <input class="form-control text-center" value="0.00" id="input_total" name="input_total" readonly>
+                                    <input type="hidden" id="input_total_hidden" name="input_total_hidden" value="0.00">
                                 </div>
                             </div>
                         </form>
