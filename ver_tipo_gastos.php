@@ -5,12 +5,9 @@ if (is_null($_SESSION['id_empresa'])) {
     header("Location: login.php");
 }
 
-require 'class/cl_documentos_sunat.php';
-require 'class/cl_documentos_empresa.php';
+require 'class/cl_movimiento_banco_tipo.php';
 
-$c_documentos = new cl_documentos_sunat();
-$c_mis_documentos = new cl_documentos_empresa();
-$c_mis_documentos->setIdEmpresa($_SESSION['id_empresa']);
+$c_tipo = new cl_movimiento_banco_tipo();
 
 $title = "Ver Tipos de Movimiento de Dinero - Farmacia - Luna Systems Peru";
 ?>
@@ -106,21 +103,6 @@ $title = "Ver Tipos de Movimiento de Dinero - Farmacia - Luna Systems Peru";
             <div class="col-lg-12">
                 <div class="hpanel">
                     <div class="panel-body">
-                        <p>
-                            Registrar la secuencia numerica de cada documento propio a la empresa.
-                        </p>
-                        <p>
-                            documentos de venta, notas de ingreso, notas propias, etc.
-                        </p>
-
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="col-lg-12">
-                <div class="hpanel">
-                    <div class="panel-body">
                         <div class="row">
                             <div class="col-md-12 m-b-md">
                                 <div class="btn-group">
@@ -140,7 +122,7 @@ $title = "Ver Tipos de Movimiento de Dinero - Farmacia - Luna Systems Peru";
                                                         <label class="col-lg-2 control-label">Nombre: </label>
                                                         <div class="col-lg-10">
                                                             <input type="text" class="form-control"
-                                                                   name="input_serie" id="input_serie"
+                                                                   name="input_nombre" id="input_nombre"
                                                                    required/>
                                                         </div>
                                                     </div>
@@ -165,13 +147,20 @@ $title = "Ver Tipos de Movimiento de Dinero - Farmacia - Luna Systems Peru";
                             </tr>
                             </thead>
                             <tbody>
+                            <?php
+                            $a_tipo = $c_tipo->verFilas();
+                            foreach ($a_tipo as $fila) {
+                                ?>
                                 <tr>
-                                    <td><?php echo "1"?></td>
-                                    <td><?php echo "GASTOS REPRESENTIVOS"?></td>
+                                    <td><?php echo $fila['id_tipo'] ?></td>
+                                    <td><?php echo $fila['nombre'] ?></td>
                                     <td class="text-center">
                                         <button class="btn btn-success btn-sm" title="Editar"><i class="fa fa-edit"></i></button>
                                     </td>
                                 </tr>
+                                <?php
+                            }
+                            ?>
                             </tbody>
                         </table>
                     </div>

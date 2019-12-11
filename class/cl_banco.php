@@ -113,7 +113,7 @@ class cl_banco
     public function insertar()
     {
         global $conn;
-        $query = "insert into bancos values ('$this->id_banco', '$this->nombre', '$this->cuenta', '$this->saldo')";
+        $query = "insert into bancos values ('$this->id_banco', '$this->nombre', '$this->cuenta', '$this->saldo', '$this->id_empresa')";
         $resultado = $conn->query($query);
         if (!$resultado) {
             die('Could not enter data in bancos: ' . mysqli_error($conn));

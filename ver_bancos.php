@@ -33,7 +33,7 @@ $title = "Ver mis Bancos - Farmacia - Luna Systems Peru";
     <link rel="stylesheet" href="vendor/datatables.net-bs/css/dataTables.bootstrap.min.css"/>
 
     <!-- App styles -->
-    <link rel="stylesheet" href="fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css"/>
+    <link rel="stylesheet" href="http://webapplayers.com/homer_admin-v2.0/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css"/>
     <link rel="stylesheet" href="fonts/pe-icon-7-stroke/css/helper.css"/>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet"
@@ -124,7 +124,7 @@ $title = "Ver mis Bancos - Farmacia - Luna Systems Peru";
                                                 <label class="col-lg-2 control-label">Nombre: </label>
                                                 <div class="col-lg-10">
                                                     <input type="text" class="form-control"
-                                                           name="input_serie" id="input_serie" maxlength="245"
+                                                           name="input_nombre" id="input_nombre" maxlength="245"
                                                            required/>
                                                 </div>
                                             </div>
@@ -132,7 +132,7 @@ $title = "Ver mis Bancos - Farmacia - Luna Systems Peru";
                                                 <label class="col-lg-2 control-label">Cuenta: </label>
                                                 <div class="col-lg-10">
                                                     <input type="text" class="form-control"
-                                                           name="input_serie" id="input_serie"  maxlength="45"
+                                                           name="input_cuenta" id="input_cuenta"  maxlength="45"
                                                            required/>
                                                 </div>
                                             </div>
@@ -140,7 +140,7 @@ $title = "Ver mis Bancos - Farmacia - Luna Systems Peru";
                                                 <label class="col-lg-2 control-label">Saldo: </label>
                                                 <div class="col-lg-4">
                                                     <input type="text" class="form-control text-right"
-                                                           name="input_serie" id="input_serie" maxlength="10"
+                                                           name="input_saldo" id="input_saldo" maxlength="10"
                                                            required/>
                                                 </div>
                                             </div>
