@@ -5,9 +5,9 @@ if (is_null($_SESSION['id_empresa'])) {
     header("Location: login.php");
 }
 
-require 'class/cl_caja_diaria.php';
-$c_caja = new cl_caja_diaria();
-$c_caja->setIdEmpresa($_SESSION['id_empresa']);
+require 'class/cl_banco.php';
+$c_banco = new cl_banco();
+$c_banco->setIdEmpresa($_SESSION['id_empresa']);
 
 $title = "Ver mis Bancos - Farmacia - Luna Systems Peru";
 ?>
@@ -166,15 +166,24 @@ $title = "Ver mis Bancos - Farmacia - Luna Systems Peru";
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td><?php echo "1" ?></td>
-                                <td><?php echo "BANCO FICTISIO 1" ?></td>
-                                <td class="text-center"><?php echo "MIO" ?></td>
-                                <td class="text-right"><?php echo number_format(2650, 2) ?></td>
-                                <td class="text-center">
-                                    <a href="ver_movimientos_banco.php?id_banco=1" class="btn btn-success btn-sm" title="Ver Detalle de Caja"><i class="fa fa-bar-chart"></i></a>
-                                </td>
-                            </tr>
+                            <?php
+                            $a_bancos = $c_banco->verFilas();
+                            $item = 0;
+                            foreach ($a_bancos as $fila) {
+                                $item ++;
+                                ?>
+                                <tr>
+                                    <td><?php echo $item ?></td>
+                                    <td><?php echo $fila['nombre'] ?></td>
+                                    <td class="text-center"><?php echo $fila['cuenta'] ?></td>
+                                    <td class="text-right"><?php echo number_format($fila['saldo'], 2) ?></td>
+                                    <td class="text-center">
+                                        <a href="ver_movimientos_banco.php?id_banco=<?php echo $fila['id_banco'] ?>" class="btn btn-success btn-sm" title="Ver Detalle de Caja"><i class="fa fa-bar-chart"></i></a>
+                                    </td>
+                                </tr>
+                            <?php
+                            }
+                            ?>
                             </tbody>
                         </table>
                     </div>

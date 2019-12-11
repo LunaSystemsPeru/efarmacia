@@ -5,10 +5,19 @@ if (is_null($_SESSION['id_empresa'])) {
     header("Location: login.php");
 }
 
-require 'class/cl_caja_diaria.php';
-$c_caja = new cl_caja_diaria();
-$c_caja->setIdEmpresa($_SESSION['id_empresa']);
+require 'class/cl_banco_movimiento.php';
+require 'class/cl_banco.php';
 
+$c_movimiento = new cl_banco_movimiento();
+$c_banco = new cl_banco();
+
+$c_movimiento->setIdBanco(filter_input(INPUT_GET, 'id_banco'));
+$c_banco->setIdBanco($c_movimiento->getIdBanco());
+$c_banco->setIdEmpresa($_SESSION['id_empresa']);
+
+if (!$c_movimiento->getIdBanco()) {
+    header("Location: ver_bancos.php");
+}
 $title = "Ver Movimientos del Banco - Farmacia - Luna Systems Peru";
 ?>
 <!DOCTYPE html>
@@ -115,7 +124,7 @@ $title = "Ver Movimientos del Banco - Farmacia - Luna Systems Peru";
                         </div>
 
                         <div class="btn-group">
-                            <button class="btn btn-info"  data-toggle="modal" data-target="#modalenviar"><i class="fa fa-send"> </i> Enviar a Tienda</button>
+                            <button class="btn btn-info" data-toggle="modal" data-target="#modalenviar"><i class="fa fa-send"> </i> Enviar a Tienda</button>
                         </div>
 
                         <div class="modal fade" id="modaltransferir" tabindex="-1" role="dialog" aria-hidden="true">
@@ -130,8 +139,14 @@ $title = "Ver Movimientos del Banco - Farmacia - Luna Systems Peru";
                                             <div class="form-group">
                                                 <label class="col-lg-2 control-label">Banco: </label>
                                                 <div class="col-lg-10">
-                                                    <select class="form-control">
-                                                        <option>ANTICIPO LAS AMERICAS SAC</option>
+                                                    <select class="form-control" name="select_banco">
+                                                        <?php
+                                                        foreach ($c_banco->verOtrosBancos() as $fila) {
+                                                            ?>
+                                                            <option value="<?php echo $fila['id_banco']?>"><?php echo $fila['nombre']?></option>
+                                                            <?php
+                                                        }
+                                                        ?>
                                                     </select>
                                                 </div>
                                             </div>
@@ -211,18 +226,28 @@ $title = "Ver Movimientos del Banco - Farmacia - Luna Systems Peru";
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td><?php echo "1" ?></td>
-                                <td><?php echo "2019-12-01" ?></td>
-                                <td><?php echo "MOVIMIENTO DE DINERO DEL BANCO A PROVEEDOR" ?></td>
-                                <td><?php echo "MERCADERIA" ?></td>
-                                <td class="text-right"><?php echo number_format(0, 2) ?></td>
-                                <td class="text-right"><?php echo number_format(2650, 2) ?></td>
-                                <td class="text-right"><?php echo number_format(2650, 2) ?></td>
-                                <!--<td class="text-center">
-                                    <button class="btn btn-success btn-sm" title="Ver Detalle de Caja"><i class="fa fa-bar-chart"></i></button>
-                                </td>-->
-                            </tr>
+                            <?php
+                            $a_movimientos = $c_movimiento->verFilas();
+                            $item = 1;
+                            $saldo = 0;
+                            foreach ($a_movimientos as $fila) {
+                                $saldo +=$fila['ingresa']  - $fila['egresa'];
+                                ?>
+                                <tr>
+                                    <td><?php echo $item?></td>
+                                    <td><?php echo $fila['fecha'] ?></td>
+                                    <td><?php echo $fila['descripcion']  ?></td>
+                                    <td><?php echo $fila['nombre'] ?></td>
+                                    <td class="text-right"><?php echo number_format($fila['ingresa'] , 2) ?></td>
+                                    <td class="text-right"><?php echo number_format($fila['egresa'] , 2) ?></td>
+                                    <td class="text-right"><?php echo number_format($saldo , 2) ?></td>
+                                    <!--<td class="text-center">
+                                        <button class="btn btn-success btn-sm" title="Ver Detalle de Caja"><i class="fa fa-bar-chart"></i></button>
+                                    </td>-->
+                                </tr>
+                                <?php
+                            }
+                            ?>
                             </tbody>
                         </table>
                     </div>
