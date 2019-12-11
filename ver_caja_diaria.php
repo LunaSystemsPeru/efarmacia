@@ -283,22 +283,13 @@ $title = "Caja Diaria - Farmacia - Luna Systems Peru";
                                                                         <button type="submit" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                                                                         <button type="submit"class="btn btn-primary">Guardar</button>
                                                                     </div>
+                                                                </div>
                                                             </form>
-
-
-
-
                                                         </div>
-
                                                     </div>
                                                 </div>
                                             </div>
-
-
-
                                         </div>
-
-
                                     </div>
                                     <div class="panel-body">
                                         <table class="table table-striped">
@@ -311,9 +302,9 @@ $title = "Caja Diaria - Farmacia - Luna Systems Peru";
                                             </thead>
                                             <tbody>
                                                 <?php
-                                                $suma_movimientos=0;
+                                                $suma_movimientos = 0;
                                                 foreach ($cm->tabular() as $value) {
-                                                     $monto = $value['MONTO'];
+                                                    $monto = $value['MONTO'];
                                                     $descripccion = $value['DESCRIPCCION'];
                                                     $fecha = $value['FECHA'];
                                                     $suma_movimientos += ($monto);
@@ -324,10 +315,10 @@ $title = "Caja Diaria - Farmacia - Luna Systems Peru";
                                                         <td class="text-right"><?php echo $fecha ?></td>
                                                     </tr>
 
-                                                    
-        <?php
-    }
-    ?>
+
+                                                    <?php
+                                                }
+                                                ?>
                                             </tbody>
                                             <tfoot>
                                                 <tr>
@@ -370,11 +361,11 @@ $title = "Caja Diaria - Farmacia - Luna Systems Peru";
                                 </div>
 
                             </div>
-    <?php
-} else {
-    require 'modals_php/m_sin_caja.php';
-}
-?>
+                            <?php
+                        } else {
+                            require 'modals_php/m_sin_caja.php';
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
@@ -411,7 +402,7 @@ $title = "Caja Diaria - Farmacia - Luna Systems Peru";
 
 
     <!-- Right sidebar -->
-<?php include("includes/right_sidebar.php"); ?>
+    <?php include("includes/right_sidebar.php"); ?>
 
     <!-- Footer-->
     <?php include("includes/footer.php"); ?>
