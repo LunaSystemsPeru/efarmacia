@@ -151,5 +151,15 @@ class cl_banco
         return $resultado->fetch_all(MYSQLI_ASSOC);
     }
 
+    function verOtrosBancos()
+    {
+        global $conn;
+        $query = "select * from bancos
+            where id_empresa = '$this->id_empresa' and id_banco != '$this->id_banco'
+            order by nombre asc ";
+        $resultado = $conn->query($query);
+        return $resultado->fetch_all(MYSQLI_ASSOC);
+    }
+
 
 }
