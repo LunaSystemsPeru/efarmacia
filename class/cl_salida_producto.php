@@ -124,7 +124,7 @@ class cl_salida_producto
         $resultado = $conn->query($query);
         $grabado=false;
         if (!$resultado) {
-            die('Could not delete data in ingreso: ' . mysqli_error($conn));
+            die('Could not delete data in Salida: ' . mysqli_error($conn));
         } else {
             //echo "Entered data successfully";
             $grabado = true;
