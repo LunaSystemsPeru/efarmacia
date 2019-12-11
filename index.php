@@ -95,23 +95,85 @@ $title = "Inicio - Farmacia - Luna Systems Peru";
 
 
                 <div class="row">
-                    <div class="col-lg-6">
+                    <div class="col-lg-9">
                         <div class="hpanel">
                             <div class="panel-heading">
                                 <div class="panel-tools">
                                     <a class="showhide"><i class="fa fa-chevron-up"></i></a>
                                     <a class="closebox"><i class="fa fa-times"></i></a>
                                 </div>
-                                Line type chart
+                                Grafica de Ventas vs Utilidad mensual
                             </div>
                             <div class="panel-body">
                                 <div>
-                                    <canvas id="lineOptions" height="140"></canvas>
+                                    <canvas id="lineOptions" height="90"></canvas>
                                 </div>
                             </div>
                         </div>
                     </div>
 
+                    <div class="col-lg-3">
+
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="hpanel">
+                            <div class="panel-heading">
+                                <div class="panel-tools">
+                                    <a class="showhide"><i class="fa fa-chevron-up"></i></a>
+                                    <a class="closebox"><i class="fa fa-times"></i></a>
+                                </div>
+                                Grafica de Ventas vs Utilidad Diaria
+                            </div>
+                            <div class="panel-body">
+                                <div>
+                                    <canvas id="grafica_diaria_ventas" height="90"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="hpanel">
+                            <div class="panel-heading">
+                                <div class="panel-tools">
+                                    <a class="showhide"><i class="fa fa-chevron-up"></i></a>
+                                    <a class="closebox"><i class="fa fa-times"></i></a>
+                                </div>
+                                Grafica de Ventas por Laboratorio durante el año (comparacion de lo vendido en S/ vs el Stock Actual en S/)
+                            </div>
+                            <div class="panel-body">
+                                <div>
+                                    <canvas id="grafica_laboratorio_anio" height="120"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="hpanel">
+                            <div class="panel-heading">
+                                <div class="panel-tools">
+                                    <a class="showhide"><i class="fa fa-chevron-up"></i></a>
+                                    <a class="closebox"><i class="fa fa-times"></i></a>
+                                </div>
+                                Grafica de Ventas por laboratorio este mes
+                            </div>
+                            <div class="panel-body">
+                                <div>
+                                    <canvas id="grafica_laboratorio_mes" height="80"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -137,6 +199,7 @@ $title = "Inicio - Farmacia - Luna Systems Peru";
         <script src="vendor/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
 
         <script src="vendor/chartjs/Chart.min.js"></script>
+
         <!-- App scripts -->
         <script src="scripts/homer.js"></script>
         <script src="scripts/charts.js"></script>
