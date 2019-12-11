@@ -205,6 +205,28 @@ class cl_compra
         $this->id_usuario = $id_usuario;
     }
 
+    public function obtenerDatos(){
+        $existe = false;
+        global $conn;
+        $query = "select * from compra where id_compra = $this->id_compra and periodo=$this->periodo and id_empresa=$this->id_empresa";
+        $resultado = $conn->query($query);
+
+        if ($resultado->num_rows > 0) {
+            $existe = true;
+            while ($fila = $resultado->fetch_assoc()) {
+                $this->fecha = $fila['fecha'];
+                $this->id_documento = $fila['id_documento'];
+                $this->serie = $fila['serie'];
+                $this->numero = $fila['numero'];
+                $this->id_proveedor = $fila['id_proveedor'];
+                $this->total = $fila['total'];
+                $this->pagado = $fila['pagado'];
+                $this->id_usuario=$fila['id_usuario'];
+            }
+        }
+        return $existe;
+    }
+
 
     public function verFilas()
     {

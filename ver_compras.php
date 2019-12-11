@@ -132,14 +132,14 @@ $title = "Ver Documentos de Compras - Farmacia - Luna Systems Peru";
                                 <table id="tabla-ingresos" class="table table-striped table-bordered table-hover">
                                     <thead>
                                         <tr>
-                                            <th width="10%">Id.</th>
+                                            <th width="7%">Id.</th>
                                             <th width="11%">Fecha</th>
                                             <th width="30%">Proveedor</th>
                                             <th width="15%">Documento</th>
                                             <th width="11%">Usuario</th>
-                                            <th width="10%">Total</th>
-                                            <th width="10%">Pagado</th>
-                                            <th width="11%">Acciones</th>
+                                            <th width="7%">Total</th>
+                                            <th width="7%">Pagado</th>
+                                            <th width="20%">Acciones</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -157,6 +157,7 @@ $title = "Ver Documentos de Compras - Farmacia - Luna Systems Peru";
                                             <td class="text-right"><?php echo number_format($fila['pagado'],2 )?></td>
                                             <td class="text-center">
                                                 <button class="btn btn-info btn-sm" title="Ver Documento"><i class="fa fa-eye-slash"></i></button>
+                                                <button onclick="obtener_datos_pago(<?php echo $fila['id_compra'] . ",". $fila['periodo'] ;?>)" data-toggle="modal" data-target="#modalpagocompra" class="btn btn-sm btn-warning" title="Ver Pagos"><i class="fa fa-money"></i></button>
                                                 <button class="btn btn-danger btn-sm" title="Eliminar Documento"><i class="fa fa-close"></i></button>
                                             </td>
                                         </tr>
@@ -172,6 +173,41 @@ $title = "Ver Documentos de Compras - Farmacia - Luna Systems Peru";
                 </div>
             </div>
 
+        <!-- Modal -->
+        <div class="modal fade" id="modalpagocompra" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header text-center" style="padding: 15px;">
+                        <h5 class="modal-title" id="exampleModalLabel">Pago de documento de compra</h5>
+                    </div>
+                    <div id="contenpago" class="modal-body">
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="modalPagar" tabindex="-2" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header text-center" style="padding: 15px;">
+                        <h5 class="modal-title" id="exampleModalLabel">Agregar Pago</h5>
+                    </div>
+                    <div  class="modal-body">
+                        <div>
+                            <span>Total</span>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
             <!-- Right sidebar -->
             <?php include("includes/right_sidebar.php"); ?>
@@ -224,6 +260,16 @@ $title = "Ver Documentos de Compras - Farmacia - Luna Systems Peru";
 
 
     </body>
+
+    <script>
+        function obtener_datos_pago(id,periodo) {
+            $.post( "ajax_post/detalle_compra.php",
+                { id_compra: id, periodo: periodo },
+                function( data ) {
+                $("#contenpago").html(data);
+            });
+        }
+    </script>
 
 </html>
 

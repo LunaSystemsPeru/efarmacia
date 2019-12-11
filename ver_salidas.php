@@ -31,7 +31,7 @@ $c_salida->setIdEmpresa($_SESSION['id_empresa']);
         <link rel="stylesheet" href="vendor/animate.css/animate.css"/>
         <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.css"/>
         <link rel="stylesheet" href="vendor/datatables.net-bs/css/dataTables.bootstrap.min.css"/>
-
+        <link rel="stylesheet" href="vendor/sweetalert/lib/sweet-alert.css">
         <!-- App styles -->
         <link rel="stylesheet" href="fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css"/>
         <link rel="stylesheet" href="fonts/pe-icon-7-stroke/css/helper.css"/>
@@ -152,7 +152,7 @@ $c_salida->setIdEmpresa($_SESSION['id_empresa']);
                                        echo     '<td class="text-right">'. $salida["total"] .'</td>';
                                        echo     '<td class="text-center">';
                                        echo         '<button class="btn btn-info btn-sm" title="Ver Documento"><i class="fa fa-eye-slash"></i></button>';
-                                       echo         '<button onclick="' . $salida["id_salida"] . '" class="btn btn-danger btn-sm" title="Eliminar Documento"><i class="fa fa-close"></i></button>';
+                                       echo         '<button onclick="eliminar(' . $salida["id_salida"] . ')" class="btn btn-danger btn-sm" title="Eliminar Documento"><i class="fa fa-close"></i></button>';
                                        echo     '</td>';
                                        echo '</tr>';
 
@@ -194,6 +194,7 @@ $c_salida->setIdEmpresa($_SESSION['id_empresa']);
         <script src="vendor/datatables.net-buttons/js/buttons.print.min.js"></script>
         <script src="vendor/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
         <script src="vendor/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+        <script src="vendor/sweetalert/lib/sweet-alert.min.js"></script>
         <!-- App scripts -->
         <script src="scripts/homer.js"></script>
 
