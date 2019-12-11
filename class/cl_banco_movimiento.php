@@ -148,8 +148,17 @@ class cl_banco_movimiento
     public function insertar()
     {
         global $conn;
-        $query = "insert into bancos_movimientos values ('$this->id_movimiento', '$this->fecha', '$this->descripcion', '$this->ingresa', '$this->egresa', '$this->id_tipo')";
+        $query = "insert into bancos_movimientos "
+                . "values ('$this->id_movimiento',"
+                            . " '$this->id_banco', "
+                            . "now(), "
+                            . "'$this->descripcion',"
+                            . " '$this->ingresa', "
+                            . "'$this->egresa',"
+                            . " '$this->id_tipo')";
+       
         $resultado = $conn->query($query);
+        echo $query;
         if (!$resultado) {
             die('Could not enter data in bancos_movimientos: ' . mysqli_error($conn));
         } else {
