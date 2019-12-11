@@ -139,7 +139,7 @@ class cl_salida
         $resultado = $conn->query($query);
         echo $query;
         if (!$resultado) {
-            die('Could not enter data in ingreso: ' . mysqli_error($conn));
+            die('Could not enter data in salida: ' . mysqli_error($conn));
         } else {
             //echo "Entered data successfully";
             $grabado = true;
@@ -161,6 +161,21 @@ class cl_salida
         $resultado = $conn->query($query);
         $fila = $resultado->fetch_all(MYSQLI_ASSOC);
         return $fila;
+    }
+
+    public function eliminar()
+    {
+        global $conn;
+        $query = "delete from salidas  where  id_salida= '$this->id_salida' and id_empresa = '$this->id_empresa'";
+        $resultado = $conn->query($query);
+        if (!$resultado) {
+            die('Could not delete data in ingreso: ' . mysqli_error($conn));
+        } else {
+            //echo "Entered data successfully";
+            $grabado = true;
+        }
+        //$conn->close();
+        return $grabado;
     }
 
 

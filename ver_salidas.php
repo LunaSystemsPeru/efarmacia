@@ -107,12 +107,12 @@ $c_salida->setIdEmpresa($_SESSION['id_empresa']);
                             </div>
                             <div class="panel-body">
                                 <div class="row">
-                                    <div class="col-md-6 m-b-md">
+                                    <div class="col-md-9 m-b-md">
                                         <div class="btn-group">
                                             <a href="reg_salida.php" class="btn btn-success">Nueva Salida</a>
                                         </div>
                                     </div>
-                                    <div class="col-md-6 ">
+                                    <div class="col-md-3 ">
                                         <form class="form-horizontal">
                                             <div class="form-group">
                                                 <div class="col-md-12">
@@ -152,7 +152,7 @@ $c_salida->setIdEmpresa($_SESSION['id_empresa']);
                                        echo     '<td class="text-right">'. $salida["total"] .'</td>';
                                        echo     '<td class="text-center">';
                                        echo         '<button class="btn btn-info btn-sm" title="Ver Documento"><i class="fa fa-eye-slash"></i></button>';
-                                       echo         '<button class="btn btn-danger btn-sm" title="Eliminar Documento"><i class="fa fa-close"></i></button>';
+                                       echo         '<button onclick="' . $salida["id_salida"] . '" class="btn btn-danger btn-sm" title="Eliminar Documento"><i class="fa fa-close"></i></button>';
                                        echo     '</td>';
                                        echo '</tr>';
 
@@ -217,6 +217,27 @@ $c_salida->setIdEmpresa($_SESSION['id_empresa']);
 
         </script>
 
+        <script !src="">
+            function eliminar (id_salida) {
+
+                swal({
+                    title: "Anular Ingreso",
+                    text: "Esta seguro de Eliminar este documento?",
+                    type: "warning",
+                    showCancelButton: true,
+                    //cancelButtonClass: 'btn-secondary ',
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText: "Anular",
+                    cancelButtonText: "No, cancelar!",
+                    closeOnConfirm: false,
+                    closeOnCancel: true
+                }, function (isConfirm) {
+                    if (isConfirm) {
+                        window.location.href = 'procesos/del_salida.php?id_salida=' + id_salida;
+                    }
+                });
+            }
+        </script>
 
     </body>
 

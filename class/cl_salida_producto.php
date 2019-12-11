@@ -117,5 +117,21 @@ class cl_salida_producto
         return $grabado;
     }
 
+    public function eliminar()
+    {
+        global $conn;
+        $query = "delete from salidas_productos  where  id_salida= '$this->id_salida' and id_empresa = '$this->id_empresa'";
+        $resultado = $conn->query($query);
+        $grabado=false;
+        if (!$resultado) {
+            die('Could not delete data in ingreso: ' . mysqli_error($conn));
+        } else {
+            //echo "Entered data successfully";
+            $grabado = true;
+        }
+        //$conn->close();
+        return $grabado;
+    }
+
 
 }
