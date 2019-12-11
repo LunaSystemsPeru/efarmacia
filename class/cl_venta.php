@@ -307,7 +307,7 @@ class cl_venta
             inner join documentos_sunat ds on v.id_documento = ds.id_documento 
             inner join cliente c on v.id_cliente = c.id_cliente and v.id_empresa = c.id_empresa 
             inner join usuario u on v.id_empresa = u.id_empresa
-            where v.id_empresa = '$this->id_empresa' and concat(year(v.fecha), month(v.fecha)) = concat(year(curdate()), month(curdate()))";
+            where v.id_empresa = '$this->id_empresa'";
         $resultado = $conn->query($query);
         $fila = $resultado->fetch_all(MYSQLI_ASSOC);
         return $fila;

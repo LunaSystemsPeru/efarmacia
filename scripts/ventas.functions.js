@@ -2,15 +2,15 @@ function obtenerDatos() {
     var datoSelect=$("#select_documento").val();
 
     if (datoSelect!=1){
-        $('#input_documento_cliente').prop("readonly", false);
-        $('#input_cliente').prop("readonly", false);
+        $('#input_documento_cliente').prop("disabled", false);
+        $('#input_cliente').prop("disabled", false);
         $('#input_direccion').prop("disabled", false);
         $('#button_comprobar').prop("disabled", false);
         $('#input_cliente').val("");
         $('#input_documento_cliente').val("");
     }else{
         $('#input_documento_cliente').val("0");
-        $('#input_documento_cliente').prop("readonly", true);
+        $('#input_documento_cliente').prop("disabled", true);
         $('#input_cliente').val("CLIENTE NO ESPECIFADO");
         $('#input_cliente').prop("disabled", true);
         $('#input_direccion').prop("disabled", true);
@@ -213,7 +213,6 @@ function enviar_formulario() {
         condicion=(num_documento.length==11&&direccion.length>0&&nombreCliente.length>2);
     }
     if (total > 0 && contar_filas > 1 && condicion) {
-        console.log(num_documento);
         $.ajax({
             type: "POST",
             url: "procesos/reg_venta.php",
@@ -245,6 +244,11 @@ function enviar_formulario() {
                 }
             }
         });
+
+
+        /*$c_cliente->setDocumento(filter_input(INPUT_POST, 'input_doc_cliente'));
+        $c_cliente->setNombre(filter_input(INPUT_POST, 'input_cliente'));
+        $c_cliente->setDireccion(filter_input(INPUT_POST, 'input_direccion'));*/
         //document.frm_venta.submit();
     } else {
         alert("FALTA COMPLETAR DATOS");

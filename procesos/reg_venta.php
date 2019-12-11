@@ -19,26 +19,18 @@ $sendCurlVenta=new SendCurlVenta();
 $id_empresa = $_SESSION['id_empresa'];
 
 $c_cliente->setIdEmpresa($id_empresa);
-$c_cliente->setDocumento(filter_input(INPUT_POST, 'input_documento_cliente'));
+$c_cliente->setDocumento(filter_input(INPUT_POST, 'input_doc_cliente'));
 $c_cliente->setNombre(filter_input(INPUT_POST, 'input_cliente'));
 $c_cliente->setDireccion(filter_input(INPUT_POST, 'input_direccion'));
 
-$tipo_doc = filter_input(INPUT_POST, 'select_documento');
-
-if ($c_cliente->getDocumento() === "") {
-    if ($tipo_doc == 1) {
-        $c_cliente->setIdCliente(0);
-        $c_cliente->obtener_datos();
-    }
-    if ($tipo_doc == 2 && $tipo_doc ==3) {
-        $c_cliente->obtener_codigo();
-        $c_cliente->setDocumento("SD" . $c_varios->generarCodigo(5));
-        $c_cliente->setTotalPagado(0);
-        $c_cliente->setTelefono(0);
-        $c_cliente->setTotalVenta(0);
-        $c_cliente->setUltimaVenta(date("Y-m-d"));
-        $c_cliente->insertar();
-    }
+if ($c_cliente->getDocumento() == "") {
+    $c_cliente->obtener_codigo();
+    $c_cliente->setDocumento("SD" . $c_varios->generarCodigo(5));
+    $c_cliente->setTotalPagado(0);
+    $c_cliente->setTelefono(0);
+    $c_cliente->setTotalVenta(0);
+    $c_cliente->setUltimaVenta(date("Y-m-d"));
+    $c_cliente->insertar();
 } else {
     if (!$c_cliente->buscar_documento()) {
         $c_cliente->obtener_codigo();
@@ -76,7 +68,6 @@ if ($c_venta->insertar()) {
     $c_detalle->setIdVenta($c_venta->getIdVenta());
     $c_detalle->setPeriodo($c_venta->getPeriodo());
     $a_detalle = $_SESSION['productos_venta'];
-
     foreach ($a_detalle as $value) {
         $c_detalle->setIdProducto($value['id_producto']);
         $c_detalle->setLote($value['lote']);

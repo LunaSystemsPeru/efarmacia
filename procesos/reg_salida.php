@@ -30,5 +30,5 @@ if ($c_salida->insertar()) {
         $c_detalle->insertar();
     }
 }
-    header("Location: ../ver_salida.php");
+    header("Location: ../ver_salidas.php");
 

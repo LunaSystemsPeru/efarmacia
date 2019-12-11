@@ -132,14 +132,14 @@ $title = "Ver Documentos de Compras - Farmacia - Luna Systems Peru";
                                 <table id="tabla-ingresos" class="table table-striped table-bordered table-hover">
                                     <thead>
                                         <tr>
-                                            <th width="8%">Id.</th>
-                                            <th width="8%">Fecha</th>
-                                            <th width="35%">Proveedor</th>
-                                            <th width="10%">Documento</th>
-                                            <th width="9%">Usuario</th>
-                                            <th width="9%">Total</th>
-                                            <th width="9%">Pagado</th>
-                                            <th width="12%">Acciones</th>
+                                            <th width="10%">Id.</th>
+                                            <th width="11%">Fecha</th>
+                                            <th width="30%">Proveedor</th>
+                                            <th width="15%">Documento</th>
+                                            <th width="11%">Usuario</th>
+                                            <th width="10%">Total</th>
+                                            <th width="10%">Pagado</th>
+                                            <th width="11%">Acciones</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -157,7 +157,6 @@ $title = "Ver Documentos de Compras - Farmacia - Luna Systems Peru";
                                             <td class="text-right"><?php echo number_format($fila['pagado'],2 )?></td>
                                             <td class="text-center">
                                                 <button class="btn btn-info btn-sm" title="Ver Documento"><i class="fa fa-eye-slash"></i></button>
-                                                <button class="btn btn-success btn-sm" title="ver Pagos"><i class="fa fa-paypal"></i></button>
                                                 <button class="btn btn-danger btn-sm" title="Eliminar Documento"><i class="fa fa-close"></i></button>
                                             </td>
                                         </tr>
