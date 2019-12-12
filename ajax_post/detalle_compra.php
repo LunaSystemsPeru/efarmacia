@@ -33,13 +33,15 @@ if ($c_compra->obtenerDatos()){
     echo "Fecha : ".$c_compra->getFecha()." <br/>";
     echo "Documento : ".$c_compra->getSerie() ."|". $c_compra->getNumero()." <br/>";
     echo "Proveedor : ".$c_proveedor->getNombre()." <br/>";
-    echo "Total : {$c_compra->getTotal()}<br/>";
+    echo "Total : <span id='idTotal'>{$c_compra->getTotal()}</span> <br/>";
+    echo "Pagado : <span id='idPagado'>{$c_compra->getPagado()}</span> <br/>";
     echo "<div class='table-responsive'>";
     echo     "<table class='table table-hover table-condensed'>";
     echo         "<thead>";
     echo             "<tr>";
     echo                 "<th>#</th>";
     echo                 "<th>Fecha</th>";
+    echo                 "<th>Banco</th>";
     echo                 "<th>Monto</th>";
     echo                 "<th></th>";
     echo             "</tr>";
@@ -50,6 +52,7 @@ if ($c_compra->obtenerDatos()){
     echo             "<tr>";
     echo                 "<th scope='row'>".$fila['id_pago']."</th>";
     echo                 "<td>".$fila['fecha']."</td>";
+    echo                 "<td>".$fila['banco']."</td>";
     echo                 "<td>{$fila['monto']}</td>";
     echo                "<td><button class='btn btn-info btn-sm' title='Eliminar'><i class='fa fa-eye-slash'></i></button></td>";
     echo             "</tr>";
@@ -59,8 +62,9 @@ if ($c_compra->obtenerDatos()){
     echo         "</tbody>";
     if ($pagado!=$c_compra->getTotal()){
         echo     "</table> <br/><br/>";
-        echo     "<button data-toggle='modal' data-target='#modalPagar' type='button' class='btn btn-primary'>Agregar Pago</button>";
+        echo     "<button onclick='preparar_datos_pagos()' data-toggle='modal' data-target='#modalPagar' type='button' class='btn btn-primary'>Agregar Pago</button>";
     }
 
     echo "</div>";
+    echo "<scri";
 }

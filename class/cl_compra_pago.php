@@ -117,7 +117,12 @@ class cl_compra_pago
     public function verCompasPagos()
     {
         global $conn;
-        $query = "select * from compra_pago where id_compra = $this->id_compra and periodo=$this->periodo and id_empresa=$this->id_empresa";
+        $query = "SELECT comp.*,ba.nombre AS banco  
+                    FROM compra_pago AS comp 
+                        INNER JOIN bancos_movimientos AS bm ON comp.id_movimiento= bm.id_movimiento
+                        INNER JOIN bancos AS ba ON bm.id_banco = ba.id_banco  
+                    where comp.id_compra = $this->id_compra and comp.periodo=$this->periodo and comp.id_empresa=$this->id_empresa";
+
         $resultado = $conn->query($query);
         return $resultado->fetch_all(MYSQLI_ASSOC);
     }

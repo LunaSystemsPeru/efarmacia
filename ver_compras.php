@@ -6,8 +6,11 @@ if (is_null($_SESSION['id_empresa'])) {
 }
 
 require 'class/cl_compra.php';
+require 'class/cl_banco.php';
 
 $c_compra = new cl_compra();
+$c_banco=new cl_banco();
+$c_banco->setIdEmpresa($_SESSION['id_empresa']);
 $c_compra->setIdEmpresa($_SESSION['id_empresa']);
 
 $title = "Ver Documentos de Compras - Farmacia - Luna Systems Peru";
@@ -191,7 +194,7 @@ $title = "Ver Documentos de Compras - Farmacia - Luna Systems Peru";
         </div>
 
         <!-- Modal -->
-        <div class="modal fade" id="modalPagar" tabindex="-2" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div  class="modal fade" id="modalPagar" tabindex="-2" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header text-center" style="padding: 15px;">
@@ -199,7 +202,30 @@ $title = "Ver Documentos de Compras - Farmacia - Luna Systems Peru";
                     </div>
                     <div  class="modal-body">
                         <div>
-                            <span>Total</span>
+                            <span id="idPre_total">Total: </span><br>
+                            <span id="idPre_pagado">Pagado: </span><br>
+
+                        </div>
+                        <form id="input_form_pago">
+                            <input type="hidden" id="id_compra" name="id_compra">
+                            <input type="hidden" id="periodo_compra" name="periodo">
+                            <input type="date" name="fecha">
+                            <select name="id_banco">
+                                <?php
+                                $listaBancos= $c_banco->verFilas();
+                                foreach ($listaBancos as $value){
+                                    echo "<option value='{$value['id_banco']}'>{$value['nombre']}</option>";
+                                }
+                                ?>
+
+                            </select>
+                            <input type="text" name="monto">
+                        </form>
+
+
+                        <div>
+
+                            <button onclick="enviarPagoCompra ()">registrar</button>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -263,11 +289,68 @@ $title = "Ver Documentos de Compras - Farmacia - Luna Systems Peru";
 
     <script>
         function obtener_datos_pago(id,periodo) {
+            $("#id_compra").val(id);
+            $("#periodo_compra").val(periodo);
             $.post( "ajax_post/detalle_compra.php",
                 { id_compra: id, periodo: periodo },
                 function( data ) {
                 $("#contenpago").html(data);
             });
+        }
+
+        function preparar_datos_pagos() {
+            console.log($("#idTotal").text());
+            $("#idPre_total").text("Total: " + $("#idTotal").text());
+            $("#idPre_pagado").text("Pagado: " + $("#idPagado").text());
+        }
+
+        function enviarPagoCompra () {
+            if (true){
+                $.ajax({
+                    type: "POST",
+                    url: "procesos/reg_pago_compra.php",
+                    data: $("#input_form_pago").serialize(),
+                    success: function(data)
+                    {
+                        console.log(data);
+                        /*if (isJsonStructure(data)||true){
+                            var obj = JSON.parse(data);
+                            swal({
+                                title: "Pago",
+                                text: "Pago Registrado con exito!",
+                                type: "success",
+                                showCancelButton: false,
+                                //cancelButtonClass: 'btn-secondary ',
+                                confirmButtonColor: "#DD6B55",
+                                confirmButtonText: "Ver Ticket",
+                                //cancelButtonText: "No, cancel plx!",
+                                closeOnConfirm: false,
+                                //closeOnCancel: false
+                            }, function (isConfirm) {
+                                if (isConfirm) {
+
+
+                                }
+                            });
+                        }else{
+                            swal("Error en el servidor,  contacte con soporte");
+                        }*/
+                    }
+                });
+            }
+        }
+
+
+        function isJsonStructure(str) {
+            if (typeof str !== 'string') return false;
+            try {
+                const result = JSON.parse(str);
+                const type = Object.prototype.toString.call(result);
+                return type === '[object Object]'
+                    || type === '[object Array]';
+            } catch (err) {
+                return false;
+            }
         }
     </script>
 
