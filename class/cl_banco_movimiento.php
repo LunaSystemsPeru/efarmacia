@@ -127,6 +127,7 @@ class cl_banco_movimiento {
         global $conn;
         $query = "select ifnull(max(id_movimiento) + 1, 1) as codigo 
         from bancos_movimientos ";
+        echo $query;
         $resultado = $conn->query($query);
         if ($resultado->num_rows > 0) {
             while ($fila = $resultado->fetch_assoc()) {
@@ -140,7 +141,7 @@ class cl_banco_movimiento {
         $query = "insert into bancos_movimientos "
                 . "values ('$this->id_movimiento',"
                 . " '$this->id_banco', "
-                . "now(), "
+                . "'$this->fecha', "
                 . "'$this->descripcion',"
                 . " '$this->ingresa', "
                 . "'$this->egresa',"
@@ -154,7 +155,7 @@ class cl_banco_movimiento {
             //echo "Entered data successfully";
             $grabado = true;
         }
-        insert_caja_m();
+        //insert_caja_m();
         
         return $grabado;
     }
