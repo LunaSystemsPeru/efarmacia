@@ -131,6 +131,7 @@ class cl_caja_movimiento {
         }
     }
 
+
     public function insertar() {
         global $conn;
         $query = "INSERT INTO caja_movimiento 
@@ -153,26 +154,6 @@ class cl_caja_movimiento {
         }
 
         return $grabado;
-    }
-
-    public function tabular() {
-        global $conn;
-        
-        $query = "SELECT 
-                    (ingresa-retira) AS 'MONTO', 
-                    glosa AS 'DESCRIPCCION',
-                    fecha AS 'FECHA'
-                        FROM
-                          caja_movimiento;";
-        $resultado = $conn->query($query);
-        if (!$resultado) {
-            die('Could not enter data in caja movimiento: ' . mysqli_error($conn));
-        } else {
-            //echo "Entered data successfully";
-            $grabado = true;
-        }
-
-        return $resultado;
     }
 
 }
