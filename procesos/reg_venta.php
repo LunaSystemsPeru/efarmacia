@@ -29,7 +29,7 @@ if ($tipo_doc == 1) {
     $c_cliente->setIdCliente(0);
     $c_cliente->obtener_datos();
 }
-if ($tipo_doc == 2 && $tipo_doc == 3) {
+if ($tipo_doc == 2 || $tipo_doc == 3) {
     if ($c_cliente->getDocumento() == "") {
         $c_cliente->obtener_codigo();
         $c_cliente->setDocumento("SD" . $c_varios->generarCodigo(5));

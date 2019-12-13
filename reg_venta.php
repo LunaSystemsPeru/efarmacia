@@ -190,12 +190,10 @@ $title = "Registro de Venta de Mercaderia - Farmacia - Luna Systems Peru";
                                         <?php
                                         $a_mis_documentos = $c_mis_documentos->ver_documentos();
                                         foreach ($a_mis_documentos as $fila) {
-                                            echo '<option   value="'.$fila['id_documento'].'">'.$fila['nombre'].'</option>';
+                                            echo '<option value="'.$fila['id_documento'].'">'.$fila['nombre'].'</option>';
                                         }
                                         if (isset($a_mis_documentos[0]))
                                         $c_mis_documentos->setIdDocumento($a_mis_documentos[0]["id_documento"]);
-
-
                                         $c_mis_documentos->obtener_datos();
                                         ?>
                                     </select>
