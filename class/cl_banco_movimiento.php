@@ -160,31 +160,6 @@ class cl_banco_movimiento {
         return $grabado;
     }
 
-    public function insert_caja_m() {
-        global $conn;
-        $query = "INSERT INTO caja_movimiento 
-            VALUES(
-                '$this->id_empresa', 
-                now(), 
-                '$this->id_movimiento', 
-                '$this->ingresa', 
-                '$this->retira', 
-                '$this->glosa', 
-                '$this->id_usuario'
-                );";
-        
-        echo $query;
-        $resultado = $conn->query($query);
-        if (!$resultado) {
-            die('Could not enter data in caja movimiento: ' . mysqli_error($conn));
-        } else {
-            //echo "Entered data successfully";
-            $grabado = true;
-        }
-
-        return $grabado;
-    }
-
     function verFilas() {
         global $conn;
         $query = "select bm.fecha, bm.descripcion, bm.ingresa, bm.egresa, bm.id_movimiento, bmt.nombre 

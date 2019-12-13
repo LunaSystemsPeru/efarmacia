@@ -1,6 +1,6 @@
 <?php
 session_start();
-require '../class/cl_documentos_sunat.php';
+
 require '../class/cl_caja_movimiento.php';
 
 

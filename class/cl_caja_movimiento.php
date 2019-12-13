@@ -131,7 +131,6 @@ class cl_caja_movimiento {
         }
     }
 
-
     public function insertar() {
         global $conn;
         $query = "INSERT INTO caja_movimiento 
@@ -154,6 +153,24 @@ class cl_caja_movimiento {
         }
 
         return $grabado;
+    }
+
+    public function verFilas() {
+        global $conn;
+        
+        $query = "SELECT (cm.ingresa-cm.retira) AS 'MONTO', cm.glosa AS 'DESCRIPCCION', cm.id_movimiento, u.username 
+            FROM caja_movimiento as cm
+            inner join usuario u on cm.id_usuario = u.id_usuario and cm.id_empresa = u.id_empresa
+            where cm.fecha = '$this->fecha' and cm.id_empresa = '$this->id_empresa'";
+        $resultado = $conn->query($query);
+        if (!$resultado) {
+            die('Could not enter data in caja movimiento: ' . mysqli_error($conn));
+        } else {
+            //echo "Entered data successfully";
+            $grabado = true;
+        }
+
+        return $resultado;
     }
 
 }
