@@ -35,6 +35,7 @@ $title = "Ver Documentos de Compras - Farmacia - Luna Systems Peru";
         <link rel="stylesheet" href="vendor/animate.css/animate.css"/>
         <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.css"/>
         <link rel="stylesheet" href="vendor/datatables.net-bs/css/dataTables.bootstrap.min.css"/>
+        <link rel="stylesheet" href="vendor/sweetalert/lib/sweet-alert.css">
 
         <!-- App styles -->
         <link rel="stylesheet" href="fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css"/>
@@ -161,7 +162,7 @@ $title = "Ver Documentos de Compras - Farmacia - Luna Systems Peru";
                                             <td class="text-center">
                                                 <button class="btn btn-info btn-sm" title="Ver Documento"><i class="fa fa-eye-slash"></i></button>
                                                 <button onclick="obtener_datos_pago(<?php echo $fila['id_compra'] . ",". $fila['periodo'] ;?>)" data-toggle="modal" data-target="#modalpagocompra" class="btn btn-sm btn-warning" title="Ver Pagos"><i class="fa fa-money"></i></button>
-                                                <button class="btn btn-danger btn-sm" title="Eliminar Documento"><i class="fa fa-close"></i></button>
+                                                <button onclick="eliminar_compra(<?php echo $fila['id_compra'] . ",". $fila['periodo'] ;?>)" class="btn btn-danger btn-sm" title="Eliminar Documento"><i class="fa fa-close"></i></button>
                                             </td>
                                         </tr>
                                     <?php
@@ -202,30 +203,48 @@ $title = "Ver Documentos de Compras - Farmacia - Luna Systems Peru";
                     </div>
                     <div  class="modal-body">
                         <div>
-                            <span id="idPre_total">Total: </span><br>
-                            <span id="idPre_pagado">Pagado: </span><br>
+                            <span id="idPre_total" style="font-weight: bold; font-size: 1.5em;" >Total: </span><br>
+                            <span id="idPre_pagado" style="font-weight: bold; font-size: 1.5em;" >Pagado: </span><br><br>
 
                         </div>
                         <form id="input_form_pago">
                             <input type="hidden" id="id_compra" name="id_compra">
                             <input type="hidden" id="periodo_compra" name="periodo">
-                            <input type="date" name="fecha">
-                            <select name="id_banco">
-                                <?php
-                                $listaBancos= $c_banco->verFilas();
-                                foreach ($listaBancos as $value){
-                                    echo "<option value='{$value['id_banco']}'>{$value['nombre']}</option>";
-                                }
-                                ?>
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">Fecha:</label>
+                                <div class="col-sm-10">
+                                    <input type="date" class="form-control"  name="fecha" style="margin-bottom: 5px;">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">Banco:</label>
+                                <div class="col-sm-10">
+                                    <select class="form-control" name="id_banco" style="margin-bottom: 5px;">
+                                        <?php
+                                        $listaBancos= $c_banco->verFilas();
+                                        foreach ($listaBancos as $value){
+                                            echo "<option value='{$value['id_banco']}'>{$value['nombre']}</option>";
+                                        }
+                                        ?>
 
-                            </select>
-                            <input type="text" name="monto">
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">Monto:</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control" type="text" name="monto">
+                                </div>
+                            </div>
+
+
+
                         </form>
 
 
-                        <div>
+                        <div >
 
-                            <button onclick="enviarPagoCompra ()">registrar</button>
+                            <button style="margin-top: 15px;margin: auto;" class="btn btn-primary" onclick="enviarPagoCompra ()">registrar</button>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -261,10 +280,12 @@ $title = "Ver Documentos de Compras - Farmacia - Luna Systems Peru";
         <script src="vendor/datatables.net-buttons/js/buttons.print.min.js"></script>
         <script src="vendor/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
         <script src="vendor/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+        <script src="vendor/sweetalert/lib/sweet-alert.min.js"></script>
         <!-- App scripts -->
         <script src="scripts/homer.js"></script>
 
         <script>
+
 
             $(function () {
 
@@ -286,11 +307,37 @@ $title = "Ver Documentos de Compras - Farmacia - Luna Systems Peru";
 
 
     </body>
-
+    <script>
+        function eliminar_compra(id_compra,periodo) {
+            swal({
+                title: "Anular Compra",
+                text: "Esta seguro de ANULAR esta compra?",
+                type: "warning",
+                showCancelButton: true,
+                //cancelButtonClass: 'btn-secondary ',
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Anular",
+                cancelButtonText: "No, cancelar!",
+                closeOnConfirm: false,
+                closeOnCancel: true
+            }, function (isConfirm) {
+                if (isConfirm) {
+                    var urls=window.location.toString();
+                    var res = urls.substring(0,urls.length- 16);
+                    console.log(res+"/procesos/del_compra.php?idcompra="+id_compra+"&periodo="+periodo);
+                    location.href=res+"/procesos/del_compra.php?idcompra="+id_compra+"&periodo="+periodo;
+                }
+            });
+        }
+    </script>
     <script>
         function obtener_datos_pago(id,periodo) {
             $("#id_compra").val(id);
             $("#periodo_compra").val(periodo);
+            /*$.get( "ajax_post/detalle_compra.php?id_compra={id}%", function( data ) {
+                $( ".result" ).html( data );
+                alert( "Load was performed." );
+            });*/
             $.post( "ajax_post/detalle_compra.php",
                 { id_compra: id, periodo: periodo },
                 function( data ) {
@@ -312,8 +359,10 @@ $title = "Ver Documentos de Compras - Farmacia - Luna Systems Peru";
                     data: $("#input_form_pago").serialize(),
                     success: function(data)
                     {
+
                         console.log(data);
-                        /*if (isJsonStructure(data)||true){
+
+                        if (isJsonStructure(data)){
                             var obj = JSON.parse(data);
                             swal({
                                 title: "Pago",
@@ -322,25 +371,62 @@ $title = "Ver Documentos de Compras - Farmacia - Luna Systems Peru";
                                 showCancelButton: false,
                                 //cancelButtonClass: 'btn-secondary ',
                                 confirmButtonColor: "#DD6B55",
-                                confirmButtonText: "Ver Ticket",
+                                confirmButtonText: "Registrado",
                                 //cancelButtonText: "No, cancel plx!",
-                                closeOnConfirm: false,
+                                closeOnConfirm: true,
                                 //closeOnCancel: false
                             }, function (isConfirm) {
                                 if (isConfirm) {
-
-
+                                    $('#modalPagar').modal('toggle');
+                                    obtener_datos_pago(obj.id,obj.periodo);
+                                    estado_reload=true;
                                 }
                             });
                         }else{
                             swal("Error en el servidor,  contacte con soporte");
-                        }*/
+                        }
                     }
                 });
             }
         }
 
+        $('#modalpagocompra').on('hide.bs.modal', function (e) {
+            if (estado_reload){
+                window.location.reload();
 
+            }
+
+        });
+
+        function eliminar_pago_compra(id_pago) {
+            swal({
+                title: "Anular Pago",
+                text: "Esta seguro de ANULAR este Pago?",
+                type: "warning",
+                showCancelButton: true,
+                //cancelButtonClass: 'btn-secondary ',
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Anular",
+                cancelButtonText: "No, cancelar!",
+                closeOnConfirm: true,
+                closeOnCancel: true
+            }, function (isConfirm) {
+                if (isConfirm) {
+                    $.get( "procesos/del_compra_pago.php?id_pago="+ id_pago, function( data ) {
+                        console.log(data);
+
+                        if (isJsonStructure(data)){
+                            var obj = JSON.parse(data);
+                            obtener_datos_pago(obj.id,obj.periodo);
+                            estado_reload=true;
+                        }else{
+                            swal("Error en el servidor,  contacte con soporte");
+                        }
+                     });
+                }
+            });
+        }
+        var estado_reload=false;
         function isJsonStructure(str) {
             if (typeof str !== 'string') return false;
             try {

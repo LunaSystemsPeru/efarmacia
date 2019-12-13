@@ -30,11 +30,15 @@ if ($c_compra->obtenerDatos()){
 
     $listaCompraPago=$c_compra_pago->verCompasPagos();
 
-    echo "Fecha : ".$c_compra->getFecha()." <br/>";
-    echo "Documento : ".$c_compra->getSerie() ."|". $c_compra->getNumero()." <br/>";
-    echo "Proveedor : ".$c_proveedor->getNombre()." <br/>";
-    echo "Total : <span id='idTotal'>{$c_compra->getTotal()}</span> <br/>";
-    echo "Pagado : <span id='idPagado'>{$c_compra->getPagado()}</span> <br/>";
+    echo "<strong>Fecha :</strong> ".$c_compra->getFecha()." <br/>";
+    echo "<strong>Documento :</strong> ".$c_compra->getSerie() ."|". $c_compra->getNumero()." <br/>";
+    echo "<strong>Proveedor :</strong> ".$c_proveedor->getNombre()." <br/>";
+    echo "<strong>Total :</strong> <span id='idTotal'>{$c_compra->getTotal()}</span> <br/>";
+    echo "<strong>Pagado :</strong> <span id='idPagado'>{$c_compra->getPagado()}</span> <br/>";
+    echo "<hr style='     margin-top: 3px; 
+    margin-bottom: 3px;
+    border: 0;
+    border-top: 1px solid #858585;' />";
     echo "<div class='table-responsive'>";
     echo     "<table class='table table-hover table-condensed'>";
     echo         "<thead>";
@@ -54,7 +58,7 @@ if ($c_compra->obtenerDatos()){
     echo                 "<td>".$fila['fecha']."</td>";
     echo                 "<td>".$fila['banco']."</td>";
     echo                 "<td>{$fila['monto']}</td>";
-    echo                "<td><button class='btn btn-info btn-sm' title='Eliminar'><i class='fa fa-eye-slash'></i></button></td>";
+    echo                "<td><button onclick='eliminar_pago_compra(".$fila['id_pago'].")' class='btn btn-danger btn-sm' title='Eliminar'><i class='fa fa-close' ></i></button></td>";
     echo             "</tr>";
 
     }
@@ -66,5 +70,4 @@ if ($c_compra->obtenerDatos()){
     }
 
     echo "</div>";
-    echo "<scri";
 }

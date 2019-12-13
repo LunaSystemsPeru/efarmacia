@@ -357,7 +357,7 @@ $title = "Ver Ventas - Farmacia - Luna Systems Peru";
             closeOnCancel: true
         }, function (isConfirm) {
             if (isConfirm) {
-                window.location.href = 'procesos/del_venta.php?id_venta=' + id_venta + '&periodo=' + periodo;
+                window.location.href = 'procesos/del_compra.php?id_venta=' + id_venta + '&periodo=' + periodo;
             }
         });
     }

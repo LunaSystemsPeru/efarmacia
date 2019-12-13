@@ -10,6 +10,7 @@ class cl_compra_pago
     private $id_empresa;
     private $fecha;
     private $monto;
+    private $id_movimiento;
 
     /**
      * cl_compra_pago constructor.
@@ -17,6 +18,23 @@ class cl_compra_pago
     public function __construct()
     {
     }
+
+    /**
+     * @return mixed
+     */
+    public function getIdMovimiento()
+    {
+        return $this->id_movimiento;
+    }
+
+    /**
+     * @param mixed $id_movimiento
+     */
+    public function setIdMovimiento($id_movimiento)
+    {
+        $this->id_movimiento = $id_movimiento;
+    }
+
 
     /**
      * @return mixed
@@ -112,6 +130,79 @@ class cl_compra_pago
     public function setMonto($monto)
     {
         $this->monto = $monto;
+    }
+
+    public function obtener_codigo() {
+        global $conn;
+        $query = "select ifnull(max(id_pago) + 1, 1) as codigo 
+        from compra_pago ";
+
+        $resultado = $conn->query($query);
+        if ($resultado->num_rows > 0) {
+            while ($fila = $resultado->fetch_assoc()) {
+                $this->id_pago = $fila ['codigo'];
+            }
+        }
+    }
+
+    public function insertar() {
+        global $conn;
+        $query = "INSERT INTO compra_pago
+                    VALUES ('$this->id_pago',
+                            '$this->id_compra',
+                            '$this->periodo',
+                            '$this->id_empresa',
+                            '$this->fecha',
+                            '$this->monto',
+                            '$this->id_movimiento')";
+
+        $resultado = $conn->query($query);
+
+        if (!$resultado) {
+            die('Could not enter data in compra_pago: ' . mysqli_error($conn));
+        } else {
+            //echo "Entered data successfully";
+            $grabado = true;
+        }
+
+
+        return $grabado;
+    }
+    public function eliminar()
+    {
+        global $conn;
+        $query = "delete from compra_pago where  id_pago='{$this->id_pago}'";
+        $resultado = $conn->query($query);
+        if (!$resultado) {
+            die('Could not delete data in compra_pago: ' . mysqli_error($conn));
+        } else {
+            //echo "Entered data successfully";
+            $grabado = true;
+        }
+        //$conn->close();
+        return $grabado;
+    }
+
+    public function obtenerDatos(){
+        $existe = false;
+        global $conn;
+        $query = "SELECT * FROM compra_pago WHERE id_pago=".$this->id_pago;
+
+        $resultado = $conn->query($query);
+
+        if ($resultado->num_rows > 0) {
+            $existe = true;
+            while ($fila = $resultado->fetch_assoc()) {
+                $this->id_pago;
+                            $this->id_compra=$fila["id_compra"];
+                            $this->periodo=$fila["periodo"];
+                            $this->id_empresa=$fila["id_empresa"];
+                            $this->fecha=$fila["fecha"];
+                            $this->monto=$fila["monto"];
+                            $this->id_movimiento=$fila["id_movimiento"];
+            }
+        }
+        return $existe;
     }
 
     public function verCompasPagos()

@@ -226,7 +226,20 @@ class cl_compra
         }
         return $existe;
     }
-
+    public function eliminar()
+    {
+        global $conn;
+        $query = "delete from compra where id_compra = $this->id_compra and periodo=$this->periodo and id_empresa=$this->id_empresa";
+        $resultado = $conn->query($query);
+        if (!$resultado) {
+            die('Could not delete data in compra: ' . mysqli_error($conn));
+        } else {
+            //echo "Entered data successfully";
+            $grabado = true;
+        }
+        //$conn->close();
+        return $grabado;
+    }
 
     public function verFilas()
     {
@@ -237,6 +250,7 @@ class cl_compra
         inner join proveedor p on c.id_proveedor = p.id_proveedor and c.id_empresa = p.id_empresa
         inner join usuario u on c.id_usuario = u.id_usuario and c.id_empresa = u.id_empresa
         where c.id_empresa = '$this->id_empresa' and c.pagado < c.total";
+
         $resultado = $conn->query($query);
         return $resultado->fetch_all(MYSQLI_ASSOC);
     }

@@ -127,7 +127,7 @@ class cl_banco_movimiento {
         global $conn;
         $query = "select ifnull(max(id_movimiento) + 1, 1) as codigo 
         from bancos_movimientos ";
-        echo $query;
+
         $resultado = $conn->query($query);
         if ($resultado->num_rows > 0) {
             while ($fila = $resultado->fetch_assoc()) {
@@ -148,7 +148,7 @@ class cl_banco_movimiento {
                 . " '$this->id_tipo')";
 
         $resultado = $conn->query($query);
-        echo $query;
+
         if (!$resultado) {
             die('Could not enter data in bancos_movimientos: ' . mysqli_error($conn));
         } else {
@@ -159,6 +159,23 @@ class cl_banco_movimiento {
         
         return $grabado;
     }
+
+    public function eliminar()
+    {
+        global $conn;
+        $query = "delete from bancos_movimientos  where  id_movimiento='{$this->id_movimiento}'";
+        $resultado = $conn->query($query);
+        if (!$resultado) {
+            die('Could not delete data in banco_movimiento: ' . mysqli_error($conn));
+        } else {
+            //echo "Entered data successfully";
+            $grabado = true;
+        }
+        //$conn->close();
+        return $grabado;
+    }
+
+
 
     public function insert_caja_m() {
         global $conn;
