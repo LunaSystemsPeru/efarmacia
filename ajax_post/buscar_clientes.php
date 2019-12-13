@@ -3,10 +3,10 @@ session_start();
 require '../class/cl_conectar.php';
 mysqli_set_charset($conn, "utf8");
 $searchTerm = mysqli_real_escape_string($conn, (filter_input(INPUT_GET, 'term')));
-$query = "select documento, nombre, direccion, id_cliente "
-    . "from cliente "
-    . "where id_empresa = '" . $_SESSION['id_empresa'] . "' and (documento like '%" . $searchTerm . "%' or nombre like '%" . $searchTerm . "%') "
-    . "order by nombre asc";
+$query = "select documento, nombre, direccion, id_cliente 
+from cliente 
+where id_empresa = '" . $_SESSION['id_empresa'] . "' and (documento like '%" . $searchTerm . "%' or nombre like '%" . $searchTerm . "%') 
+order by nombre asc";
 $resultado = $conn->query($query);
 $a_json = array();
 $a_json_row = array();

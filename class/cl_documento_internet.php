@@ -56,7 +56,8 @@ class cl_documento_internet
 
         //si es dni
         if ($this->tipo == 2) {
-            $direccion = "http://www.lunasystemsperu.com/consultas_json/composer/consultas_dni_JMP.php?dni=" . $this->documento;
+            $direccion = "https://tiwi.pe/dni/example/consulta.php?ndni=". $this->documento;
+            //$direccion = "http://www.lunasystemsperu.com/consultas_json/composer/consultas_dni_JMP.php?dni=" . $this->documento;
         }
 
         $json = file_get_contents($direccion, FALSE);

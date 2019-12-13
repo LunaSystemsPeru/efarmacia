@@ -2,7 +2,7 @@ function obtenerDatos() {
     var datoSelect=$("#select_documento").val();
 
     if (datoSelect!=1){
-        $('#input_documento_cliente').prop("disabled", false);
+        $('#input_documento_cliente').prop("readonly", false);
         $('#input_cliente').prop("disabled", false);
         $('#input_direccion').prop("disabled", false);
         $('#button_comprobar').prop("disabled", false);
@@ -10,7 +10,7 @@ function obtenerDatos() {
         $('#input_documento_cliente').val("");
     }else{
         $('#input_documento_cliente').val("0");
-        $('#input_documento_cliente').prop("disabled", true);
+        $('#input_documento_cliente').prop("readonly", true);
         $('#input_cliente').val("CLIENTE NO ESPECIFADO");
         $('#input_cliente').prop("disabled", true);
         $('#input_direccion').prop("disabled", true);

@@ -35,10 +35,22 @@ if ($c_cliente->buscar_documento()) {
         $resultado["direccion"] = "";
     } else {
         if ($c_internet->getTipo() == 2) {
+            if ($respuesta['source'] == "reniec") {
+                $resultado["success"] = "nuevo";
+                $resultado["documento"] = $respuesta["result"]["DNI"];
+                $resultado["datos"] = $respuesta["result"]["apellidos"] . " " . $respuesta["result"]["Nombres"];
+                $resultado["direccion"] = "";
+            }
             if ($respuesta['source'] == "padron_jne") {
                 $resultado["success"] = "nuevo";
                 $resultado["documento"] = $respuesta["result"]["DNI"];
                 $resultado["datos"] = $respuesta["result"]["apellidos"] . " " . $respuesta["result"]["Nombres"];
+                $resultado["direccion"] = "";
+            }
+            if ($respuesta['source'] == "essalud") {
+                $resultado["success"] = "nuevo";
+                $resultado["documento"] = $respuesta["result"]["DNI"];
+                $resultado["datos"] = $respuesta["result"]["ApellidoPaterno"] . " " . $respuesta["result"]["ApellidoMaterno"] . " " . $respuesta["result"]["Nombres"];
                 $resultado["direccion"] = "";
             }
         }
