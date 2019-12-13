@@ -14,8 +14,8 @@ $c_detalle = new cl_venta_productos();
 $c_cobros = new cl_venta_cobros();
 $c_varios = new cl_varios();
 $c_mis_documentos = new cl_documentos_empresa();
-$c_cliente=new cl_cliente();
-$sendCurlVenta=new SendCurlVenta();
+$c_cliente = new cl_cliente();
+$sendCurlVenta = new SendCurlVenta();
 $id_empresa = $_SESSION['id_empresa'];
 
 $c_cliente->setIdEmpresa($id_empresa);
@@ -25,12 +25,12 @@ $c_cliente->setDireccion(filter_input(INPUT_POST, 'input_direccion'));
 
 $tipo_doc = filter_input(INPUT_POST, 'select_documento');
 
-if ($c_cliente->getDocumento() == "") {
-    if ($tipo_doc == 1) {
-        $c_cliente->setIdCliente(0);
-        $c_cliente->obtener_datos();
-    }
-    if ($tipo_doc == 2 && $tipo_doc ==3) {
+if ($tipo_doc == 1) {
+    $c_cliente->setIdCliente(0);
+    $c_cliente->obtener_datos();
+}
+if ($tipo_doc == 2 && $tipo_doc == 3) {
+    if ($c_cliente->getDocumento() == "") {
         $c_cliente->obtener_codigo();
         $c_cliente->setDocumento("SD" . $c_varios->generarCodigo(5));
         $c_cliente->setTotalPagado(0);
@@ -38,18 +38,17 @@ if ($c_cliente->getDocumento() == "") {
         $c_cliente->setTotalVenta(0);
         $c_cliente->setUltimaVenta(date("Y-m-d"));
         $c_cliente->insertar();
-    }
-} else {
-    if (!$c_cliente->buscar_documento()) {
-        $c_cliente->obtener_codigo();
-        $c_cliente->setTotalPagado(0);
-        $c_cliente->setTelefono(0);
-        $c_cliente->setTotalVenta(0);
-        $c_cliente->setUltimaVenta(date("Y-m-d"));
-        $c_cliente->insertar();
+    } else {
+        if (!$c_cliente->buscar_documento()) {
+            $c_cliente->obtener_codigo();
+            $c_cliente->setTotalPagado(0);
+            $c_cliente->setTelefono(0);
+            $c_cliente->setTotalVenta(0);
+            $c_cliente->setUltimaVenta(date("Y-m-d"));
+            $c_cliente->insertar();
+        }
     }
 }
-
 
 
 $c_venta->setIdEmpresa($id_empresa);
@@ -99,7 +98,7 @@ if ($c_venta->insertar()) {
     $sendCurlVenta->setIdVenta($c_venta->getIdVenta());
     $sendCurlVenta->setPeriodo($c_varios->fecha_periodo($c_venta->getFecha()));
     $sendCurlVenta->enviar_json();
-    echo "{\"venta\":" . $c_venta->getIdVenta()  . ",\"periodo\":" . $c_venta->getPeriodo() . "}";
-   // header("Location: ../ver_ventas.php");
+    echo "{\"venta\":" . $c_venta->getIdVenta() . ",\"periodo\":" . $c_venta->getPeriodo() . "}";
+    // header("Location: ../ver_ventas.php");
 
 }

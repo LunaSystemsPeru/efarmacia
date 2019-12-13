@@ -182,7 +182,7 @@ $title = "Registro de Venta de Mercaderia - Farmacia - Luna Systems Peru";
                     </div>
                     <br>
                     <div class="padding-20 text-center">
-                        <form role="form" class="form-horizontal" name="frm_venta" id="frm_venta" method="post" action="procesos/reg_venta.php">
+                        <form role="form" class="form-horizontal" name="frm_venta" id="frm_venta" action="procesos/reg_venta.php" method="post">
                             <div class="form-group">
                                 <label class="col-md-2 control-label">Doc.</label>
                                 <div class="col-md-9">
@@ -221,7 +221,7 @@ $title = "Registro de Venta de Mercaderia - Farmacia - Luna Systems Peru";
                             <div class="form-group">
                                 <label class="col-lg-2 control-label">Cliente</label>
                                 <div class="col-lg-6">
-                                    <input type="text" class="form-control text-center" onkeypress="nextElement(event,'button_comprobar')" Placeholder="Nro Documento" id="input_documento_cliente" name="input_doc_cliente"  required>
+                                    <input type="text" class="form-control text-center" onkeypress="nextElement(event,'button_comprobar')" Placeholder="Nro Documento" id="input_documento_cliente" name="input_documento_cliente"  required>
                                 </div>
                                 <div class="col-lg-1">
                                     <button id="button_comprobar" onclick="comprobarCliente()" class="btn btn-success" type="button" >Comprobar</button>
