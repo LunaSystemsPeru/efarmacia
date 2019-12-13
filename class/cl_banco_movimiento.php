@@ -12,7 +12,7 @@ class cl_banco_movimiento {
     private $egresa;
     private $id_tipo;
     
-    private $id_empresa;
+
 
     /**
      * cl_banco_movimiento constructor.
@@ -119,9 +119,7 @@ class cl_banco_movimiento {
         $this->id_tipo = $id_tipo;
     }
     
-    public function setIdEmpresa($id_empresa) {
-        $this->id_empresa = $id_empresa;
-    }
+
 
     public function obtener_codigo() {
         global $conn;
@@ -134,6 +132,21 @@ class cl_banco_movimiento {
                 $this->id_movimiento = $fila ['codigo'];
             }
         }
+    }
+
+    public function eliminar()
+    {
+        global $conn;
+        $query = "delete from bancos_movimientos  where  id_movimiento='{$this->id_movimiento}'";
+        $resultado = $conn->query($query);
+        if (!$resultado) {
+            die('Could not delete data in banco_movimiento: ' . mysqli_error($conn));
+        } else {
+            //echo "Entered data successfully";
+            $grabado = true;
+        }
+        //$conn->close();
+        return $grabado;
     }
 
     public function insertar() {
