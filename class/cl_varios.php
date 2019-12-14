@@ -66,14 +66,13 @@ class cl_varios {
     }
     
     function fecha_actual_completa() {
-        $fecha_actual = date("Y-m-d H:i:s");
-        return $fecha_actual;
+        date_default_timezone_set('America/Los_Angeles');
+        return date("Y-m-d H:i:s");
     }
 
     function fecha_actual_corta() {
 		date_default_timezone_set('America/Los_Angeles');
-        $fecha_actual = date("Y-m-d");
-        return $fecha_actual;
+        return date("Y-m-d");
     }
 
     function zerofill($valor, $longitud) {

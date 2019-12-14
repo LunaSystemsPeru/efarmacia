@@ -104,4 +104,24 @@ class cl_inicio
         return json_encode($registros);
 
     }
+
+        public function verTotalVencimientos()
+    {
+        global $conn;
+        $sql = "select year(p.vcto) as anio_vcto, month(p.vcto) as mes_vcto, count(*) as stock_vence
+            from producto as p
+            where p.id_empresa = '$this->id_empresa' and p.cantidad > 0 and curdate() > date_sub(p.vcto, INTERVAL 121 day )
+            group by year(p.vcto), month(p.vcto)
+            order by year(p.vcto) asc, month(p.vcto) asc";
+        $resultado = $conn->query($sql);
+        $i = 0;
+        $registros = array();
+        while ($row = $resultado->fetch_assoc()) {
+            $registros[$i] = $row;
+            $i++;
+        };
+        //return json_encode(array('data' => $registros));
+        return json_encode($registros);
+
+    }
 }

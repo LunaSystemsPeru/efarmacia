@@ -116,7 +116,7 @@ $periodo = filter_input(INPUT_GET, 'periodo');
                                 <a href="reg_venta.php" class="btn btn-info"><i class="fa fa-plus"></i> Agregar Venta</a>
                             </div>
                             <div class="col-lg-9">
-                                <iframe class="col-lg-12" height="500px" src="reports/documento_venta.php?id_venta=<?php echo $id_venta . "&periodo=" . $periodo;?>"></iframe>
+                                <iframe class="col-lg-12" height="500px" src="reports/rpt_voucher_venta.php?id_venta=<?php echo $id_venta . "&periodo=" . $periodo;?>"></iframe>
                             </div>
                         </div>
 

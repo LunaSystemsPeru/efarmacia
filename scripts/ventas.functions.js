@@ -61,111 +61,72 @@ function comprobarCliente() {
 
 function validar_detalle() {
     var permitir = false;
-    var cantidad = $('#input_cantidad_producto').val();
+    var cantidad = $('#input_cventa').val();
     if (cantidad === "") {
         swal("NO HA INGRESADO CANTIDAD DEL PRODUCTO A VENDER!");
-        $('#input_cantidad_producto').focus();
+        $('#input_cventa').focus();
     } else {
         permitir = true;
     }
     return permitir;
 }
 
-function agregarProducto() {
-    var datainput = {
-        id_producto: $('#hidden_codigo_producto').val(),
-        descripcion: $('#input_descripcion_producto').val(),
-        precio: $('#input_precio_producto').val(),
-        costo: $('#input_costo_producto').val(),
-        cantidad: $('#input_cantidad_producto').val(),
-        action: 1
-    }
-    obtenerDetalle(datainput);
-}
-
-function eliminarProducto(idproducto) {
-    var datainput = {
-        id_producto: idproducto,
-        action: 2
-    }
-    obtenerDetalle(datainput);
-}
-
 function addProductos() {
-    $.ajax({
-        data: {
-            input_id_producto: $('#hidden_id_producto').val(),
-            input_descripcion_producto: $('#hidden_descripcion_producto').val(),
-            input_costo_producto: $('#hidden_costo').val(),
-            input_precio_producto: $('#input_precio').val(),
-            input_cantidad_producto: $('#input_cventa').val(),
-            input_lote_producto: $('#input_lote').val(),
-            input_vcto_producto: $('#input_vencimiento').val()
-        },
-        url: 'ajax_post/add_productos_ventas.php',
-        type: 'GET',
-        //dataType: 'json',
-        beforeSend: function () {
-            //$('#body_detalle_pedido').html("");
-            $('table tbody').html("");
-        },
-        success: function (r) {
-            //alert(r);
-            $('table tbody').append(r);
-            clean();
-            //$('#body_detalle_pedido').html(r);
-        },
-        error: function () {
-            alert('Ocurrio un error en el servidor ..');
-            $('table tbody').html("");
-            //$('#body_detalle_pedido').html("");
-        }
-    });
+    if (validar_detalle()) {
+        $.ajax({
+            data: {
+                input_id_producto: $('#hidden_id_producto').val(),
+                input_descripcion_producto: $('#hidden_descripcion_producto').val(),
+                input_costo_producto: $('#hidden_costo').val(),
+                input_precio_producto: $('#input_precio').val(),
+                input_cantidad_producto: $('#input_cventa').val(),
+                input_lote_producto: $('#input_lote').val(),
+                input_vcto_producto: $('#input_vencimiento').val()
+            },
+            url: 'ajax_post/add_productos_ventas.php',
+            type: 'GET',
+            //dataType: 'json',
+            beforeSend: function () {
+                //$('#body_detalle_pedido').html("");
+                $('table tbody').html("");
+            },
+            success: function (r) {
+                //alert(r);
+                $('table tbody').append(r);
+                clean();
+                //$('#body_detalle_pedido').html(r);
+            },
+            error: function () {
+                alert('Ocurrio un error en el servidor ..');
+                $('table tbody').html("");
+                //$('#body_detalle_pedido').html("");
+            }
+        });
+    }
 }
 
 function eliminar_item(id_producto) {
     $.ajax({
         data: {
-            input_id_producto: id_producto
+            input_id_producto: id_producto,
         },
-        url: 'ajax_post/del_productos_venta.php',
+        url: 'ajax_post/del_productos_ventas.php',
         type: 'GET',
         //dataType: 'json',
         beforeSend: function () {
             //$('#body_detalle_pedido').html("");
-            $('table tbody').html("");
+            $('#tabla-detalle tbody').html("");
         },
         success: function (r) {
-            //alert(r);
-            $('table tbody').append(r);
+            //console.log(r);
+            $('#tabla-detalle tbody').html(r);
             clean();
             //$('#body_detalle_pedido').html(r);
         },
         error: function () {
             alert('Ocurrio un error en el servidor ..');
-            $('table tbody').html("");
+            $('#tabla-detalle tbody').html("");
             //$('#body_detalle_pedido').html("");
-        }
-    });
-}
-
-function obtenerDetalle(datainput) {
-    $.ajax({
-        data: datainput,
-        url: '../controller/ProductosVentaSession.php',
-        type: 'POST',
-        //dataType: 'json',
-        beforeSend: function () {
-            $('table tbody').html("");
-        },
-        success: function (r) {
-            //alert(r);
-            $('table tbody').append(r);
-            clean();
-        },
-        error: function () {
-            alert('Ocurrio un error en el servidor ..');
-            $('table tbody').html("");
         }
     });
 }
@@ -178,7 +139,7 @@ function clean() {
     $('#input_lote').val('');
     $('#input_vencimiento').val('');
     $('#input_cactual').val('');
-    $('#input_cventa').val('');
+    $('#input_cventa').val('1');
     $('#hidden_descripcion_producto').val('');
     $('#btn_add_producto').prop("disabled", true);
     $('#btn_guardar_formulario').prop("disabled", false);

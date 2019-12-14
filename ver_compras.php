@@ -105,34 +105,47 @@ $title = "Ver Documentos de Compras - Farmacia - Luna Systems Peru";
 
 
                 <div class="row">
+
                     <div class="col-lg-12">
                         <div class="hpanel">
                             <div class="panel-body">
-                                <div class="row">
-                                    <div class="col-md-6 m-b-md">
-                                        <div class="btn-group">
-                                            <a href="reg_compra.php" class="btn btn-success">Nuevo Documento Compra</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 ">
-                                        <form class="form-horizontal">
-                                            <div class="form-group">
-                                                <div class="col-md-5">
-                                                    <select class="form-control">
-                                                        <option>Seleccionar Año</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-md-5"
-                                                    <select class="form-control">
-                                                        <option>Seleccionar Periodo</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </form>
+                                <div class="col-md-7 m-b-md">
+                                    <div class="btn-group">
+                                        <a href="reg_compra.php" class="btn btn-success"><i class="fa fa-plus"></i> Nuevo Doc. Compra</a>
                                     </div>
                                 </div>
+                                <div class="col-md-5 ">
+                                    <form class="form-horizontal">
+                                        <div class="form-group">
+                                            <div class="col-md-6">
+                                                <select class="form-control">
+                                                    <option>Seleccionar Año</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <select class="form-control">
+                                                    <option>Seleccionar Periodo</option>
+                                                    <?php
+                                                   /* $a_periodo = $c_compra->verPeriodos();
+                                                    foreach ($a_periodo as $fila) {
+                                                        ?>
+                                                        <option ><?php echo $fila['periodo']?></option>
+                                                    <?php
+                                                    }*/
+                                                    ?>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
 
+                            </div>
+                        </div>
+                    </div>
 
+                    <div class="col-lg-12">
+                        <div class="hpanel">
+                            <div class="panel-body">
                                 <table id="tabla-ingresos" class="table table-striped table-bordered table-hover">
                                     <thead>
                                         <tr>
@@ -149,7 +162,11 @@ $title = "Ver Documentos de Compras - Farmacia - Luna Systems Peru";
                                     <tbody>
                                     <?php
                                     $a_compras = $c_compra->verFilas();
+                                    $total = 0;
+                                    $pagado = 0;
                                     foreach ($a_compras as $fila) {
+                                        $total += $fila['total'];
+                                        $pagado += $fila['pagado'];
                                         ?>
                                         <tr>
                                             <td><?php echo $fila['periodo'] . $fila['id_compra']?></td>
@@ -160,7 +177,6 @@ $title = "Ver Documentos de Compras - Farmacia - Luna Systems Peru";
                                             <td class="text-right"><?php echo number_format($fila['total'],2)?></td>
                                             <td class="text-right"><?php echo number_format($fila['pagado'],2 )?></td>
                                             <td class="text-center">
-                                                <button class="btn btn-info btn-sm" title="Ver Documento"><i class="fa fa-eye-slash"></i></button>
                                                 <button onclick="obtener_datos_pago(<?php echo $fila['id_compra'] . ",". $fila['periodo'] ;?>)" data-toggle="modal" data-target="#modalpagocompra" class="btn btn-sm btn-warning" title="Ver Pagos"><i class="fa fa-money"></i></button>
                                                 <button onclick="eliminar_compra(<?php echo $fila['id_compra'] . ",". $fila['periodo'] ;?>)" class="btn btn-danger btn-sm" title="Eliminar Documento"><i class="fa fa-close"></i></button>
                                             </td>
@@ -169,6 +185,14 @@ $title = "Ver Documentos de Compras - Farmacia - Luna Systems Peru";
                                     }
                                     ?>
                                     </tbody>
+                                    <tfoot>
+                                    <tr>
+                                        <td colspan="5"></td>
+                                        <td class="text-right"><?php echo number_format($total,2 )?></td>
+                                        <td class="text-right"><?php echo number_format($pagado,2 )?></td>
+                                        <td class="text-right"><?php echo number_format($total - $pagado,2 )?></td>
+                                    </tr>
+                                    </tfoot>
                                 </table>
                             </div>
                         </div>
@@ -291,12 +315,13 @@ $title = "Ver Documentos de Compras - Farmacia - Luna Systems Peru";
 
                 // Initialize Example 1
                 $('#tabla-ingresos').dataTable({
+                    order: [[1, "asc"]],
                     dom: "<'row'<'col-sm-4'l><'col-sm-4 text-center'B><'col-sm-4'f>>tp",
-                    "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+                    "lengthMenu": [[50, 100, 200, -1], [50, 100, 200, "All"]],
                     buttons: [
                         {extend: 'copy', className: 'btn-sm'},
-                        {extend: 'csv', title: 'Ingresos_201903', className: 'btn-sm'},
-                        {extend: 'pdf', title: 'Ingresos_201903', className: 'btn-sm'},
+                        {extend: 'csv', title: 'Compras', className: 'btn-sm'},
+                        {extend: 'pdf', title: 'Compras', className: 'btn-sm'},
                         {extend: 'print', className: 'btn-sm'}
                     ]
                 });

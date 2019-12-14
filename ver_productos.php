@@ -35,9 +35,9 @@ $title = "Ver Productos - Farmacia - Luna Systems Peru";
     <link rel="stylesheet" href="fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css"/>
     <link rel="stylesheet" href="fonts/pe-icon-7-stroke/css/helper.css"/>
     <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet"
+    <!--<link rel="stylesheet"
           href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/themes/base/minified/jquery-ui.min.css"
-          type="text/css"/>
+          type="text/css"/>-->
 </head>
 <body class="fixed-navbar fixed-sidebar">
 
@@ -99,6 +99,28 @@ $title = "Ver Productos - Farmacia - Luna Systems Peru";
 
 
         <div class="row">
+            <div class="col-lg-12">
+                <div class="hpanel">
+                    <div class="panel-body">
+                        <div class="col-md-7 m-b-md">
+                            <div class="btn-group">
+                                <a href="ver_reporte_medicamentos.php" class="btn btn-success"><i class="fa fa-search"></i> Ver Medic. Vencidos</a>
+                            </div>
+                        </div>
+                        <div class="col-md-5 ">
+                            <form class="form-horizontal">
+                                <div class="form-group">
+
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
             <div class="col-lg-12">
                 <div class="hpanel">
                     <div class="panel-body">
@@ -199,7 +221,7 @@ $title = "Ver Productos - Farmacia - Luna Systems Peru";
         $('#table-productos').dataTable({
             "order": [[1, "asc"]],
             dom: "<'row'<'col-sm-4'l><'col-sm-4 text-center'B><'col-sm-4'f>>tp",
-            "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+            "lengthMenu": [[50, 100, 200, -1], [50, 100, 200, "All"]],
             buttons: [
                 {extend: 'copy', className: 'btn-sm'},
                 {extend: 'csv', title: 'mis_productos', className: 'btn-sm'},

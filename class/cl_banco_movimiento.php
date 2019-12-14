@@ -125,7 +125,7 @@ class cl_banco_movimiento {
         global $conn;
         $query = "select ifnull(max(id_movimiento) + 1, 1) as codigo 
         from bancos_movimientos ";
-        echo $query;
+      //  echo $query;
         $resultado = $conn->query($query);
         if ($resultado->num_rows > 0) {
             while ($fila = $resultado->fetch_assoc()) {
@@ -161,7 +161,7 @@ class cl_banco_movimiento {
                 . " '$this->id_tipo')";
 
         $resultado = $conn->query($query);
-        echo $query;
+       // echo $query;
         if (!$resultado) {
             die('Could not enter data in bancos_movimientos: ' . mysqli_error($conn));
         } else {

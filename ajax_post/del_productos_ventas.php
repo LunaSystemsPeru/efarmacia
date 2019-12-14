@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (!isset($_SESSION)) {
+    session_start();
+}
 require '../class_session/cs_productos_venta.php';
 $cs_productos = new cs_productos_venta();
 

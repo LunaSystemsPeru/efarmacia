@@ -59,7 +59,7 @@ $(function () {
             utilidad[val.dia] = val.utilidad;
         })
 
-        console.log(dias);
+        //console.log(dias);
 
         new Chart(document.getElementById("grafica_diaria_ventas"),
             {

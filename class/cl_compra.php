@@ -122,7 +122,7 @@ class cl_compra
      */
     public function setSerie($serie)
     {
-        $this->serie = $serie;
+        $this->serie = strtoupper($serie);
     }
 
     /**
@@ -205,6 +205,20 @@ class cl_compra
         $this->id_usuario = $id_usuario;
     }
 
+    public function obtener_codigo()
+    {
+        global $conn;
+        $query = "select ifnull(max(id_compra) + 1, 1) as codigo 
+            from compra 
+            where periodo = '$this->periodo' and id_empresa = '$this->id_empresa' ";
+        $resultado = $conn->query($query);
+        if ($resultado->num_rows > 0) {
+            while ($fila = $resultado->fetch_assoc()) {
+                $this->id_compra = $fila ['codigo'];
+            }
+        }
+    }
+
     public function obtenerDatos(){
         $existe = false;
         global $conn;
@@ -226,6 +240,22 @@ class cl_compra
         }
         return $existe;
     }
+
+    public function insertar()
+    {
+        global $conn;
+        $query = "insert into compra value ('$this->id_compra', '$this->periodo', '$this->id_empresa', '$this->fecha', '$this->id_documento', '$this->serie', '$this->numero', '$this->id_proveedor', '$this->total', '0', '$this->id_usuario')";
+        $resultado = $conn->query($query);
+        if (!$resultado) {
+            die('Could not insert data in compra: ' . mysqli_error($conn));
+        } else {
+            //echo "Entered data successfully";
+            $grabado = true;
+        }
+        //$conn->close();
+        return $grabado;
+    }
+
     public function eliminar()
     {
         global $conn;
@@ -254,5 +284,18 @@ class cl_compra
         $resultado = $conn->query($query);
         return $resultado->fetch_all(MYSQLI_ASSOC);
     }
+
+    public function verPeriodos()
+    {
+        global $conn;
+        $query = "select concat(year(fecha), LPAD(month(fecha), 2,0)) as periodo 
+        from compra
+        where id_empresa = '$this->id_empresa' 
+        group by year(fecha), month(fecha)";
+        echo $query;
+        $resultado = $conn->query($query);
+        return $resultado->fetch_all(MYSQLI_ASSOC);
+    }
+
 
 }
