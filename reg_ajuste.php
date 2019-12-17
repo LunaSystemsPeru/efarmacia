@@ -4,7 +4,7 @@ session_start();
 if (is_null($_SESSION['id_empresa'])) {
     header("Location: login.php");
 }
-$_SESSION['productos_ajuste'] = "";
+$_SESSION['productos_ajuste'] = Array();
 
 $title = "Registro de Ajuste de Mercaderia - Farmacia - Luna Systems Peru";
 ?>

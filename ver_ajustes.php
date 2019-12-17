@@ -5,11 +5,11 @@ if (is_null($_SESSION['id_empresa'])) {
     header("Location: login.php");
 }
 
-require 'class/cl_ingreso.php';
+require 'class/cl_ajuste.php';
 require 'class/cl_varios.php';
 $c_varios = new cl_varios();
-$c_ingreso = new cl_ingreso();
-$c_ingreso->setIdEmpresa($_SESSION['id_empresa']);
+$c_ajuste = new cl_ajuste();
+$c_ajuste->setIdEmpresa($_SESSION['id_empresa']);
 
 $title = "Ver Ajustes de Mercaderia - Farmacia - Luna Systems Peru";
 ?>
@@ -185,27 +185,27 @@ $title = "Ver Ajustes de Mercaderia - Farmacia - Luna Systems Peru";
                             <tr>
                                 <th width="10%">Id.</th>
                                 <th width="11%">Fecha</th>
-                                <th width="30%">Proveedor</th>
-                                <th width="15%">Documento</th>
-                                <th width="11%">Usuario</th>
-                                <th width="10%">Total</th>
+                                <th width="30%">Usuario</th>
+                                <th width="10%">Cant. tot. Sist.</th>
+                                <th width="10%">Cant. tot. Enc.</th>
+                                <th width="10%">Total Diferencias S/</th>
                                 <th width="11%">Acciones</th>
                             </tr>
                             </thead>
                             <tbody>
                             <?php
-                            $a_ingresos = $c_ingreso->ver_ingresos();
-                            foreach ($a_ingresos as $fila) {
+                            $a_ajustes = $c_ajuste->verFilas();
+                            foreach ($a_ajustes as $fila) {
                                 ?>
                                 <tr>
-                                    <td><?php echo $fila['periodo'] . $c_varios->zerofill($fila['id_ingreso'], 3)?></td>
+                                    <td><?php echo $fila['id_inventario']?></td>
                                     <td class="text-center"><?php echo $fila['fecha']?></td>
-                                    <td><?php echo $fila['ruc'] . " | " . $fila['razon_social']?></td>
-                                    <td><?php echo $fila['doc_sunat'] . " | " . $fila['serie'] . " - " . $fila['numero']?></td>
-                                    <td class="text-center"><?php echo $fila['username']?></td>
-                                    <td class="text-right"><?php echo number_format($fila['total'], 2)?></td>
+                                    <td><?php echo $fila['username'] ?></td>
+                                    <td><?php echo "0"?></td>
+                                    <td class="text-center"><?php echo "0"?></td>
+                                    <td class="text-right"><?php echo $fila['monto']?></td>
                                     <td class="text-center">
-                                        <button class="btn btn-info btn-sm" title="Ver Documento" onclick="obtener_detalle('<?php echo $fila['id_ingreso']?>', '<?php echo $fila['periodo']?>')"><i class="fa fa-eye"></i></button>
+                                        <button class="btn btn-info btn-sm" title="Ver Documento" onclick="obtener_detalle('<?php echo $fila['id_inventario']?>')"><i class="fa fa-eye"></i></button>
                                         <button class="btn btn-danger btn-sm" title="Eliminar Documento"><i class="fa fa-close"></i></button>
                                     </td>
                                 </tr>
@@ -221,11 +221,11 @@ $title = "Ver Ajustes de Mercaderia - Farmacia - Luna Systems Peru";
         </div>
 
         <div class="modal fade" id="modal_ver_detalle" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
+            <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="color-line"></div>
                     <div class="modal-header text-center">
-                        <h4 class="modal-title">Ver detalle de Ingreso</h4>
+                        <h4 class="modal-title">Ver detalle de Inventario</h4>
                     </div>
                     <div class="modal-body" id="modal_detalle">
                     </div>
@@ -277,8 +277,8 @@ $title = "Ver Ajustes de Mercaderia - Farmacia - Luna Systems Peru";
             "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
             buttons: [
                 {extend: 'copy', className: 'btn-sm'},
-                {extend: 'csv', title: 'Ingresos_201903', className: 'btn-sm'},
-                {extend: 'pdf', title: 'Ingresos_201903', className: 'btn-sm'},
+                {extend: 'csv', title: 'Ajustes_201912', className: 'btn-sm'},
+                {extend: 'pdf', title: 'Ajustes_201912', className: 'btn-sm'},
                 {extend: 'print', className: 'btn-sm'}
             ]
         });
@@ -288,14 +288,13 @@ $title = "Ver Ajustes de Mercaderia - Farmacia - Luna Systems Peru";
 </script>
 
 <script>
-    function obtener_detalle(id_ingreso, periodo) {
+    function obtener_detalle(id_inventario) {
         var parametros = {
-            id_ingreso: id_ingreso,
-            periodo: periodo
+            id_ajuste: id_inventario
         };
         $.ajax({
             data: parametros, //datos que se envian a traves de ajax
-            url: 'modals_php/m_ingreso_productos.php', //archivo que recibe la peticion
+            url: 'modals_php/m_inventario_productos.php', //archivo que recibe la peticion
             type: 'post', //método de envio
             beforeSend: function () {
                 $("#modal_detalle").html("Procesando, espere por favor...");
