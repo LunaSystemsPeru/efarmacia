@@ -167,8 +167,8 @@ $title = "Ver Productos - Farmacia - Luna Systems Peru";
                                     <td class="text-center"><?php echo $label_estado?></td>
                                     <td class="text-center">
                                         <a href="<?php echo "mod_producto.php?id_producto=" . $fila['id_producto']. "&id_empresa=" . $_SESSION['id_empresa']; ?>"><button class="btn btn-success btn-sm" title="Editar Producto"><i class="fa fa-edit"></i></button></a>
-                                        <button class="btn btn-info btn-sm" title="Ver historial de Lotes"><i class="fa fa-bar-chart-o"></i></button>
                                         <a href="ver_kardex_producto.php?id_producto=<?php echo $fila['id_producto'] ?>" class="btn btn-info btn-sm" title="Ver Kardex"><i class="fa fa-bars"></i></a>
+                                        <button type="button" class="btn btn-danger btn-sm" title="Eliminar Producto" onclick="eliminar('<?php echo $fila['id_producto']?>')"><i class="fa fa-trash"></i></button>
                                     </td>
                                 </tr>
                                 <?php
@@ -231,6 +231,26 @@ $title = "Ver Productos - Farmacia - Luna Systems Peru";
         });
 
     });
+
+    function eliminar(codigo) {
+
+        swal({
+            title: "Eliminar Producto",
+            text: "Esta seguro de eliminar este Producto?",
+            type: "warning",
+            showCancelButton: true,
+            //cancelButtonClass: 'btn-secondary ',
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "Eliminar",
+            cancelButtonText: "No, cancelar!",
+            closeOnConfirm: false,
+            closeOnCancel: true
+        }, function (isConfirm) {
+            if (isConfirm) {
+                window.location.href = 'procesos/del_producto.php?id_producto=' + codigo;
+            }
+        });
+    }
 
 </script>
 </body>

@@ -259,7 +259,22 @@ class cl_producto
             . "'" . $this->id_presentacion . "', '" . $this->costo . "', '" . $this->precio . "', '0', '2000-01-01', '-', 0)";
         $resultado = $conn->query($query);
         if (!$resultado) {
-            die('Could not enter data in documentos_sunat: ' . mysqli_error($conn));
+            die('Could not enter data in producto: ' . mysqli_error($conn));
+        } else {
+            //echo "Entered data successfully";
+            $grabado = true;
+        }
+        return $grabado;
+    }
+
+    public function eliminar()
+    {
+        global $conn;
+        $query = "delete from producto 
+        where id_producto = '" . $this->id_producto . "' and id_empresa = '" . $this->id_empresa . "'";
+        $resultado = $conn->query($query);
+        if (!$resultado) {
+            die('Could not delete data in producto: ' . mysqli_error($conn));
         } else {
             //echo "Entered data successfully";
             $grabado = true;
