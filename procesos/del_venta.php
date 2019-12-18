@@ -1,5 +1,9 @@
 <?php
 session_start();
+
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
+
 require '../class/cl_venta.php';
 require '../class/cl_ventas_anuladas.php';
 
