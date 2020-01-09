@@ -4,10 +4,12 @@ session_start();
 require '../class/cl_ingreso.php';
 require '../class/cl_ingreso_productos.php';
 require '../class/cl_varios.php';
+require '../class/cl_producto.php';
 
 $c_ingreso = new cl_ingreso();
 $c_detalle = new cl_ingreso_productos();
 $c_varios = new cl_varios();
+$c_producto=new cl_producto();
 
 $fecha = filter_input(INPUT_POST, 'input_fecha');
 $c_ingreso->setFecha($fecha);
@@ -28,7 +30,15 @@ if ($c_ingreso->insertar()) {
     $c_detalle->setIdEmpresa($c_ingreso->getIdEmpresa());
     //leer detalle de ingreso
     $a_detalle = $_SESSION['productos_ingreso'];
+    $c_producto->setIdEmpresa($_SESSION['id_empresa']);
+
     foreach ($a_detalle as $value) {
+        $c_producto->setIdProducto($value['id_producto']);
+        if (!$c_producto->obtener_datos()){
+            $c_producto->setCosto(0);
+            $c_producto->setPrecio(0);
+            $c_producto->insertar();
+        }
         $c_detalle->setIdProducto($value['id_producto']);
         $c_detalle->setLote($value['lote']);
         $c_detalle->setVencimiento($value['vcto']);

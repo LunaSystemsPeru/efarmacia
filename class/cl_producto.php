@@ -255,8 +255,8 @@ class cl_producto
     public function insertar()
     {
         global $conn;
-        $query = "insert into producto values ('" . $this->id_producto . "', '" . $this->id_empresa . "', '" . $this->nombre . "', '" . $this->principio_activo . "', '" . $this->id_laboratorio . "', "
-            . "'" . $this->id_presentacion . "', '" . $this->costo . "', '" . $this->precio . "', '0', '2000-01-01', '-', 0)";
+        $query = "insert into producto values ('" . $this->id_producto . "', '" . $this->id_empresa . "',
+         '" . $this->costo . "', '" . $this->precio . "', '0', '2000-01-01', '-', 0)";
         $resultado = $conn->query($query);
         if (!$resultado) {
             die('Could not enter data in producto: ' . mysqli_error($conn));
@@ -286,13 +286,17 @@ class cl_producto
     {
         $existe = false;
         global $conn;
-        $query = "select * from producto where id_empresa = '" . $this->id_empresa . "' and id_producto = '" . $this->id_producto . "'";
+
+        $query = "SELECT * FROM producto
+                INNER JOIN productos_minsa  
+                    ON producto.id_producto = productos_minsa.id_producto_sistema  
+                    where id_empresa = '" . $this->id_empresa . "' and id_producto = '" . $this->id_producto . "'";
+
         $resultado = $conn->query($query);
         if ($resultado->num_rows > 0) {
             $existe = true;
             while ($fila = $resultado->fetch_assoc()) {
                 $this->nombre = $fila['nombre'];
-                $this->principio_activo = $fila['principio_activo'];
                 $this->id_laboratorio = $fila['id_laboratorio'];
                 $this->id_presentacion = $fila['id_presentacion'];
                 $this->costo = $fila['costo'];
@@ -309,33 +313,65 @@ class cl_producto
     function ver_productos()
     {
         global $conn;
-        $query = "select p.id_producto, p.nombre, p.principio_activo, pr.nombre as npresentacion, l.nombre as nlaboratorio, p.cantidad, p.precio, p.lote, p.vcto, DATEDIFF(p.vcto, current_date()) as faltantes 
-        from producto as p 
-        inner join laboratorio as l on p.id_laboratorio = l.id_laboratorio 
-        inner join presentacion pr on p.id_presentacion = pr.id_presentacion 
-        where p.id_empresa = '$this->id_empresa'";
+        $query = "SELECT p.id_producto,
+          pm.nombre,
+          pr.nombre AS npresentacion,
+          l.nombre AS nlaboratorio,
+          p.cantidad,
+          p.precio,
+          p.lote,
+          p.vcto,
+          DATEDIFF(p.vcto, CURRENT_DATE()) AS faltantes 
+        FROM
+          producto AS p 
+          INNER JOIN productos_minsa AS pm
+            ON p.id_producto = pm.id_producto_sistema 
+          INNER JOIN laboratorio AS l 
+            ON pm.id_laboratorio = l.id_laboratorio 
+          INNER JOIN presentacion pr 
+            ON pm.id_presentacion = pr.id_presentacion 
+        WHERE p.id_empresa = '$this->id_empresa'";
         $resultado = $conn->query($query);
+
         return $resultado->fetch_all(MYSQLI_ASSOC);
     }
 
     function verVencidos () {
         global $conn;
-        $query = "select p.id_producto, p.nombre, l.nombre as laboratorio, p.cantidad, p.precio, p2.nombre as presentacion, p.vcto, (p.vcto - curdate()) as faltantes
-        from producto as p
-        inner join laboratorio l on p.id_laboratorio = l.id_laboratorio
-        inner join presentacion p2 on p.id_presentacion = p2.id_presentacion
-        where p.id_empresa = '$this->id_empresa' and curdate() >= date_sub(p.vcto, interval 121 day ) and cantidad > 0
-        order by p.vcto asc";
+        $query = "SELECT 
+                    p.id_producto,
+                    pm.nombre,
+                    l.nombre AS laboratorio,
+                    p.cantidad,
+                    p.precio,
+                    p2.nombre AS presentacion,
+                    p.vcto,
+                    (p.vcto - CURDATE()) AS faltantes 
+                  FROM
+                    producto AS p 
+                    INNER JOIN productos_minsa AS pm 
+                    ON p.id_producto = pm.id_producto_sistema 
+                    
+                    INNER JOIN laboratorio l 
+                      ON pm.id_laboratorio = l.id_laboratorio 
+                    INNER JOIN presentacion p2 
+                      ON pm.id_presentacion = p2.id_presentacion 
+                  WHERE p.id_empresa = '$this->id_empresa' 
+                    AND CURDATE() >= DATE_SUB(p.vcto, INTERVAL 121 DAY) 
+                    AND cantidad > 0 
+                  ORDER BY p.vcto ASC ";
         $resultado = $conn->query($query);
         return $resultado->fetch_all(MYSQLI_ASSOC);
     }
 
     function verSinStock () {
         global $conn;
-        $query = "select p.id_producto, p.nombre, l.nombre as laboratorio, p.cantidad, p.precio, p2.nombre as presentacion
-        from producto as p
-        inner join laboratorio l on p.id_laboratorio = l.id_laboratorio
-        inner join presentacion p2 on p.id_presentacion = p2.id_presentacion
+        $query = "SELECT p.id_producto, pm.nombre, l.nombre AS laboratorio, p.cantidad, p.precio, p2.nombre AS presentacion
+        FROM producto AS p
+        INNER JOIN productos_minsa AS pm 
+	ON p.id_producto = pm.id_producto_sistema   
+        INNER JOIN laboratorio l ON pm.id_laboratorio = l.id_laboratorio
+        INNER JOIN presentacion p2 ON pm.id_presentacion = p2.id_presentacion
         where p.id_empresa = '$this->id_empresa' and p.cantidad <= 0
         order by p.vcto asc";
         $resultado = $conn->query($query);
@@ -349,11 +385,6 @@ class cl_producto
         global $conn;
         $query = "update producto 
                     set id_producto = '$this->id_producto',
-                        id_empresa = '$this->id_empresa', 
-                        nombre = '$this->nombre',
-                        principio_activo = '$this->principio_activo',
-                        id_laboratorio = '$this->id_laboratorio',
-                        id_presentacion = '$this->id_presentacion',
                         costo = '$this->costo',
                         precio = '$this->precio'
                     where id_producto = '$this->id_producto'
