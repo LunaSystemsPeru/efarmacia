@@ -21,11 +21,9 @@ class cl_productos
         global $conn;
         $query = "SELECT SUM(p.cantidad * p.precio) AS total_actual, l.nombre
         FROM producto AS p
-        INNER JOIN productos_minsa AS pm 
-    ON p.id_producto = pm.id_producto_sistema 
-        INNER JOIN laboratorio l ON pm .id_laboratorio = l.id_laboratorio
+        INNER JOIN laboratorio l ON p .id_laboratorio = l.id_laboratorio
         WHERE p.id_empresa = '$this->id_empresa'
-        GROUP BY pm .id_laboratorio
+        GROUP BY p .id_laboratorio
         ORDER BY SUM(p.cantidad * p.precio)";
         $resultado = $conn->query($query);
         $i = 0;
