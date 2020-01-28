@@ -25,6 +25,7 @@ class cl_empresa
     private $provincia;
     private $departamento;
     private $estado;
+    private $cod_establecimiento;
 
     /**
      * cl_empresa constructor.
@@ -275,6 +276,22 @@ class cl_empresa
         $this->nombre_comercial = $nombre_comercial;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getCodEstablecimiento()
+    {
+        return $this->cod_establecimiento;
+    }
+
+    /**
+     * @param mixed $cod_establecimiento
+     */
+    public function setCodEstablecimiento($cod_establecimiento)
+    {
+        $this->cod_establecimiento = $cod_establecimiento;
+    }
+
     public function obtener_codigo()
     {
         global $conn;
@@ -292,7 +309,7 @@ class cl_empresa
     {
         global $conn;
         $query = "insert into empresa values ('" . $this->id_empresa . "', '" . $this->ruc . "', '" . $this->razon_social . "', '" . $this->nombre_comercial . "', "
-            . "'" . $this->direccion . "', '" . $this->telefono . "', '" . $this->email . "', '1')";
+            . "'" . $this->direccion . "', '" . $this->telefono . "', '" . $this->email . "', '1', '$this->cod_establecimiento')";
         $resultado = $conn->query($query);
         if (!$resultado) {
             die('Could not enter data in empresa: ' . mysqli_error($conn));
@@ -327,6 +344,7 @@ class cl_empresa
                 $this->distrito=$fila['distrito'];
                 $this->provincia=$fila['provincia'];
                 $this->departamento=$fila['departamento'];
+                $this->cod_establecimiento=$fila['cod_establecimiento'];
             }
         }
         return $existe;
