@@ -307,10 +307,31 @@ class cl_venta
             inner join documentos_sunat ds on v.id_documento = ds.id_documento 
             inner join cliente c on v.id_cliente = c.id_cliente and v.id_empresa = c.id_empresa 
             inner join usuario u on v.id_empresa = u.id_empresa
-            where v.id_empresa = '$this->id_empresa'";
+            where v.id_empresa = '$this->id_empresa' and v.periodo = '$this->periodo' ";
         $resultado = $conn->query($query);
-        $fila = $resultado->fetch_all(MYSQLI_ASSOC);
-        return $fila;
+        return $resultado->fetch_all(MYSQLI_ASSOC);
+    }
+
+    function ver_anios()
+    {
+        global $conn;
+        $query = "select distinct(year(fecha)) as anio 
+        from venta 
+        where id_empresa = '$this->id_empresa' 
+        order by year(fecha) asc";
+        $resultado = $conn->query($query);
+        return $resultado->fetch_all(MYSQLI_ASSOC);
+    }
+
+    function ver_periodos($anio)
+    {
+        global $conn;
+        $query = "select distinct(periodo) as periodo 
+        from venta 
+        where id_empresa = '$this->id_empresa' and year(fecha) = '$anio'   
+        order by periodo asc";
+        $resultado = $conn->query($query);
+        return $resultado->fetch_all(MYSQLI_ASSOC);
     }
 
 

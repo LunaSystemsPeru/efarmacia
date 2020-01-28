@@ -11,7 +11,11 @@ if (is_null($_SESSION['id_empresa'])) {
 require 'class/cl_venta.php';
 $c_venta = new cl_venta();
 $c_venta->setIdEmpresa($_SESSION['id_empresa']);
+$c_venta->setPeriodo(date("Ym"));
 
+if (filter_input(INPUT_GET, 'periodo')) {
+    $c_venta->setPeriodo(filter_input(INPUT_GET, 'periodo'));
+}
 $title = "Ver Ventas - Farmacia - Luna Systems Peru";
 ?>
 <!DOCTYPE html>
@@ -165,12 +169,17 @@ $title = "Ver Ventas - Farmacia - Luna Systems Peru";
                             <form class="form-horizontal">
                                 <div class="form-group">
                                     <div class="col-md-6">
-                                        <select class="form-control">
-                                            <option>Seleccionar Año</option>
+                                        <select class="form-control" id="select_anio" onchange="obtener_periodo()">
+                                            <option >Seleccionar Año</option>
+                                            <?php
+                                            foreach ($c_venta->ver_anios() as $fila) {
+                                                echo '<option value="'.$fila['anio'].'">'.$fila['anio'].'</option>';
+                                            }
+                                            ?>
                                         </select>
                                     </div>
                                     <div class="col-md-6">
-                                        <select class="form-control">
+                                        <select class="form-control" id="select_periodo" onchange="ver_periodo()">
                                             <option>Seleccionar Periodo</option>
                                         </select>
                                     </div>
@@ -342,6 +351,35 @@ $title = "Ver Ventas - Farmacia - Luna Systems Peru";
                 $("#modal_detalle").html(response);
             }
         });
+    }
+
+    function obtener_periodo() {
+        var anio = $("#select_anio").val();
+        var periodo = $("#select_periodo");
+        var parametros = {
+            anio: anio
+        };
+        $.ajax({
+            data: parametros, //datos que se envian a traves de ajax
+            url: 'ajax_post/obtener_periodos_venta.php', //archivo que recibe la peticion
+            type: 'post', //método de envio
+            beforeSend: function () {
+                //$("#select_periodo").html("")
+            },
+            success: function (response) { //una vez que el archivo recibe el request lo procesa y lo devuelve
+                var json_response = JSON.parse(response);
+                periodo.find('option').remove();
+                periodo.append('<option value="">Seleccionar periodo</option>')
+                $(json_response).each(function (i, v) { // indice, valor
+                    periodo.append('<option value="' + v.periodo + '">' + v.periodo + '</option>');
+                });
+                periodo.prop('disabled', false);
+            }
+        });
+    }
+
+    function ver_periodo() {
+        window.location.href = 'ver_ventas.php?periodo=' + $("#select_periodo").val();
     }
 
 

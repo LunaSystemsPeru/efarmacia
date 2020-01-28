@@ -219,7 +219,7 @@ $title = "Registro de Venta de Mercaderia - Farmacia - Luna Systems Peru";
                             <div class="form-group">
                                 <label class="col-lg-2 control-label">Cliente</label>
                                 <div class="col-lg-6">
-                                    <input type="text" class="form-control text-center" onkeypress="nextElement(event,'button_comprobar')" Placeholder="Nro Documento" id="input_documento_cliente" name="input_documento_cliente"  required>
+                                    <input type="text" class="form-control text-center" onkeypress="nextElement(event,'button_comprobar')" Placeholder="Nro Documento" id="input_documento_cliente" name="input_documento_cliente" value="0" required>
                                 </div>
                                 <div class="col-lg-1">
                                     <button id="button_comprobar" onclick="comprobarCliente()" class="btn btn-success" type="button" >Comprobar</button>
