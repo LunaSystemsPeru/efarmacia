@@ -359,7 +359,7 @@ class cl_producto
         global $conn;
         $query = "select p.id_producto, p.precio, p.precio_caja, p.id_mimsa 
         from producto as p 
-        where p.id_empresa = '$this->id_empresa'";
+        where p.id_empresa = '$this->id_empresa' and p.id_mimsa != '' ";
         $resultado = $conn->query($query);
         return $resultado->fetch_all(MYSQLI_ASSOC);
     }
@@ -394,12 +394,7 @@ class cl_producto
     {
         global $conn;
         $query = "update producto 
-                    set id_producto = '$this->id_producto',
-                        id_empresa = '$this->id_empresa', 
-                        nombre = '$this->nombre',
-                        principio_activo = '$this->principio_activo',
-                        id_laboratorio = '$this->id_laboratorio',
-                        id_presentacion = '$this->id_presentacion',
+                    set 
                         costo = '$this->costo',
                         precio = '$this->precio',
                         id_mimsa = '$this->id_mimsa',

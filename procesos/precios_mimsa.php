@@ -16,7 +16,7 @@ $c_producto->setIdEmpresa($c_empresa->getIdEmpresa());
 $a_productos = $c_producto->ver_productos_mimsa();
 ?>
 
-<table border="1" cellpadding="2" cellspacing="0" width="100%">
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
     <tr>
         <td>CodEstab</td>
         <td>CodProd</td>
