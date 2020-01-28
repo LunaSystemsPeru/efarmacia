@@ -106,6 +106,9 @@ $title = "Ver Productos - Farmacia - Luna Systems Peru";
                             <div class="btn-group">
                                 <a href="ver_reporte_medicamentos.php" class="btn btn-success"><i class="fa fa-search"></i> Ver Medic. Vencidos</a>
                             </div>
+                            <div class="btn-group">
+                                <a href="procesos/precios_mimsa.php" class="btn btn-info"><i class="fa fa-file-excel-o"></i> Ver Precios MIMSA</a>
+                            </div>
                         </div>
                         <div class="col-md-5 ">
                             <form class="form-horizontal">

@@ -23,6 +23,8 @@ class cl_producto
     private $fecha_vcto;
     private $lote;
     private $id_proveedor;
+    private $id_mimsa;
+    private $precio_caja;
     private $estado;
 
     /**
@@ -240,6 +242,38 @@ class cl_producto
         $this->estado = $estado;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getIdMimsa()
+    {
+        return $this->id_mimsa;
+    }
+
+    /**
+     * @param mixed $id_mimsa
+     */
+    public function setIdMimsa($id_mimsa)
+    {
+        $this->id_mimsa = $id_mimsa;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPrecioCaja()
+    {
+        return $this->precio_caja;
+    }
+
+    /**
+     * @param mixed $precio_caja
+     */
+    public function setPrecioCaja($precio_caja)
+    {
+        $this->precio_caja = $precio_caja;
+    }
+
     public function obtener_codigo()
     {
         global $conn;
@@ -256,7 +290,7 @@ class cl_producto
     {
         global $conn;
         $query = "insert into producto values ('" . $this->id_producto . "', '" . $this->id_empresa . "', '" . $this->nombre . "', '" . $this->principio_activo . "', '" . $this->id_laboratorio . "', "
-            . "'" . $this->id_presentacion . "', '" . $this->costo . "', '" . $this->precio . "', '0', '2000-01-01', '-', 0)";
+            . "'" . $this->id_presentacion . "', '" . $this->costo . "', '" . $this->precio . "', '0', '2000-01-01', '-', 0, '$this->id_mimsa', '$this->precio_caja')";
         $resultado = $conn->query($query);
         if (!$resultado) {
             die('Could not enter data in producto: ' . mysqli_error($conn));
@@ -301,6 +335,8 @@ class cl_producto
                 $this->lote = $fila['lote'];
                 $this->fecha_vcto = $fila['vcto'];
                 $this->id_proveedor = $fila['id_proveedor'];
+                $this->id_mimsa = $fila['id_mimsa'];
+                $this->precio_caja = $fila['precio_caja'];
             }
         }
         return $existe;
@@ -313,6 +349,16 @@ class cl_producto
         from producto as p 
         inner join laboratorio as l on p.id_laboratorio = l.id_laboratorio 
         inner join presentacion pr on p.id_presentacion = pr.id_presentacion 
+        where p.id_empresa = '$this->id_empresa'";
+        $resultado = $conn->query($query);
+        return $resultado->fetch_all(MYSQLI_ASSOC);
+    }
+
+    function ver_productos_mimsa()
+    {
+        global $conn;
+        $query = "select p.id_producto, p.precio, p.precio_caja, p.id_mimsa 
+        from producto as p 
         where p.id_empresa = '$this->id_empresa'";
         $resultado = $conn->query($query);
         return $resultado->fetch_all(MYSQLI_ASSOC);
@@ -355,7 +401,9 @@ class cl_producto
                         id_laboratorio = '$this->id_laboratorio',
                         id_presentacion = '$this->id_presentacion',
                         costo = '$this->costo',
-                        precio = '$this->precio'
+                        precio = '$this->precio',
+                        id_mimsa = '$this->id_mimsa',
+                        precio_caja = '$this->precio_caja'
                     where id_producto = '$this->id_producto'
                       and id_empresa = '$this->id_empresa'";
         $resultado = $conn->query($query);

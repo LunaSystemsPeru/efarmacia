@@ -1,4 +1,7 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
+
 session_start();
 
 if (is_null($_SESSION['id_empresa'])) {

@@ -170,6 +170,22 @@ $title = "Registro de Producto - Farmacia - Luna Systems Peru";
                                            id="input_precio" max-lenght="9" required/>
                                 </div>
                             </div>
+
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">PRECIO x CAJA: </label>
+                                <div class="col-lg-2">
+                                    <input type="text" class="form-control text-right" name="input_precio_caja"
+                                           id="input_precio_caja" max-lenght="9" required/>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">Id de MIMSA: </label>
+                                <div class="col-lg-2">
+                                    <input type="text" class="form-control text-center" name="input_mimsa"
+                                           id="input_mimsa" max-lenght="6"/>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="panel-footer text-right">
