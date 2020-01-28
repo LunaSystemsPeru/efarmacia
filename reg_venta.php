@@ -306,18 +306,20 @@ $title = "Registro de Venta de Mercaderia - Farmacia - Luna Systems Peru";
         });
 
         $("#input_producto").autocomplete({
-            source: "ajax_post/buscar_productos.php",
+            source: "ajax_post/buscar_mis_productos.php",
             minLength: 2,
             select: function (event, ui) {
                 event.preventDefault();
+                $('#hidden_id_producto').val(ui.item.id);
+                $('#hidden_descripcion_producto').val(ui.item.nombre);
+                $('#input_producto').val(ui.item.nombre);
+
                 $('#input_cactual').val(ui.item.cantidad);
                 $('#input_precio').val(ui.item.precio);
                 $('#hidden_costo').val(ui.item.costo);
                 $('#input_lote').val(ui.item.lote);
                 $('#input_vencimiento').val(ui.item.vcto);
-                $('#hidden_id_producto').val(ui.item.id);
-                $('#hidden_descripcion_producto').val(ui.item.nombre);
-                $('#input_producto').val(ui.item.nombre);
+
                 $('#btn_add_producto').prop("disabled", false);
                 $('#btn_finalizar_pedido').prop("disabled", false);
                 $('#input_precio').prop("readonly", false);

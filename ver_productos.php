@@ -132,7 +132,6 @@ $title = "Ver Productos - Farmacia - Luna Systems Peru";
                             <tr>
                                 <th>Id.</th>
                                 <th>Descripcion</th>
-                                <th>Principio Activo</th>
                                 <th>Cantidad.</th>
                                 <th>P. Vta.</th>
                                 <th>Lote Actual</th>
@@ -163,7 +162,7 @@ $title = "Ver Productos - Farmacia - Luna Systems Peru";
                                 <tr>
                                     <td><?php echo $fila['id_producto']?></td>
                                     <td ><p class="<?php echo $color_texto?>"><?php echo $fila['nombre'] . " - " . $fila['npresentacion'] . " - " . $fila['nlaboratorio']?></p></td>
-                                    <td><p class="<?php echo $color_texto?>"><?php echo $fila['principio_activo']?></p></td>
+
                                     <td class="text-right"><p class="<?php echo $color_texto?>"><?php echo $fila['cantidad']?></p></td>
                                     <td class="text-right"><p class="<?php echo $color_texto?>"><?php echo $fila['precio']?></p></td>
                                     <td class="text-center"><p class="<?php echo $color_texto?>"><?php echo $fila['vcto'] . " | " . $fila['lote']?></p></td>

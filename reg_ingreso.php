@@ -183,9 +183,6 @@ $title = "Registro de Ingreso de Mercaderia - Farmacia - Luna Systems Peru";
                                     <input type="hidden" name="hidden_id_producto" id="hidden_id_producto"/>
                                     <input type="hidden" name="hidden_descripcion_producto" id="hidden_descripcion_producto"/>
                                 </div>
-                                <div class="col-md-2">
-                                    <a href="reg_producto.php" target="_blank" class="btn btn-info btn-sm"><i class="fa fa-plus"></i> Crear Producto</a>
-                                </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-1 control-label">Cant. Actual</label>
@@ -318,17 +315,34 @@ $title = "Registro de Ingreso de Mercaderia - Farmacia - Luna Systems Peru";
             minLength: 2,
             select: function (event, ui) {
                 event.preventDefault();
-                $('#input_cactual').val(ui.item.cantidad);
+                /*$('#input_cactual').val(ui.item.cantidad);
                 $('#input_precio').val(ui.item.precio);
-                $('#input_costo').val(ui.item.costo);
+                $('#input_costo').val(ui.item.costo);*/
                 $('#hidden_id_producto').val(ui.item.id);
                 $('#hidden_descripcion_producto').val(ui.item.nombre);
-                $('#hidden_lote_producto').val(ui.item.vcto + " - " + ui.item.lote);
                 $('#input_producto').val(ui.item.nombre);
-                $('#btn_add_producto').prop("disabled", false);
-                $('#input_costo').prop("readonly", false);
-                $('#input_precio').prop("readonly", false);
+
                 $('#input_ccompra').focus();
+                $.get( "ajax_post/datos_producto.php?idproduc="+ui.item.id, function( data ) {
+                   console.log(data);
+                   var json=JSON.parse(data);
+                   if (json.estado){
+                       $('#input_cactual').val(json.cantidad);
+                       $('#input_precio').val(json.precio);
+                       $('#input_costo').val(json.costo);
+                       $('#btn_add_producto').prop("disabled", false);
+                       $('#input_costo').prop("readonly", false);
+                       $('#input_precio').prop("readonly", false);
+                   }else{
+                       $('#btn_add_producto').prop("disabled", false);
+                       $('#input_costo').focus();
+                       $('#input_cactual').val("");
+                       $('#input_precio').val("");
+                       $('#input_costo').val("");
+                   }
+                });
+
+
             }
         });
     });

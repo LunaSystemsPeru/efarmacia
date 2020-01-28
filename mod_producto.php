@@ -97,12 +97,12 @@ $cl_producto->obtener_datos();
                             <span>Almacen</span>
                         </li>
                         <li class="active">
-                            <span>Producto</span>
+                            <span>Medicamento</span>
                         </li>
                     </ol>
                 </div>
                 <h2 class="font-light m-b-xs">
-                    Registro de Producto
+                    Modificacion de Medicamento
 
             </div>
         </div>
@@ -124,22 +124,15 @@ $cl_producto->obtener_datos();
                                 <div class="col-lg-8">
                                     <input type="text" class="form-control"
                                            name="input_nombre" id="input_nombre"
-                                           max-lenght="245" value="<?php echo $cl_producto->getNombre() ?>" required/>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="col-lg-2 control-label">PRINCIPIO ACTIVO: </label>
-                                <div class="col-lg-8">
-                                    <input value="<?php echo $cl_producto->getPrincipioActivo() ?>" type="text" class="form-control" name="input_principio_activo"
-                                           id="input_principio_activo" max-lenght="245" required/>
+                                           max-lenght="245" value="<?php echo $cl_producto->getNombre() ?>" disabled/>
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="col-lg-2 control-label">LABORATORIO:</label>
                                 <div class="col-lg-3">
-                                    <select class="form-control" name="select_laboratorio">
+
+                                    <select disabled class="form-control" name="select_laboratorio">
                                         <?php
                                         $a_laboratorio = $c_laboratorio->ver_laboratorios();
                                         foreach ($a_laboratorio as $fila) {
@@ -153,13 +146,13 @@ $cl_producto->obtener_datos();
                                         ?>
                                     </select>
                                 </div>
-                                <a href="ver_laboratorios.php" target="_blank" class="btn btn-info btn-sm"><i class="fa fa-plus"></i> Crear Laboratorio</a>
+
                             </div>
 
                             <div class="form-group">
                                 <label class="col-lg-2 control-label">PRESENTACION:</label>
                                 <div class="col-lg-3">
-                                    <select class="form-control" name="select_presentacion">
+                                    <select disabled class="form-control" name="select_presentacion">
                                         <?php
                                         $a_presentacion = $c_presentacion->ver_presentaciones();
                                         foreach ($a_presentacion as $fila) {
@@ -173,7 +166,7 @@ $cl_producto->obtener_datos();
                                         ?>
                                     </select>
                                 </div>
-                                <a href="ver_presentaciones.php" target="_blank" class="btn btn-info btn-sm"><i class="fa fa-plus"></i> Crear Presentacion</a>
+
                             </div>
 
                             <div class="form-group">

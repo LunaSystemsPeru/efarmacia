@@ -19,12 +19,14 @@ class cl_productos
 
     function verMontoLaboratorio () {
         global $conn;
-        $query = "select sum(p.cantidad * p.precio) as total_actual, l.nombre
-        from producto as p
-        inner join laboratorio l on p.id_laboratorio = l.id_laboratorio
-        where p.id_empresa = '$this->id_empresa'
-        group by p.id_laboratorio
-        order by sum(p.cantidad * p.precio)";
+        $query = "SELECT SUM(p.cantidad * p.precio) AS total_actual, l.nombre
+        FROM producto AS p
+        INNER JOIN productos_minsa AS pm 
+    ON p.id_producto = pm.id_producto_sistema 
+        INNER JOIN laboratorio l ON pm .id_laboratorio = l.id_laboratorio
+        WHERE p.id_empresa = '$this->id_empresa'
+        GROUP BY pm .id_laboratorio
+        ORDER BY SUM(p.cantidad * p.precio)";
         $resultado = $conn->query($query);
         $i = 0;
         $registros = array();
