@@ -173,6 +173,9 @@ function enviar_formulario() {
     if (selectOption==3){
         condicion=(num_documento.length==11&&direccion.length>0&&nombreCliente.length>2);
     }
+    if (selectOption==2){
+        condicion=(nombreCliente.length>0);
+    }
     if (total > 0 && contar_filas > 1 && condicion) {
         $.ajax({
             type: "POST",

@@ -21,7 +21,7 @@ $a_json_row = array();
 if ($resultado->num_rows > 0) {
     while ($row = $resultado->fetch_assoc()) {
 
-        $a_json_row['value'] = $row['nombre'] . " - " . $row['presentacion'] . " - " . $row['laboratorio'];
+        $a_json_row['value'] = $row['nombre'] . " - " . $row['presentacion'] . " - " . $row['laboratorio'] . " - S/ " . $row['precio'] . " - C.Actual: " . $row['cantidad'];
         $a_json_row['id'] = $row['id_producto'];
         $a_json_row['nombre'] = $row['nombre'];
         $a_json_row["cantidad"]=$row['cantidad'];

@@ -23,7 +23,7 @@ $title = "Registro de Ingreso de Mercaderia - Farmacia - Luna Systems Peru";
     <title><?php echo $title; ?></title>
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <link rel="shortcut icon" type="image/ico" href="images/favicon.ico" />
+    <link rel="shortcut icon" type="image/ico" href="images/favicon.ico"/>
 
     <!-- Vendor styles -->
     <link rel="stylesheet" href="vendor/fontawesome/css/font-awesome.css"/>
@@ -94,7 +94,7 @@ $title = "Registro de Ingreso de Mercaderia - Farmacia - Luna Systems Peru";
 
 
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-4">
                 <!-- begin panel -->
                 <div class="hpanel">
                     <div class="panel-heading">
@@ -103,8 +103,14 @@ $title = "Registro de Ingreso de Mercaderia - Farmacia - Luna Systems Peru";
                     <div class="panel-body">
                         <form class="form-horizontal" name="frm_ingreso" method="POST" action="procesos/reg_ingreso.php">
                             <div class="form-group">
-                                <label class="col-md-1 control-label">Documento</label>
-                                <div class="col-md-3">
+                                <label class="col-md-4 control-label">Fecha</label>
+                                <div class="col-md-8">
+                                    <input type="date" id="input_fecha" name="input_fecha" class="form-control text-center" value="<?php echo date("Y-m-d") ?>" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">Documento</label>
+                                <div class="col-md-8">
                                     <select id="select_documento" name="select_documento" class="form-control">
                                         <?php
                                         $a_documentos = $c_documentos->ver_documentos();
@@ -114,37 +120,60 @@ $title = "Registro de Ingreso de Mercaderia - Farmacia - Luna Systems Peru";
                                         ?>
                                     </select>
                                 </div>
-                                <div class="col-md-2">
-                                    <input class="form-control text-center" value="" id="input_serie" name="input_serie" placeholder="Serie" required>
-                                </div>
-                                <div class="col-md-2">
-                                    <input class="form-control text-center" value="" id="input_numero" name="input_numero" placeholder="Numero" required>
-                                </div>
-                                <label class="col-md-1 control-label">Fecha</label>
-                                <div class="col-md-3">
-                                    <input type="date" id="input_fecha" name="input_fecha" class="form-control text-center" value="<?php echo date("Y-m-d")?>">
-                                </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-md-1 control-label">Proveedor</label>
-                                <div class="col-md-2">
+                                <label class="col-md-4 control-label">Ser / Nro</label>
+                                <div class="col-md-4">
+                                    <input class="form-control text-center" value="" id="input_serie" name="input_serie" placeholder="Serie" required>
+                                </div>
+                                <div class="col-md-4">
+                                    <input class="form-control text-center" value="" id="input_numero" name="input_numero" placeholder="Numero" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">Total</label>
+                                <div class="col-md-8">
+                                    <input class="form-control text-center" value="0.00" id="input_total" name="input_total" readonly>
+                                    <input type="hidden" id="input_total_hidden" name="input_total_hidden" value="0.00">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- end panel -->
+            </div>
+            <div class="col-md-8">
+                <!-- begin panel -->
+                <div class="hpanel">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">Datos del Documento</h4>
+                    </div>
+                    <div class="panel-body">
+                        <form class="form-horizontal" name="frm_ingreso" method="POST" action="procesos/reg_ingreso.php">
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">Proveedor</label>
+                                <div class="col-md-4">
                                     <input class="form-control text-center" value="" id="input_ruc_proveedor" name="input_ruc_proveedor" placeholder="Ingrese RUC" required>
                                     <input type="hidden" id="hidden_id_proveedor" name="hidden_id_proveedor">
-                                </div>
-                                <div class="col-md-7">
-                                    <input class="form-control" id="input_razon_social" name="input_razon_social" readonly="true" required>
                                 </div>
                                 <div class="col-md-2">
                                     <a class="btn btn-info btn-sm" href="reg_proveedor.php" target="_blank"><i class="fa fa-plus"></i> Reg. Proveedor</a>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-1 control-label">Direccion</label>
-                                <div class="col-md-9">
-                                    <input class="form-control" id="input_direccion" name="input_direccion" readonly="true">
-                                </div>
                                 <div class="col-md-2">
                                     <button type="button" id="btn_editar_proveedor" class="btn btn-success btn-sm" onclick="cargar_editar_proveedor()" disabled=true><i class="fa fa-edit"></i> Edit. Proveedor</button>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">Razon Social</label>
+                                <div class="col-md-9">
+                                    <input class="form-control" id="input_razon_social" name="input_razon_social" readonly="true" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">Direccion</label>
+                                <div class="col-md-9">
+                                    <input class="form-control" id="input_direccion" name="input_direccion" readonly="true">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -155,11 +184,6 @@ $title = "Registro de Ingreso de Mercaderia - Farmacia - Luna Systems Peru";
                                 <label class="col-md-2 control-label">IGV</label>
                                 <div class="col-md-2">
                                     <input class="form-control text-center" value="0.00" id="input_igv" name="input_igv" readonly>
-                                </div>
-                                <label class="col-md-2 control-label">Total</label>
-                                <div class="col-md-2">
-                                    <input class="form-control text-center" value="0.00" id="input_total" name="input_total" readonly>
-                                    <input type="hidden" id="input_total_hidden" name="input_total_hidden" value="0.00">
                                 </div>
                             </div>
                         </form>
@@ -324,23 +348,23 @@ $title = "Registro de Ingreso de Mercaderia - Farmacia - Luna Systems Peru";
                 $('#input_producto').val(ui.item.nombre);
 
                 $('#input_ccompra').focus();
-                $.get( "ajax_post/datos_producto.php?idproduc="+ui.item.id, function( data ) {
-                   console.log(data);
-                   var json=JSON.parse(data);
-                   if (json.estado){
-                       $('#input_cactual').val(json.cantidad);
-                       $('#input_precio').val(json.precio);
-                       $('#input_costo').val(json.costo);
-                       $('#btn_add_producto').prop("disabled", false);
-                       $('#input_costo').prop("readonly", false);
-                       $('#input_precio').prop("readonly", false);
-                   }else{
-                       $('#btn_add_producto').prop("disabled", false);
-                       $('#input_costo').focus();
-                       $('#input_cactual').val("");
-                       $('#input_precio').val("");
-                       $('#input_costo').val("");
-                   }
+                $.get("ajax_post/datos_producto.php?idproduc=" + ui.item.id, function (data) {
+                    console.log(data);
+                    var json = JSON.parse(data);
+                    if (json.estado) {
+                        $('#input_cactual').val(json.cantidad);
+                        $('#input_precio').val(json.precio);
+                        $('#input_costo').val(json.costo);
+                        $('#btn_add_producto').prop("disabled", false);
+                        $('#input_costo').prop("readonly", false);
+                        $('#input_precio').prop("readonly", false);
+                    } else {
+                        $('#btn_add_producto').prop("disabled", false);
+                        $('#input_costo').focus();
+                        $('#input_cactual').val("");
+                        $('#input_precio').val("");
+                        $('#input_costo').val("");
+                    }
                 });
 
 
