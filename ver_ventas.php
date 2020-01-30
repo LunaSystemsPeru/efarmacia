@@ -120,6 +120,9 @@ $title = "Ver Ventas - Farmacia - Luna Systems Peru";
                             <div class="btn-group">
                                 <button class="btn btn-warning" data-toggle="modal" data-target="#modalbuscar">Buscar Documento</button>
                             </div>
+                            <div class="btn-group">
+                                <a href="ver_utilidad_venta.php?periodo=<?php echo date("Ym")?>" class="btn btn-info" >Ver Utilidad del mes</a>
+                            </div>
 
                             <div class="modal fade" id="modalbuscar" tabindex="-1" role="dialog" aria-hidden="true">
                                 <div class="modal-dialog">
