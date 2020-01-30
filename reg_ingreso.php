@@ -344,8 +344,8 @@ $title = "Registro de Ingreso de Mercaderia - Farmacia - Luna Systems Peru";
                 $('#input_precio').val(ui.item.precio);
                 $('#input_costo').val(ui.item.costo);*/
                 $('#hidden_id_producto').val(ui.item.id);
-                $('#hidden_descripcion_producto').val(ui.item.nombre);
-                $('#input_producto').val(ui.item.nombre);
+                $('#hidden_descripcion_producto').val(ui.item.nombre + " - " + ui.item.presentacion + " - " + ui.item.laboratorio);
+                $('#input_producto').val(ui.item.nombre + " - " + ui.item.presentacion + " - " + ui.item.laboratorio);
 
                 $('#input_ccompra').focus();
                 $.get("ajax_post/datos_producto.php?idproduc=" + ui.item.id, function (data) {
@@ -389,35 +389,44 @@ $title = "Registro de Ingreso de Mercaderia - Farmacia - Luna Systems Peru";
     }
 
     function addProductos() {
-        $.ajax({
-            data: {
-                input_id_producto: $('#hidden_id_producto').val(),
-                input_descripcion_producto: $('#hidden_descripcion_producto').val(),
-                input_costo_producto: $('#input_costo').val(),
-                input_precio_producto: $('#input_precio').val(),
-                input_cantidad_producto: $('#input_ccompra').val(),
-                input_lote_producto: $('#input_lote').val(),
-                input_vcto_producto: $('#input_vencimiento').val()
-            },
-            url: 'ajax_post/add_productos_ingresos.php',
-            type: 'GET',
-            //dataType: 'json',
-            beforeSend: function () {
-                //$('#body_detalle_pedido').html("");
-                $('table tbody').html("");
-            },
-            success: function (r) {
-                //alert(r);
-                $('table tbody').append(r);
-                clean();
-                //$('#body_detalle_pedido').html(r);
-            },
-            error: function () {
-                alert('Ocurrio un error en el servidor ..');
-                $('table tbody').html("");
-                //$('#body_detalle_pedido').html("");
-            }
-        });
+        var costo = $('#input_costo').val();
+        var precio = $('#input_precio').val();
+        var cantidad = $('#input_ccompra').val();
+        var lote = $('#input_lote').val();
+        var vcto = $('#input_vencimiento').val();
+        if (costo != "" &  precio != "" & cantidad != "" & lote != "" & vcto != "") {
+            $.ajax({
+                data: {
+                    input_id_producto: $('#hidden_id_producto').val(),
+                    input_descripcion_producto: $('#hidden_descripcion_producto').val(),
+                    input_costo_producto: $('#input_costo').val(),
+                    input_precio_producto: $('#input_precio').val(),
+                    input_cantidad_producto: $('#input_ccompra').val(),
+                    input_lote_producto: $('#input_lote').val(),
+                    input_vcto_producto: $('#input_vencimiento').val()
+                },
+                url: 'ajax_post/add_productos_ingresos.php',
+                type: 'GET',
+                //dataType: 'json',
+                beforeSend: function () {
+                    //$('#body_detalle_pedido').html("");
+                    $('table tbody').html("");
+                },
+                success: function (r) {
+                    //alert(r);
+                    $('table tbody').append(r);
+                    clean();
+                    //$('#body_detalle_pedido').html(r);
+                },
+                error: function () {
+                    alert('Ocurrio un error en el servidor ..');
+                    $('table tbody').html("");
+                    //$('#body_detalle_pedido').html("");
+                }
+            });
+        } else {
+            alert("Faltan ingresar datos");
+        }
     }
 
     function eliminar_item(id_producto) {

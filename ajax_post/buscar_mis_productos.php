@@ -24,6 +24,8 @@ if ($resultado->num_rows > 0) {
         $a_json_row['value'] = $row['nombre'] . " - " . $row['presentacion'] . " - " . $row['laboratorio'] . " - S/ " . $row['precio'] . " - C.Actual: " . $row['cantidad'];
         $a_json_row['id'] = $row['id_producto'];
         $a_json_row['nombre'] = $row['nombre'];
+        $a_json_row['presentacion'] = $row['presentacion'];
+        $a_json_row['laboratorio'] = $row['laboratorio'];
         $a_json_row["cantidad"]=$row['cantidad'];
         $a_json_row["precio"]=$row['precio'];
         $a_json_row["costo"]=$row['costo'];

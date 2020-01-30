@@ -211,7 +211,7 @@ $title = "Caja Diaria - Farmacia - Luna Systems Peru";
                                             <div class="form-group row">
                                                 <label for="inputMonto" class="col-sm-2 col-form-label">Monto</label>
                                                 <div class="col-sm-10">
-                                                    <input type="number" name="inputMonto" class="form-control" id="inputMonto" placeholder="Monto 00.0 s/.">
+                                                    <input type="text" name="inputMonto" class="form-control" id="inputMonto" placeholder="Monto 00.0 s/.">
                                                 </div>
                                             </div>
                                             <div class="form-group row">

@@ -189,6 +189,23 @@ class cl_venta_productos
         return $grabado;
     }
 
+    public function eliminar()
+    {
+        global $conn;
+        $query = "delete from venta_producto  
+        where id_venta = '$this->id_venta' and id_empresa = '$this->id_empresa' and periodo = '$this->periodo'";
+        //echo $query;
+        $resultado = $conn->query($query);
+        if (!$resultado) {
+            die('Could not delete data in venta_producto: ' . mysqli_error($conn));
+        } else {
+            //echo "Entered data successfully";
+            $grabado = true;
+        }
+        //$conn->close();
+        return $grabado;
+    }
+
     function ver_productos()
     {
         global $conn;
