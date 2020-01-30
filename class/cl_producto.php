@@ -395,6 +395,9 @@ class cl_producto
         global $conn;
         $query = "update producto 
                     set 
+                    nombre = '$this->nombre',
+                    id_laboratorio = '$this->id_laboratorio',
+                    id_presentacion = '$this->id_presentacion',
                         costo = '$this->costo',
                         precio = '$this->precio',
                         id_mimsa = '$this->id_mimsa',

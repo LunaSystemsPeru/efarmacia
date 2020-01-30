@@ -183,6 +183,7 @@ $title = "Registro de Ingreso de Mercaderia - Farmacia - Luna Systems Peru";
                                     <input type="hidden" name="hidden_id_producto" id="hidden_id_producto"/>
                                     <input type="hidden" name="hidden_descripcion_producto" id="hidden_descripcion_producto"/>
                                 </div>
+                                <a href="reg_producto.php" target="_blank" class="btn btn-info"><i class="fa fa-plus"></i> Reg Producto</a>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-1 control-label">Cant. Actual</label>
