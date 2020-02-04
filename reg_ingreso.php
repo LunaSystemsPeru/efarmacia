@@ -94,14 +94,14 @@ $title = "Registro de Ingreso de Mercaderia - Farmacia - Luna Systems Peru";
 
 
         <div class="row">
-            <div class="col-md-4">
-                <!-- begin panel -->
-                <div class="hpanel">
-                    <div class="panel-heading">
-                        <h4 class="panel-title">Datos del Documento</h4>
-                    </div>
-                    <div class="panel-body">
-                        <form class="form-horizontal" name="frm_ingreso" method="POST" action="procesos/reg_ingreso.php">
+            <form class="form-horizontal" name="frm_ingreso" id="frm_ingreso" method="POST" action="procesos/reg_ingreso.php">
+                <div class="col-md-4">
+                    <!-- begin panel -->
+                    <div class="hpanel">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">Datos del Documento</h4>
+                        </div>
+                        <div class="panel-body">
                             <div class="form-group">
                                 <label class="col-md-4 control-label">Fecha</label>
                                 <div class="col-md-8">
@@ -138,19 +138,17 @@ $title = "Registro de Ingreso de Mercaderia - Farmacia - Luna Systems Peru";
                                     <input type="hidden" id="input_total_hidden" name="input_total_hidden" value="0.00">
                                 </div>
                             </div>
-                        </form>
+                        </div>
                     </div>
+                    <!-- end panel -->
                 </div>
-                <!-- end panel -->
-            </div>
-            <div class="col-md-8">
-                <!-- begin panel -->
-                <div class="hpanel">
-                    <div class="panel-heading">
-                        <h4 class="panel-title">Datos del Documento</h4>
-                    </div>
-                    <div class="panel-body">
-                        <form class="form-horizontal" name="frm_ingreso" method="POST" action="procesos/reg_ingreso.php">
+                <div class="col-md-8">
+                    <!-- begin panel -->
+                    <div class="hpanel">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">Datos del Documento</h4>
+                        </div>
+                        <div class="panel-body">
                             <div class="form-group">
                                 <label class="col-md-2 control-label">Proveedor</label>
                                 <div class="col-md-4">
@@ -186,11 +184,11 @@ $title = "Registro de Ingreso de Mercaderia - Farmacia - Luna Systems Peru";
                                     <input class="form-control text-center" value="0.00" id="input_igv" name="input_igv" readonly>
                                 </div>
                             </div>
-                        </form>
+                        </div>
                     </div>
+                    <!-- end panel -->
                 </div>
-                <!-- end panel -->
-            </div>
+            </form>
 
             <div class="col-md-12">
                 <!-- begin panel -->
@@ -382,7 +380,9 @@ $title = "Registro de Ingreso de Mercaderia - Farmacia - Luna Systems Peru";
         console.log(contar_filas);
         //enviar form
         if (id_proveedor !== "" && serie !== "-" && numero !== "" && contar_filas > 1) {
-            document.frm_ingreso.submit();
+            //document.frm_ingreso.submit();
+            document.getElementById("frm_ingreso").submit();
+            return false;
         } else {
             alert("FALTA COMPLETAR DATOS");
         }
@@ -394,7 +394,7 @@ $title = "Registro de Ingreso de Mercaderia - Farmacia - Luna Systems Peru";
         var cantidad = $('#input_ccompra').val();
         var lote = $('#input_lote').val();
         var vcto = $('#input_vencimiento').val();
-        if (costo != "" &  precio != "" & cantidad != "" & lote != "" & vcto != "") {
+        if (costo != "" & precio != "" & cantidad != "" & lote != "" & vcto != "") {
             $.ajax({
                 data: {
                     input_id_producto: $('#hidden_id_producto').val(),
