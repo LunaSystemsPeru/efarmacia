@@ -1,7 +1,7 @@
 <?php
 date_default_timezone_set('America/Los_Angeles');
 
-$servidor = "lunasystemsperu.com";
+$servidor = "localhost";
 //es una prueba para git
 $bd = "lsp_farmacia";
 $usu = "root_lsp";
