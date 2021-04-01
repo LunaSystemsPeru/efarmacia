@@ -23,6 +23,36 @@ class cl_venta
     private $pagado;
     private $estado;
     private $id_usuario;
+    private $enviado_sunat;
+    private $id_sucursal;
+
+    /**
+     * @return mixed
+     */
+    public function getEnviadoSunat() {
+        return $this->enviado_sunat;
+    }
+
+    /**
+     * @param mixed $enviado_sunat
+     */
+    public function setEnviadoSunat($enviado_sunat) {
+        $this->enviado_sunat = $enviado_sunat;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIdSucursal() {
+        return $this->id_sucursal;
+    }
+
+    /**
+     * @param mixed $id_sucursal
+     */
+    public function setIdSucursal($id_sucursal) {
+        $this->id_sucursal = $id_sucursal;
+    }
 
     /**
      * cl_venta constructor.
@@ -258,7 +288,7 @@ class cl_venta
     {
         global $conn;
         $query = "insert into venta values ('" . $this->id_venta . "', '" . $this->periodo . "', '" . $this->id_empresa . "', '" . $this->fecha . "', '" . $this->id_documento . "', '" . $this->serie . "', "
-            . "'" . $this->numero . "', '" . $this->id_cliente . "', '" . $this->total . "', '0', '0', NOW(), '" . $this->id_usuario . "', '0')";
+            . "'" . $this->numero . "', '" . $this->id_cliente . "', '" . $this->total . "', '0', '0', NOW(), '" . $this->id_usuario . "', '0','$this->id_sucursal')";
         //echo $query;
         $resultado = $conn->query($query);
         if (!$resultado) {

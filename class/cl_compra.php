@@ -21,6 +21,22 @@ class cl_compra
     private $total;
     private $pagado;
     private $id_usuario;
+    private $id_sucursal;
+
+    /**
+     * @return mixed
+     */
+    public function getIdSucursal() {
+        return $this->id_sucursal;
+    }
+
+    /**
+     * @param mixed $id_sucursal
+     */
+    public function setIdSucursal($id_sucursal) {
+        $this->id_sucursal = $id_sucursal;
+    }
+
 
     /**
      * cl_compra constructor.
@@ -236,6 +252,7 @@ class cl_compra
                 $this->total = $fila['total'];
                 $this->pagado = $fila['pagado'];
                 $this->id_usuario=$fila['id_usuario'];
+                $this->id_sucursal=$fila['id_sucursal'];
             }
         }
         return $existe;
@@ -244,7 +261,7 @@ class cl_compra
     public function insertar()
     {
         global $conn;
-        $query = "insert into compra value ('$this->id_compra', '$this->periodo', '$this->id_empresa', '$this->fecha', '$this->id_documento', '$this->serie', '$this->numero', '$this->id_proveedor', '$this->total', '0', '$this->id_usuario')";
+        $query = "insert into compra value ('$this->id_compra', '$this->periodo', '$this->id_empresa', '$this->fecha', '$this->id_documento', '$this->serie', '$this->numero', '$this->id_proveedor', '$this->total', '0', '$this->id_usuario','$this->id_sucursal')";
         $resultado = $conn->query($query);
         if (!$resultado) {
             die('Could not insert data in compra: ' . mysqli_error($conn));

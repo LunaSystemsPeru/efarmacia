@@ -27,6 +27,7 @@ class cl_caja_diaria
     private $otros_ingresos;
     private $compra_egreso;
     private $gastos_varios;
+    private $id_sucursal;
 
     /**
      * cl_caja_diaria constructor.
@@ -211,6 +212,20 @@ class cl_caja_diaria
         $this->gastos_varios = $gastos_varios;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getIdSucursal() {
+        return $this->id_sucursal;
+    }
+
+    /**
+     * @param mixed $id_sucursal
+     */
+    public function setIdSucursal($id_sucursal) {
+        $this->id_sucursal = $id_sucursal;
+    }
+
     public function obtener_datos()
     {
         $existe = false;
@@ -238,7 +253,7 @@ class cl_caja_diaria
     {
         $grabado = false;
         global $conn;
-        $query = "insert into caja_diaria values ('" . $this->id_empresa . "', '" . $this->fecha . "', '0', '0', '0', '0', '0', '0', '0', '" . $this->m_apertura . "', '0')";
+        $query = "insert into caja_diaria values ('" . $this->id_empresa . "', '" . $this->fecha . "', '0', '0', '0', '0', '0', '0', '0', '" . $this->m_apertura . "', '0', '$this->id_sucursal')";
         $resultado = $conn->query($query);
         if (!$resultado) {
             die('Could not enter data in caja_diaria: ' . mysqli_error($conn));

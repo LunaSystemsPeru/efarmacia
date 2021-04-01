@@ -12,6 +12,7 @@ require '../class/cl_empresa.php';
 $c_empresa = new cl_empresa();
 $c_usuario = new cl_usuario();
 
+
 $c_empresa->setRuc(filter_input(INPUT_POST, 'input_ruc'));
 $c_usuario->setUsername(filter_input(INPUT_POST, 'input_username'));
 $password = filter_input(INPUT_POST, 'input_password');
@@ -30,6 +31,7 @@ if ($existe_ruc) {
             $_SESSION['id_usuario'] = $c_usuario->getIdUsuario();
             $_SESSION['nombre_comercial'] = $c_empresa->getNombreComercial();
             $_SESSION['nombre_usuario'] = $c_usuario->getNombre();
+            $_SESSION['id_sucursal']= $c_usuario->getIdSucursal();
             header("Location: ../index.php");
         } else {
             header("Location: ../login.php?error=2");

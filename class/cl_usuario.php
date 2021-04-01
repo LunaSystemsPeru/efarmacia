@@ -20,6 +20,21 @@ class cl_usuario
     private $telefono;
     private $email;
     private $estado;
+    private $id_sucursal;
+
+    /**
+     * @return mixed
+     */
+    public function getIdSucursal() {
+        return $this->id_sucursal;
+    }
+
+    /**
+     * @param mixed $id_sucursal
+     */
+    public function setIdSucursal($id_sucursal) {
+        $this->id_sucursal = $id_sucursal;
+    }
 
     /**
      * cl_usuario constructor.
@@ -201,7 +216,7 @@ class cl_usuario
     {
         global $conn;
         $query = "insert into usuario values ('" . $this->id_usuario . "', '" . $this->id_empresa . "', '" . $this->nombre . "', '" . $this->username . "', 
-            '" . $this->password . "', now(), now(), '" . $this->telefono . "', '" . $this->email . "', '1')";
+            '" . $this->password . "', now(), now(), '" . $this->telefono . "', '" . $this->email . "', '1','$this->id_sucursal')";
         $resultado = $conn->query($query);
         if (!$resultado) {
             die('Could not enter data in usuario: ' . mysqli_error($conn));
@@ -245,6 +260,7 @@ class cl_usuario
                 $this->telefono = $fila['telefono'];
                 $this->email = $fila['email'];
                 $this->estado = $fila['estado'];
+                $this->id_sucursal= $fila['id_sucursal'];
             }
         }
         return $existe;
