@@ -11,6 +11,7 @@ if (is_null($_SESSION['id_empresa'])) {
 require 'class/cl_venta.php';
 $c_venta = new cl_venta();
 $c_venta->setIdEmpresa($_SESSION['id_empresa']);
+$c_venta->setIdSucursal($_SESSION['id_sucursal']);
 $c_venta->setPeriodo(date("Ym"));
 
 if (filter_input(INPUT_GET, 'periodo')) {

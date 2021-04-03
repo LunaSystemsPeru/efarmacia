@@ -275,7 +275,7 @@ class cl_venta
     {
         global $conn;
         $query = "select ifnull(max(id_venta) + 1, 1) as codigo 
-                from venta where periodo = '" . $this->periodo . "' and id_empresa = '" . $this->id_empresa . "' and id_sucursal='".$this->id_sucursal."'";
+                from venta where periodo = '" . $this->periodo . "' and id_empresa = '" . $this->id_empresa . "'";
         $resultado = $conn->query($query);
         if ($resultado->num_rows > 0) {
             while ($fila = $resultado->fetch_assoc()) {
@@ -324,6 +324,7 @@ class cl_venta
                 $this->pagado=$fila["pagado"];
                 $this->estado=$fila["estado"];
                 $this->id_usuario=$fila["id_usuario"];
+                $this->id_sucursal=$fila["id_sucursal"];
             }
         }
         return $existe;
@@ -337,7 +338,7 @@ class cl_venta
             inner join documentos_sunat ds on v.id_documento = ds.id_documento 
             inner join cliente c on v.id_cliente = c.id_cliente and v.id_empresa = c.id_empresa 
             inner join usuario u on v.id_empresa = u.id_empresa
-            where v.id_empresa = '$this->id_empresa' and v.periodo = '$this->periodo' ";
+            where v.id_empresa = '$this->id_empresa' and v.periodo = '$this->periodo' and v.id_sucursal = '$this->id_sucursal'";
         $resultado = $conn->query($query);
         return $resultado->fetch_all(MYSQLI_ASSOC);
     }

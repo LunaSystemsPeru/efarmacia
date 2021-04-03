@@ -11,6 +11,7 @@ require 'class/cl_documentos_empresa.php';
 
 $c_mis_documentos = new cl_documentos_empresa();
 $c_mis_documentos->setIdEmpresa($_SESSION['id_empresa']);
+$c_mis_documentos->setIdSucursal($_SESSION['id_sucursal']);
 
 $title = "Registro de Venta de Mercaderia - Farmacia - Luna Systems Peru";
 ?>
