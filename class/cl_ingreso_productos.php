@@ -216,5 +216,20 @@ class cl_ingreso_productos
         return $fila;
     }
 
+    function ver_historia_compra_miproducto($idsucursal)
+    {
+        global $conn;
+        $query = "select i.fecha, ds.abreviatura ,i.serie, i.numero, p.nombre, ip.cantidad, ip.costo, ip.lote, ip.precio, ip.vcto   
+                    from ingreso_producto as ip 
+                    inner join ingreso i on ip.periodo = i.periodo and ip.id_ingreso = i.id_ingreso and ip.id_empresa = i.id_empresa 
+                    inner join proveedor p on i.id_proveedor = p.id_proveedor and i.id_empresa = p.id_empresa
+                    inner join documentos_sunat ds on i.id_documento = ds.id_documento
+                    where ip.id_producto = '$this->id_producto' and i.id_empresa = '$this->id_empresa' and i.id_sucursal = '$idsucursal'";
+        $resultado = $conn->query($query);
+        $fila = $resultado->fetch_all(MYSQLI_ASSOC);
+        return $fila;
+    }
+
+
 
 }

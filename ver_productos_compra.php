@@ -5,20 +5,14 @@ if (is_null($_SESSION['id_empresa'])) {
     header("Location: login.php");
 }
 
-require 'class/cl_kardex.php';
 require 'class/cl_producto.php';
 require 'class/cl_presentacion.php';
 require 'class/cl_laboratorio.php';
+require 'class/cl_ingreso_productos.php';
 
 $c_producto = new cl_producto();
-$c_kardex = new cl_kardex();
-
-$c_kardex->setIdEmpresa($_SESSION['id_empresa']);
-$c_kardex->setIdSurcursal($_SESSION['id_sucursal']);
-$c_kardex->setIdProducto(filter_input(INPUT_GET, 'id_producto'));
-
-$c_producto->setIdProducto($c_kardex->getIdProducto());
-$c_producto->setIdEmpresa($c_kardex->getIdEmpresa());
+$c_producto->setIdProducto(filter_input(INPUT_GET, 'id_producto'));
+$c_producto->setIdEmpresa($_SESSION['id_empresa']);
 $c_producto->obtener_datos();
 
 $c_presentacion = new cl_presentacion();
@@ -29,7 +23,12 @@ $c_laboratorio = new cl_laboratorio();
 $c_laboratorio->setIdLaboratorio($c_producto->getIdLaboratorio());
 $c_laboratorio->obtener_datos();
 
-$title = "Ver Kardex Producto - Farmacia - Luna Systems Peru";
+$c_ingreso_producto = new cl_ingreso_productos();
+$c_ingreso_producto->setIdEmpresa($_SESSION['id_empresa']);
+$c_ingreso_producto->setIdProducto($c_producto->getIdProducto());
+
+
+$title = "Ver Historial de Compra - Farmacia - Luna Systems Peru";
 ?>
 <!DOCTYPE html>
 <html>
@@ -126,38 +125,36 @@ $title = "Ver Kardex Producto - Farmacia - Luna Systems Peru";
                         listar Kardex
                     </div>
                     <div class="panel-body">
-                        <table id="tabla-clientes" class="table table-striped table-bordered table-hover">
+                        <table id="tabla-productos" class="table table-striped table-bordered table-hover">
                             <thead>
                             <tr>
                                 <th>Id.</th>
                                 <th>Fecha</th>
-                                <th>Lote</th>
-                                <th>Tipo</th>
-                                <th>Registro</th>
+                                <th>Proveedor</th>
                                 <th>Documento</th>
-                                <th>C. Ingresa</th>
-                                <th>C. Sale</th>
-                                <th>Tot. Ingresa</th>
-                                <th>Tot. Sale</th>
+                                <th>Cant.</th>
+                                <th>Lote</th>
+                                <th>Fec. Venc.</th>
+                                <th>Precio Compra</th>
+                                <th>Precio Venta</th>
                             </tr>
                             </thead>
                             <tbody>
                             <?php
-                            $a_kardex = $c_kardex->ver_kardex_producto();
+                            $a_historial = $c_ingreso_producto->ver_historia_compra_miproducto($_SESSION['id_sucursal']);
                             $item = 1;
-                            foreach ($a_kardex as $fila) {
+                            foreach ($a_historial as $fila) {
                                 ?>
                                 <tr>
                                     <td><?php echo $item ?></td>
                                     <td><?php echo $fila['fecha'] ?></td>
-                                    <td><?php echo $fila['lote'] . " | " . $fila['vcto'] ?></td>
-                                    <td class="text-center"><?php echo $fila['movimiento'] ?></td>
-                                    <td class="text-center"><?php echo $fila['id_registro'] ?></td>
-                                    <td class="text-center"><?php echo $fila['doc_sunat'] . " / " . $fila['serie_doc'] . " - " . $fila['numero_doc'] ?></td>
-                                    <td class="text-right"><?php echo $fila['c_ingresa'] ?></td>
-                                    <td class="text-right"><?php echo $fila['c_sale']  ?></td>
-                                    <td class="text-right"><?php echo number_format($fila['cu_ingresa'] * $fila['c_ingresa'], 2) ?></td>
-                                    <td class="text-right"><?php echo number_format($fila['cu_sale'] * $fila['c_sale'],2) ?></td>
+                                    <td><?php echo $fila['nombre']?></td>
+                                    <td class="text-center"><?php echo $fila['abreviatura'] . " | " . $fila['serie'] . "-" . $fila['numero'] ?></td>
+                                    <td class="text-right"><?php echo $fila['cantidad'] ?></td>
+                                    <td class="text-center"><?php echo $fila['lote']?></td>
+                                    <td class="text-right"><?php echo $fila['vcto'] ?></td>
+                                    <td class="text-right"><?php echo number_format($fila['costo'], 2) ?></td>
+                                    <td class="text-right"><?php echo number_format($fila['precio'], 2) ?></td>
                                 </tr>
                                 <?php
                                 $item++;
