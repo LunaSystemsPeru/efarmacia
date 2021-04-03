@@ -1,4 +1,5 @@
 <?php
+require 'cl_conectar.php';
 
 class cl_sucursal {
     private $id_sucursal;
@@ -203,9 +204,11 @@ class cl_sucursal {
         return $existe;
     }
 
-    public function ver_sucursal(){
+    public function verFilas(){
         global $conn;
-        $query="select * from sucursales where  id_empresa= '$this->id_empresa' order by nombre asc ";
+        $query="select * from sucursales 
+                where id_empresa = '$this->id_empresa' 
+                order by nombre asc ";
         $resultado = $conn->query($query);
         $fila= $resultado->fetch_all(MYSQLI_ASSOC);
         return $fila;

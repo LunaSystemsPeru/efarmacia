@@ -16,6 +16,7 @@ class cl_ajuste
     private $fecha;
     private $id_usuario;
     private $monto;
+    private $id_sucursal;
 
     /**
      * cl_ajuste_producto constructor.
@@ -120,6 +121,22 @@ class cl_ajuste
         $this->monto = $monto;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getIdSucursal()
+    {
+        return $this->id_sucursal;
+    }
+
+    /**
+     * @param mixed $id_sucursal
+     */
+    public function setIdSucursal($id_sucursal)
+    {
+        $this->id_sucursal = $id_sucursal;
+    }
+
     public function obtener_codigo()
     {
         global $conn;
@@ -136,7 +153,7 @@ class cl_ajuste
     public function insertar()
     {
         global $conn;
-        $query = "insert into inventario values ('$this->id_ajuste', '$this->anio', '$this->fecha', '$this->id_usuario', '$this->id_empresa', 0)";
+        $query = "insert into inventario values ('$this->id_ajuste', '$this->anio', '$this->fecha', '$this->id_usuario', '$this->id_empresa', 0, '$this->id_sucursal')";
         $resultado = $conn->query($query);
         if (!$resultado) {
             die('Could not enter data in inventario: ' . mysqli_error($conn));
@@ -161,6 +178,7 @@ class cl_ajuste
                 $this->id_usuario = $fila['id_usuario'];
                 $this->id_empresa = $fila['id_empresa'];
                 $this->monto = $fila['monto'];
+                $this->id_sucursal = $fila['id_sucursal'];
             }
         }
         return $existe;
@@ -172,7 +190,7 @@ class cl_ajuste
         $query = "select i.id_inventario, i.fecha,i.anio, u.username, i.monto  
         from inventario as i 
         inner join usuario u on i.id_usuario = u.id_usuario and i.id_empresa = u.id_empresa 
-        where i.id_empresa = '$this->id_empresa'";
+        where i.id_empresa = '$this->id_empresa' and i.id_sucursal = '$this->id_sucursal' ";
         $resultado = $conn->query($query);
         return $resultado->fetch_all(MYSQLI_ASSOC);
     }

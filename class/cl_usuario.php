@@ -231,7 +231,7 @@ class cl_usuario
     {
         global $conn;
         $query = "update usuario 
-        set nombre =  '$this->nombre', username = '$this->username', password = '$this->password', telefono = '$this->telefono', email = '$this->email' 
+        set nombre =  '$this->nombre', username = '$this->username', password = '$this->password', telefono = '$this->telefono', email = '$this->email', sucursal = '$this->id_sucursal' 
         where id_empresa = '$this->id_empresa' and id_usuario = '$this->id_usuario'";
         $resultado = $conn->query($query);
         if (!$resultado) {

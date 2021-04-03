@@ -82,6 +82,7 @@
                 <a href="#"><span class="nav-label">Generales</span><span class="fa arrow"></span> </a>
                 <ul class="nav nav-second-level">
                     <li><a href="ver_usuarios.php">Ver Usuarios</a></li>
+                    <li><a href="ver_sucursales.php">Ver Sucursales</a></li>
                     <li><a href="ver_documentos_sunat.php">Ver Tipo Documentos SUNAT</a></li>
                     <li><a href="ver_mis_documentos.php">Ver Mis Documentos SUNAT</a></li>
                 </ul>

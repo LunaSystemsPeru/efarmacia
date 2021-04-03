@@ -13,7 +13,7 @@
         </div>
         <form class="navbar-form-custom" method="post" action="#">
             <div class="form-group">
-                <input type="text" class="form-control" name="usuario" readonly="true" value="<?php echo $_SESSION['nombre_comercial'] . " | " . $_SESSION['nombre_usuario']?>">
+                <input type="text" class="form-control" name="usuario" readonly="true" value="<?php echo $_SESSION['nombre_comercial'] . " | " . $_SESSION['nombre_sucursal'] . " | " . $_SESSION['nombre_usuario']?>">
             </div>
         </form>
         
