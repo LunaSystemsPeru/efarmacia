@@ -118,12 +118,12 @@ $c_sucursal->setIdEmpresa($_SESSION['id_empresa']);
                                 <table id="tabla-salidas" class="table table-striped table-bordered table-hover">
                                     <thead>
                                         <tr>
-                                            <th width="10%">Id.</th>
-                                            <th width="11%">Nombre</th>
-                                            <th width="30%">Direccion</th>
-                                            <th width="11%">Cod SUNAT</th>
-                                            <th width="10%">Ubigeo</th>
-                                            <th width="11%">Acciones</th>
+                                            <th>Id.</th>
+                                            <th>Nombre</th>
+                                            <th>Direccion</th>
+                                            <th>Cod SUNAT</th>
+                                            <th>Ubigeo</th>
+                                            <th>Acciones</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -138,7 +138,7 @@ $c_sucursal->setIdEmpresa($_SESSION['id_empresa']);
                                        echo     '<td class="text-center">'. $listar["ubigeo"] .'</td>';
                                        echo     '<td class="text-center">';
                                        echo         '<button class="btn btn-info btn-sm" title="Ver Documentos"><i class="fa fa-file-archive-o"></i></button>';
-                                       echo         '<button onclick="" class="btn btn-warning btn-sm" title="Editar Sucursal"><i class="fa fa-close"></i></button>';
+                                       echo         '<a href="reg_sucursal.php?id='.$listar["id_sucursal"].'" class="btn btn-warning btn-sm" title="Editar Sucursal"><i class="fa fa-edit"></i></button>';
                                        echo     '</td>';
                                        echo '</tr>';
 

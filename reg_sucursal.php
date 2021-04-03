@@ -4,6 +4,16 @@ session_start();
 if (is_null($_SESSION['id_empresa'])) {
     header("Location: login.php");
 }
+require 'class/cl_sucursal.php';
+$c_sucursal = new cl_sucursal();
+
+$titulo_panel = "REGISTRO DE SUCURSAL";
+
+if (filter_input(INPUT_GET, 'id')){
+    $c_sucursal->setIdSucursal(filter_input(INPUT_GET, 'id'));
+    $c_sucursal->obtener_datos();
+    $titulo_panel = "MODIFICAR DATOS DE SUCURSAL";
+}
 
 $title = "Registro de Sucursal - Farmacia - Luna Systems Peru";
 ?>
@@ -85,8 +95,8 @@ $title = "Registro de Sucursal - Farmacia - Luna Systems Peru";
                     </ol>
                 </div>
                 <h2 class="font-light m-b-xs">
-                    Registro de Sucursal
-
+                    <?php echo $titulo_panel?>
+                </h2>
             </div>
         </div>
     </div>
@@ -98,7 +108,7 @@ $title = "Registro de Sucursal - Farmacia - Luna Systems Peru";
         <div class="row">
             <div class="col-lg-12">
                 <div class="hpanel">
-                    <form class="form-horizontal" name="frm_reg_cliente" id="frm_reg_cliente" action="procesos/reg_cliente.php" method="post">
+                    <form class="form-horizontal" name="reg_sucursal" id="reg_sucursal" action="procesos/reg_sucursal.php" method="post">
                         <div class="panel-body">
                             <div class="form-group" id="error_ruc">
 
@@ -106,9 +116,9 @@ $title = "Registro de Sucursal - Farmacia - Luna Systems Peru";
                             <div class="form-group">
                                 <label class="col-lg-2 control-label">Nombre: </label>
                                 <div class="col-lg-4">
-                                    <input type="text" class="form-control text-center"
+                                    <input type="text" class="form-control"
                                            name="input_nombre" id="input_nombre"
-                                           max-lenght="245" required/>
+                                           max-lenght="245" value="<?php echo $c_sucursal->getNombre()?>" required/>
                                 </div>
                             </div>
 
@@ -116,7 +126,7 @@ $title = "Registro de Sucursal - Farmacia - Luna Systems Peru";
                                 <label class="col-lg-2 control-label">Direccion: </label>
                                 <div class="col-lg-8">
                                     <input type="text" class="form-control" name="input_direccion"
-                                           id="input_direccion" max-lenght="245" required/>
+                                           id="input_direccion" max-lenght="245" value="<?php echo $c_sucursal->getDireccion()?>" required/>
                                 </div>
                             </div>
 
@@ -124,7 +134,7 @@ $title = "Registro de Sucursal - Farmacia - Luna Systems Peru";
                                 <label class="col-lg-2 control-label">Ubigeo: </label>
                                 <div class="col-lg-2">
                                     <input type="text" class="form-control" name="input_ubigeo"
-                                           id="input_ubigeo" max-lenght="6" required/>
+                                           id="input_ubigeo" max-lenght="6" value="<?php echo $c_sucursal->getUbigeo()?>" required/>
                                 </div>
                             </div>
 
@@ -132,7 +142,7 @@ $title = "Registro de Sucursal - Farmacia - Luna Systems Peru";
                                 <label class="col-lg-2 control-label">Distrito: </label>
                                 <div class="col-lg-4">
                                     <input type="text" class="form-control" name="input_distrito"
-                                           id="input_distrito" max-lenght="9" required/>
+                                           id="input_distrito" max-lenght="9"  value="<?php echo $c_sucursal->getDistrito()?>" required/>
                                 </div>
                             </div>
 
@@ -140,7 +150,7 @@ $title = "Registro de Sucursal - Farmacia - Luna Systems Peru";
                                 <label class="col-lg-2 control-label">Provincia: </label>
                                 <div class="col-lg-4">
                                     <input type="text" class="form-control" name="input_provincia"
-                                           id="input_provincia" max-lenght="9" required/>
+                                           id="input_provincia" max-lenght="9" value="<?php echo $c_sucursal->getProvincia()?>" required/>
                                 </div>
                             </div>
 
@@ -148,7 +158,7 @@ $title = "Registro de Sucursal - Farmacia - Luna Systems Peru";
                                 <label class="col-lg-2 control-label">Departamento: </label>
                                 <div class="col-lg-4">
                                     <input type="text" class="form-control" name="input_departamento"
-                                           id="input_departamento" max-lenght="9" required/>
+                                           id="input_departamento" max-lenght="9" value="<?php echo $c_sucursal->getDepartamento()?>" required/>
                                 </div>
                             </div>
 
@@ -156,13 +166,14 @@ $title = "Registro de Sucursal - Farmacia - Luna Systems Peru";
                                 <label class="col-lg-2 control-label">Codigo SUNAT: </label>
                                 <div class="col-lg-2">
                                     <input type="text" class="form-control" name="input_codsunat"
-                                           id="input_codsunat" max-lenght="4" required/>
+                                           id="input_codsunat" max-lenght="4" value="<?php echo $c_sucursal->getCodsunat()?>" required/>
                                 </div>
                             </div>
 
                         </div>
 
                         <div class="panel-footer text-right">
+                            <input type="hidden" name="input_idsucursal" value="<?php echo $c_sucursal->getIdSucursal()?>">
                             <button type="submit" class="btn btn-primary" id="registrar_sucursal">Guardar</button>
                         </div>
                     </form>

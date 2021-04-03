@@ -66,7 +66,8 @@
                 <ul class="nav nav-second-level">
                     <li><a href="ver_presentaciones.php">Ver Presentaciones</a></li>
                     <li><a href="ver_laboratorios.php">Ver Laboratorios</a></li>
-                    <li><a href="ver_productos.php">Ver Productos</a></li>
+                    <li><a href="ver_productos_sucrusal.php">Ver Mis Productos</a></li>
+                    <li><a href="ver_productos.php">Ver Lista de Productos</a></li>
                 </ul>
             </li>
             <li>
