@@ -146,9 +146,8 @@ class cl_sucursal {
 
     public function obtener_codigo(){
         global $conn;
-        $query="select ifnull(max(id_sucursal)+1,1) as codigo".
-                "from sucursales"
-                ."where id_sucursal = '".$this->id_sucursal."''";
+        $query="select ifnull(max(id_sucursal)+1,1) as codigo 
+                    from sucursales";
         $resultado= $conn->query($query);
         if ($resultado->num_rows>0){
             while ($fila=$resultado->fetch_assoc()){

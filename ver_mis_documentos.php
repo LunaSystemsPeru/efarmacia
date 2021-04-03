@@ -108,7 +108,7 @@ $title = "Ver Mis Documentos SUNAT - Farmacia - Luna Systems Peru";
                 <div class="hpanel">
                     <div class="panel-body">
                         <p>
-                            Registrar la secuencia numerica de cada documento propio a la empresa.
+                            Registrar la secuencia numerica de cada documento propio a la empresa y de su sucursal, solo se puede asignar documentos a la Sucursal establecida en el usuario.
                         </p>
                         <p>
                             documentos de venta, notas de ingreso, notas propias, etc.
