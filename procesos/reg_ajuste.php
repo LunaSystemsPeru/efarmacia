@@ -13,6 +13,7 @@ $c_ajuste->setIdUsuario($_SESSION['id_usuario']);
 $c_ajuste->setIdEmpresa($_SESSION['id_empresa']);
 $c_ajuste->setFecha(date("Y-m-d"));
 $c_ajuste->setAnio($c_varios->anio_de_fecha($c_ajuste->getFecha()));
+$c_ajuste->setIdSucursal($_SESSION['id_sucursal']);
 $c_ajuste->obtener_codigo();
 
 if ($c_ajuste->insertar()) {

@@ -21,6 +21,21 @@ class cl_ingreso
     private $id_proveedor;
     private $total;
     private $id_usuario;
+    private $id_sucursal;
+
+    /**
+     * @return mixed
+     */
+    public function getIdSucursal() {
+        return $this->id_sucursal;
+    }
+
+    /**
+     * @param mixed $id_sucursal
+     */
+    public function setIdSucursal($id_sucursal) {
+        $this->id_sucursal = $id_sucursal;
+    }
 
     /**
      * cl_ingreso constructor.
@@ -206,7 +221,7 @@ class cl_ingreso
     {
         global $conn;
         $query = "insert into ingreso values ('" . $this->periodo . "', '" . $this->id_ingreso . "', '" . $this->id_empresa . "', '" . $this->fecha . "', '" . $this->id_documento . "', '" . $this->serie . "', "
-            . "'" . $this->numero . "', '" . $this->id_proveedor . "', '" . $this->id_usuario . "', '" . $this->total . "')";
+            . "'" . $this->numero . "', '" . $this->id_proveedor . "', '" . $this->id_usuario . "', '" . $this->total . "',".$this->id_sucursal.")";
         //echo  $query;
         $resultado = $conn->query($query);
         if (!$resultado) {
@@ -240,7 +255,7 @@ class cl_ingreso
         $existe = false;
         global $conn;
         $query = "select * from ingreso "
-            . "where periodo = '" . $this->periodo . "' and id_ingreso = '" . $this->id_ingreso . "' and id_empresa = '" . $this->id_empresa . "'";
+            . "where periodo = '" . $this->periodo . "' and id_ingreso = '" . $this->id_ingreso . "' and id_empresa = '" . $this->id_empresa . "' and id_sucursal = '".$this->id_sucursal."'";
         $resultado = $conn->query($query);
         if ($resultado->num_rows > 0) {
             $existe = true;
@@ -260,9 +275,10 @@ class cl_ingreso
     function ver_ingresos()
     {
         global $conn;
-        $query = "select i.periodo, i.id_ingreso, i.fecha, ds.abreviatura as doc_sunat, i.serie, i.numero, p.documento as ruc, p.nombre as razon_social, u.username, i.total "
+        $query = "select i.periodo , i.id_ingreso, i.fecha, ds.abreviatura as doc_sunat, i.serie, i.numero, p.documento as ruc, p.nombre as razon_social, u.username, i.total, sucursales.nombre as nombresucursal "
             . "from ingreso i "
             . "inner join documentos_sunat ds on i.id_documento = ds.id_documento "
+            . "inner join sucursales on i.id_sucursal= sucursales.id_sucursal "
             . "inner join proveedor p on i.id_proveedor = p.id_proveedor and i.id_empresa = p.id_empresa "
             . "inner join usuario u on i.id_usuario = u.id_usuario and i.id_empresa = u.id_empresa "
             . "where i.id_empresa = '".$this->id_empresa."' "
