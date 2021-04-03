@@ -174,7 +174,8 @@ $title = "Registro de Sucursal - Farmacia - Luna Systems Peru";
 
                         <div class="panel-footer text-right">
                             <input type="hidden" name="input_idsucursal" value="<?php echo $c_sucursal->getIdSucursal()?>">
-                            <button type="submit" class="btn btn-primary" id="registrar_sucursal">Guardar</button>
+                            <a href="ver_sucursales.php" class="btn btn-success" ><i class="fa fa-arrow-left"></i> Regresar</a>
+                            <button type="submit" class="btn btn-primary" id="registrar_sucursal"><i class="fa fa-save"></i> Guardar</button>
                         </div>
                     </form>
                 </div>

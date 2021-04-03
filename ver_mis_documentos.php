@@ -11,6 +11,7 @@ require 'class/cl_documentos_empresa.php';
 $c_documentos = new cl_documentos_sunat();
 $c_mis_documentos = new cl_documentos_empresa();
 $c_mis_documentos->setIdEmpresa($_SESSION['id_empresa']);
+$c_mis_documentos->setIdSucursal($_SESSION['id_sucursal']);
 
 $title = "Ver Mis Documentos SUNAT - Farmacia - Luna Systems Peru";
 ?>
@@ -266,6 +267,7 @@ $title = "Ver Mis Documentos SUNAT - Farmacia - Luna Systems Peru";
 </body>
 
 </html>
+
 
 
 

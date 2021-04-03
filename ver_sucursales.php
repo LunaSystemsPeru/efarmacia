@@ -109,7 +109,7 @@ $c_sucursal->setIdEmpresa($_SESSION['id_empresa']);
                                 <div class="row">
                                     <div class="col-md-9 m-b-md">
                                         <div class="btn-group">
-                                            <a href="reg_sucursal.php" class="btn btn-success">Nueva Sucursal</a>
+                                            <a href="reg_sucursal.php" class="btn btn-info"><i class="fa fa-plus"></i> Nueva Sucursal</a>
                                         </div>
                                     </div>
                                 </div>
@@ -137,7 +137,7 @@ $c_sucursal->setIdEmpresa($_SESSION['id_empresa']);
                                        echo     '<td class="text-center">'. $listar["codsunat"] .'</td>';
                                        echo     '<td class="text-center">'. $listar["ubigeo"] .'</td>';
                                        echo     '<td class="text-center">';
-                                       echo         '<button class="btn btn-info btn-sm" title="Ver Documentos"><i class="fa fa-file-archive-o"></i></button>';
+                                       echo         '<a href="ver_mis_documentos.php" class="btn btn-info btn-sm" title="Ver Documentos"><i class="fa fa-file-archive-o"></i></a>';
                                        echo         '<a href="reg_sucursal.php?id='.$listar["id_sucursal"].'" class="btn btn-warning btn-sm" title="Editar Sucursal"><i class="fa fa-edit"></i></button>';
                                        echo     '</td>';
                                        echo '</tr>';

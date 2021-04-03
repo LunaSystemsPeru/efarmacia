@@ -13,6 +13,7 @@ class cl_documentos_empresa
     private $id_empresa;
     private $serie;
     private $numero;
+    private $id_sucursal;
 
     /**
      * cl_documentos_empresa constructor.
@@ -85,10 +86,33 @@ class cl_documentos_empresa
         $this->numero = $numero;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getIdSucursal()
+    {
+        return $this->id_sucursal;
+    }
+
+    /**
+     * @param mixed $id_sucursal
+     */
+    public function setIdSucursal($id_sucursal)
+    {
+        $this->id_sucursal = $id_sucursal;
+    }
+
     public function insertar()
     {
         global $conn;
-        $query = "insert into documentos_empresa values ('".$this->id_documento."', '".$this->id_empresa."', '".$this->serie."', '".$this->numero."')";
+        $query = "insert into documentos_empresa 
+                    values (
+                            '".$this->id_documento."', 
+                            '".$this->id_empresa."', 
+                            '".$this->serie."', 
+                            '".$this->numero."', 
+                            '$this->id_sucursal'
+                            )";
         $resultado = $conn->query($query);
         if (!$resultado) {
             die('Could not enter data in documentos_empresa: ' . mysqli_error($conn));
@@ -102,7 +126,9 @@ class cl_documentos_empresa
     public function obtener_datos() {
         $existe = false;
         global $conn;
-        $query = "select * from documentos_empresa where id_documento = '" . $this->id_documento . "' and id_empresa = '" . $this->id_empresa . "'";
+        $query = "select * 
+                    from documentos_empresa 
+                    where id_documento = '$this->id_documento' and id_empresa = '$this->id_empresa' and id_sucursal = '$this->id_sucursal'";
 
         $resultado = $conn->query($query);
         if ($resultado->num_rows > 0) {
@@ -121,7 +147,7 @@ class cl_documentos_empresa
         $query = "select de.id_documento, ds.nombre, de.serie, de.numero 
             from documentos_empresa de 
             inner join documentos_sunat ds on de.id_documento = ds.id_documento 
-            where de.id_empresa = '" . $this->id_empresa . "' 
+            where de.id_empresa = '$this->id_empresa' and de.id_sucursal = '$this->id_sucursal' 
             order by ds.nombre asc";
         $resultado = $conn->query($query);
         $fila = $resultado->fetch_all(MYSQLI_ASSOC);
