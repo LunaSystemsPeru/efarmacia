@@ -8,7 +8,7 @@ if (is_null($_SESSION['id_empresa'])) {
 require 'class/cl_producto.php';
 $c_producto = new cl_producto();
 $c_producto->setIdEmpresa($_SESSION['id_empresa']);
-$title = "Ver Productos - Farmacia - Luna Systems Peru";
+$title = "Ver Mis Productos - Farmacia - Luna Systems Peru";
 ?>
 <!DOCTYPE html>
 <html>
@@ -169,6 +169,7 @@ $title = "Ver Productos - Farmacia - Luna Systems Peru";
                                     <td class="text-center"><?php echo $label_estado?></td>
                                     <td class="text-center">
                                         <a href="<?php echo "mod_producto.php?id_producto=" . $fila['id_producto']. "&id_empresa=" . $_SESSION['id_empresa']; ?>"><button class="btn btn-success btn-sm" title="Editar Producto"><i class="fa fa-edit"></i></button></a>
+                                        <a href="ver_productos_compra.php?id_producto=<?php echo $fila['id_producto'] ?>" class="btn btn-success btn-sm" title="Ver Historial de Compra"><i class="fa fa-cart-arrow-down"></i></a>
                                         <a href="ver_kardex_producto.php?id_producto=<?php echo $fila['id_producto'] ?>" class="btn btn-info btn-sm" title="Ver Kardex"><i class="fa fa-bars"></i></a>
                                         <button type="button" class="btn btn-danger btn-sm" title="Eliminar Producto" onclick="eliminar('<?php echo $fila['id_producto']?>')"><i class="fa fa-trash"></i></button>
                                     </td>

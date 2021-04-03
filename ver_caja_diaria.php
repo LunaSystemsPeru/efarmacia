@@ -15,6 +15,7 @@ $cm = new cl_caja_movimiento();
 
 $c_caja->setIdEmpresa($_SESSION['id_empresa']);
 $c_caja->setFecha(date("Y-m-d"));
+$c_caja->setIdSucursal($_SESSION['id_sucursal']);
 $existe_caja = $c_caja->obtener_datos();
 $c_banco->setIdEmpresa($_SESSION['id_empresa']);
 
