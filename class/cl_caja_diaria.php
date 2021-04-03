@@ -230,7 +230,7 @@ class cl_caja_diaria
     {
         $existe = false;
         global $conn;
-        $query = "select * from caja_diaria where id_empresa = '" . $this->id_empresa . "' and fecha = '" . $this->fecha . "'";
+        $query = "select * from caja_diaria where id_empresa = '" . $this->id_empresa . "' and fecha = '" . $this->fecha . "' and id_sucursal= '".$this->id_sucursal."'";
         $resultado = $conn->query($query);
         if ($resultado->num_rows > 0) {
             $existe = true;
