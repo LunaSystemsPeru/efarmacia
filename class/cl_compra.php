@@ -238,7 +238,7 @@ class cl_compra
     public function obtenerDatos(){
         $existe = false;
         global $conn;
-        $query = "select * from compra where id_compra = $this->id_compra and periodo=$this->periodo and id_empresa=$this->id_empresa";
+        $query = "select * from compra where id_compra = $this->id_compra and periodo=$this->periodo and id_empresa=$this->id_empresa and id_sucursal=$this->id_sucursal";
         $resultado = $conn->query($query);
 
         if ($resultado->num_rows > 0) {
@@ -252,7 +252,6 @@ class cl_compra
                 $this->total = $fila['total'];
                 $this->pagado = $fila['pagado'];
                 $this->id_usuario=$fila['id_usuario'];
-                $this->id_sucursal=$fila['id_sucursal'];
             }
         }
         return $existe;

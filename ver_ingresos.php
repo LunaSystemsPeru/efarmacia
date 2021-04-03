@@ -186,6 +186,7 @@ $title = "Ver Ingresos de Mercaderia - Farmacia - Luna Systems Peru";
                             <tr>
                                 <th width="10%">Id.</th>
                                 <th width="11%">Fecha</th>
+                                <th width="30%">Sucursal</th>
                                 <th width="30%">Proveedor</th>
                                 <th width="15%">Documento</th>
                                 <th width="11%">Usuario</th>
@@ -201,6 +202,7 @@ $title = "Ver Ingresos de Mercaderia - Farmacia - Luna Systems Peru";
                                 <tr>
                                     <td><?php echo $fila['periodo'] . $c_varios->zerofill($fila['id_ingreso'], 3)?></td>
                                     <td class="text-center"><?php echo $fila['fecha']?></td>
+                                    <td class="text-center"><?php echo $fila['nombresucursal']?></td>
                                     <td><?php echo $fila['ruc'] . " | " . $fila['razon_social']?></td>
                                     <td><?php echo $fila['doc_sunat'] . " | " . $fila['serie'] . " - " . $fila['numero']?></td>
                                     <td class="text-center"><?php echo $fila['username']?></td>

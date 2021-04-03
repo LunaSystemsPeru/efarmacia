@@ -275,7 +275,7 @@ class cl_venta
     {
         global $conn;
         $query = "select ifnull(max(id_venta) + 1, 1) as codigo 
-                from venta where periodo = '" . $this->periodo . "' and id_empresa = '" . $this->id_empresa . "'";
+                from venta where periodo = '" . $this->periodo . "' and id_empresa = '" . $this->id_empresa . "' and id_sucursal='".$this->id_sucursal."'";
         $resultado = $conn->query($query);
         if ($resultado->num_rows > 0) {
             while ($fila = $resultado->fetch_assoc()) {

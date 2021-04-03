@@ -17,6 +17,7 @@ $c_producto = new cl_venta_productos();
 $c_venta->setIdVenta(filter_input(INPUT_GET, 'id_venta'));
 $c_venta->setPeriodo(filter_input(INPUT_GET, 'periodo'));
 $c_venta->setIdEmpresa($_SESSION["id_empresa"]);
+$c_venta->setIdSucursal($_SESSION['id_sucursal']);
 
 $c_cobro->setIdEmpresa($c_venta->getIdEmpresa());
 $c_cobro->setPeriodo($c_venta->getPeriodo());

@@ -19,6 +19,7 @@ $id_empresa=$_SESSION["id_empresa"];
 $c_compra->setIdEmpresa($id_empresa);
 $c_compra->setIdCompra($id_compra);
 $c_compra->setPeriodo($periodo);
+$c_compra->setIdSucursal($_SESSION['id_sucursal']);
 $c_compra->obtenerDatos();
 
 $c_compra_pago->setPeriodo($periodo);
