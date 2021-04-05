@@ -345,7 +345,7 @@ class cl_producto
     function ver_productos()
     {
         global $conn;
-        $query = "select p.id_producto, p.nombre, p.principio_activo, pr.nombre as npresentacion, l.nombre as nlaboratorio, p.cantidad, p.precio, p.lote, p.vcto, DATEDIFF(p.vcto, current_date()) as faltantes 
+        $query = "select p.id_producto, p.nombre, p.principio_activo, pr.nombre as npresentacion, l.nombre as nlaboratorio, p.costo, p.precio, p.lote, p.vcto, DATEDIFF(p.vcto, current_date()) as faltantes 
         from producto as p 
         inner join laboratorio as l on p.id_laboratorio = l.id_laboratorio 
         inner join presentacion pr on p.id_presentacion = pr.id_presentacion 
@@ -364,21 +364,9 @@ class cl_producto
         return $resultado->fetch_all(MYSQLI_ASSOC);
     }
 
-    function verVencidos () {
-        global $conn;
-        $query = "select p.id_producto, p.nombre, l.nombre as laboratorio, p.cantidad, p.precio, p2.nombre as presentacion, p.vcto, (p.vcto - curdate()) as faltantes
-        from producto as p
-        inner join laboratorio l on p.id_laboratorio = l.id_laboratorio
-        inner join presentacion p2 on p.id_presentacion = p2.id_presentacion
-        where p.id_empresa = '$this->id_empresa' and curdate() >= date_sub(p.vcto, interval 121 day ) and cantidad > 0
-        order by p.vcto asc";
-        $resultado = $conn->query($query);
-        return $resultado->fetch_all(MYSQLI_ASSOC);
-    }
-
     function verSinStock () {
         global $conn;
-        $query = "select p.id_producto, p.nombre, l.nombre as laboratorio, p.cantidad, p.precio, p2.nombre as presentacion
+        $query = "select p.id_producto, p.nombre, l.nombre as laboratorio, p.precio, p2.nombre as presentacion
         from producto as p
         inner join laboratorio l on p.id_laboratorio = l.id_laboratorio
         inner join presentacion p2 on p.id_presentacion = p2.id_presentacion

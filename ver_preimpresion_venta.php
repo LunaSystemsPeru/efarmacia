@@ -6,11 +6,8 @@ if (is_null($_SESSION['id_empresa'])) {
 }
 
 require 'class/cl_documentos_sunat.php';
-require 'class/cl_documentos_empresa.php';
 
 $c_documentos = new cl_documentos_sunat();
-$c_mis_documentos = new cl_documentos_empresa();
-$c_mis_documentos->setIdEmpresa($_SESSION['id_empresa']);
 
 $title = "Ver Mis Documentos SUNAT - Farmacia - Luna Systems Peru";
 

@@ -17,6 +17,7 @@ $c_mis_documentos = new cl_documentos_empresa();
 $c_cliente = new cl_cliente();
 $sendCurlVenta = new SendCurlVenta();
 $id_empresa = $_SESSION['id_empresa'];
+$id_sucursal = $_SESSION['id_sucursal'];
 
 $c_cliente->setIdEmpresa($id_empresa);
 $c_cliente->setDocumento(filter_input(INPUT_POST, 'input_documento_cliente'));
@@ -52,6 +53,7 @@ if ($tipo_doc == 2 || $tipo_doc == 3) {
 
 
 $c_venta->setIdEmpresa($id_empresa);
+$c_venta->setIdSucursal($id_sucursal);
 
 $fecha = filter_input(INPUT_POST, 'input_fecha');
 
@@ -61,6 +63,7 @@ $c_venta->setIdDocumento(filter_input(INPUT_POST, 'select_documento'));
 
 $c_mis_documentos->setIdDocumento($c_venta->getIdDocumento());
 $c_mis_documentos->setIdEmpresa($c_venta->getIdEmpresa());
+$c_mis_documentos->setIdSucursal($c_venta->getIdSucursal());
 $c_mis_documentos->obtener_datos();
 
 $c_venta->setSerie($c_mis_documentos->getSerie());

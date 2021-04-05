@@ -8,6 +8,7 @@ require '../class/cl_conectar.php';
 class cl_inicio
 {
     private $id_empresa;
+    private $id_sucursal;
 
     /**
      * cl_inicio constructor.
@@ -15,6 +16,7 @@ class cl_inicio
     public function __construct()
     {
         $this->id_empresa = $_SESSION['id_empresa'];
+        $this->id_sucursal = $_SESSION['id_sucursal'];
     }
 
 
@@ -109,10 +111,12 @@ class cl_inicio
     {
         global $conn;
         $sql = "select year(p.vcto) as anio_vcto, month(p.vcto) as mes_vcto, count(*) as stock_vence
-            from producto as p
-            where p.id_empresa = '$this->id_empresa' and p.cantidad > 0 and curdate() > date_sub(p.vcto, INTERVAL 121 day )
+            from productos_sucursales as ps 
+            inner join producto p on ps.id_producto = p.id_producto and ps.id_empresa = p.id_empresa
+            where p.id_empresa = '$this->id_empresa' and ps.id_sucursal = '$this->id_sucursal' and ps.cantidad > 0 and curdate() > date_sub(p.vcto, INTERVAL 121 day )
             group by year(p.vcto), month(p.vcto)
             order by year(p.vcto) asc, month(p.vcto) asc";
+        //echo $sql;
         $resultado = $conn->query($sql);
         $i = 0;
         $registros = array();

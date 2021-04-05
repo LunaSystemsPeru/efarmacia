@@ -22,7 +22,7 @@ $title = "Ver Productos - Farmacia - Luna Systems Peru";
     <title><?php echo $title; ?></title>
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <link rel="shortcut icon" type="image/ico" href="images/favicon.ico" />
+    <link rel="shortcut icon" type="image/ico" href="images/favicon.ico"/>
 
     <!-- Vendor styles -->
     <link rel="stylesheet" href="vendor/fontawesome/css/font-awesome.css"/>
@@ -123,7 +123,6 @@ $title = "Ver Productos - Farmacia - Luna Systems Peru";
             </div>
 
 
-
             <div class="col-lg-12">
                 <div class="hpanel">
                     <div class="panel-body">
@@ -132,45 +131,41 @@ $title = "Ver Productos - Farmacia - Luna Systems Peru";
                             <tr>
                                 <th>Id.</th>
                                 <th>Descripcion</th>
-                                <th>Cantidad.</th>
+                                <th>P. Compra</th>
                                 <th>P. Vta.</th>
                                 <th>Lote Actual</th>
                                 <th>Estado</th>
-                                <th>Acciones</th>
+                                <th width="13%">Acciones</th>
                             </tr>
                             </thead>
                             <tbody>
                             <?php
                             $a_productos = $c_producto->ver_productos();
                             foreach ($a_productos as $fila) {
-                                if ($fila['cantidad'] < 1) {
-                                    $color_texto = "text-info font-bold";
-                                    $label_estado = '<label class="label label-info">sin Stock</label>';
+                                if ($fila['faltantes'] >= 90) {
+                                    $color_texto = "text-primary";
+                                    $label_estado = '<label class="label label-success">Normal</label>';
+                                } else if ($fila['faltantes'] < 90 && $fila['faltantes'] > 5) {
+                                    $color_texto = "text-warning font-bold";
+                                    $label_estado = '<label class=" label label-warning">por Vencer</label>';
                                 } else {
-                                    if ($fila['faltantes'] >= 90) {
-                                        $color_texto = "text-primary";
-                                        $label_estado = '<label class="label label-success">Normal</label>';
-                                    } else if ($fila['faltantes'] < 90 && $fila['faltantes'] > 5) {
-                                        $color_texto = "text-warning font-bold";
-                                        $label_estado = '<label class=" label label-warning">por Vencer</label>';
-                                    } else {
-                                        $color_texto = "text-danger font-bold";
-                                        $label_estado = '<label class="label label-danger">Vencido</label>';
-                                    }
+                                    $color_texto = "text-danger font-bold";
+                                    $label_estado = '<label class="label label-danger">Vencido</label>';
                                 }
                                 ?>
                                 <tr>
-                                    <td><?php echo $fila['id_producto']?></td>
-                                    <td ><p class="<?php echo $color_texto?>"><?php echo $fila['nombre'] . " - " . $fila['npresentacion'] . " - " . $fila['nlaboratorio']?></p></td>
-
-                                    <td class="text-right"><p class="<?php echo $color_texto?>"><?php echo $fila['cantidad']?></p></td>
-                                    <td class="text-right"><p class="<?php echo $color_texto?>"><?php echo $fila['precio']?></p></td>
-                                    <td class="text-center"><p class="<?php echo $color_texto?>"><?php echo $fila['vcto'] . " | " . $fila['lote']?></p></td>
-                                    <td class="text-center"><?php echo $label_estado?></td>
+                                    <td><?php echo $fila['id_producto'] ?></td>
+                                    <td><p class="<?php echo $color_texto ?>"><?php echo $fila['nombre'] . " - " . $fila['npresentacion'] . " - " . $fila['nlaboratorio'] ?></p></td>
+                                    <td class="text-right"><p class="<?php echo $color_texto ?>"><?php echo $fila['costo'] ?></p></td>
+                                    <td class="text-right"><p class="<?php echo $color_texto ?>"><?php echo $fila['precio'] ?></p></td>
+                                    <td class="text-center"><p class="<?php echo $color_texto ?>"><?php echo $fila['vcto'] . " | " . $fila['lote'] ?></p></td>
+                                    <td class="text-center"><?php echo $label_estado ?></td>
                                     <td class="text-center">
-                                        <a href="<?php echo "mod_producto.php?id_producto=" . $fila['id_producto']. "&id_empresa=" . $_SESSION['id_empresa']; ?>"><button class="btn btn-success btn-sm" title="Editar Producto"><i class="fa fa-edit"></i></button></a>
+                                        <a href="<?php echo "mod_producto.php?id_producto=" . $fila['id_producto'] . "&id_empresa=" . $_SESSION['id_empresa']; ?>">
+                                            <button class="btn btn-success btn-sm" title="Editar Producto"><i class="fa fa-edit"></i></button>
+                                        </a>
                                         <a href="ver_kardex_producto.php?id_producto=<?php echo $fila['id_producto'] ?>" class="btn btn-info btn-sm" title="Ver Kardex"><i class="fa fa-bars"></i></a>
-                                        <button type="button" class="btn btn-danger btn-sm" title="Eliminar Producto" onclick="eliminar('<?php echo $fila['id_producto']?>')"><i class="fa fa-trash"></i></button>
+                                        <button type="button" class="btn btn-danger btn-sm" title="Eliminar Producto" onclick="eliminar('<?php echo $fila['id_producto'] ?>')"><i class="fa fa-trash"></i></button>
                                     </td>
                                 </tr>
                                 <?php

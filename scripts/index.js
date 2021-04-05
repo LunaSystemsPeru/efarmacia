@@ -1,14 +1,5 @@
 $(function () {
 
-    $.getJSON("data/data_datos_index.php?tipo=2", function (result) {
-        console.log(result);
-        $.each(result, function (key, val) {
-
-        })
-
-
-    });
-
     $.getJSON("data/data_datos_index.php?tipo=1", function (result) {
         var periodo = Array();
         var cantidad = Array();
@@ -18,8 +9,18 @@ $(function () {
             cantidad.push(val.stock_vence);
         })
 
-        for (let i = 0; i < cantidad; i++) {
-            $("#table-cantidades tbody").append('<tr><td>VENCIMIENTO AL '+periodo[i]+'</td><td class="text-right">"+cantidad[i]+"</td></tr>');
+        for (let i = 0; i < cantidad.length; i++) {
+            console.log(periodo[i]);
+            $("#table-cantidades tbody").append('<tr>' +
+                '<td>' +
+                    '<a href="javascript:void(0);" onclick="verVencidos(\'' + periodo[i] + '\')">' +
+                        'VENCIMIENTO AL ' + periodo[i] +
+                    '</a>' +
+                '</td>' +
+                '<td class="text-right">' + cantidad[i] + '</td>' +
+                '</tr>');
         }
     });
+
+
 });

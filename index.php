@@ -200,6 +200,22 @@ $title = "Inicio - Farmacia - Luna Systems Peru";
         </div>
     </div>
 
+    <div class="modal fade" id="modal_ver_detalle" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="color-line"></div>
+                <div class="modal-header text-center">
+                    <h4 class="modal-title">Ver Productos vencidos en el periodo seleccionado (Estan ordenados por fecha de vencimiento)</h4>
+                </div>
+                <div class="modal-body" id="modal_detalle">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <!-- Right sidebar -->
     <?php include("includes/right_sidebar.php"); ?>
@@ -227,6 +243,26 @@ $title = "Inicio - Farmacia - Luna Systems Peru";
 <script src="scripts/homer.js"></script>
 <script src="scripts/charts.js"></script>
 <script src="scripts/index.js"></script>
+
+<script>
+    function verVencidos (periodo) {
+        var parametros = {
+            periodo: periodo
+        };
+        $.ajax({
+            data: parametros, //datos que se envian a traves de ajax
+            url: 'ajax_post/detalle_productos_vencidos.php', //archivo que recibe la peticion
+            type: 'post', //método de envio
+            beforeSend: function () {
+                $("#modal_detalle").html("Procesando, espere por favor...");
+                $("#modal_ver_detalle").modal('toggle');
+            },
+            success: function (response) { //una vez que el archivo recibe el request lo procesa y lo devuelve
+                $("#modal_detalle").html(response);
+            }
+        });
+    }
+</script>
 
 </body>
 

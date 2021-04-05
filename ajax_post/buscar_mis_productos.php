@@ -4,16 +4,18 @@ require '../class/cl_conectar.php';
 mysqli_set_charset($conn, "utf8");
 $searchTerm = mysqli_real_escape_string($conn, (filter_input(INPUT_GET, 'term')));
 $query = "SELECT 
-          p.*,
+          ps.*,
+        p.*,
           l.nombre AS laboratorio,
           pr.nombre AS presentacion 
         FROM
-          producto AS p 
+             productos_sucursales as ps 
+             inner join producto as p on p.id_producto = ps.id_producto and p.id_empresa = ps.id_empresa
           INNER JOIN laboratorio AS l 
             ON p.id_laboratorio = l.id_laboratorio 
           INNER JOIN presentacion AS pr 
             ON p.id_presentacion = pr.id_presentacion 
-            WHERE p.id_empresa= '{$_SESSION['id_empresa']}' and  p.nombre LIKE '%$searchTerm%'";
+            WHERE ps.id_sucursal= '{$_SESSION['id_sucursal']}' and  p.nombre LIKE '%$searchTerm%'";
 $resultado = $conn->query($query);
 $a_json = array();
 $a_json_row = array();
