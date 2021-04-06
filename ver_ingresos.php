@@ -184,13 +184,13 @@ $title = "Ver Ingresos de Mercaderia - Farmacia - Luna Systems Peru";
                         <table id="tabla-ingresos" class="table table-striped table-bordered table-hover">
                             <thead>
                             <tr>
-                                <th width="10%">Id.</th>
-                                <th width="11%">Fecha</th>
-                                <th width="30%">Sucursal</th>
-                                <th width="30%">Proveedor</th>
-                                <th width="15%">Documento</th>
-                                <th width="11%">Usuario</th>
-                                <th width="10%">Total</th>
+                                <th>Id.</th>
+                                <th>Fecha</th>
+                                <th>Sucursal</th>
+                                <th>Proveedor</th>
+                                <th>Documento</th>
+                                <th width="10%">Usuario</th>
+                                <th>Total</th>
                                 <th width="11%">Acciones</th>
                             </tr>
                             </thead>
@@ -224,7 +224,7 @@ $title = "Ver Ingresos de Mercaderia - Farmacia - Luna Systems Peru";
         </div>
 
         <div class="modal fade" id="modal_ver_detalle" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
+            <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="color-line"></div>
                     <div class="modal-header text-center">

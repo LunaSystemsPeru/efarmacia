@@ -267,9 +267,11 @@ class cl_caja_diaria
     function ver_caja_mensual($mes)
     {
         global $conn;
-        $query = "select * from caja_diaria "
-            . "where id_empresa = '" . $this->id_empresa . "' and concat(year(fecha), LPAD(month(fecha), 2, 0)) = '" . $mes . "' "
-            . "order by fecha asc";
+        $query = "select cd.*, s.nombre as nombresede 
+            from caja_diaria as cd 
+            inner join sucursales s on cd.id_sucursal = s.id_sucursal
+            where cd.id_empresa = '" . $this->id_empresa . "' and concat(year(cd.fecha), LPAD(month(cd.fecha), 2, 0)) = '" . $mes . "'
+            order by cd.fecha asc";
         $resultado = $conn->query($query);
         $fila = $resultado->fetch_all(MYSQLI_ASSOC);
         return $fila;

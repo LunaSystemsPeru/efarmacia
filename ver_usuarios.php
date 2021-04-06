@@ -116,6 +116,7 @@ $title = "Ver Usuarios - Farmacia - Luna Systems Peru";
                                 <th>Id.</th>
                                 <th>Username</th>
                                 <th>Nombre</th>
+                                <th>Sucursal</th>
                                 <th>Telefono</th>
                                 <th>Fec. Registro</th>
                                 <th>Ultimo Ingreso</th>
@@ -131,6 +132,7 @@ $title = "Ver Usuarios - Farmacia - Luna Systems Peru";
                                     <td><?php echo $fila['id_usuario']?></td>
                                     <td><?php echo $fila['username']?></td>
                                     <td><?php echo $fila['nombre']?></td>
+                                    <td><?php echo $fila['nombresede']?></td>
                                     <td><?php echo $fila['telefono']?></td>
                                     <td><?php echo $fila['fecha_registro']?></td>
                                     <td><?php echo $fila['ultimo_ingreso']?></td>

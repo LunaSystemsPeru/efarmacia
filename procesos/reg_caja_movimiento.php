@@ -20,6 +20,8 @@ if($rad=="ingreso")
 
 $cm->setIdEmpresa($_SESSION['id_empresa']);
 $cm->setIdUsuario($_SESSION['id_usuario']);
+$cm->setIdSucursal($_SESSION['id_sucursal']);
+$cm->setFecha(date("Y-m-d"));
 $cm->setGlosa($descr);
 $cm->obtener_codigo();
 

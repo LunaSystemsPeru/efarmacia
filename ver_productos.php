@@ -142,10 +142,10 @@ $title = "Ver Productos - Farmacia - Luna Systems Peru";
                             <?php
                             $a_productos = $c_producto->ver_productos();
                             foreach ($a_productos as $fila) {
-                                if ($fila['faltantes'] >= 90) {
+                                if ($fila['faltantes'] >= 120) {
                                     $color_texto = "text-primary";
                                     $label_estado = '<label class="label label-success">Normal</label>';
-                                } else if ($fila['faltantes'] < 90 && $fila['faltantes'] > 5) {
+                                } else if ($fila['faltantes'] < 120 && $fila['faltantes'] > 5) {
                                     $color_texto = "text-warning font-bold";
                                     $label_estado = '<label class=" label label-warning">por Vencer</label>';
                                 } else {

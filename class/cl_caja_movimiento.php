@@ -11,6 +11,7 @@ class cl_caja_movimiento {
     private $retira;
     private $glosa;
     private $id_usuario;
+    private $id_sucursal;
 
     /**
      * cl_caja_movimiento constructor.
@@ -117,11 +118,27 @@ class cl_caja_movimiento {
         $this->id_usuario = $id_usuario;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getIdSucursal()
+    {
+        return $this->id_sucursal;
+    }
+
+    /**
+     * @param mixed $id_sucursal
+     */
+    public function setIdSucursal($id_sucursal)
+    {
+        $this->id_sucursal = $id_sucursal;
+    }
+
     public function obtener_codigo() {
         global $conn;
         $query = "select ifnull(max(id_movimiento) + 1, 1) as codigo "
                 . "from caja_movimiento "
-                . "where id_empresa = '" . $this->id_empresa . "'  and id_usuario= " . $this->id_usuario;
+                . "where id_empresa = '" . $this->id_empresa . "'  and fecha= " . $this->fecha;
         //echo $query;
         $resultado = $conn->query($query);
         if ($resultado->num_rows > 0) {
@@ -141,7 +158,8 @@ class cl_caja_movimiento {
                 '$this->ingresa', 
                 '$this->retira', 
                 '$this->glosa', 
-                '$this->id_usuario'
+                '$this->id_usuario',
+                '$this->id_sucursal'
                 );";
         echo $query;
         $resultado = $conn->query($query);
@@ -161,7 +179,7 @@ class cl_caja_movimiento {
         $query = "SELECT (cm.ingresa-cm.retira) AS 'MONTO', cm.glosa AS 'DESCRIPCCION', cm.id_movimiento, u.username 
             FROM caja_movimiento as cm
             inner join usuario u on cm.id_usuario = u.id_usuario and cm.id_empresa = u.id_empresa
-            where cm.fecha = '$this->fecha' and cm.id_empresa = '$this->id_empresa'";
+            where cm.fecha = '$this->fecha' and cm.id_empresa = '$this->id_empresa' and cm.id_sucursal = '$this->id_sucursal'";
         $resultado = $conn->query($query);
         if (!$resultado) {
             die('Could not enter data in caja movimiento: ' . mysqli_error($conn));

@@ -21,6 +21,7 @@ $c_banco->setIdEmpresa($_SESSION['id_empresa']);
 
 $cm->setFecha($c_caja->getFecha());
 $cm->setIdEmpresa($c_caja->getIdEmpresa());
+$cm->setIdSucursal($c_caja->getIdSucursal());
 
 $title = "Caja Diaria - Farmacia - Luna Systems Peru";
 ?>

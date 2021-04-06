@@ -343,6 +343,20 @@ class cl_venta
         return $resultado->fetch_all(MYSQLI_ASSOC);
     }
 
+    function ver_ventas_total()
+    {
+        global $conn;
+        $query = "select v.periodo, v.id_venta, v.fecha, ds.abreviatura, v.serie, v.numero, c.documento, c.nombre, v.total, v.enviado_sunat, v.estado, u.username, s.nombre as nombresede  
+            from venta v
+            inner join sucursales s on v.id_empresa = s.id_empresa and v.id_sucursal = s.id_sucursal
+            inner join documentos_sunat ds on v.id_documento = ds.id_documento 
+            inner join cliente c on v.id_cliente = c.id_cliente and v.id_empresa = c.id_empresa 
+            inner join usuario u on v.id_empresa = u.id_empresa
+            where v.id_empresa = '$this->id_empresa' and v.periodo = '$this->periodo' ";
+        $resultado = $conn->query($query);
+        return $resultado->fetch_all(MYSQLI_ASSOC);
+    }
+
     function ver_anios()
     {
         global $conn;

@@ -109,6 +109,12 @@ $title = "Registro de Ingreso de Mercaderia - Farmacia - Luna Systems Peru";
                                 </div>
                             </div>
                             <div class="form-group">
+                                <label class="col-md-4 control-label">Sucursal</label>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control text-center" value="<?php echo $_SESSION['nombre_sucursal'] ?>" readonly>
+                                </div>
+                            </div>
+                            <div class="form-group">
                                 <label class="col-md-4 control-label">Documento</label>
                                 <div class="col-md-8">
                                     <select id="select_documento" name="select_documento" class="form-control">
@@ -179,6 +185,8 @@ $title = "Registro de Ingreso de Mercaderia - Farmacia - Luna Systems Peru";
                                 <div class="col-md-2">
                                     <input class="form-control text-center" value="0.00" id="input_subtotal" name="input_subtotal" readonly>
                                 </div>
+                            </div>
+                            <div class="form-group">
                                 <label class="col-md-2 control-label">IGV</label>
                                 <div class="col-md-2">
                                     <input class="form-control text-center" value="0.00" id="input_igv" name="input_igv" readonly>

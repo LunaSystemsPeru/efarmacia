@@ -255,7 +255,7 @@ class cl_ingreso
         $existe = false;
         global $conn;
         $query = "select * from ingreso "
-            . "where periodo = '" . $this->periodo . "' and id_ingreso = '" . $this->id_ingreso . "' and id_empresa = '" . $this->id_empresa . "' and id_sucursal = '".$this->id_sucursal."'";
+            . "where periodo = '" . $this->periodo . "' and id_ingreso = '" . $this->id_ingreso . "' and id_empresa = '" . $this->id_empresa . "' ";
         $resultado = $conn->query($query);
         if ($resultado->num_rows > 0) {
             $existe = true;

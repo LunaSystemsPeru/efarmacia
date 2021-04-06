@@ -149,7 +149,7 @@ $title = "Ver Presentacion de Productos - Farmacia - Luna Systems Peru";
 
                                     </div>
                                 </div>
-                                <table id="table-presentaciones" class="table table-striped table-bordered table-hover">
+                                <table id="table-presentaciones" class="table table-striped table-hover">
                                     <thead>
                                         <tr>
                                             <th>Id.</th>
@@ -221,7 +221,7 @@ $title = "Ver Presentacion de Productos - Farmacia - Luna Systems Peru";
                 $('#table-presentaciones').dataTable({
                     "order": [[ 1, "asc" ]],
                     dom: "<'row'<'col-sm-4'l><'col-sm-4 text-center'B><'col-sm-4'f>>tp",
-                    "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+                    "lengthMenu": [[50, 100, 200, -1], [50, 100, 200, "All"]],
                     buttons: [
                         {extend: 'copy', className: 'btn-sm'},
                         {extend: 'csv', title: 'Presentaciones', className: 'btn-sm'},

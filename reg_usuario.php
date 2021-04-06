@@ -6,8 +6,11 @@ if (is_null($_SESSION['id_empresa'])) {
 }
 
 require 'class/cl_usuario.php';
+require 'class/cl_sucursal.php';
 $c_usuario = new cl_usuario();
+$c_sucursal = new cl_sucursal();
 
+$c_sucursal->setIdEmpresa($_SESSION['id_empresa']);
 if (filter_input(INPUT_GET, 'id_usuario')) {
     $c_usuario->setIdEmpresa($_SESSION['id_empresa']);
     $c_usuario->setIdUsuario(filter_input(INPUT_GET, 'id_usuario'));
@@ -153,6 +156,23 @@ $title = "Registro de Usuario - Farmacia - Luna Systems Peru";
                                 <div class="col-lg-3">
                                     <input type="text" class="form-control" name="input_contrasena"
                                            id="input_contrasena" max-lenght="45" value="<?php echo $c_usuario->getPassword()?>" required//>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">SUCURSAL: </label>
+                                <div class="col-lg-3">
+                                    <select class="form-control" name="select_sucursal">
+                                        <?php
+                                        $a_sucursales = $c_sucursal->verFilas();
+                                        $selected = "";
+                                        foreach ($a_sucursales as $fila) {
+                                            if ($fila['id_sucursal'] == $c_usuario->getIdSucursal()) {
+                                                $selected = "selected";
+                                            }
+                                            echo '<option '.$selected.' value="'.$fila["id_sucursal"].'">'.$fila["nombre"].'</option>';
+                                        }
+                                        ?>
+                                    </select>
                                 </div>
                             </div>
                             <input type="hidden" value="<?php echo $c_usuario->getIdUsuario()?>" name="hidden_id_usuario" />

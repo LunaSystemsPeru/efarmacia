@@ -138,6 +138,7 @@ $title = "Ver Caja Mensual - Farmacia - Luna Systems Peru";
                             <thead>
                             <tr>
                                 <th>Fecha</th>
+                                <th>Sucursal</th>
                                 <th>Apertura</th>
                                 <th>Ingresos</th>
                                 <th>Egresos</th>
@@ -157,6 +158,7 @@ $title = "Ver Caja Mensual - Farmacia - Luna Systems Peru";
                                 ?>
                                 <tr>
                                     <td><?php echo $fila['fecha'] ?></td>
+                                    <td><?php echo $fila['nombresede'] ?></td>
                                     <td class="text-right"><?php echo number_format($fila['m_apertura'],2) ?></td>
                                     <td class="text-right"><?php echo number_format($m_ingreso,2) ?></td>
                                     <td class="text-right"><?php echo number_format($m_egresos,2) ?></td>

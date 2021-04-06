@@ -216,7 +216,24 @@ class cl_usuario
     {
         global $conn;
         $query = "insert into usuario values ('" . $this->id_usuario . "', '" . $this->id_empresa . "', '" . $this->nombre . "', '" . $this->username . "', 
-            '" . $this->password . "', now(), now(), '" . $this->telefono . "', '" . $this->email . "', '1','$this->id_sucursal')";
+            '" . $this->password . "', now(), now(), '" . $this->telefono . "', '" . $this->email . "', '1','$this->id_sucursal
+            ')";
+        $resultado = $conn->query($query);
+        if (!$resultado) {
+            die('Could not enter data in usuario: ' . mysqli_error($conn));
+        } else {
+            //echo "Entered data successfully";
+            $grabado = true;
+        }
+        return $grabado;
+    }
+
+    public function actualizarFecha()
+    {
+        global $conn;
+        $query = "update usuario 
+        set ultimo_ingreso =  CURRENT_TIMESTAMP() 
+        where id_empresa = '$this->id_empresa' and id_usuario = '$this->id_usuario'";
         $resultado = $conn->query($query);
         if (!$resultado) {
             die('Could not enter data in usuario: ' . mysqli_error($conn));
@@ -231,7 +248,7 @@ class cl_usuario
     {
         global $conn;
         $query = "update usuario 
-        set nombre =  '$this->nombre', username = '$this->username', password = '$this->password', telefono = '$this->telefono', email = '$this->email', sucursal = '$this->id_sucursal' 
+        set nombre =  '$this->nombre', username = '$this->username', password = '$this->password', telefono = '$this->telefono', email = '$this->email', id_sucursal = '$this->id_sucursal' 
         where id_empresa = '$this->id_empresa' and id_usuario = '$this->id_usuario'";
         $resultado = $conn->query($query);
         if (!$resultado) {
@@ -285,9 +302,11 @@ class cl_usuario
     function ver_usuarios()
     {
         global $conn;
-        $query = "select * from usuario 
-            where id_empresa = '$this->id_empresa' 
-            order by nombre asc";
+        $query = "select u.*, s.nombre as nombresede 
+            from usuario as u 
+            inner join sucursales s on u.id_empresa = s.id_empresa
+            where u.id_empresa = '$this->id_empresa' 
+            order by u.nombre asc";
         $resultado = $conn->query($query);
         $fila = $resultado->fetch_all(MYSQLI_ASSOC);
         return $fila;

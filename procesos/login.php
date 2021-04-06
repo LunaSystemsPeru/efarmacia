@@ -31,6 +31,7 @@ if ($existe_ruc) {
        $c_sucursal->obtener_datos();
        echo $c_usuario->getPassword();
         if ($password == $c_usuario->getPassword()) {
+            $c_usuario->actualizarFecha();
             $_SESSION['id_empresa'] = $c_empresa->getIdEmpresa();
             $_SESSION['id_usuario'] = $c_usuario->getIdUsuario();
             $_SESSION['nombre_comercial'] = $c_empresa->getNombreComercial();

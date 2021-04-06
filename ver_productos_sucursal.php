@@ -5,9 +5,10 @@ if (is_null($_SESSION['id_empresa'])) {
     header("Location: login.php");
 }
 
-require 'class/cl_producto.php';
-$c_producto = new cl_producto();
+require 'class/cl_producto_sucursal.php';
+$c_producto = new cl_producto_sucursal();
 $c_producto->setIdEmpresa($_SESSION['id_empresa']);
+$c_producto->setIdSucursal($_SESSION['id_sucursal']);
 $title = "Ver Mis Productos - Farmacia - Luna Systems Peru";
 ?>
 <!DOCTYPE html>
@@ -136,7 +137,7 @@ $title = "Ver Mis Productos - Farmacia - Luna Systems Peru";
                                 <th>P. Vta.</th>
                                 <th>Lote Actual</th>
                                 <th>Estado</th>
-                                <th>Acciones</th>
+                                <th width="15%">Acciones</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -147,10 +148,10 @@ $title = "Ver Mis Productos - Farmacia - Luna Systems Peru";
                                     $color_texto = "text-info font-bold";
                                     $label_estado = '<label class="label label-info">sin Stock</label>';
                                 } else {
-                                    if ($fila['faltantes'] >= 90) {
+                                    if ($fila['faltantes'] >= 120) {
                                         $color_texto = "text-primary";
                                         $label_estado = '<label class="label label-success">Normal</label>';
-                                    } else if ($fila['faltantes'] < 90 && $fila['faltantes'] > 5) {
+                                    } else if ($fila['faltantes'] < 120 && $fila['faltantes'] > 5) {
                                         $color_texto = "text-warning font-bold";
                                         $label_estado = '<label class=" label label-warning">por Vencer</label>';
                                     } else {
