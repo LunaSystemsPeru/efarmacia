@@ -304,7 +304,7 @@ class cl_usuario
         global $conn;
         $query = "select u.*, s.nombre as nombresede 
             from usuario as u 
-            inner join sucursales s on u.id_empresa = s.id_empresa
+            inner join sucursales s on u.id_sucursal = s.id_sucursal
             where u.id_empresa = '$this->id_empresa' 
             order by u.nombre asc";
         $resultado = $conn->query($query);

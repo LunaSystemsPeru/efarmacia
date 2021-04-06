@@ -25,7 +25,7 @@ class cl_inicio
         global $conn;
         $sql = "select  m.id, m.nombre, ifnull(sum(vp.cantidad * vp.precio), 0) as venta, ifnull(sum((vp.precio - vp.costo) * vp.cantidad), 0) as utilidad
         from mes as m
-        left join venta as v on month(v.fecha) = m.id and v.id_empresa = '$this->id_empresa' and v.estado=1 and year(v.fecha) = year(curdate())
+        left join venta as v on month(v.fecha) = m.id and v.id_empresa = '$this->id_empresa' and v.id_sucursal = '$this->id_sucursal' and v.estado=1 and year(v.fecha) = year(curdate())
         left join venta_producto vp on v.id_venta = vp.id_venta and v.periodo = vp.periodo and v.id_empresa = vp.id_empresa
         group by m.id";
         $resultado = $conn->query($sql);
@@ -46,7 +46,7 @@ class cl_inicio
         $sql = "select day(v.fecha) as dia, ifnull(sum(vp.cantidad * vp.precio), 0) as venta, ifnull(sum((vp.precio - vp.costo) * vp.cantidad), 0) as utilidad
         from venta as v
         inner join venta_producto vp on v.id_venta = vp.id_venta and v.periodo = vp.periodo and v.id_empresa = vp.id_empresa
-        where month(v.fecha) = month(curdate()) and v.id_empresa = '$this->id_empresa' and v.estado=1 and year(v.fecha) = year(curdate())
+        where month(v.fecha) = month(curdate()) and v.id_empresa = '$this->id_empresa' and v.id_sucursal = '$this->id_sucursal' and v.estado=1 and year(v.fecha) = year(curdate())
         group by v.fecha
         order by v.fecha asc";
         $resultado = $conn->query($sql);
@@ -69,7 +69,7 @@ class cl_inicio
             inner join producto p on vp.id_producto = p.id_producto and vp.id_empresa = p.id_empresa
                 inner join laboratorio l on p.id_laboratorio = l.id_laboratorio
             inner join venta v on vp.id_venta = v.id_venta and vp.periodo = v.periodo and vp.id_empresa = v.id_empresa
-            where year(v.fecha) = year(curdate()) and v.estado = 1 and v.id_empresa = '$this->id_empresa'
+            where year(v.fecha) = year(curdate()) and v.estado = 1 and v.id_empresa = '$this->id_empresa' and v.id_sucursal = '$this->id_sucursal'
             group by p.id_laboratorio 
             order by sum(vp.cantidad * vp.precio) desc";
         $resultado = $conn->query($sql);
@@ -92,7 +92,7 @@ class cl_inicio
             inner join producto p on vp.id_producto = p.id_producto and vp.id_empresa = p.id_empresa
                 inner join laboratorio l on p.id_laboratorio = l.id_laboratorio
             inner join venta v on vp.id_venta = v.id_venta and vp.periodo = v.periodo and vp.id_empresa = v.id_empresa
-            where year(v.fecha) = year(curdate()) and month(v.fecha) = month(curdate()) and v.estado = 1 and v.id_empresa = '$this->id_empresa'
+            where year(v.fecha) = year(curdate()) and month(v.fecha) = month(curdate()) and v.estado = 1 and v.id_empresa = '$this->id_empresa' and v.id_sucursal = '$this->id_sucursal'
             group by p.id_laboratorio
             order by sum(vp.cantidad * vp.precio) desc";
         $resultado = $conn->query($sql);

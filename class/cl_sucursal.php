@@ -158,9 +158,18 @@ class cl_sucursal {
 
     public function insertar(){
         global $conn;
-        $query = "insert into sucursales values ('".$this->id_sucursal."', '".$this->id_empresa."', '".$this->nombre."', '".
-        $this->direccion."', '".$this->ubigeo."', '".$this->distrito."', '".$this->provincia."', '".$this->departamento."', '".$this->codsunat."')";
-        $resultado= $conn-$query($query);
+        $query = "insert into sucursales values (
+                               '".$this->id_sucursal."', 
+                               '".$this->id_empresa."', 
+                               '".$this->nombre."', 
+                               '".$this->direccion."', 
+                               '".$this->ubigeo."', 
+                               '".$this->distrito."', 
+                               '".$this->provincia."', 
+                               '".$this->departamento."', 
+                               '".$this->codsunat."'
+                               )";
+        $resultado= $conn->query($query);
         if(!$resultado){
             die('Could not enter data in sucursales: ' .mysqli_error($conn));
         }else{

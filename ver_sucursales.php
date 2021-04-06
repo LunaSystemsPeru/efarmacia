@@ -4,12 +4,12 @@ session_start();
 if (is_null($_SESSION['id_empresa'])) {
     header("Location: login.php");
 }
-require 'class/cl_sucursal.php';
-$title = "Ver Sucursales - Farmacia - Luna Systems Peru";
+require 'class/cl_salida.php';
+$title = "Ver Salidas de Mercaderia - Farmacia - Luna Systems Peru";
 
-$c_sucursal = new cl_sucursal();
+$c_salida=new cl_salida();
 
-$c_sucursal->setIdEmpresa($_SESSION['id_empresa']);
+$c_salida->setIdEmpresa($_SESSION['id_empresa']);
 ?>
 <!DOCTYPE html>
 <html>
@@ -81,15 +81,15 @@ $c_sucursal->setIdEmpresa($_SESSION['id_empresa']);
                             <ol class="hbreadcrumb breadcrumb">
                                 <li><a href="index.php">Dashboard</a></li>
                                 <li>
-                                    <span>Sucursales</span>
+                                    <span>Movimientos Almacen</span>
                                 </li>
                                 <li class="active">
-                                    <span>Sucursales</span>
+                                    <span>Salidas</span>
                                 </li>
                             </ol>
                         </div>
                         <h2 class="font-light m-b-xs">
-                            Ver mis Sucursales
+                            Salidas de Mercaderia
                         </h2>
                     </div>
                 </div>
@@ -103,14 +103,28 @@ $c_sucursal->setIdEmpresa($_SESSION['id_empresa']);
                     <div class="col-lg-12">
                         <div class="hpanel">
                             <div class="panel-heading ">
-                                Listar Sucursales
+                                Listar Salidas
                             </div>
                             <div class="panel-body">
                                 <div class="row">
                                     <div class="col-md-9 m-b-md">
                                         <div class="btn-group">
-                                            <a href="reg_sucursal.php" class="btn btn-info"><i class="fa fa-plus"></i> Nueva Sucursal</a>
+                                            <a href="reg_salida.php" class="btn btn-success">Nueva Salida</a>
                                         </div>
+                                    </div>
+                                    <div class="col-md-3 ">
+                                        <form class="form-horizontal">
+                                            <div class="form-group">
+                                                <div class="col-md-12">
+                                                    <select class="form-control">
+                                                        <option>Seleccionar Año</option>
+                                                    </select>
+                                                    <select class="form-control">
+                                                        <option>Seleccionar Periodo</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
 
@@ -118,26 +132,27 @@ $c_sucursal->setIdEmpresa($_SESSION['id_empresa']);
                                 <table id="tabla-salidas" class="table table-striped table-bordered table-hover">
                                     <thead>
                                         <tr>
-                                            <th>Id.</th>
-                                            <th>Nombre</th>
-                                            <th>Direccion</th>
-                                            <th>Cod SUNAT</th>
-                                            <th>Ubigeo</th>
-                                            <th>Acciones</th>
+                                            <th width="10%">Id.</th>
+                                            <th width="11%">Fecha</th>
+                                            <th width="30%">Proveedor</th>
+                                            <th width="11%">Usuario</th>
+                                            <th width="10%">Total</th>
+                                            <th width="11%">Acciones</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                     <?php
-                                    $listaSucursales= $c_sucursal->verFilas();
-                                    foreach ($listaSucursales as $listar){
+                                    $listaSalidas= $c_salida->ver_salidas();
+                                    foreach ($listaSalidas as $salida){
                                        echo '<tr>';
-                                       echo     '<td>'. $listar["id_sucursal"] .'</td>';
-                                       echo     '<td>'. $listar["nombre"] .'</td>';
-                                       echo     '<td>'. $listar["direccion"] .'</td>';
-                                       echo     '<td class="text-center">'. $listar["codsunat"] .'</td>';
-                                       echo     '<td class="text-center">'. $listar["ubigeo"] .'</td>';
+                                       echo     '<td>'. $salida["id_salida"] .'</td>';
+                                       echo     '<td class="text-center">'. $salida["fecha"] .'</td>';
+                                       echo     '<td>'. $salida["documento"] .' | '. $salida["proveedor"] .'</td>';
+                                       echo     '<td class="text-center">'. $salida["usuario"] .'</td>';
+                                       echo     '<td class="text-right">'. $salida["total"] .'</td>';
                                        echo     '<td class="text-center">';
-                                       echo         '<a href="reg_sucursal.php?id='.$listar["id_sucursal"].'" class="btn btn-warning btn-sm" title="Editar Sucursal"><i class="fa fa-edit"></i></button>';
+                                       echo         '<button class="btn btn-info btn-sm" title="Ver Documento"><i class="fa fa-eye-slash"></i></button>';
+                                       echo         '<button onclick="eliminar(' . $salida["id_salida"] . ')" class="btn btn-danger btn-sm" title="Eliminar Documento"><i class="fa fa-close"></i></button>';
                                        echo     '</td>';
                                        echo '</tr>';
 
