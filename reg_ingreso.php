@@ -361,6 +361,8 @@ $title = "Registro de Ingreso de Mercaderia - Farmacia - Luna Systems Peru";
                         $('#input_cactual').val(json.cantidad);
                         $('#input_precio').val(json.precio);
                         $('#input_costo').val(json.costo);
+                        $('#input_lote').val(json.lote);
+                        $('#input_vencimiento').val(json.fecha);
                         $('#btn_add_producto').prop("disabled", false);
                         $('#input_costo').prop("readonly", false);
                         $('#input_precio').prop("readonly", false);

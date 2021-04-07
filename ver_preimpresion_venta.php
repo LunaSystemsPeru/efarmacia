@@ -107,13 +107,17 @@ $periodo = filter_input(INPUT_GET, 'periodo');
                 <div class="hpanel">
                     <div class="panel-body">
                         <div class="row">
-                            <div class="col-lg-3 buttons">
+                            <div class="col-lg-2 buttons">
                                 <a href="ver_ventas.php" class="btn btn-success"><i class="fa fa-arrow-circle-o-left"></i> Ver Ventas</a>
                                 <br>
                                 <a href="reg_venta.php" class="btn btn-info"><i class="fa fa-plus"></i> Agregar Venta</a>
                             </div>
-                            <div class="col-lg-9">
-                                <iframe class="col-lg-12" height="500px" src="reports/rpt_voucher_venta.php?id_venta=<?php echo $id_venta . "&periodo=" . $periodo;?>"></iframe>
+                            <?php ?>
+                            <div class="col-lg-5">
+                                <iframe class="col-lg-12" id="idframe1" height="500px" src="reports/rpt_voucher_venta.php?id_venta=<?php echo $id_venta . "&periodo=" . $periodo;?>"></iframe>
+                            </div>
+                            <div class="col-lg-4">
+                                <iframe class="col-lg-12" id="idframe2" height="500px" src="reports/rpt_ticket_venta.php?id_venta=<?php echo $id_venta . "&periodo=" . $periodo;?>"></iframe>
                             </div>
                         </div>
 

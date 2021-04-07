@@ -16,6 +16,7 @@ $query = "SELECT
           INNER JOIN presentacion AS pr 
             ON p.id_presentacion = pr.id_presentacion 
             WHERE ps.id_sucursal= '{$_SESSION['id_sucursal']}' and  p.nombre LIKE '%$searchTerm%'";
+            //echo $query;
 $resultado = $conn->query($query);
 $a_json = array();
 $a_json_row = array();

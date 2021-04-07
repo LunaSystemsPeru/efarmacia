@@ -337,7 +337,7 @@ class cl_venta
             from venta v 
             inner join documentos_sunat ds on v.id_documento = ds.id_documento 
             inner join cliente c on v.id_cliente = c.id_cliente and v.id_empresa = c.id_empresa 
-            inner join usuario u on v.id_empresa = u.id_empresa
+            inner join usuario u on v.id_empresa = u.id_empresa and u.id_usuario = v.id_usuario 
             where v.id_empresa = '$this->id_empresa' and v.periodo = '$this->periodo' and v.id_sucursal = '$this->id_sucursal'";
         $resultado = $conn->query($query);
         return $resultado->fetch_all(MYSQLI_ASSOC);

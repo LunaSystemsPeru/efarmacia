@@ -225,7 +225,7 @@ $title = "Registro de Ajuste de Mercaderia - Farmacia - Luna Systems Peru";
     $(function () {
         //autocomplete
         $("#input_producto").autocomplete({
-            source: "ajax_post/buscar_productos.php",
+            source: "ajax_post/buscar_mis_productos.php",
             minLength: 2,
             select: function (event, ui) {
                 event.preventDefault();
