@@ -4,8 +4,8 @@ require '../class/cl_conectar.php';
 mysqli_set_charset($conn, "utf8");
 $searchTerm = mysqli_real_escape_string($conn, (filter_input(INPUT_GET, 'term')));
 $query = "SELECT 
-          ps.*,
-        p.*,
+          ps.cantidad,p.id_producto,
+        p.nombre,p.precio,p.costo,p.vcto,p.lote,
           l.nombre AS laboratorio,
           pr.nombre AS presentacion 
         FROM
