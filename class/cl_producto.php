@@ -19,7 +19,6 @@ class cl_producto
     private $id_laboratorio;
     private $costo;
     private $precio;
-    private $cantidad;
     private $fecha_vcto;
     private $lote;
     private $id_proveedor;
@@ -162,21 +161,6 @@ class cl_producto
         $this->precio = $precio;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getCantidad()
-    {
-        return $this->cantidad;
-    }
-
-    /**
-     * @param mixed $cantidad
-     */
-    public function setCantidad($cantidad)
-    {
-        $this->cantidad = $cantidad;
-    }
 
     /**
      * @return mixed
@@ -370,7 +354,8 @@ class cl_producto
         from producto as p
         inner join laboratorio l on p.id_laboratorio = l.id_laboratorio
         inner join presentacion p2 on p.id_presentacion = p2.id_presentacion
-        where p.id_empresa = '$this->id_empresa' and p.cantidad <= 0
+        inner join productos_sucursales ps on p.id_producto = ps.id_producto
+        where p.id_empresa = '$this->id_empresa' and ps.cantidad <= 0
         order by p.vcto asc";
         $resultado = $conn->query($query);
         return $resultado->fetch_all(MYSQLI_ASSOC);
