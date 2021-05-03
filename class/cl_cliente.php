@@ -201,6 +201,21 @@ class cl_cliente
 
         return $grabado;
     }
+    
+    public function modificar()
+    {
+        global $conn;
+        $query = "update cliente set nombre = '$this->nombre', direccion = '$this->direccion', telefono = '$this->telefono' where id_cliente = '" . $this->id_cliente . "' and id_empresa = '" . $this->id_empresa . "'";
+        $resultado = $conn->query($query);
+        if (!$resultado) {
+            die('Could not update data in cliente: ' . mysqli_error($conn));
+        } else {
+            //echo "Entered data successfully";
+            $grabado = true;
+        }
+
+        return $grabado;
+    }
 
     public function obtener_datos()
     {
@@ -208,6 +223,7 @@ class cl_cliente
         global $conn;
         $query = "select * from cliente "
             . "where id_cliente = '" . $this->id_cliente . "' and id_empresa = '" . $this->id_empresa . "'";
+          //  echo $query;
         $resultado = $conn->query($query);
         if ($resultado->num_rows > 0) {
             $existe = true;

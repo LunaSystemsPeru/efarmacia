@@ -5,6 +5,16 @@ if (is_null($_SESSION['id_empresa'])) {
     header("Location: login.php");
 }
 
+require 'class/cl_cliente.php';
+$cliente = new cl_cliente();
+
+$id = filter_input(INPUT_GET, 'id');
+if ($id){
+    $cliente->setIdCliente($id);
+    $cliente->setIdEmpresa($_SESSION['id_empresa']);
+    $cliente->obtener_datos();
+}
+
 $title = "Registro de Cliente - Farmacia - Luna Systems Peru";
 ?>
 <!DOCTYPE html>
@@ -108,7 +118,7 @@ $title = "Registro de Cliente - Farmacia - Luna Systems Peru";
                                 <div class="col-lg-2">
                                     <input type="text" class="form-control text-center"
                                            name="input_ndocumento" id="input_ndocumento"
-                                           max-lenght="11" required/>
+                                           max-lenght="11"  value="<?php echo $cliente->getDocumento()?>" required/>
                                 </div>
                                 <button type="button" class="btn btn-info" onclick="enviar_ruc()" name="btn_comprueba_ruc">Validar Documento</button>
                             </div>
@@ -116,7 +126,7 @@ $title = "Registro de Cliente - Farmacia - Luna Systems Peru";
                             <div class="form-group">
                                 <label class="col-lg-2 control-label">DATOS: </label>
                                 <div class="col-lg-8">
-                                    <input type="text" class="form-control" name="input_datos"
+                                    <input type="text" class="form-control" name="input_datos" value="<?php echo $cliente->getNombre()?>"
                                            id="input_datos" max-lenght="245" required/>
                                 </div>
                             </div>
@@ -140,6 +150,7 @@ $title = "Registro de Cliente - Farmacia - Luna Systems Peru";
                         </div>
 
                         <div class="panel-footer text-right">
+                            <input type="hidden" name="hidden_id_cliente" value="<?php echo $id?>" >
                             <button type="submit" class="btn btn-primary" id="registrar_cliente">Guardar</button>
                         </div>
                     </form>

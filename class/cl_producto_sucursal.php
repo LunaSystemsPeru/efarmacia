@@ -96,12 +96,12 @@ class cl_producto_sucursal
     function ver_productos()
     {
         global $conn;
-        $query = "select p.id_producto, p.nombre, p.principio_activo, pr.nombre as npresentacion, l.nombre as nlaboratorio, p.cantidad, p.precio, p.lote, p.vcto, DATEDIFF(p.vcto, current_date()) as faltantes 
+        $query = "select p.id_producto, p.nombre, p.principio_activo, pr.nombre as npresentacion, l.nombre as nlaboratorio, ps.cantidad, p.precio, p.lote, p.vcto, DATEDIFF(p.vcto, current_date()) as faltantes 
         from productos_sucursales as ps 
             inner join producto as p on p.id_producto = ps.id_producto and p.id_empresa = ps.id_empresa
         inner join laboratorio as l on p.id_laboratorio = l.id_laboratorio 
         inner join presentacion pr on p.id_presentacion = pr.id_presentacion 
-        where p.id_empresa = '$this->id_empresa' and ps.id_sucursal = '$this->id_sucursal'";
+        where ps.id_sucursal = '$this->id_sucursal'";
         $resultado = $conn->query($query);
         return $resultado->fetch_all(MYSQLI_ASSOC);
     }
