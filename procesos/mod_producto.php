@@ -13,9 +13,8 @@ $c_producto->setIdMimsa(filter_input(INPUT_POST, 'input_mimsa'));
 $c_producto->setPrecioCaja(filter_input(INPUT_POST, 'input_precio_caja'));
 $c_producto->setIdLaboratorio(filter_input(INPUT_POST, 'select_laboratorio'));
 $c_producto->setIdPresentacion(filter_input(INPUT_POST, 'select_presentacion'));
-$c_producto->setIdEmpresa($_SESSION['id_empresa']);
 
 
 if ($c_producto->actualizar_productos()) {
-    header("Location: ../ver_productos.php");
+    header("Location: ../ver_productos_sucursal.php");
 }

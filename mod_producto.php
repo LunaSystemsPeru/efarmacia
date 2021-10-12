@@ -124,7 +124,7 @@ $cl_producto->obtener_datos();
                                 <div class="col-lg-8">
                                     <input type="text" class="form-control"
                                            name="input_nombre" id="input_nombre"
-                                           max-lenght="245" value="<?php echo $cl_producto->getNombre() ?>" disabled/>
+                                           max-lenght="245" value="<?php echo $cl_producto->getNombre() ?>" readonly/>
                                 </div>
                             </div>
 
@@ -132,7 +132,7 @@ $cl_producto->obtener_datos();
                                 <label class="col-lg-2 control-label">LABORATORIO:</label>
                                 <div class="col-lg-3">
 
-                                    <select disabled class="form-control" name="select_laboratorio">
+                                    <select class="form-control" name="select_laboratorio">
                                         <?php
                                         $a_laboratorio = $c_laboratorio->ver_laboratorios();
                                         foreach ($a_laboratorio as $fila) {
@@ -152,7 +152,7 @@ $cl_producto->obtener_datos();
                             <div class="form-group">
                                 <label class="col-lg-2 control-label">PRESENTACION:</label>
                                 <div class="col-lg-3">
-                                    <select disabled class="form-control" name="select_presentacion">
+                                    <select class="form-control" name="select_presentacion">
                                         <?php
                                         $a_presentacion = $c_presentacion->ver_presentaciones();
                                         foreach ($a_presentacion as $fila) {

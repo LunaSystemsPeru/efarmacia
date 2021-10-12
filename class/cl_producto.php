@@ -347,7 +347,8 @@ class cl_producto
         return $resultado->fetch_all(MYSQLI_ASSOC);
     }
 
-    function verSinStock () {
+    function verSinStock()
+    {
         global $conn;
         $query = "select p.id_producto, p.nombre, l.nombre as laboratorio, p.precio, p2.nombre as presentacion
         from producto as p
@@ -361,21 +362,21 @@ class cl_producto
     }
 
 
-
     function actualizar_productos()
     {
         global $conn;
         $query = "update producto 
-                    set 
-                    nombre = '$this->nombre',
-                    id_laboratorio = '$this->id_laboratorio',
-                    id_presentacion = '$this->id_presentacion',
-                        costo = '$this->costo',
-                        precio = '$this->precio',
-                        id_mimsa = '$this->id_mimsa',
-                        precio_caja = '$this->precio_caja'
-                    where id_producto = '$this->id_producto'
-                      and id_empresa = '$this->id_empresa'";
+                   set 
+                   nombre = '$this->nombre',
+                   id_laboratorio = '$this->id_laboratorio',
+                   id_presentacion = '$this->id_presentacion',
+                   costo = '$this->costo',
+                   precio = '$this->precio',
+                   id_mimsa = '$this->id_mimsa',
+                   precio_caja = '$this->precio_caja'
+                   where id_producto = '$this->id_producto'
+                   and id_empresa = '$this->id_empresa'";
+
         $resultado = $conn->query($query);
         return true;
 
