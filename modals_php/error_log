@@ -1,0 +1,9 @@
+[24-Jan-2020 12:02:52 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/modals_php/m_venta_productos.php on line 6
+[24-Jan-2020 12:02:59 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/modals_php/m_venta_productos.php on line 6
+[02-May-2020 06:37:20 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/modals_php/m_venta_productos.php on line 6
+[05-May-2021 12:30:26 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/modals_php/m_venta_productos.php on line 6
+[05-May-2021 12:32:41 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/modals_php/m_ingreso_productos.php on line 13
+[05-May-2021 12:36:05 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/modals_php/m_ingreso_productos.php on line 13
+[05-May-2021 12:36:05 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/modals_php/m_ingreso_productos.php on line 13
+[03-Sep-2021 10:01:09 America/Los_Angeles] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/lunasystems/public_html/clientes/farmacia/class/cl_varios.php on line 88
+[03-Sep-2021 10:01:28 America/Los_Angeles] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/lunasystems/public_html/clientes/farmacia/class/cl_varios.php on line 88

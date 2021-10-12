@@ -15,8 +15,8 @@ $c_sucursal->setDepartamento(filter_input(INPUT_POST, 'input_departamento'));
 $c_sucursal->setCodsunat(filter_input(INPUT_POST, 'input_codsunat'));
 
 if (filter_input(INPUT_POST, 'input_idsucursal')) {
-    $c_sucursal->setIdSucursal(filter_input(INPUT_POST, 'input_idsucursal'));
-    $c_sucursal->modificar();
+$c_sucursal->setIdSucursal(filter_input(INPUT_POST, 'input_idsucursal'));
+$c_sucursal->modificar();
 } else {
     $c_sucursal->obtener_codigo();
     $c_sucursal->insertar();

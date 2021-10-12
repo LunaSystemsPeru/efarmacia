@@ -12,6 +12,7 @@ $resultado = "";
 if (strlen($documento) == 8) {
     $c_validar->setDni($documento);
     $json = $c_validar->obtener_dni();
+    print_r($json);
     $decodificado = json_decode($json, true);
     $success = $decodificado['success'];
     if ($success == false) {
@@ -39,8 +40,8 @@ if (strlen($documento) == 11) {
     }
     if ($success == true) {
         $array_result = array(
-            "nombre" => $decodificado['entity']['razonSocial'],
-            "direccion" => $decodificado['entity']['direccion']
+            "nombre" => $decodificado['entity']['RazonSocial'],
+            "direccion" => $decodificado['entity']['Direccion']
         );
     }
     $resultado = (object)array(

@@ -15,8 +15,8 @@ require __DIR__ . '/../../class/cl_empresa.php';
 
 $util = Util::getInstance();
 
-$id_empresa = filter_input(INPUT_GET, 'id_empresa');
-$fecha = filter_input(INPUT_GET, 'fecha');
+$id_empresa = filter_input(INPUT_POST, 'id_empresa');
+$fecha = filter_input(INPUT_POST, 'fecha');
 
 if ($id_empresa) {
 
@@ -37,7 +37,7 @@ if ($id_empresa) {
     $url = $_SERVER["HTTP_HOST"];
     $dominio = "http://" . $url . "/clientes/farmacia/";
 
-    $see = $util->getSee(SunatEndpoints::FE_BETA);
+    $see = $util->getSee(SunatEndpoints::FE_PRODUCCION);
 
     $contar_malas = 0;
     $total_filas = 0;
@@ -62,7 +62,7 @@ if ($id_empresa) {
             if ($res->isSuccess()) {
                 //obtener cdr y guardar en json
                 $cdr = $res->getCdrResponse();
-                $util->writeCdr_XML($nombre_archivo, $res->getCdrZip());
+                $util->writeCdr($nombre_archivo, $res->getCdrZip());
                 $mensaje = $mensaje . "archivo recibido por sunat " . $cdr->getDescription() . PHP_EOL;
 
                 $c_venta->setIdVenta($fila['id_venta']);

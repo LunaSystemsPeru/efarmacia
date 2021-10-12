@@ -38,15 +38,15 @@ if ($c_cliente->buscar_documento()) {
         if ($c_internet->getTipo() == 2) {
             $resultado["success"] = "nuevo";
             $resultado["documento"] = $respuesta["dni"];
-            $resultado["datos"] = $respuesta["apellidoPaterno"] . " " . $respuesta["apellidoMaterno"] . " " . $respuesta["nombres"];
+            $resultado["datos"] = $respuesta["nombre"];
             $resultado["direccion"] = "";
         }
 
         if ($c_internet->getTipo() == 1) {
             $resultado["success"] = "nuevo";
-            $resultado["documento"] = $respuesta["result"]["RUC"];
-            $resultado["datos"] = $respuesta["result"]["RazonSocial"];
-            $resultado["direccion"] = $respuesta["result"]["Direccion"];
+            $resultado["documento"] = $respuesta["ruc"];
+            $resultado["datos"] = $respuesta["razonSocial"];
+            $resultado["direccion"] = $respuesta["direccion"];
         }
   //  }
 }

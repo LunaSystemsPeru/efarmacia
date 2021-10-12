@@ -5,9 +5,9 @@
  * Date: 02/09/19
  * Time: 07:45 PM
  */
-if (!isset($_SESSION)) {
+/*if (!isset($_SESSION)) {
     session_start();
-}
+}*/
 
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
@@ -17,14 +17,14 @@ require '../../class/cl_empresa.php';
 
 $c_empresa = new cl_empresa();
 //variables publicas
-$url = "http://lunasystemsperu.com/clientes/farmacia/";
+$url = "http://www.lunasystemsperu.com/clientes/farmacia/";
 $fecha = date("Y-m-d");
-//$fecha = '2019-11-06';
+//$fecha = '2021-09-07';
 
 //recorrer lista de empresas
 $array_empresas = $c_empresa->ver_empresas();
 foreach ($array_empresas as $fila) {
-    echo $fila['id_empresa'] . " nombre " . $fila['razon_social'] . PHP_EOL;
+    echo "----ID EMPRESA: " . $fila['id_empresa'] . " nombre " . $fila['razon_social'] . "<br>";
     $id_empresa = $fila['id_empresa'];
 
     //enviar resumen de boletas
@@ -44,9 +44,9 @@ foreach ($array_empresas as $fila) {
     $respuesta_factura = curl_exec($ch_factura);
     curl_close($ch_factura);
 
-    echo PHP_EOL . " respuesta factura " . PHP_EOL;
+    echo "<br>" . " respuesta factura " . "<br>";
     print_r($respuesta_factura);
-    echo PHP_EOL;
+    echo "<br>";
 
     $ruta = $url . "greenter/generates/resumen.php";
     //enviar resumen de facturas
@@ -59,9 +59,9 @@ foreach ($array_empresas as $fila) {
     $respuesta_resumen = curl_exec($ch_resumen);
     curl_close($ch_resumen);
 
-    echo PHP_EOL . " respuesta resumen " . PHP_EOL;
+    echo "<br>" . " respuesta resumen " . "<br>";
     print_r($respuesta_resumen);
-    echo PHP_EOL;
+    echo "<br>";
 
     //enviar notificacion de bajas
     $ruta = $url . "greenter/generates/comunicacion-baja.php";
@@ -75,8 +75,8 @@ foreach ($array_empresas as $fila) {
     $respuesta_baja= curl_exec($ch_baja);
     curl_close($ch_baja);
 
-    echo PHP_EOL . " respuesta comunicacion baja " . PHP_EOL;
+    echo "<br>" . " respuesta comunicacion baja " . "<br>";
     print_r($respuesta_baja);
-    echo PHP_EOL;
+    echo "<br><br>";
 
 }

@@ -13,8 +13,8 @@
  */
 class cl_validar_documento {
 
-    private $url_ruc = "http://lunasystemsperu.com/consultas_json/composer/consulta_sunat_JMP.php?ruc=";
-    private $url_dni = "http://lunasystemsperu.com/consultas_json/composer/consultas_dni_JMP.php?dni=";
+    private $url_ruc = "http://lunasystemsperu.com/apis/apiruc.php?ruc=";
+    private $url_dni = "http://lunasystemsperu.com/apis/apidni.php?dni=";
     private $dni;
     private $ruc;
 
@@ -36,6 +36,12 @@ class cl_validar_documento {
             // Check for errors
             if ($json_ruc === FALSE) {
                 die('Error');
+            } else {
+                $array_ruc = json_decode($json_ruc, true);
+                $json_ruc = (object) array(
+                    "success" => true,
+                    "entity" => $array_ruc
+                );
             }
         } else {
             $json_ruc = (object) array(
@@ -44,7 +50,7 @@ class cl_validar_documento {
             );
         }
 
-        return $json_ruc;
+        return json_encode($json_ruc);
     }
 
     public function obtener_dni() {
@@ -53,6 +59,12 @@ class cl_validar_documento {
             // Check for errors
             if ($json === FALSE) {
                 die('Error');
+            } else {
+                $array_dni = json_decode($json, true);
+                $json = (object) array(
+                    "success" => true,
+                    "entity" => $array_dni
+                );
             }
         } else {
             $json = (object) array(
@@ -61,7 +73,8 @@ class cl_validar_documento {
             );
         }
 
-        return $json;
+        return json_encode($json);
+
     }
 
 }

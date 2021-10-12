@@ -116,7 +116,7 @@ class cl_ventas_anuladas
             INNER JOIN venta AS v ON v.id_venta = va.venta_id_venta 
             INNER JOIN documentos_sunat ds ON v.id_documento = ds.id_documento
             INNER JOIN cliente c ON v.id_cliente = c.id_cliente 
-        where v.id_empresa = '$this->id_empresa' and v.fecha = '$this->fecha' and v.id_documento = 2 ";
+        where v.id_empresa = '$this->id_empresa' and v.fecha = '$this->fecha' and v.id_documento = 2 and v.estado = 2 ";
         $resultado = $conn->query($sql);
         $fila = $resultado->fetch_all(MYSQLI_ASSOC);
         return $fila;
@@ -131,7 +131,7 @@ class cl_ventas_anuladas
             INNER JOIN venta AS v ON v.id_venta = va.venta_id_venta 
             INNER JOIN documentos_sunat ds ON v.id_documento = ds.id_documento
             INNER JOIN cliente c ON v.id_cliente = c.id_cliente 
-        where v.id_empresa = '$id_empresa' and v.fecha = '$this->fecha' and v.id_documento = 3 ";
+        where v.id_empresa = '$id_empresa' and v.fecha = '$this->fecha' and v.id_documento = 3 and v.estado = 2 ";
         $resultado = $conn->query($sql);
         $fila = $resultado->fetch_all(MYSQLI_ASSOC);
         return $fila;

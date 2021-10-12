@@ -1,0 +1,1037 @@
+[05-Dec-2019 16:02:36 America/Los_Angeles] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Unsupported image type: /images/' in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(884): FPDF->Error('Unsupported ima...')
+#1 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(88): FPDF->Image('../images/', 10, 10, 25, 25)
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[05-Dec-2019 16:06:22 America/Los_Angeles] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png' in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #27, '../greenter/gen...')
+#2 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(192): FPDF->Image('../greenter/gen...', 130, 108, 22, 22)
+#4 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[04-Jan-2020 10:53:42 America/Los_Angeles] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png' in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #27, '../greenter/gen...')
+#2 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(192): FPDF->Image('../greenter/gen...', 130, 108, 22, 22)
+#4 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[08-Jan-2020 11:23:12 America/Los_Angeles] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Unsupported image type: /images/' in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(884): FPDF->Error('Unsupported ima...')
+#1 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(88): FPDF->Image('../images/', 10, 10, 36, 20)
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[24-Jan-2020 12:35:22 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 31
+[24-Jan-2020 12:35:22 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 41
+[24-Jan-2020 12:35:23 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 54
+[24-Jan-2020 12:35:23 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 58
+[24-Jan-2020 12:35:23 America/Los_Angeles] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Unsupported image type: /images/' in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(884): FPDF->Error('Unsupported ima...')
+#1 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(88): FPDF->Image('../images/', 10, 10, 36, 20)
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[24-Jan-2020 12:35:30 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 31
+[24-Jan-2020 12:35:30 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 41
+[24-Jan-2020 12:35:30 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 54
+[24-Jan-2020 12:35:30 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 58
+[24-Jan-2020 12:35:30 America/Los_Angeles] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Unsupported image type: /images/' in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(884): FPDF->Error('Unsupported ima...')
+#1 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(88): FPDF->Image('../images/', 10, 10, 36, 20)
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[24-Jan-2020 12:35:34 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 31
+[24-Jan-2020 12:35:34 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 41
+[24-Jan-2020 12:35:34 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 54
+[24-Jan-2020 12:35:34 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 58
+[24-Jan-2020 12:35:34 America/Los_Angeles] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Unsupported image type: /images/' in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(884): FPDF->Error('Unsupported ima...')
+#1 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(88): FPDF->Image('../images/', 10, 10, 36, 20)
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[05-Feb-2020 07:52:24 America/Los_Angeles] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Unsupported image type: /images/' in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(884): FPDF->Error('Unsupported ima...')
+#1 /home/lunasystems/public_html/clientes/farmacia/reports/rpt_voucher_venta.php(99): FPDF->Image('../images/', 8, 8, 20, 15)
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[12-Feb-2020 14:56:50 America/Los_Angeles] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png' in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #27, '../greenter/gen...')
+#2 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/lunasystems/public_html/clientes/farmacia/reports/rpt_voucher_venta.php(169): FPDF->Image('../greenter/gen...', 8, 88, 22, 22)
+#4 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[08-Apr-2020 11:49:20 America/Los_Angeles] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png' in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #27, '../greenter/gen...')
+#2 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(192): FPDF->Image('../greenter/gen...', 130, 108, 22, 22)
+#4 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[11-May-2020 22:40:33 America/Los_Angeles] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Unsupported image type: /images/' in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(884): FPDF->Error('Unsupported ima...')
+#1 /home/lunasystems/public_html/clientes/farmacia/reports/rpt_voucher_venta.php(99): FPDF->Image('../images/', 8, 8, 20, 15)
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[11-May-2020 22:40:56 America/Los_Angeles] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Unsupported image type: /images/' in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(884): FPDF->Error('Unsupported ima...')
+#1 /home/lunasystems/public_html/clientes/farmacia/reports/rpt_voucher_venta.php(99): FPDF->Image('../images/', 8, 8, 20, 15)
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[19-May-2020 17:44:12 America/Los_Angeles] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png' in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #27, '../greenter/gen...')
+#2 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(192): FPDF->Image('../greenter/gen...', 130, 108, 22, 22)
+#4 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[19-May-2020 17:44:22 America/Los_Angeles] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png' in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #27, '../greenter/gen...')
+#2 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(192): FPDF->Image('../greenter/gen...', 130, 108, 22, 22)
+#4 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[19-May-2020 17:44:56 America/Los_Angeles] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png' in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #27, '../greenter/gen...')
+#2 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(192): FPDF->Image('../greenter/gen...', 130, 108, 22, 22)
+#4 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[19-May-2020 17:45:50 America/Los_Angeles] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png' in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #27, '../greenter/gen...')
+#2 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(192): FPDF->Image('../greenter/gen...', 130, 108, 22, 22)
+#4 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[19-May-2020 17:46:14 America/Los_Angeles] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png' in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #27, '../greenter/gen...')
+#2 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(192): FPDF->Image('../greenter/gen...', 130, 108, 22, 22)
+#4 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[19-May-2020 17:46:17 America/Los_Angeles] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png' in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #27, '../greenter/gen...')
+#2 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(192): FPDF->Image('../greenter/gen...', 130, 108, 22, 22)
+#4 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[11-Jun-2020 23:00:27 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 31
+[11-Jun-2020 23:00:27 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 41
+[11-Jun-2020 23:00:27 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 54
+[11-Jun-2020 23:00:27 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 58
+[11-Jun-2020 23:00:27 America/Los_Angeles] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Unsupported image type: /images/' in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(884): FPDF->Error('Unsupported ima...')
+#1 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(88): FPDF->Image('../images/', 10, 10, 36, 20)
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[11-Jun-2020 23:00:35 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 31
+[11-Jun-2020 23:00:35 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 41
+[11-Jun-2020 23:00:35 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 54
+[11-Jun-2020 23:00:35 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 58
+[11-Jun-2020 23:00:35 America/Los_Angeles] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Unsupported image type: /images/' in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(884): FPDF->Error('Unsupported ima...')
+#1 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(88): FPDF->Image('../images/', 10, 10, 36, 20)
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[11-Jun-2020 23:01:01 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 31
+[11-Jun-2020 23:01:01 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 41
+[11-Jun-2020 23:01:01 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 54
+[11-Jun-2020 23:01:01 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 58
+[11-Jun-2020 23:01:01 America/Los_Angeles] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Unsupported image type: /images/' in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(884): FPDF->Error('Unsupported ima...')
+#1 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(88): FPDF->Image('../images/', 10, 10, 36, 20)
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[11-Jun-2020 23:03:27 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 31
+[11-Jun-2020 23:03:27 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 41
+[11-Jun-2020 23:03:27 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 54
+[11-Jun-2020 23:03:27 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 58
+[11-Jun-2020 23:03:27 America/Los_Angeles] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Unsupported image type: /images/' in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(884): FPDF->Error('Unsupported ima...')
+#1 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(88): FPDF->Image('../images/', 10, 10, 36, 20)
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[11-Jun-2020 23:05:03 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 31
+[11-Jun-2020 23:05:03 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 41
+[11-Jun-2020 23:05:03 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 54
+[11-Jun-2020 23:05:03 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 58
+[11-Jun-2020 23:05:03 America/Los_Angeles] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Unsupported image type: /images/' in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(884): FPDF->Error('Unsupported ima...')
+#1 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(88): FPDF->Image('../images/', 10, 10, 36, 20)
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[11-Jun-2020 23:06:34 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 31
+[11-Jun-2020 23:06:34 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 41
+[11-Jun-2020 23:06:34 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 54
+[11-Jun-2020 23:06:34 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 58
+[11-Jun-2020 23:06:34 America/Los_Angeles] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Unsupported image type: /images/' in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(884): FPDF->Error('Unsupported ima...')
+#1 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(88): FPDF->Image('../images/', 10, 10, 36, 20)
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[11-Jun-2020 23:06:41 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 31
+[11-Jun-2020 23:06:41 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 41
+[11-Jun-2020 23:06:41 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 54
+[11-Jun-2020 23:06:41 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 58
+[11-Jun-2020 23:06:41 America/Los_Angeles] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Unsupported image type: /images/' in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(884): FPDF->Error('Unsupported ima...')
+#1 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(88): FPDF->Image('../images/', 10, 10, 36, 20)
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[12-Jun-2020 18:02:25 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 31
+[12-Jun-2020 18:02:25 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 41
+[12-Jun-2020 18:02:25 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 54
+[12-Jun-2020 18:02:25 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 58
+[12-Jun-2020 18:02:25 America/Los_Angeles] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Unsupported image type: /images/' in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(884): FPDF->Error('Unsupported ima...')
+#1 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(88): FPDF->Image('../images/', 10, 10, 36, 20)
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[19-Jul-2020 17:30:32 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 31
+[19-Jul-2020 17:30:32 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 41
+[19-Jul-2020 17:30:32 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 54
+[19-Jul-2020 17:30:32 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 58
+[19-Jul-2020 17:30:32 America/Los_Angeles] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Unsupported image type: /images/' in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(884): FPDF->Error('Unsupported ima...')
+#1 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(88): FPDF->Image('../images/', 10, 10, 36, 20)
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[19-Jul-2020 17:30:42 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 31
+[19-Jul-2020 17:30:42 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 41
+[19-Jul-2020 17:30:42 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 54
+[19-Jul-2020 17:30:42 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 58
+[19-Jul-2020 17:30:42 America/Los_Angeles] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Unsupported image type: /images/' in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(884): FPDF->Error('Unsupported ima...')
+#1 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(88): FPDF->Image('../images/', 10, 10, 36, 20)
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[20-Oct-2020 23:54:34 UTC] PHP Parse error:  syntax error, unexpected ')' in /home/lunasystems/public_html/clientes/farmacia/reports/rpt_voucher_venta.php on line 167
+[30-Nov-2020 14:12:44 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 31
+[30-Nov-2020 14:12:44 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 41
+[30-Nov-2020 14:12:44 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 54
+[30-Nov-2020 14:12:44 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 58
+[30-Nov-2020 14:12:44 America/Los_Angeles] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Unsupported image type: /images/' in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(884): FPDF->Error('Unsupported ima...')
+#1 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(88): FPDF->Image('../images/', 10, 10, 36, 20)
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[02-Dec-2020 19:09:11 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 31
+[02-Dec-2020 19:09:11 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 41
+[02-Dec-2020 19:09:11 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 54
+[02-Dec-2020 19:09:11 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 58
+[02-Dec-2020 19:09:11 America/Los_Angeles] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Unsupported image type: /images/' in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(884): FPDF->Error('Unsupported ima...')
+#1 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(88): FPDF->Image('../images/', 10, 10, 36, 20)
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[02-Dec-2020 19:09:20 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 31
+[02-Dec-2020 19:09:20 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 41
+[02-Dec-2020 19:09:20 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 54
+[02-Dec-2020 19:09:21 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 58
+[02-Dec-2020 19:09:21 America/Los_Angeles] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Unsupported image type: /images/' in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(884): FPDF->Error('Unsupported ima...')
+#1 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(88): FPDF->Image('../images/', 10, 10, 36, 20)
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[30-Dec-2020 18:47:54 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 31
+[30-Dec-2020 18:47:55 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 41
+[30-Dec-2020 18:47:55 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 54
+[30-Dec-2020 18:47:55 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 58
+[30-Dec-2020 18:47:55 America/Los_Angeles] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Unsupported image type: /images/' in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(884): FPDF->Error('Unsupported ima...')
+#1 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(88): FPDF->Image('../images/', 10, 10, 36, 20)
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[30-Dec-2020 18:48:16 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 31
+[30-Dec-2020 18:48:16 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 41
+[30-Dec-2020 18:48:16 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 54
+[30-Dec-2020 18:48:17 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 58
+[30-Dec-2020 18:48:17 America/Los_Angeles] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Unsupported image type: /images/' in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(884): FPDF->Error('Unsupported ima...')
+#1 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(88): FPDF->Image('../images/', 10, 10, 36, 20)
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[30-Dec-2020 18:48:32 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 31
+[30-Dec-2020 18:48:32 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 41
+[30-Dec-2020 18:48:32 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 54
+[30-Dec-2020 18:48:32 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 58
+[30-Dec-2020 18:48:32 America/Los_Angeles] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Unsupported image type: /images/' in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(884): FPDF->Error('Unsupported ima...')
+#1 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(88): FPDF->Image('../images/', 10, 10, 36, 20)
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[30-Dec-2020 18:49:18 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 31
+[30-Dec-2020 18:49:18 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 41
+[30-Dec-2020 18:49:18 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 54
+[30-Dec-2020 18:49:18 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 58
+[30-Dec-2020 18:49:19 America/Los_Angeles] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Unsupported image type: /images/' in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(884): FPDF->Error('Unsupported ima...')
+#1 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(88): FPDF->Image('../images/', 10, 10, 36, 20)
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[01-Feb-2021 07:53:26 America/Los_Angeles] PHP Warning:  mysqli::mysqli(): (HY000/2002): No such file or directory in /home/lunasystems/public_html/clientes/farmacia/class/cl_conectar.php on line 9
+[01-Feb-2021 07:53:28 America/Los_Angeles] PHP Warning:  mysqli::mysqli(): (HY000/2002): No such file or directory in /home/lunasystems/public_html/clientes/farmacia/class/cl_conectar.php on line 9
+[30-Mar-2021 18:06:48 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 31
+[30-Mar-2021 18:06:48 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 41
+[30-Mar-2021 18:06:48 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 54
+[30-Mar-2021 18:06:48 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 58
+[30-Mar-2021 18:06:48 America/Los_Angeles] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Unsupported image type: /images/' in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(884): FPDF->Error('Unsupported ima...')
+#1 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(88): FPDF->Image('../images/', 10, 10, 36, 20)
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[30-Mar-2021 18:07:01 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 31
+[30-Mar-2021 18:07:01 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 41
+[30-Mar-2021 18:07:01 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 54
+[30-Mar-2021 18:07:01 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 58
+[30-Mar-2021 18:07:01 America/Los_Angeles] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Unsupported image type: /images/' in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(884): FPDF->Error('Unsupported ima...')
+#1 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(88): FPDF->Image('../images/', 10, 10, 36, 20)
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[30-Mar-2021 18:07:35 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 31
+[30-Mar-2021 18:07:35 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 41
+[30-Mar-2021 18:07:35 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 54
+[30-Mar-2021 18:07:35 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php on line 58
+[30-Mar-2021 18:07:35 America/Los_Angeles] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Unsupported image type: /images/' in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(884): FPDF->Error('Unsupported ima...')
+#1 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(88): FPDF->Image('../images/', 10, 10, 36, 20)
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[14-Apr-2021 08:24:04 America/Los_Angeles] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png' in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #27, '../greenter/gen...')
+#2 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/lunasystems/public_html/clientes/farmacia/reports/rpt_voucher_venta.php(169): FPDF->Image('../greenter/gen...', 60.5, 88, 22, 22)
+#4 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[14-Apr-2021 08:24:04 America/Los_Angeles] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png' in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #27, '../greenter/gen...')
+#2 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/lunasystems/public_html/clientes/farmacia/reports/rpt_ticket_venta.php(170): FPDF->Image('../greenter/gen...', 8, 102, 30, 30)
+#4 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[14-Apr-2021 08:24:14 America/Los_Angeles] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png' in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #27, '../greenter/gen...')
+#2 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/lunasystems/public_html/clientes/farmacia/reports/rpt_voucher_venta.php(169): FPDF->Image('../greenter/gen...', 60.5, 88, 22, 22)
+#4 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[14-Apr-2021 08:24:14 America/Los_Angeles] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png' in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #27, '../greenter/gen...')
+#2 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/lunasystems/public_html/clientes/farmacia/reports/rpt_ticket_venta.php(170): FPDF->Image('../greenter/gen...', 8, 102, 30, 30)
+#4 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[14-Apr-2021 08:24:22 America/Los_Angeles] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png' in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #27, '../greenter/gen...')
+#2 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/lunasystems/public_html/clientes/farmacia/reports/rpt_ticket_venta.php(170): FPDF->Image('../greenter/gen...', 8, 102, 30, 30)
+#4 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[14-Apr-2021 08:24:22 America/Los_Angeles] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png' in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #27, '../greenter/gen...')
+#2 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/lunasystems/public_html/clientes/farmacia/reports/rpt_voucher_venta.php(169): FPDF->Image('../greenter/gen...', 60.5, 88, 22, 22)
+#4 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[14-Apr-2021 08:25:30 America/Los_Angeles] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png' in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #27, '../greenter/gen...')
+#2 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/lunasystems/public_html/clientes/farmacia/reports/rpt_voucher_venta.php(169): FPDF->Image('../greenter/gen...', 60.5, 88, 22, 22)
+#4 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[14-Apr-2021 08:25:30 America/Los_Angeles] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png' in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #27, '../greenter/gen...')
+#2 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/lunasystems/public_html/clientes/farmacia/reports/rpt_ticket_venta.php(170): FPDF->Image('../greenter/gen...', 8, 102, 30, 30)
+#4 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[14-Apr-2021 08:26:56 America/Los_Angeles] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png' in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #27, '../greenter/gen...')
+#2 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/lunasystems/public_html/clientes/farmacia/reports/rpt_ticket_venta.php(170): FPDF->Image('../greenter/gen...', 8, 96, 30, 30)
+#4 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[14-Apr-2021 08:26:57 America/Los_Angeles] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png' in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #27, '../greenter/gen...')
+#2 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/lunasystems/public_html/clientes/farmacia/reports/rpt_voucher_venta.php(169): FPDF->Image('../greenter/gen...', 60.5, 88, 22, 22)
+#4 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[14-Apr-2021 08:30:59 America/Los_Angeles] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png' in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #27, '../greenter/gen...')
+#2 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/lunasystems/public_html/clientes/farmacia/reports/rpt_voucher_venta.php(169): FPDF->Image('../greenter/gen...', 60.5, 88, 22, 22)
+#4 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[14-Apr-2021 08:31:00 America/Los_Angeles] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png' in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #27, '../greenter/gen...')
+#2 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/lunasystems/public_html/clientes/farmacia/reports/rpt_ticket_venta.php(170): FPDF->Image('../greenter/gen...', 8, 108, 30, 30)
+#4 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[14-Apr-2021 08:36:49 America/Los_Angeles] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png' in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #27, '../greenter/gen...')
+#2 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/lunasystems/public_html/clientes/farmacia/reports/rpt_voucher_venta.php(169): FPDF->Image('../greenter/gen...', 60.5, 88, 22, 22)
+#4 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[14-Apr-2021 08:36:49 America/Los_Angeles] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png' in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #27, '../greenter/gen...')
+#2 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/lunasystems/public_html/clientes/farmacia/reports/rpt_ticket_venta.php(170): FPDF->Image('../greenter/gen...', 8, 93, 30, 30)
+#4 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[14-Apr-2021 09:19:39 America/Los_Angeles] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png' in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #27, '../greenter/gen...')
+#2 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/lunasystems/public_html/clientes/farmacia/reports/rpt_voucher_venta.php(169): FPDF->Image('../greenter/gen...', 60.5, 88, 22, 22)
+#4 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[14-Apr-2021 09:19:39 America/Los_Angeles] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png' in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #27, '../greenter/gen...')
+#2 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/lunasystems/public_html/clientes/farmacia/reports/rpt_ticket_venta.php(170): FPDF->Image('../greenter/gen...', 8, 102, 30, 30)
+#4 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[14-Apr-2021 09:46:03 America/Los_Angeles] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png' in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #27, '../greenter/gen...')
+#2 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/lunasystems/public_html/clientes/farmacia/reports/rpt_voucher_venta.php(169): FPDF->Image('../greenter/gen...', 60.5, 88, 22, 22)
+#4 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[14-Apr-2021 09:46:03 America/Los_Angeles] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png' in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #27, '../greenter/gen...')
+#2 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/lunasystems/public_html/clientes/farmacia/reports/rpt_ticket_venta.php(170): FPDF->Image('../greenter/gen...', 8, 96, 30, 30)
+#4 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[14-Apr-2021 09:49:21 America/Los_Angeles] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png' in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #27, '../greenter/gen...')
+#2 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/lunasystems/public_html/clientes/farmacia/reports/rpt_ticket_venta.php(170): FPDF->Image('../greenter/gen...', 8, 108, 30, 30)
+#4 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[14-Apr-2021 09:49:21 America/Los_Angeles] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png' in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #27, '../greenter/gen...')
+#2 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/lunasystems/public_html/clientes/farmacia/reports/rpt_voucher_venta.php(169): FPDF->Image('../greenter/gen...', 60.5, 88, 22, 22)
+#4 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[14-Apr-2021 09:50:58 America/Los_Angeles] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png' in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #27, '../greenter/gen...')
+#2 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/lunasystems/public_html/clientes/farmacia/reports/rpt_voucher_venta.php(169): FPDF->Image('../greenter/gen...', 60.5, 88, 22, 22)
+#4 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[14-Apr-2021 09:50:58 America/Los_Angeles] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png' in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #27, '../greenter/gen...')
+#2 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/lunasystems/public_html/clientes/farmacia/reports/rpt_ticket_venta.php(170): FPDF->Image('../greenter/gen...', 8, 108, 30, 30)
+#4 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[14-Apr-2021 09:52:20 America/Los_Angeles] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png' in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #27, '../greenter/gen...')
+#2 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/lunasystems/public_html/clientes/farmacia/reports/rpt_voucher_venta.php(169): FPDF->Image('../greenter/gen...', 60.5, 88, 22, 22)
+#4 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[14-Apr-2021 09:52:20 America/Los_Angeles] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png' in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #27, '../greenter/gen...')
+#2 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/lunasystems/public_html/clientes/farmacia/reports/rpt_ticket_venta.php(170): FPDF->Image('../greenter/gen...', 8, 102, 30, 30)
+#4 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[14-Apr-2021 09:56:15 America/Los_Angeles] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png' in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #27, '../greenter/gen...')
+#2 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/lunasystems/public_html/clientes/farmacia/reports/rpt_voucher_venta.php(169): FPDF->Image('../greenter/gen...', 60.5, 88, 22, 22)
+#4 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[14-Apr-2021 09:56:16 America/Los_Angeles] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png' in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #27, '../greenter/gen...')
+#2 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/lunasystems/public_html/clientes/farmacia/reports/rpt_ticket_venta.php(170): FPDF->Image('../greenter/gen...', 8, 96, 30, 30)
+#4 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[14-Apr-2021 15:54:56 America/Los_Angeles] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png' in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #27, '../greenter/gen...')
+#2 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(192): FPDF->Image('../greenter/gen...', 130, 108, 22, 22)
+#4 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[14-Apr-2021 15:54:59 America/Los_Angeles] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png' in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #27, '../greenter/gen...')
+#2 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(192): FPDF->Image('../greenter/gen...', 130, 108, 22, 22)
+#4 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[14-Apr-2021 15:55:00 America/Los_Angeles] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png' in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #27, '../greenter/gen...')
+#2 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(192): FPDF->Image('../greenter/gen...', 130, 108, 22, 22)
+#4 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[14-Apr-2021 15:55:05 America/Los_Angeles] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png' in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #27, '../greenter/gen...')
+#2 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(192): FPDF->Image('../greenter/gen...', 130, 108, 22, 22)
+#4 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[14-Apr-2021 15:55:11 America/Los_Angeles] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png' in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #27, '../greenter/gen...')
+#2 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(192): FPDF->Image('../greenter/gen...', 130, 108, 22, 22)
+#4 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[14-Apr-2021 15:55:27 America/Los_Angeles] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png' in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #27, '../greenter/gen...')
+#2 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(192): FPDF->Image('../greenter/gen...', 130, 108, 22, 22)
+#4 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[17-Apr-2021 11:39:28 America/Los_Angeles] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png' in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #27, '../greenter/gen...')
+#2 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(192): FPDF->Image('../greenter/gen...', 130, 108, 22, 22)
+#4 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[17-Apr-2021 11:39:31 America/Los_Angeles] PHP Fatal error:  Uncaught exception 'Exception' with message 'FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png' in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #27, '../greenter/gen...')
+#2 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(192): FPDF->Image('../greenter/gen...', 130, 108, 22, 22)
+#4 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[03-Sep-2021 09:18:45 America/Los_Angeles] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/Varios.php on line 88
+[03-Sep-2021 09:18:45 America/Los_Angeles] PHP Deprecated:  Function get_magic_quotes_runtime() is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 1043
+[03-Sep-2021 09:18:45 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1063): FPDF->Error('Some data has a...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(231): FPDF->Output('I', '20605162739-01-...')
+#3 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[03-Sep-2021 09:18:51 America/Los_Angeles] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/Varios.php on line 88
+[03-Sep-2021 09:18:51 America/Los_Angeles] PHP Deprecated:  Function get_magic_quotes_runtime() is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 1043
+[03-Sep-2021 09:18:51 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1063): FPDF->Error('Some data has a...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(231): FPDF->Output('I', '20605162739-03-...')
+#3 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[03-Sep-2021 09:18:53 America/Los_Angeles] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/Varios.php on line 88
+[03-Sep-2021 09:18:53 America/Los_Angeles] PHP Deprecated:  Function get_magic_quotes_runtime() is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 1043
+[03-Sep-2021 09:18:53 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1063): FPDF->Error('Some data has a...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(231): FPDF->Output('I', '20605162739-03-...')
+#3 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[03-Sep-2021 09:20:09 America/Los_Angeles] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/Varios.php on line 88
+[03-Sep-2021 09:20:09 America/Los_Angeles] PHP Deprecated:  Function get_magic_quotes_runtime() is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 1043
+[03-Sep-2021 09:20:09 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1063): FPDF->Error('Some data has a...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(231): FPDF->Output('I', '20605162739-03-...')
+#3 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[03-Sep-2021 09:20:55 America/Los_Angeles] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/Varios.php on line 88
+[03-Sep-2021 09:20:55 America/Los_Angeles] PHP Deprecated:  Function get_magic_quotes_runtime() is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 1043
+[03-Sep-2021 09:20:55 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1063): FPDF->Error('Some data has a...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(231): FPDF->Output('I', '20605162739-03-...')
+#3 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[03-Sep-2021 09:22:23 America/Los_Angeles] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/Varios.php on line 88
+[03-Sep-2021 09:22:23 America/Los_Angeles] PHP Deprecated:  Function get_magic_quotes_runtime() is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 1043
+[03-Sep-2021 09:22:23 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1063): FPDF->Error('Some data has a...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(231): FPDF->Output('I', '20605162739-03-...')
+#3 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[03-Sep-2021 09:22:25 America/Los_Angeles] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/Varios.php on line 88
+[03-Sep-2021 09:22:25 America/Los_Angeles] PHP Deprecated:  Function get_magic_quotes_runtime() is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 1043
+[03-Sep-2021 09:22:25 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1063): FPDF->Error('Some data has a...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(231): FPDF->Output('I', '20605162739-03-...')
+#3 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[03-Sep-2021 09:22:27 America/Los_Angeles] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/Varios.php on line 88
+[03-Sep-2021 09:22:27 America/Los_Angeles] PHP Deprecated:  Function get_magic_quotes_runtime() is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 1043
+[03-Sep-2021 09:22:27 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1063): FPDF->Error('Some data has a...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(231): FPDF->Output('I', '20605162739-03-...')
+#3 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[03-Sep-2021 09:22:41 America/Los_Angeles] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/Varios.php on line 88
+[03-Sep-2021 09:22:41 America/Los_Angeles] PHP Deprecated:  Function get_magic_quotes_runtime() is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 1043
+[03-Sep-2021 09:22:41 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1063): FPDF->Error('Some data has a...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(231): FPDF->Output('I', '20605162739-03-...')
+#3 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[03-Sep-2021 09:31:14 America/Los_Angeles] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/Varios.php on line 88
+[03-Sep-2021 09:31:14 America/Los_Angeles] PHP Deprecated:  Function get_magic_quotes_runtime() is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 1043
+[03-Sep-2021 09:31:14 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1063): FPDF->Error('Some data has a...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(231): FPDF->Output('I', '20605162739-03-...')
+#3 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[03-Sep-2021 09:40:35 America/Los_Angeles] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/Varios.php on line 88
+[03-Sep-2021 09:40:35 America/Los_Angeles] PHP Deprecated:  Function get_magic_quotes_runtime() is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 1043
+[03-Sep-2021 09:40:35 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1063): FPDF->Error('Some data has a...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(231): FPDF->Output('I', '20605162739-03-...')
+#3 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[03-Sep-2021 09:54:13 America/Los_Angeles] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/Varios.php on line 88
+[03-Sep-2021 09:54:13 America/Los_Angeles] PHP Deprecated:  Function get_magic_quotes_runtime() is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 1043
+[03-Sep-2021 09:54:13 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1063): FPDF->Error('Some data has a...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(231): FPDF->Output('I', '20605162739-03-...')
+#3 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[03-Sep-2021 10:15:12 America/Los_Angeles] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/Varios.php on line 88
+[03-Sep-2021 10:15:12 America/Los_Angeles] PHP Deprecated:  Function get_magic_quotes_runtime() is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 1043
+[03-Sep-2021 10:15:12 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1063): FPDF->Error('Some data has a...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(231): FPDF->Output('I', '20605162739-03-...')
+#3 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[03-Sep-2021 10:16:42 America/Los_Angeles] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/Varios.php on line 88
+[03-Sep-2021 10:16:42 America/Los_Angeles] PHP Deprecated:  Function get_magic_quotes_runtime() is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 1043
+[03-Sep-2021 10:16:42 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1063): FPDF->Error('Some data has a...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(231): FPDF->Output('I', '20605162739-03-...')
+#3 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[03-Sep-2021 10:26:55 America/Los_Angeles] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/Varios.php on line 88
+[03-Sep-2021 10:26:55 America/Los_Angeles] PHP Deprecated:  Function get_magic_quotes_runtime() is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 1043
+[03-Sep-2021 10:26:55 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1063): FPDF->Error('Some data has a...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(231): FPDF->Output('I', '20605162739-03-...')
+#3 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[03-Sep-2021 10:28:11 America/Los_Angeles] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/Varios.php on line 88
+[03-Sep-2021 10:28:11 America/Los_Angeles] PHP Deprecated:  Function get_magic_quotes_runtime() is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 1043
+[03-Sep-2021 10:28:11 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1063): FPDF->Error('Some data has a...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(231): FPDF->Output('I', '20605162739-03-...')
+#3 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[03-Sep-2021 10:48:21 America/Los_Angeles] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/Varios.php on line 88
+[03-Sep-2021 10:48:21 America/Los_Angeles] PHP Deprecated:  Function get_magic_quotes_runtime() is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 1043
+[03-Sep-2021 10:48:21 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1063): FPDF->Error('Some data has a...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(231): FPDF->Output('I', '20605162739-03-...')
+#3 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[03-Sep-2021 11:01:02 America/Los_Angeles] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/Varios.php on line 88
+[03-Sep-2021 11:01:02 America/Los_Angeles] PHP Deprecated:  Function get_magic_quotes_runtime() is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 1043
+[03-Sep-2021 11:01:02 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1063): FPDF->Error('Some data has a...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(231): FPDF->Output('I', '20605162739-03-...')
+#3 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[03-Sep-2021 11:48:48 America/Los_Angeles] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/Varios.php on line 88
+[03-Sep-2021 11:48:48 America/Los_Angeles] PHP Deprecated:  Function get_magic_quotes_runtime() is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 1043
+[03-Sep-2021 11:48:48 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1063): FPDF->Error('Some data has a...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(231): FPDF->Output('I', '20605162739-03-...')
+#3 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[03-Sep-2021 11:48:53 America/Los_Angeles] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/Varios.php on line 88
+[03-Sep-2021 11:48:53 America/Los_Angeles] PHP Deprecated:  Function get_magic_quotes_runtime() is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 1043
+[03-Sep-2021 11:48:53 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1063): FPDF->Error('Some data has a...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(231): FPDF->Output('I', '20605162739-03-...')
+#3 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[03-Sep-2021 11:48:54 America/Los_Angeles] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/Varios.php on line 88
+[03-Sep-2021 11:48:54 America/Los_Angeles] PHP Deprecated:  Function get_magic_quotes_runtime() is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 1043
+[03-Sep-2021 11:48:54 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1063): FPDF->Error('Some data has a...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(231): FPDF->Output('I', '20605162739-03-...')
+#3 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[03-Sep-2021 11:53:36 America/Los_Angeles] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/Varios.php on line 88
+[03-Sep-2021 11:53:36 America/Los_Angeles] PHP Deprecated:  Function get_magic_quotes_runtime() is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 1043
+[03-Sep-2021 11:53:36 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1063): FPDF->Error('Some data has a...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(231): FPDF->Output('I', '20605162739-03-...')
+#3 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[03-Sep-2021 11:54:25 America/Los_Angeles] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/Varios.php on line 88
+[03-Sep-2021 11:54:25 America/Los_Angeles] PHP Deprecated:  Function get_magic_quotes_runtime() is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 1043
+[03-Sep-2021 11:54:25 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1063): FPDF->Error('Some data has a...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(231): FPDF->Output('I', '20605162739-03-...')
+#3 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[03-Sep-2021 13:23:43 America/Los_Angeles] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/Varios.php on line 88
+[03-Sep-2021 13:23:43 America/Los_Angeles] PHP Deprecated:  Function get_magic_quotes_runtime() is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 1043
+[03-Sep-2021 13:23:43 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1063): FPDF->Error('Some data has a...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(231): FPDF->Output('I', '20605162739-03-...')
+#3 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[03-Sep-2021 17:04:58 America/Los_Angeles] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/Varios.php on line 88
+[03-Sep-2021 17:04:58 America/Los_Angeles] PHP Deprecated:  Function get_magic_quotes_runtime() is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 1043
+[03-Sep-2021 17:04:58 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1063): FPDF->Error('Some data has a...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(231): FPDF->Output('I', '20605162739-03-...')
+#3 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[03-Sep-2021 17:05:05 America/Los_Angeles] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/Varios.php on line 88
+[03-Sep-2021 17:05:05 America/Los_Angeles] PHP Deprecated:  Function get_magic_quotes_runtime() is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 1043
+[03-Sep-2021 17:05:05 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1063): FPDF->Error('Some data has a...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(231): FPDF->Output('I', '20605162739-03-...')
+#3 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[03-Sep-2021 17:05:08 America/Los_Angeles] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/Varios.php on line 88
+[03-Sep-2021 17:05:08 America/Los_Angeles] PHP Deprecated:  Function get_magic_quotes_runtime() is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 1043
+[03-Sep-2021 17:05:08 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1063): FPDF->Error('Some data has a...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(231): FPDF->Output('I', '20605162739-03-...')
+#3 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[03-Sep-2021 17:05:10 America/Los_Angeles] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/Varios.php on line 88
+[03-Sep-2021 17:05:10 America/Los_Angeles] PHP Deprecated:  Function get_magic_quotes_runtime() is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 1043
+[03-Sep-2021 17:05:10 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1063): FPDF->Error('Some data has a...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(231): FPDF->Output('I', '20605162739-03-...')
+#3 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[03-Sep-2021 17:05:13 America/Los_Angeles] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/Varios.php on line 88
+[03-Sep-2021 17:05:13 America/Los_Angeles] PHP Deprecated:  Function get_magic_quotes_runtime() is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 1043
+[03-Sep-2021 17:05:13 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1063): FPDF->Error('Some data has a...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(231): FPDF->Output('I', '20605162739-03-...')
+#3 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[04-Sep-2021 06:22:19 America/Los_Angeles] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/Varios.php on line 88
+[04-Sep-2021 06:22:19 America/Los_Angeles] PHP Deprecated:  Function get_magic_quotes_runtime() is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 1043
+[04-Sep-2021 06:22:19 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1063): FPDF->Error('Some data has a...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(231): FPDF->Output('I', '20605162739-03-...')
+#3 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[04-Sep-2021 07:43:24 America/Los_Angeles] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/Varios.php on line 88
+[04-Sep-2021 07:43:24 America/Los_Angeles] PHP Deprecated:  Function get_magic_quotes_runtime() is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 1043
+[04-Sep-2021 07:43:24 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1063): FPDF->Error('Some data has a...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(231): FPDF->Output('I', '20605162739-03-...')
+#3 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[04-Sep-2021 07:54:59 America/Los_Angeles] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/Varios.php on line 88
+[04-Sep-2021 07:54:59 America/Los_Angeles] PHP Deprecated:  Function get_magic_quotes_runtime() is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 1043
+[04-Sep-2021 07:54:59 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1063): FPDF->Error('Some data has a...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(231): FPDF->Output('I', '20605162739-03-...')
+#3 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[04-Sep-2021 09:46:22 America/Los_Angeles] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/Varios.php on line 88
+[04-Sep-2021 09:46:22 America/Los_Angeles] PHP Deprecated:  Function get_magic_quotes_runtime() is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 1043
+[04-Sep-2021 09:46:22 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1063): FPDF->Error('Some data has a...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(231): FPDF->Output('I', '20605162739-03-...')
+#3 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[04-Sep-2021 09:50:23 America/Los_Angeles] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/Varios.php on line 88
+[04-Sep-2021 09:50:23 America/Los_Angeles] PHP Deprecated:  Function get_magic_quotes_runtime() is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 1043
+[04-Sep-2021 09:50:23 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1063): FPDF->Error('Some data has a...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(231): FPDF->Output('I', '20605162739-03-...')
+#3 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[04-Sep-2021 11:45:35 America/Los_Angeles] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/Varios.php on line 88
+[04-Sep-2021 11:45:36 America/Los_Angeles] PHP Deprecated:  Function get_magic_quotes_runtime() is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 1043
+[04-Sep-2021 11:45:36 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1063): FPDF->Error('Some data has a...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(231): FPDF->Output('I', '20605162739-03-...')
+#3 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[04-Sep-2021 12:38:32 America/Los_Angeles] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/Varios.php on line 88
+[04-Sep-2021 12:38:32 America/Los_Angeles] PHP Deprecated:  Function get_magic_quotes_runtime() is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 1043
+[04-Sep-2021 12:38:32 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1063): FPDF->Error('Some data has a...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(231): FPDF->Output('I', '20605162739-03-...')
+#3 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[06-Sep-2021 06:03:37 America/Los_Angeles] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/Varios.php on line 88
+[06-Sep-2021 06:03:37 America/Los_Angeles] PHP Deprecated:  Function get_magic_quotes_runtime() is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 1043
+[06-Sep-2021 06:03:37 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1063): FPDF->Error('Some data has a...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(231): FPDF->Output('I', '20605162739-03-...')
+#3 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[06-Sep-2021 06:52:57 America/Los_Angeles] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/Varios.php on line 88
+[06-Sep-2021 06:52:57 America/Los_Angeles] PHP Deprecated:  Function get_magic_quotes_runtime() is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 1043
+[06-Sep-2021 06:52:57 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1063): FPDF->Error('Some data has a...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(231): FPDF->Output('I', '20605162739-03-...')
+#3 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[06-Sep-2021 12:17:10 America/Los_Angeles] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/Varios.php on line 88
+[06-Sep-2021 12:17:10 America/Los_Angeles] PHP Deprecated:  Function get_magic_quotes_runtime() is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 1043
+[06-Sep-2021 12:17:10 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1063): FPDF->Error('Some data has a...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(231): FPDF->Output('I', '20605162739-03-...')
+#3 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[06-Sep-2021 15:44:25 America/Los_Angeles] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/Varios.php on line 88
+[06-Sep-2021 15:44:25 America/Los_Angeles] PHP Deprecated:  Function get_magic_quotes_runtime() is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 1043
+[06-Sep-2021 15:44:25 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1063): FPDF->Error('Some data has a...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(231): FPDF->Output('I', '20605162739-03-...')
+#3 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[06-Sep-2021 16:54:37 America/Los_Angeles] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/Varios.php on line 88
+[06-Sep-2021 16:54:38 America/Los_Angeles] PHP Deprecated:  Function get_magic_quotes_runtime() is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 1043
+[06-Sep-2021 16:54:38 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1063): FPDF->Error('Some data has a...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(231): FPDF->Output('I', '20605162739-03-...')
+#3 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[06-Sep-2021 16:55:34 America/Los_Angeles] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/Varios.php on line 88
+[06-Sep-2021 16:55:34 America/Los_Angeles] PHP Deprecated:  Function get_magic_quotes_runtime() is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 1043
+[06-Sep-2021 16:55:34 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1063): FPDF->Error('Some data has a...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(231): FPDF->Output('I', '20605162739-03-...')
+#3 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[06-Sep-2021 16:58:25 America/Los_Angeles] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/Varios.php on line 88
+[06-Sep-2021 16:58:25 America/Los_Angeles] PHP Deprecated:  Function get_magic_quotes_runtime() is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 1043
+[06-Sep-2021 16:58:25 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1063): FPDF->Error('Some data has a...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(231): FPDF->Output('I', '20605162739-03-...')
+#3 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[06-Sep-2021 16:59:46 America/Los_Angeles] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/Varios.php on line 88
+[06-Sep-2021 16:59:46 America/Los_Angeles] PHP Deprecated:  Function get_magic_quotes_runtime() is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 1043
+[06-Sep-2021 16:59:46 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1063): FPDF->Error('Some data has a...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(231): FPDF->Output('I', '20605162739-01-...')
+#3 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[07-Sep-2021 06:06:34 America/Los_Angeles] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/Varios.php on line 88
+[07-Sep-2021 06:06:34 America/Los_Angeles] PHP Deprecated:  Function get_magic_quotes_runtime() is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 1043
+[07-Sep-2021 06:06:34 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1063): FPDF->Error('Some data has a...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(231): FPDF->Output('I', '20605162739-03-...')
+#3 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[07-Sep-2021 07:16:22 America/Los_Angeles] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/Varios.php on line 88
+[07-Sep-2021 07:16:23 America/Los_Angeles] PHP Deprecated:  Function get_magic_quotes_runtime() is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 1043
+[07-Sep-2021 07:16:23 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1063): FPDF->Error('Some data has a...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(231): FPDF->Output('I', '20605162739-03-...')
+#3 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271
+[07-Sep-2021 07:17:19 America/Los_Angeles] PHP Deprecated:  Function get_magic_quotes_runtime() is deprecated in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 1043
+[07-Sep-2021 07:17:19 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(1063): FPDF->Error('Some data has a...')
+#1 /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php(999): FPDF->_checkoutput()
+#2 /home/lunasystems/public_html/clientes/farmacia/reports/documento_venta.php(231): FPDF->Output('I', '20605162739-03-...')
+#3 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/class_varios/fpdf/fpdf.php on line 271

@@ -11,7 +11,7 @@ $c_producto->setIdEmpresa($_SESSION['id_empresa']);
 
 if (filter_input(INPUT_GET, 'periodo')) {
     $c_producto->setPeriodo(filter_input(INPUT_GET, 'periodo'));
-    $a_precios = $c_producto->ver_utilidad_periodo();
+    $a_precios = $c_producto->ver_utilidad_periodo_sucursal($_SESSION['id_sucursal']);
 } else {
     $a_precios = $c_producto->ver_utilidad();
 }

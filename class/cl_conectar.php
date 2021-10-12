@@ -1,11 +1,10 @@
 <?php
 date_default_timezone_set('America/Los_Angeles');
 
-$servidor = "lunasystemsperu.com";
-//es una prueba para git
+$servidor = "localhost";
 $bd = "lsp_farmacia";
-$usu = "root_lsp";
-$pass = "root/*123";
+$usu = "goempres_root";
+$pass = "k;6?6,m{7ePs";
 $puerto = "3306";
 $conn = new mysqli($servidor, $usu, $pass, $bd, $puerto);
 if ($conn->connect_error) {

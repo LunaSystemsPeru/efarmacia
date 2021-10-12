@@ -9,6 +9,7 @@ error_reporting(E_ALL);
 use Greenter\Model\Client\Client;
 use Greenter\Model\Company\Address;
 use Greenter\Model\Company\Company;
+use Greenter\Model\Sale\FormaPagos\FormaPagoContado;
 use Greenter\Model\Sale\Invoice;
 use Greenter\Model\Sale\Legend;
 use Greenter\Model\Sale\SaleDetail;
@@ -85,6 +86,7 @@ $invoice
     ->setCorrelativo($c_venta->getNumero())
     ->setFechaEmision(\DateTime::createFromFormat('Y-m-d', $c_venta->getFecha()))
     ->setFecVencimiento(\DateTime::createFromFormat('Y-m-d', $c_venta->getFecha()))
+    ->setFormaPago(new FormaPagoContado())
     ->setTipoMoneda('PEN')
     ->setClient($client)
     ->setMtoOperGravadas(number_format($c_venta->getTotal() / 1.18, 2, ".", ""))
@@ -92,6 +94,7 @@ $invoice
     ->setTotalImpuestos(number_format($c_venta->getTotal() / 1.18 * 0.18, 2, ".", ""))
     ->setValorVenta(number_format($c_venta->getTotal() / 1.18, 2, ".", ""))
     ->setMtoImpVenta(number_format($c_venta->getTotal(), 2, ".", ""))
+    ->setSubTotal(number_format($c_venta->getTotal(), 2, ".", ""))
     ->setCompany($empresa);
 
 $c_productos = new cl_venta_productos();
@@ -151,9 +154,9 @@ $c_generar->generar_qr();
 $url_qr = $dominio . "/greenter/generate_qr/temp/" . $nombre_archivo . ".png";
 
 // Envio a SUNAT.
-$see = $util->getSee(SunatEndpoints::FE_BETA);
+$see = $util->getSee(SunatEndpoints::FE_PRODUCCION);
 //$res = $see->send($invoice);
-$see->GenerarXML($invoice);
+$see->getXmlSigned($invoice);
 $util->writeXml($invoice, $see->getFactory()->getLastXml());
 
 $c_hash = new cl_venta_sunat();

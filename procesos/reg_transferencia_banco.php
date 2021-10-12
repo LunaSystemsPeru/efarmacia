@@ -1,4 +1,6 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
 session_start();
 
 require '../class/cl_banco.php';
@@ -17,7 +19,7 @@ $c_banco->setIdBanco($id_banco_destino);
 $c_banco->obtener_datos();
 
 $bm->setFecha(filter_input(INPUT_POST, 'input_fecha'));
-$bm->setIdEmpresa($id_empresa);
+//$bm->setIdEmpresa($id_empresa);
 $bm->setIdBanco($id_banco_origen);
 $bm->setDescripcion("ENVIO DE TRANSFERENCIA A " . $c_banco->getNombre());
 $bm->setIngresa(0);

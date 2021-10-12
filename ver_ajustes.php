@@ -10,6 +10,7 @@ require 'class/cl_varios.php';
 $c_varios = new cl_varios();
 $c_ajuste = new cl_ajuste();
 $c_ajuste->setIdEmpresa($_SESSION['id_empresa']);
+$c_ajuste->setIdSucursal($_SESSION['id_sucursal']);
 
 $title = "Ver Ajustes de Mercaderia - Farmacia - Luna Systems Peru";
 ?>

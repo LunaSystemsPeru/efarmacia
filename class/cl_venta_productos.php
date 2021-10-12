@@ -236,7 +236,7 @@ class cl_venta_productos
 
     }
 
-    function ver_utilidad_periodo()
+    function ver_utilidad_sucursal()
     {
         global $conn;
         $query = "select p.id_producto, p.nombre, l.nombre as laboratorio, p2.nombre as presentacion, sum(vp.cantidad) as cvendido, vp.precio, p.precio as preventa, p.costo
@@ -245,9 +245,44 @@ class cl_venta_productos
         inner join laboratorio l on p.id_laboratorio = l.id_laboratorio
         inner join presentacion p2 on p.id_presentacion = p2.id_presentacion
         inner join venta v on vp.id_venta = v.id_venta and vp.periodo = v.periodo and vp.id_empresa = v.id_empresa
-        where vp.id_empresa = '$this->id_empresa' and v.periodo = '$this->periodo'
+        where vp.id_empresa = '$this->id_empresa' and year(v.fecha) = year(curdate())
         group by vp.precio, vp.id_producto
         order by p.nombre asc, l.nombre asc, p.nombre asc, vp.precio asc";
+        $resultado = $conn->query($query);
+        return $resultado->fetch_all(MYSQLI_ASSOC);
+
+    }
+
+    function ver_utilidad_periodo()
+    {
+        global $conn;
+        $query = "select p.id_producto, p.nombre, l.nombre as laboratorio, p2.nombre as presentacion, sum(vp.cantidad) as cvendido, vp.precio, p.precio as preventa, p.costo
+        from venta_producto as vp
+             inner join producto p on vp.id_producto = p.id_producto and vp.id_empresa = p.id_empresa
+             inner join laboratorio l on p.id_laboratorio = l.id_laboratorio
+             inner join presentacion p2 on p.id_presentacion = p2.id_presentacion
+             inner join venta v on vp.id_venta = v.id_venta and vp.periodo = v.periodo and vp.id_empresa = v.id_empresa
+        where v.id_sucursal = '$this->id_empresa' and v.periodo = '$this->periodo'
+        group by vp.precio, vp.id_producto
+        order by p.nombre asc, l.nombre asc, p.nombre asc, vp.precio asc";
+        $resultado = $conn->query($query);
+        return $resultado->fetch_all(MYSQLI_ASSOC);
+
+    }
+
+    function ver_utilidad_periodo_sucursal($idsucursal)
+    {
+        global $conn;
+        $query = "select p.id_producto, p.nombre, l.nombre as laboratorio, p2.nombre as presentacion, sum(vp.cantidad) as cvendido, vp.precio, p.precio as preventa, p.costo
+                from venta_producto as vp
+                         inner join producto p on vp.id_producto = p.id_producto and vp.id_empresa = p.id_empresa
+                         inner join laboratorio l on p.id_laboratorio = l.id_laboratorio
+                         inner join presentacion p2 on p.id_presentacion = p2.id_presentacion
+                         inner join venta v on vp.id_venta = v.id_venta and vp.periodo = v.periodo and vp.id_empresa = v.id_empresa
+                         inner join sucursales s on v.id_sucursal = s.id_sucursal
+                where v.id_sucursal = '$idsucursal' and v.periodo = '$this->periodo'
+                group by vp.precio, vp.id_producto
+                order by p.nombre asc, l.nombre asc, p.nombre asc, vp.precio asc";
         $resultado = $conn->query($query);
         return $resultado->fetch_all(MYSQLI_ASSOC);
 

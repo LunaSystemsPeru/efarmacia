@@ -1,0 +1,58 @@
+[11-Dec-2019 10:17:31 America/Los_Angeles] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/lunasystems/public_html/clientes/farmacia/class_graficas/cl_inicio.php on line 32
+[11-Dec-2019 10:17:50 America/Los_Angeles] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/lunasystems/public_html/clientes/farmacia/class_graficas/cl_inicio.php on line 32
+[11-Dec-2019 10:17:54 America/Los_Angeles] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/lunasystems/public_html/clientes/farmacia/class_graficas/cl_inicio.php on line 32
+[27-Jan-2020 12:54:02 America/Los_Angeles] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/lunasystems/public_html/clientes/farmacia/class_graficas/cl_inicio.php on line 99
+[27-Jan-2020 12:54:02 America/Los_Angeles] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/lunasystems/public_html/clientes/farmacia/class_graficas/cl_inicio.php on line 119
+[27-Jan-2020 12:54:02 America/Los_Angeles] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/lunasystems/public_html/clientes/farmacia/class_graficas/cl_inicio.php on line 76
+[27-Jan-2020 12:55:02 America/Los_Angeles] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/lunasystems/public_html/clientes/farmacia/class_graficas/cl_inicio.php on line 99
+[27-Jan-2020 12:55:02 America/Los_Angeles] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/lunasystems/public_html/clientes/farmacia/class_graficas/cl_inicio.php on line 119
+[27-Jan-2020 12:55:02 America/Los_Angeles] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/lunasystems/public_html/clientes/farmacia/class_graficas/cl_inicio.php on line 76
+[27-Jan-2020 12:58:37 America/Los_Angeles] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/lunasystems/public_html/clientes/farmacia/class_graficas/cl_inicio.php on line 76
+[27-Jan-2020 12:58:37 America/Los_Angeles] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/lunasystems/public_html/clientes/farmacia/class_graficas/cl_inicio.php on line 99
+[27-Jan-2020 12:58:37 America/Los_Angeles] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/lunasystems/public_html/clientes/farmacia/class_graficas/cl_inicio.php on line 119
+[27-Jan-2020 13:31:30 America/Los_Angeles] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/lunasystems/public_html/clientes/farmacia/class_graficas/cl_inicio.php on line 99
+[27-Jan-2020 13:31:30 America/Los_Angeles] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/lunasystems/public_html/clientes/farmacia/class_graficas/cl_inicio.php on line 76
+[27-Jan-2020 13:31:30 America/Los_Angeles] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/lunasystems/public_html/clientes/farmacia/class_graficas/cl_inicio.php on line 119
+[27-Jan-2020 13:54:40 America/Los_Angeles] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/lunasystems/public_html/clientes/farmacia/class_graficas/cl_inicio.php on line 76
+[27-Jan-2020 13:54:40 America/Los_Angeles] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/lunasystems/public_html/clientes/farmacia/class_graficas/cl_inicio.php on line 119
+[27-Jan-2020 13:54:40 America/Los_Angeles] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/lunasystems/public_html/clientes/farmacia/class_graficas/cl_inicio.php on line 99
+[27-Jan-2020 16:02:42 America/Los_Angeles] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/lunasystems/public_html/clientes/farmacia/class_graficas/cl_inicio.php on line 99
+[27-Jan-2020 16:02:42 America/Los_Angeles] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/lunasystems/public_html/clientes/farmacia/class_graficas/cl_inicio.php on line 76
+[27-Jan-2020 16:02:42 America/Los_Angeles] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/lunasystems/public_html/clientes/farmacia/class_graficas/cl_inicio.php on line 119
+[27-Jan-2020 16:27:01 America/Los_Angeles] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/lunasystems/public_html/clientes/farmacia/class_graficas/cl_inicio.php on line 76
+[27-Jan-2020 16:27:01 America/Los_Angeles] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/lunasystems/public_html/clientes/farmacia/class_graficas/cl_inicio.php on line 119
+[27-Jan-2020 16:27:01 America/Los_Angeles] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/lunasystems/public_html/clientes/farmacia/class_graficas/cl_inicio.php on line 99
+[28-Jan-2020 05:15:57 America/Los_Angeles] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/lunasystems/public_html/clientes/farmacia/class_graficas/cl_inicio.php on line 76
+[28-Jan-2020 05:15:57 America/Los_Angeles] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/lunasystems/public_html/clientes/farmacia/class_graficas/cl_inicio.php on line 99
+[28-Jan-2020 05:15:57 America/Los_Angeles] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/lunasystems/public_html/clientes/farmacia/class_graficas/cl_inicio.php on line 119
+[28-Jan-2020 05:56:36 America/Los_Angeles] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/lunasystems/public_html/clientes/farmacia/class_graficas/cl_inicio.php on line 76
+[28-Jan-2020 05:56:36 America/Los_Angeles] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/lunasystems/public_html/clientes/farmacia/class_graficas/cl_inicio.php on line 99
+[28-Jan-2020 05:56:36 America/Los_Angeles] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/lunasystems/public_html/clientes/farmacia/class_graficas/cl_inicio.php on line 119
+[28-Jan-2020 06:20:38 America/Los_Angeles] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/lunasystems/public_html/clientes/farmacia/class_graficas/cl_inicio.php on line 76
+[28-Jan-2020 06:20:38 America/Los_Angeles] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/lunasystems/public_html/clientes/farmacia/class_graficas/cl_inicio.php on line 99
+[28-Jan-2020 06:20:38 America/Los_Angeles] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/lunasystems/public_html/clientes/farmacia/class_graficas/cl_inicio.php on line 119
+[28-Jan-2020 07:06:40 America/Los_Angeles] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/lunasystems/public_html/clientes/farmacia/class_graficas/cl_inicio.php on line 99
+[28-Jan-2020 07:06:40 America/Los_Angeles] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/lunasystems/public_html/clientes/farmacia/class_graficas/cl_inicio.php on line 76
+[28-Jan-2020 07:06:40 America/Los_Angeles] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/lunasystems/public_html/clientes/farmacia/class_graficas/cl_inicio.php on line 119
+[28-Jan-2020 08:05:37 America/Los_Angeles] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/lunasystems/public_html/clientes/farmacia/class_graficas/cl_inicio.php on line 76
+[28-Jan-2020 08:05:37 America/Los_Angeles] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/lunasystems/public_html/clientes/farmacia/class_graficas/cl_inicio.php on line 99
+[28-Jan-2020 08:05:37 America/Los_Angeles] PHP Fatal error:  Call to a member function fetch_assoc() on boolean in /home/lunasystems/public_html/clientes/farmacia/class_graficas/cl_inicio.php on line 119
+[15-Apr-2020 12:23:01 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/class_graficas/cl_inicio.php on line 17
+[15-Apr-2020 12:24:44 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/class_graficas/cl_inicio.php on line 17
+[15-Apr-2020 14:39:38 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/class_graficas/cl_inicio.php on line 17
+[09-Mar-2021 07:15:45 America/Los_Angeles] PHP Warning:  mysqli::mysqli(): (HY000/2002): No such file or directory in /home/lunasystems/public_html/clientes/farmacia/class/cl_conectar.php on line 9
+[09-Mar-2021 07:15:45 America/Los_Angeles] PHP Warning:  mysqli::mysqli(): (HY000/2002): No such file or directory in /home/lunasystems/public_html/clientes/farmacia/class/cl_conectar.php on line 9
+[09-Mar-2021 07:15:45 America/Los_Angeles] PHP Warning:  mysqli::mysqli(): (HY000/2002): No such file or directory in /home/lunasystems/public_html/clientes/farmacia/class/cl_conectar.php on line 9
+[09-Mar-2021 07:15:45 America/Los_Angeles] PHP Warning:  mysqli::mysqli(): (HY000/2002): No such file or directory in /home/lunasystems/public_html/clientes/farmacia/class/cl_conectar.php on line 9
+[09-Mar-2021 07:15:45 America/Los_Angeles] PHP Warning:  mysqli::mysqli(): (HY000/2002): No such file or directory in /home/lunasystems/public_html/clientes/farmacia/class/cl_conectar.php on line 9
+[09-Mar-2021 07:15:45 America/Los_Angeles] PHP Warning:  mysqli::mysqli(): (HY000/2002): No such file or directory in /home/lunasystems/public_html/clientes/farmacia/class/cl_conectar.php on line 9
+[20-Jul-2021 15:56:33 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/class_graficas/cl_inicio.php on line 18
+[20-Jul-2021 15:56:33 America/Los_Angeles] PHP Notice:  Undefined index: id_sucursal in /home/lunasystems/public_html/clientes/farmacia/class_graficas/cl_inicio.php on line 19
+[20-Jul-2021 15:56:33 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/class_graficas/cl_inicio.php on line 18
+[20-Jul-2021 15:56:33 America/Los_Angeles] PHP Notice:  Undefined index: id_sucursal in /home/lunasystems/public_html/clientes/farmacia/class_graficas/cl_inicio.php on line 19
+[20-Jul-2021 15:56:33 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/class_graficas/cl_inicio.php on line 18
+[20-Jul-2021 15:56:33 America/Los_Angeles] PHP Notice:  Undefined index: id_sucursal in /home/lunasystems/public_html/clientes/farmacia/class_graficas/cl_inicio.php on line 19
+[20-Jul-2021 15:56:33 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/class_graficas/cl_inicio.php on line 18
+[20-Jul-2021 15:56:33 America/Los_Angeles] PHP Notice:  Undefined index: id_sucursal in /home/lunasystems/public_html/clientes/farmacia/class_graficas/cl_inicio.php on line 19
+[20-Jul-2021 15:56:33 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/class_graficas/cl_inicio.php on line 18
+[20-Jul-2021 15:56:33 America/Los_Angeles] PHP Notice:  Undefined index: id_sucursal in /home/lunasystems/public_html/clientes/farmacia/class_graficas/cl_inicio.php on line 19

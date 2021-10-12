@@ -132,7 +132,7 @@ $title = "Registro de Proveedor - Farmacia - Luna Systems Peru";
                                 <label class="col-lg-2 control-label">NOMBRE COMERCIAL: </label>
                                 <div class="col-lg-8">
                                     <input type="text" class="form-control" name="input_comercial"
-                                           id="input_comercial" required readonly/>
+                                           id="input_comercial" required />
                                 </div>
                             </div>
 
@@ -147,14 +147,14 @@ $title = "Registro de Proveedor - Farmacia - Luna Systems Peru";
                                 <label class="col-lg-2 control-label">Condicion: </label>
                                 <div class="col-lg-8">
                                     <input type="text" class="form-control" name="input_condicion"
-                                           id="input_condicion" required readonly/>
+                                           id="input_condicion" required value="HABIDO" readonly/>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-lg-2 control-label">Estado: </label>
                                 <div class="col-lg-8">
                                     <input type="text" class="form-control" name="input_estado"
-                                           id="input_estado" required readonly/>
+                                           id="input_estado" required readonly value="ACTIVO" />
                                 </div>
                             </div>
                         </div>

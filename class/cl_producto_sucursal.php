@@ -131,4 +131,22 @@ class cl_producto_sucursal
         $resultado = $conn->query($query);
         return $resultado->fetch_all(MYSQLI_ASSOC);
     }
+
+    public function obtener_datos()
+    {
+        $existe = false;
+        global $conn;
+        $query = "select * from productos_sucursales where id_empresa = '" . $this->id_empresa . "' and id_producto = '" . $this->id_producto . "' and id_sucursal = '$this->id_sucursal'";
+        $resultado = $conn->query($query);
+        if ($resultado->num_rows > 0) {
+            $existe = true;
+            while ($fila = $resultado->fetch_assoc()) {
+                $this->cantidad = $fila['cantidad'];
+            }
+        } else {
+            $this->cantidad = 0;
+            $existe = false;
+        }
+        return $existe;
+    }
 }

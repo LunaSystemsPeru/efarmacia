@@ -1,0 +1,537 @@
+[07-Sep-2021 13:57:58 UTC] PHP Parse error:  syntax error, unexpected '/', expecting end of file in /home/lunasystems/public_html/clientes/farmacia/greenter/generates/send_sunat_diario.php on line 21
+[07-Sep-2021 06:58:08 America/Los_Angeles] PHP Fatal error:  Uncaught Error: Call to undefined method Util::ruc() in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php:109
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#1 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109
+[07-Sep-2021 06:58:08 America/Los_Angeles] PHP Fatal error:  Uncaught Error: Call to undefined method Util::ruc() in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php:109
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/resumen.php(220): Util->getSee('https://e-factu...')
+#1 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109
+[07-Sep-2021 06:58:08 America/Los_Angeles] PHP Warning:  file_get_contents(/home/lunasystems/public_html/clientes/farmacia/greenter/src/../resources/c10429017136 .pem): failed to open stream: No such file or directory in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 98
+[07-Sep-2021 06:58:08 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: No se pudo cargar el certificado in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php:100
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#1 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 100
+[07-Sep-2021 06:58:09 America/Los_Angeles] PHP Warning:  file_get_contents(/home/lunasystems/public_html/clientes/farmacia/greenter/src/../resources/c10463920058.pem): failed to open stream: No such file or directory in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 98
+[07-Sep-2021 06:58:09 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: No se pudo cargar el certificado in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php:100
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#1 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 100
+[07-Sep-2021 06:58:09 America/Los_Angeles] PHP Warning:  file_get_contents(/home/lunasystems/public_html/clientes/farmacia/greenter/src/../resources/c10464193753.pem): failed to open stream: No such file or directory in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 98
+[07-Sep-2021 06:58:09 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: No se pudo cargar el certificado in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php:100
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#1 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 100
+[07-Sep-2021 06:58:09 America/Los_Angeles] PHP Warning:  file_get_contents(/home/lunasystems/public_html/clientes/farmacia/greenter/src/../resources/c10469932091.pem): failed to open stream: No such file or directory in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 98
+[07-Sep-2021 06:58:09 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: No se pudo cargar el certificado in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php:100
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#1 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 100
+[07-Sep-2021 07:04:14 America/Los_Angeles] PHP Parse error:  syntax error, unexpected ';', expecting ')' in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109
+[07-Sep-2021 07:04:14 America/Los_Angeles] PHP Parse error:  syntax error, unexpected ';', expecting ')' in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109
+[07-Sep-2021 07:04:14 America/Los_Angeles] PHP Parse error:  syntax error, unexpected ';', expecting ')' in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109
+[07-Sep-2021 07:04:14 America/Los_Angeles] PHP Parse error:  syntax error, unexpected ';', expecting ')' in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109
+[07-Sep-2021 07:04:14 America/Los_Angeles] PHP Parse error:  syntax error, unexpected ';', expecting ')' in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109
+[07-Sep-2021 07:04:14 America/Los_Angeles] PHP Parse error:  syntax error, unexpected ';', expecting ')' in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109
+[07-Sep-2021 07:04:14 America/Los_Angeles] PHP Parse error:  syntax error, unexpected ';', expecting ')' in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109
+[07-Sep-2021 07:04:14 America/Los_Angeles] PHP Parse error:  syntax error, unexpected ';', expecting ')' in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109
+[07-Sep-2021 07:04:15 America/Los_Angeles] PHP Parse error:  syntax error, unexpected ';', expecting ')' in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109
+[07-Sep-2021 07:04:15 America/Los_Angeles] PHP Parse error:  syntax error, unexpected ';', expecting ')' in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109
+[07-Sep-2021 07:04:15 America/Los_Angeles] PHP Parse error:  syntax error, unexpected ';', expecting ')' in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109
+[07-Sep-2021 07:04:15 America/Los_Angeles] PHP Parse error:  syntax error, unexpected ';', expecting ')' in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109
+[07-Sep-2021 07:04:33 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10463920058', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[07-Sep-2021 07:04:33 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10469932091', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[07-Sep-2021 07:06:21 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10463920058', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[07-Sep-2021 07:06:21 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10469932091', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[07-Sep-2021 07:06:59 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10463920058', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[07-Sep-2021 07:07:00 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10469932091', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[07-Sep-2021 07:08:20 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10463920058', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[07-Sep-2021 07:08:21 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10469932091', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[07-Sep-2021 07:08:47 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10463920058', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[07-Sep-2021 07:08:47 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10469932091', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[07-Sep-2021 07:08:58 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10463920058', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[07-Sep-2021 07:08:58 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10469932091', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[07-Sep-2021 21:00:05 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10463920058', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[07-Sep-2021 21:00:06 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10469932091', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[08-Sep-2021 21:00:05 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10463920058', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[08-Sep-2021 21:00:05 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10469932091', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[09-Sep-2021 21:00:04 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10463920058', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[09-Sep-2021 21:00:04 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10469932091', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[10-Sep-2021 21:00:18 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10463920058', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[10-Sep-2021 21:00:19 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10469932091', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[11-Sep-2021 21:00:05 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10463920058', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[11-Sep-2021 21:00:06 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10469932091', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[12-Sep-2021 21:00:02 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10463920058', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[12-Sep-2021 21:00:03 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10469932091', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[13-Sep-2021 21:00:12 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10463920058', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[13-Sep-2021 21:00:13 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10469932091', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[14-Sep-2021 21:00:05 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10463920058', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[14-Sep-2021 21:00:05 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10469932091', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[15-Sep-2021 21:00:05 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10463920058', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[15-Sep-2021 21:00:05 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10469932091', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[16-Sep-2021 21:00:05 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10463920058', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[16-Sep-2021 21:00:05 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10469932091', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[17-Sep-2021 21:00:05 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10463920058', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[17-Sep-2021 21:00:05 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10469932091', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[18-Sep-2021 21:00:05 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10463920058', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[18-Sep-2021 21:00:06 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10469932091', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[19-Sep-2021 21:00:02 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10463920058', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[19-Sep-2021 21:00:02 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10469932091', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[20-Sep-2021 21:00:04 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10463920058', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[20-Sep-2021 21:00:05 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10469932091', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[21-Sep-2021 21:00:04 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10463920058', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[21-Sep-2021 21:00:05 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10469932091', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[22-Sep-2021 21:00:05 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10463920058', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[22-Sep-2021 21:00:05 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10469932091', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[23-Sep-2021 21:00:05 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10463920058', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[23-Sep-2021 21:00:06 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10469932091', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[24-Sep-2021 21:00:05 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10463920058', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[24-Sep-2021 21:00:05 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10469932091', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[25-Sep-2021 21:00:06 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Util::writeCdr() must be an instance of Greenter\Model\DocumentInterface, string given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php on line 65 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php:138
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(65): Util->writeCdr('20605162739-01-...', 'PK\x03\x04\x14\x00\x02\x00\x08\x00\x03\xB89S\x00...')
+#1 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 138
+[25-Sep-2021 21:00:12 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10463920058', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[25-Sep-2021 21:00:12 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10469932091', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[26-Sep-2021 21:00:02 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10463920058', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[26-Sep-2021 21:00:03 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10469932091', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[27-Sep-2021 21:00:05 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10463920058', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[27-Sep-2021 21:00:06 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10469932091', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[28-Sep-2021 21:00:30 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10463920058', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[28-Sep-2021 21:00:30 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10469932091', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[29-Sep-2021 21:00:04 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10463920058', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[29-Sep-2021 21:00:05 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10469932091', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[30-Sep-2021 21:00:22 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10463920058', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[30-Sep-2021 21:00:23 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10469932091', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[01-Oct-2021 21:01:11 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10463920058', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[01-Oct-2021 21:01:12 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10469932091', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[02-Oct-2021 21:00:04 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to Util::writeCdr() must be an instance of Greenter\Model\DocumentInterface, string given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php on line 65 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php:138
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(65): Util->writeCdr('20605162739-01-...', 'PK\x03\x04\x14\x00\x02\x00\x08\x00\x02\xB8BS\x00...')
+#1 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 138
+[02-Oct-2021 21:00:07 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10463920058', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[02-Oct-2021 21:00:07 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10469932091', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[03-Oct-2021 21:00:02 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10463920058', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[03-Oct-2021 21:00:03 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10469932091', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[04-Oct-2021 21:00:15 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10463920058', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[04-Oct-2021 21:00:16 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10469932091', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[05-Oct-2021 21:00:06 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10463920058', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[05-Oct-2021 21:00:07 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10469932091', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[06-Oct-2021 21:00:24 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10463920058', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[06-Oct-2021 21:00:24 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10469932091', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[07-Oct-2021 21:00:05 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10463920058', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[07-Oct-2021 21:00:05 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10469932091', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[08-Oct-2021 21:00:02 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10463920058', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[08-Oct-2021 21:00:02 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10469932091', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[09-Oct-2021 21:00:05 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10463920058', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[09-Oct-2021 21:00:05 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10469932091', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[10-Oct-2021 21:00:02 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10463920058', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115
+[10-Oct-2021 21:00:02 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to Greenter\See::setClaveSOL() must be of the type string, null given, called in /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php on line 109 and defined in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php:115
+Stack trace:
+#0 /home/lunasystems/public_html/clientes/farmacia/greenter/src/Util.php(109): Greenter\See->setClaveSOL('10469932091', NULL, NULL)
+#1 /home/lunasystems/public_html/clientes/farmacia/greenter/generates/enviar_factura_xml.php(40): Util->getSee('https://e-factu...')
+#2 {main}
+  thrown in /home/lunasystems/public_html/clientes/farmacia/greenter/vendor/greenter/greenter/packages/lite/src/Greenter/See.php on line 115

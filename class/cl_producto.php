@@ -315,7 +315,6 @@ class cl_producto
                 $this->id_presentacion = $fila['id_presentacion'];
                 $this->costo = $fila['costo'];
                 $this->precio = $fila['precio'];
-                $this->cantidad = $fila['cantidad'];
                 $this->lote = $fila['lote'];
                 $this->fecha_vcto = $fila['vcto'];
                 $this->id_proveedor = $fila['id_proveedor'];

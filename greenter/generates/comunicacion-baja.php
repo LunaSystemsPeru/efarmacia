@@ -69,7 +69,7 @@ if ($contar_items > 0) {
 
 
     // Envio a SUNAT.
-    $see = $util->getSee(SunatEndpoints::FE_BETA);
+    $see = $util->getSee(SunatEndpoints::FE_PRODUCCION);
 
     $res = $see->send($voided);
     $util->writeXml($voided, $see->getFactory()->getLastXml());

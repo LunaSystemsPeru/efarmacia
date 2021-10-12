@@ -51,12 +51,12 @@ class cl_documento_internet
 
         //si es ruc
         if ($this->tipo == 1) {
-            $direccion = "http://www.lunasystemsperu.com/consultas_json/composer/consulta_sunat_JMP.php?ruc=" . $this->documento;
+            $direccion = "http://www.lunasystemsperu.com/apis/apiruc.php?ruc=" . $this->documento;
         }
 
         //si es dni
         if ($this->tipo == 2) {
-            $direccion = "http://chimbote.store/apis/peru-consult/public/consultaDNI.php?dni=". $this->documento;
+            $direccion = "http://www.lunasystemsperu.com/apis/apidni.php?dni=" . $this->documento;
             //$direccion = "http://www.lunasystemsperu.com/consultas_json/composer/consultas_dni_JMP.php?dni=" . $this->documento;
         }
 

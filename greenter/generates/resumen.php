@@ -135,7 +135,7 @@ if ($id_empresa) {
         //estado
         $estado = $fila['estado'];
         if ($fila['estado'] == 1) {
-            $estado = "1";
+            $estado = "3";
         }
         if ($fila['estado'] == 2) {
             $estado = "3";
@@ -234,6 +234,7 @@ if ($id_empresa) {
 
             /**@var $res \Greenter\Model\Response\SummaryResult */
             $ticket = $res->getTicket();
+            echo "nro de ticket = " . $ticket;
             $c_resumen->setTicket($ticket);
             $descripcion = "";
             $result = $see->getStatus($ticket);

@@ -73,10 +73,10 @@ if (strlen($c_cliente->getDocumento()) == 7) {
     $c_cliente->setDocumento("00000000");
 }
 
-//$pdf = new FPDF('P', 'mm', array(105,148.5));
-$pdf = new FPDF('L', 'mm', 'a5');
-$pdf->SetMargins(52.5, 8, 52.5);
-//$pdf->SetMargins(8, 8, 8);
+//$pdf = new FPDF('L', 'mm', array(210,148.5));
+$pdf = new FPDF('P', 'mm', 'a4');
+//$pdf->SetMargins(52.5, 8, 52.5);
+$pdf->SetMargins(8, 8, 8);
 $pdf->SetAutoPageBreak(true, 8);
 $pdf->AddPage();
 
@@ -93,6 +93,7 @@ $pdf->SetFont('Arial', '', 10);
 $pdf->SetTextColor(0, 0, 0);
 */
 
+$izquierda = 0;
 $izquierda = 52.5;
 
 $pdf->Image('../images/' . $imagen, 8 + $izquierda, 8, 20, 15);
@@ -112,7 +113,7 @@ $pdf->SetX(30  + $izquierda);
 $pdf->MultiCell(70, $altura_linea, utf8_decode($c_empresa->getDireccion()), 0, 'C');
 //$pdf->SetX(30);
 
-//$pdf->SetX($izquierda);
+$pdf->SetX($izquierda);
 $pdf->SetFont('Arial', 'B', 9);
 $pdf->Cell(105, $altura_linea, $c_tido->getNombre() . " ELECTRONICA | " . $c_venta->getSerie() . " - " . $c_varios->zerofill($c_venta->getNumero(),5), 0, 1, 'C');
 $pdf->Ln();
@@ -155,15 +156,17 @@ foreach ($a_productos as $value) {
     //$pdf->Ln(2);
 }
 
-$pdf->SetY(-54);
+$pdf->SetY(-64);
+$pdf->SetY(-64- 148.5);
 
 $pdf->Ln(3);
 $y = $pdf->GetY();
 $pdf->Line(8 + $izquierda, $y, 98 + $izquierda, $y);
 
-$pdf->SetY(-33);
+$pdf->SetY(-43);
+$pdf->SetY(-43-148.5);
 
-$pdf->Image('../greenter/generate_qr/temp/' . $c_recibido->getNombreXml() . '.png', 8 + $izquierda, 98, 22, 22);
+$pdf->Image('../greenter/generate_qr/temp/' . $c_recibido->getNombreXml() . '.png', 8 + $izquierda, 88, 22, 22);
 
 
 $pdf->Ln(2);
