@@ -2,7 +2,7 @@
 date_default_timezone_set('America/Los_Angeles');
 
 $servidor = "localhost";
-$bd = "lsp_farmacia";
+$bd = "goempres_farmacia";
 $usu = "goempres_root";
 $pass = "k;6?6,m{7ePs";
 $puerto = "3306";

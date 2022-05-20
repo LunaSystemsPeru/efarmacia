@@ -33,6 +33,7 @@
                     <li>
                         <a href="#"><span class="nav-label">Reportes Ventas</span><span class="fa arrow"></span> </a>
                         <ul class="nav nav-third-level">
+                            <li><a href="ver_reportes_ventas.php">Otros Reportes</a></li>
                             <li><a href="ver_ventas_mensual.php">Ventas x Mes</a></li>
                             <li><a href="ver_utilidad_venta.php">Utilidad x Mes</a></li>
                         </ul>

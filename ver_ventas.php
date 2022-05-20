@@ -122,7 +122,7 @@ $title = "Ver Ventas - Farmacia - Luna Systems Peru";
                                 <button class="btn btn-warning" data-toggle="modal" data-target="#modalbuscar">Buscar Documento</button>
                             </div>
                             <div class="btn-group">
-                                <a href="ver_utilidad_venta.php?periodo=<?php echo date("Ym")?>" class="btn btn-info" >Ver Utilidad del mes</a>
+                                <a href="ver_utilidad_venta.php?periodo=<?php echo date("Ym") ?>" class="btn btn-info">Ver Utilidad del mes</a>
                             </div>
 
                             <div class="modal fade" id="modalbuscar" tabindex="-1" role="dialog" aria-hidden="true">
@@ -174,10 +174,10 @@ $title = "Ver Ventas - Farmacia - Luna Systems Peru";
                                 <div class="form-group">
                                     <div class="col-md-6">
                                         <select class="form-control" id="select_anio" onchange="obtener_periodo()">
-                                            <option >Seleccionar Año</option>
+                                            <option>Seleccionar Año</option>
                                             <?php
                                             foreach ($c_venta->ver_anios() as $fila) {
-                                                echo '<option value="'.$fila['anio'].'">'.$fila['anio'].'</option>';
+                                                echo '<option value="' . $fila['anio'] . '">' . $fila['anio'] . '</option>';
                                             }
                                             ?>
                                         </select>
@@ -218,8 +218,12 @@ $title = "Ver Ventas - Farmacia - Luna Systems Peru";
                                 foreach ($a_ventas as $fila) {
                                     $estado = "";
                                     if ($fila['estado'] == 1) {
+                                        $total = $fila['total'];
+                                        $pagado = $fila['pagado'];
                                         $estado = "<label class='label label-success'>Pagado</label>";
                                     } else {
+                                        $total = 0;
+                                        $pagado = 0;
                                         $estado = "<label class='label label-danger'>Anulado</label>";
                                     }
                                     ?>
@@ -232,8 +236,8 @@ $title = "Ver Ventas - Farmacia - Luna Systems Peru";
                                         <td class="text-center"><?php echo $fila['fecha'] ?></td>
                                         <td><?php echo $fila['documento'] . " | " . $fila['nombre'] ?></td>
                                         <td class="text-center"><?php echo $fila['username'] ?></td>
-                                        <td class="text-right"><?php echo number_format($fila['total'], 2) ?></td>
-                                        <td class="text-right"><?php echo number_format($fila['pagado'], 2) ?></td>
+                                        <td class="text-right"><?php echo number_format($total, 2) ?></td>
+                                        <td class="text-right"><?php echo number_format($pagado, 2) ?></td>
                                         <td class="text-center">
                                             <?php echo $estado; ?>
                                         </td>
