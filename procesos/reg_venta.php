@@ -101,6 +101,7 @@ if ($c_venta->insertar()) {
     $sendCurlVenta->setIdVenta($c_venta->getIdVenta());
     $sendCurlVenta->setPeriodo($c_varios->fecha_periodo($c_venta->getFecha()));
     $sendCurlVenta->enviar_json();
+
     echo "{\"venta\":" . $c_venta->getIdVenta() . ",\"periodo\":" . $c_venta->getPeriodo() . "}";
     // header("Location: ../ver_ventas.php");
 

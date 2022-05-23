@@ -71,12 +71,12 @@ if ($id_moneda == 2) {
     $ncorto = "USD";
 }
 
-if (strlen($c_cliente->getDocumento())== 7) {
+if (strlen($c_cliente->getDocumento()) == 7) {
     $c_cliente->setDocumento("00000000");
 }
 
 $pdf = new FPDF('P', 'mm', 'A4');
-$pdf->SetMargins(10,8,10);
+$pdf->SetMargins(10, 8, 10);
 $pdf->SetAutoPageBreak(true, 8);
 $pdf->AddPage();
 
@@ -116,7 +116,7 @@ $pdf->SetX(53);
 $pdf->SetFont('Arial', '', 9);
 $pdf->MultiCell(75, 4, $c_empresa->getDireccion(), 0, "L");
 $pdf->SetX(53);
-$pdf->Cell(75, 4, "Telefono: " . $c_empresa->getTelefono() , 0, 1, 'L');
+$pdf->Cell(75, 4, "Telefono: " . $c_empresa->getTelefono(), 0, 1, 'L');
 
 $pdf->SetY(36);
 $pdf->SetFont('Arial', 'B', 9);
@@ -188,8 +188,10 @@ $y = $pdf->GetY();
 $pdf->Line(10, $y, 200, $y);
 
 $pdf->SetY(-184);
+if ($c_venta->getIdDocumento() == 3 || $c_venta->getIdDocumento() == 2) {
 
-$pdf->Image('../greenter/generate_qr/temp/' . $c_recibido->getNombreXml() . '.png', 130, 108, 22, 22);
+    $pdf->Image('../greenter/generate_qr/temp/' . $c_recibido->getNombreXml() . '.png', 130, 108, 22, 22);
+}
 
 
 $pdf->Ln(2);

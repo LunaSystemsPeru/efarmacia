@@ -129,6 +129,7 @@ class cl_venta_sunat
                     WHERE id_venta= '$this->id_venta' AND 
                           periodo= '$this->periodo'   AND 
                           id_empresa='$this->id_empresa'";
+       // echo $query;
         $resultado = $conn->query($query);
         if ($resultado->num_rows > 0) {
             $existe = true;

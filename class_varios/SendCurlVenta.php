@@ -13,7 +13,7 @@ class SendCurlVenta
      */
     public function __construct()
     {
-        $this->ruta = "http://" . $_SERVER["HTTP_HOST"] . "/clientes/farmacia/";
+        $this->ruta = "https://" . $_SERVER["HTTP_HOST"] . "/clientes/alufarma/";
     }
 
     /**
@@ -73,6 +73,8 @@ class SendCurlVenta
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $respuesta = curl_exec($ch);
         curl_close($ch);
+
+        //echo $ruta;
 
         return $respuesta;
     }

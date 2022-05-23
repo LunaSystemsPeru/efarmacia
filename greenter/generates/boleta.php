@@ -21,7 +21,7 @@ require __DIR__ . '/../../class/cl_venta_productos.php';
 require __DIR__ . '/../../class/cl_venta_sunat.php';
 
 require __DIR__ . '/../../class_varios/NumerosaLetras.php';
-require __DIR__ . '/../../greenter/generate_qr/class/GenerarQr.php';
+require '../generate_qr/class/GenerarQr.php';
 
 $util = Util::getInstance();
 
@@ -138,9 +138,14 @@ $invoice->setLegends([
 
 //fijar variables principales
 $nombre_archivo = $invoice->getName();
-$dominio = "http://" . $_SERVER["HTTP_HOST"] . "/clientes/farmacia/";
-$nombre_xml = $dominio . "/greenter/files/" . $invoice->getName() . ".xml";
+//$dominio = "https://" . $_SERVER["HTTP_HOST"] . "/clientes/farmacia/";
+
+$url = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+$rutabase= dirname(dirname($url)) . DIRECTORY_SEPARATOR;
 $hash = $util->getHash($invoice);
+
+$nombre_xml = $rutabase . "/../files/" . $invoice->getName() . ".xml";
+//echo $rutabase;
 
 //generar qr
 $qr = $c_empresa->getRuc() . "|" . "03" . "|" . $c_venta->getSerie() . "-" . $c_venta->getNumero() . "|" . $igv . "|" . $total . "|" . $c_venta->getFecha() . "|" . $tipo_doc . "|" . $c_cliente->getDocumento();
@@ -150,10 +155,11 @@ $c_generar->setNombre_archivo($nombre_archivo);
 $c_generar->generar_qr();
 
 //obtener url de qr
-$url_qr = $dominio . "/greenter/generate_qr/temp/" . $nombre_archivo . ".png";
+$url_qr =  $rutabase . "/generate_qr/temp/" . $nombre_archivo . ".png";
+//echo $url_qr;
 
 // Envio a SUNAT.
-$see = $util->getSee(SunatEndpoints::FE_BETA);
+$see = $util->getSee(SunatEndpoints::FE_PRODUCCION);
 //$res = $see->send($invoice); //aun no se envia la boleta
 $see->getXmlSigned($invoice);
 $util->writeXml($invoice, $see->getFactory()->getLastXml());

@@ -176,7 +176,7 @@ $title = "Reportes de Ventas - Farmacia - Luna Systems Peru";
         var fechainicio = $("#input-fecha-inicio").val();
         var fechafinal = $("#input-fecha-final").val();
         $.post("reports/xls_ventas_detalle_producto.php", {fechainicio: fechainicio, fechafinal: fechafinal, empresaid: '3'}, function (data) {
-            alert(data);
+            //alert(data);
             jsondata = JSON.parse(data);
             var archivo = jsondata.name;
             window.location.href = "reports/" + archivo + '?v=' + Date.now();
@@ -187,7 +187,7 @@ $title = "Reportes de Ventas - Farmacia - Luna Systems Peru";
         var fechainicio = $("#input-fecha-inicio").val();
         var fechafinal = $("#input-fecha-final").val();
         $.post("reports/xls_ventas_producto.php", {fechainicio: fechainicio, fechafinal: fechafinal, empresaid: '3'}, function (data) {
-            alert(data);
+            //alert(data);
             jsondata = JSON.parse(data);
             var archivo = jsondata.name;
             window.location.href = "reports/" + archivo+ '?v=' + Date.now();

@@ -24,7 +24,7 @@ require __DIR__ . '/../../class/cl_venta_productos.php';
 require __DIR__ . '/../../class/cl_venta_sunat.php';
 
 require __DIR__ . '/../../class_varios/NumerosaLetras.php';
-require __DIR__ . '/../../greenter/generate_qr/class/GenerarQr.php';
+require '../generate_qr/class/GenerarQr.php';
 
 
 
@@ -139,9 +139,10 @@ $invoice->setLegends([
 
 $nombre_archivo = $invoice->getName();
 $hash = $util->getHash($invoice);
-$dominio = "http://" . $_SERVER["HTTP_HOST"] . "/clientes/farmacia/";
-$nombre_xml = $dominio . "/greenter/files/" . $invoice->getName() . ".xml";
+$url = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+$rutabase= dirname(dirname($url)) . DIRECTORY_SEPARATOR;
 
+$nombre_xml = $rutabase . "/../files/" . $invoice->getName() . ".xml";
 
 //generar qr
 $qr = $c_empresa->getRuc() . "|" . "01" . "|" . $c_venta->getSerie() . "-" . $c_venta->getNumero() . "|" . $igv . "|" . $total . "|" . $c_venta->getFecha() . "|" . "06" . "|" . $c_cliente->getDocumento();
@@ -151,7 +152,7 @@ $c_generar->setNombre_archivo($nombre_archivo);
 $c_generar->generar_qr();
 
 //obtener url de qr
-$url_qr = $dominio . "/greenter/generate_qr/temp/" . $nombre_archivo . ".png";
+$url_qr =  $rutabase . "/generate_qr/temp/" . $nombre_archivo . ".png";
 
 // Envio a SUNAT.
 $see = $util->getSee(SunatEndpoints::FE_PRODUCCION);
