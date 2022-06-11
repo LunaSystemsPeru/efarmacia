@@ -13,7 +13,9 @@ class SendCurlVenta
      */
     public function __construct()
     {
-        $this->ruta = "https://" . $_SERVER["HTTP_HOST"] . "/clientes/alufarma/";
+        $url = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+        $rutabase= dirname(dirname($url)) . DIRECTORY_SEPARATOR;
+        $this->ruta = $rutabase;
     }
 
     /**
