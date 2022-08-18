@@ -109,6 +109,9 @@ $title = "Ver Ingresos de Mercaderia - Farmacia - Luna Systems Peru";
                             <a href="reg_ingreso.php" class="btn btn-success">Nuevo ingreso</a>
                         </div>
                         <div class="btn-group">
+                            <button class="btn btn-info">Reporte XLS de Ingresos Totales</button>
+                        </div>
+                        <div class="btn-group">
                             <button class="btn btn-warning" data-toggle="modal" data-target="#modalbuscar">Buscar Documento</button>
                         </div>
 
