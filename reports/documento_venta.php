@@ -116,7 +116,7 @@ $pdf->SetX(53);
 $pdf->SetFont('Arial', '', 9);
 $pdf->MultiCell(75, 4, $c_empresa->getDireccion(), 0, "L");
 $pdf->SetX(53);
-$pdf->Cell(75, 4, "Telefono: " . $c_empresa->getTelefono(), 0, 1, 'L');
+$pdf->Cell(75, 4, "Telefono: ", 0, 1, 'L');
 
 $pdf->SetY(36);
 $pdf->SetFont('Arial', 'B', 9);

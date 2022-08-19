@@ -40,9 +40,8 @@ private $empresaid;
                 inner join presentacion as ps on ps.id_presentacion = pr.id_presentacion
                 inner join laboratorio as lb on lb.id_laboratorio = pr.id_laboratorio
                 inner join usuario as u on u.id_usuario = i.id_usuario and u.id_empresa = i.id_empresa
-                where i.id_empresa = '$this->id_empresa'
+                where i.id_empresa = '$this->empresaid' and i.fecha > '1000-01-01' and i.fecha < current_date() 
                 order by i.fecha asc ";
-
         $resultado = $conn->query($query);
         $fila = $resultado->fetch_all(MYSQLI_ASSOC);
         return $fila;

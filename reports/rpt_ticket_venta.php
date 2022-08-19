@@ -108,7 +108,7 @@ $pdf->Cell(72, $altura_linea, "*** " . utf8_decode($c_empresa->getNombreComercia
 //$pdf->SetX(30  + $izquierda);
 $pdf->MultiCell(72, $altura_linea, utf8_decode($c_empresa->getRuc() . " | " . $c_empresa->getRazonSocial()), 0, 'C');
 //$pdf->SetX(30 + $izquierda );
-$pdf->Cell(72, $altura_linea, "Cel/Tel: " . $c_empresa->getTelefono(), 0, 1, 'C');
+$pdf->Cell(72, $altura_linea, "Cel/Tel: ", 0, 1, 'C');
 //$pdf->SetX(30  + $izquierda);
 $pdf->MultiCell(72, $altura_linea, utf8_decode($c_empresa->getDireccion()), 0, 'C');
 //$pdf->SetX(30);

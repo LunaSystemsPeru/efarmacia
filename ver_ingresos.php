@@ -109,7 +109,7 @@ $title = "Ver Ingresos de Mercaderia - Farmacia - Luna Systems Peru";
                             <a href="reg_ingreso.php" class="btn btn-success">Nuevo ingreso</a>
                         </div>
                         <div class="btn-group">
-                            <button class="btn btn-info">Reporte XLS de Ingresos Totales</button>
+                            <button class="btn btn-info" type="button" onclick="verProductosIngreso()">Reporte XLS de Ingresos Totales</button>
                         </div>
                         <div class="btn-group">
                             <button class="btn btn-warning" data-toggle="modal" data-target="#modalbuscar">Buscar Documento</button>
@@ -292,6 +292,15 @@ $title = "Ver Ingresos de Mercaderia - Farmacia - Luna Systems Peru";
         });
 
     });
+
+    function verProductosIngreso() {
+        $.post("reports/xls_ingresos_productos.php", {empresaid: '3'}, function (data) {
+            //alert(data);
+            jsondata = JSON.parse(data);
+            var archivo = jsondata.name;
+            window.location.href = "reports/" + archivo+ '?v=' + Date.now();
+        });
+    }
 
 </script>
 

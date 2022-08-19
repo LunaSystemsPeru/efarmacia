@@ -1,4 +1,6 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
 require '../class_graficas/cl_reporte_inventario.php';
 require '../includes/SimpleXLSXGen.php';
 use Shuchkin\SimpleXLSXGen;
@@ -17,15 +19,21 @@ $books[] = $filai;
 //estructura titulos tabla
 $books = array();
 $fila = ['Item',
+    'Fecha',
+    'Documento',
+    'Proveedor',
     'Tienda',
+    'Usuario',
     'Producto',
+    'Presentacion',
+    'Laboratorio',
     'Lote',
-    'Vcto',
-    'Costo',
-    'Precio',
+    'Fec Vcto',
     'Cantidad',
-    'Costo Parcial',
-    'Precio Parcial',
+    'Costo Compra',
+    'Precio Venta',
+    'Parcial Compra',
+    'Parcial Venta',
     'Utilidad'];
 $books[] = $fila;
 
@@ -42,21 +50,30 @@ foreach ($array_lista as $fila) {
     $utilidad = $preciototal - $costototal;
     $fila = [
         $nrofila,
-        $fila['ntienda'],
-        $fila['nproducto'],
+        $fila['fecha'],
+        $fila['documentos_sunat'] . " | " . $fila['serie'] . "-" . $fila['numero'],
+        $fila['documento']. " - " . $fila['proveedor'],
+        "-",
+        $fila['username'],
+        $fila['nombre'],
+        $fila['presentacion'],
+        $fila['laboratorio'],
         $fila['lote'],
         $fila['vcto'],
+        $fila['cantidad'],
         $fila['costo'],
         $fila['precio'],
-        $fila['cantidad'],
         number_format($costototal, 2),
         number_format($preciototal, 2),
         number_format($utilidad, 2),
     ];
     $books[] = $fila;
 }
-
-
+/*
+echo "<pre>";
+print_r($books);
+echo "</pre>";
+*/
 $xlsx = SimpleXLSXGen::fromArray($books);
 $xlsx->saveAs('reporte_ingresos_productos.xlsx');
 
