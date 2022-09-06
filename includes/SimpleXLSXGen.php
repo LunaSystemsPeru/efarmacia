@@ -67,36 +67,36 @@ class SimpleXLSXGen
 
         $this->template = [
             '_rels/.rels' => '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
-<Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="xl/workbook.xml"/>
-<Relationship Id="rId2" Type="http://schemas.openxmlformats.org/package/2006/relationships/metadata/core-properties" Target="docProps/core.xml"/>
-<Relationship Id="rId3" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/extended-properties" Target="docProps/app.xml"/>
+<Relationships xmlns="https://schemas.openxmlformats.org/package/2006/relationships">
+<Relationship Id="rId1" Type="https://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="xl/workbook.xml"/>
+<Relationship Id="rId2" Type="https://schemas.openxmlformats.org/package/2006/relationships/metadata/core-properties" Target="docProps/core.xml"/>
+<Relationship Id="rId3" Type="https://schemas.openxmlformats.org/officeDocument/2006/relationships/extended-properties" Target="docProps/app.xml"/>
 </Relationships>',
             'docProps/app.xml' => '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Properties xmlns="http://schemas.openxmlformats.org/officeDocument/2006/extended-properties">
+<Properties xmlns="https://schemas.openxmlformats.org/officeDocument/2006/extended-properties">
 <TotalTime>0</TotalTime>
 <Application>' . __CLASS__ . '</Application></Properties>',
             'docProps/core.xml' => '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<cp:coreProperties xmlns:cp="http://schemas.openxmlformats.org/package/2006/metadata/core-properties" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dcmitype="http://purl.org/dc/dcmitype/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<cp:coreProperties xmlns:cp="https://schemas.openxmlformats.org/package/2006/metadata/core-properties" xmlns:dc="https://purl.org/dc/elements/1.1/" xmlns:dcterms="https://purl.org/dc/terms/" xmlns:dcmitype="https://purl.org/dc/dcmitype/" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance">
 <dcterms:created xsi:type="dcterms:W3CDTF">{DATE}</dcterms:created>
 <dc:language>en-US</dc:language>
 <dcterms:modified xsi:type="dcterms:W3CDTF">{DATE}</dcterms:modified>
 <cp:revision>1</cp:revision>
 </cp:coreProperties>',
             'xl/_rels/workbook.xml.rels' => '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
-<Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles" Target="styles.xml"/>
+<Relationships xmlns="https://schemas.openxmlformats.org/package/2006/relationships">
+<Relationship Id="rId1" Type="https://schemas.openxmlformats.org/officeDocument/2006/relationships/styles" Target="styles.xml"/>
 {SHEETS}',
             'xl/worksheets/sheet1.xml' => '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"
-    xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+<worksheet xmlns="https://schemas.openxmlformats.org/spreadsheetml/2006/main"
+    xmlns:r="https://schemas.openxmlformats.org/officeDocument/2006/relationships"
 ><dimension ref="{REF}"/>{COLS}<sheetData>{ROWS}</sheetData>{MERGECELLS}{HYPERLINKS}</worksheet>',
             'xl/worksheets/_rels/sheet1.xml.rels' => '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">{HYPERLINKS}</Relationships>',
+<Relationships xmlns="https://schemas.openxmlformats.org/package/2006/relationships">{HYPERLINKS}</Relationships>',
             'xl/sharedStrings.xml' => '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<sst xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" count="{CNT}" uniqueCount="{CNT}">{STRINGS}</sst>',
+<sst xmlns="https://schemas.openxmlformats.org/spreadsheetml/2006/main" count="{CNT}" uniqueCount="{CNT}">{STRINGS}</sst>',
             'xl/styles.xml' => '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<styleSheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main">
+<styleSheet xmlns="https://schemas.openxmlformats.org/spreadsheetml/2006/main">
 {FONTS}
 {FILLS}
 <borders count="1"><border><left/><right/><top/><bottom/><diagonal/></border></borders>
@@ -107,12 +107,12 @@ class SimpleXLSXGen
 </cellStyles>
 </styleSheet>',
             'xl/workbook.xml' => '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<workbook xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">
+<workbook xmlns="https://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="https://schemas.openxmlformats.org/officeDocument/2006/relationships">
 <fileVersion appName="' . __CLASS__ . '"/><sheets>
 {SHEETS}
 </sheets></workbook>',
             '[Content_Types].xml' => '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types">
+<Types xmlns="https://schemas.openxmlformats.org/package/2006/content-types">
 <Override PartName="/rels/.rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/>
 <Override PartName="/docProps/app.xml" ContentType="application/vnd.openxmlformats-officedocument.extended-properties+xml"/>
 <Override PartName="/docProps/core.xml" ContentType="application/vnd.openxmlformats-package.core-properties+xml"/>
@@ -255,10 +255,10 @@ class SimpleXLSXGen
             if ($cfilename === 'xl/_rels/workbook.xml.rels') {
                 $s = '';
                 for ($i = 0; $i < $cnt_sheets; $i++) {
-                    $s .= '<Relationship Id="rId' . ($i + 2) . '" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet"' .
+                    $s .= '<Relationship Id="rId' . ($i + 2) . '" Type="https://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet"' .
                         ' Target="worksheets/sheet' . ($i + 1) . ".xml\"/>\n";
                 }
-                $s .= '<Relationship Id="rId' . ($i + 2) . '" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/sharedStrings" Target="sharedStrings.xml"/></Relationships>';
+                $s .= '<Relationship Id="rId' . ($i + 2) . '" Type="https://schemas.openxmlformats.org/officeDocument/2006/relationships/sharedStrings" Target="sharedStrings.xml"/></Relationships>';
                 $template = str_replace('{SHEETS}', $s, $template);
                 $this->_writeEntry($fh, $cdrec, $cfilename, $template);
                 $entries++;
@@ -297,7 +297,7 @@ class SimpleXLSXGen
                         $RH = [];
                         $filename = 'xl/worksheets/_rels/sheet' . ($k + 1) . '.xml.rels';
                         foreach ($v['hyperlinks'] as $h) {
-                            $RH[] = '<Relationship Id="' . $h['ID'] . '" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="' . $this->esc($h['H']) . '" TargetMode="External"/>';
+                            $RH[] = '<Relationship Id="' . $h['ID'] . '" Type="https://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="' . $this->esc($h['H']) . '" TargetMode="External"/>';
                         }
                         $xml = str_replace('{HYPERLINKS}', implode("\r\n", $RH), $template);
                         $this->_writeEntry($fh, $cdrec, $filename, $xml);

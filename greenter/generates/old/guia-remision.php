@@ -144,7 +144,7 @@ if ($res->isSuccess()) {
 $respuesta = array();
 if ($res->isSuccess()) {
 
-    $dominio = "http://" . $_SERVER["HTTP_HOST"] . "/clientes/sonomusic/";
+    $dominio = "https://" . $_SERVER["HTTP_HOST"] . "/clientes/sonomusic/";
     $nombre_xml = $dominio . "/greenter/files/" . $despatch->getName() . ".xml";
     $hash = $util->getHash($despatch);
 

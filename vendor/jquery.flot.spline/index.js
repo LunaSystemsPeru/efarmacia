@@ -3,7 +3,7 @@
  * author: Alex Bardas < alex.bardas@gmail.com >
  * modified by: Avi Kohn https://github.com/AMKohn
  * based on the spline interpolation described at:
- *		 http://scaledinnovation.com/analytics/splines/aboutSplines.html
+ *		 https://scaledinnovation.com/analytics/splines/aboutSplines.html
  *
  * Example usage: (add in plot options series object)
  *		for linespline:

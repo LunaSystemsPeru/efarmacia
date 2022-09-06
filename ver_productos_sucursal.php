@@ -9,6 +9,15 @@ require 'class/cl_producto_sucursal.php';
 $c_producto = new cl_producto_sucursal();
 $c_producto->setIdEmpresa($_SESSION['id_empresa']);
 $c_producto->setIdSucursal($_SESSION['id_sucursal']);
+$a_productos = $c_producto->buscar_productos("321654987654");
+$tipo = filter_input(INPUT_GET, 'tipo');
+$busqueda = filter_input(INPUT_GET, 'busqueda');
+if ($tipo == 0 && $busqueda ) {
+    $a_productos = $c_producto->buscar_productos($busqueda);
+}
+if ($tipo == 1) {
+    $a_productos = $c_producto->ver_productos();
+}
 $title = "Ver Mis Productos - Farmacia - Luna Systems Peru";
 ?>
 <!DOCTYPE html>
@@ -23,7 +32,7 @@ $title = "Ver Mis Productos - Farmacia - Luna Systems Peru";
     <title><?php echo $title; ?></title>
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <link rel="shortcut icon" type="image/ico" href="images/favicon.ico" />
+    <link rel="shortcut icon" type="image/ico" href="images/favicon.ico"/>
 
     <!-- Vendor styles -->
     <link rel="stylesheet" href="vendor/fontawesome/css/font-awesome.css"/>
@@ -36,8 +45,9 @@ $title = "Ver Mis Productos - Farmacia - Luna Systems Peru";
     <link rel="stylesheet" href="fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css"/>
     <link rel="stylesheet" href="fonts/pe-icon-7-stroke/css/helper.css"/>
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="vendor/sweetalert/lib/sweet-alert.css">
     <!--<link rel="stylesheet"
-          href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/themes/base/minified/jquery-ui.min.css"
+          href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/themes/base/minified/jquery-ui.min.css"
           type="text/css"/>-->
 </head>
 <body class="fixed-navbar fixed-sidebar">
@@ -57,7 +67,7 @@ $title = "Ver Mis Productos - Farmacia - Luna Systems Peru";
 </div>
 <!--[if lt IE 7]>
 <p class="alert alert-danger">You are using an <strong>outdated</strong> browser. Please <a
-        href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
 
 <!-- Header -->
@@ -105,16 +115,22 @@ $title = "Ver Mis Productos - Farmacia - Luna Systems Peru";
                     <div class="panel-body">
                         <div class="col-md-7 m-b-md">
                             <div class="btn-group">
+                                <a href="ver_productos_sucursal.php?tipo=1" class="btn btn-success"><i class="fa fa-search"></i> Ver Todos mis Productos</a>
+                            </div>
+                            <div class="btn-group">
                                 <a href="ver_reporte_medicamentos.php" class="btn btn-success"><i class="fa fa-search"></i> Ver Medic. Vencidos</a>
                             </div>
                             <div class="btn-group">
                                 <a href="procesos/precios_mimsa.php" class="btn btn-info"><i class="fa fa-file-excel-o"></i> Ver Precios MIMSA</a>
                             </div>
-                        </div>
-                        <div class="col-md-5 ">
-                            <form class="form-horizontal">
-                                <div class="form-group">
 
+                        </div>
+                        <div class="col-5">
+                            <form method="get" class="form-inline">
+                                <div class="form-group">
+                                    <input class="form-control" type="text" name="busqueda">
+                                    <input type="hidden" value="0" name="tipo">
+                                    <input class="btn btn-success btn-sm" type="submit" value="Buscar">
                                 </div>
                             </form>
                         </div>
@@ -122,7 +138,6 @@ $title = "Ver Mis Productos - Farmacia - Luna Systems Peru";
                     </div>
                 </div>
             </div>
-
 
 
             <div class="col-lg-12">
@@ -142,7 +157,6 @@ $title = "Ver Mis Productos - Farmacia - Luna Systems Peru";
                             </thead>
                             <tbody>
                             <?php
-                            $a_productos = $c_producto->ver_productos();
                             foreach ($a_productos as $fila) {
                                 if ($fila['cantidad'] < 1) {
                                     $color_texto = "text-info font-bold";
@@ -161,18 +175,20 @@ $title = "Ver Mis Productos - Farmacia - Luna Systems Peru";
                                 }
                                 ?>
                                 <tr>
-                                    <td><?php echo $fila['id_producto']?></td>
-                                    <td ><p class="<?php echo $color_texto?>"><?php echo $fila['nombre'] . " - " . $fila['npresentacion'] . " - " . $fila['nlaboratorio']?></p></td>
+                                    <td><?php echo $fila['id_producto'] ?></td>
+                                    <td><p class="<?php echo $color_texto ?>"><?php echo $fila['nombre'] . " - " . $fila['npresentacion'] . " - " . $fila['nlaboratorio'] ?></p></td>
 
-                                    <td class="text-right"><p class="<?php echo $color_texto?>"><?php echo $fila['cantidad']?></p></td>
-                                    <td class="text-right"><p class="<?php echo $color_texto?>"><?php echo $fila['precio']?></p></td>
-                                    <td class="text-center"><p class="<?php echo $color_texto?>"><?php echo $fila['vcto'] . " | " . $fila['lote']?></p></td>
-                                    <td class="text-center"><?php echo $label_estado?></td>
+                                    <td class="text-right"><p class="<?php echo $color_texto ?>"><?php echo $fila['cantidad'] ?></p></td>
+                                    <td class="text-right"><p class="<?php echo $color_texto ?>"><?php echo $fila['precio'] ?></p></td>
+                                    <td class="text-center"><p class="<?php echo $color_texto ?>"><?php echo $fila['vcto'] . " | " . $fila['lote'] ?></p></td>
+                                    <td class="text-center"><?php echo $label_estado ?></td>
                                     <td class="text-center">
-                                        <a href="<?php echo "mod_producto.php?id_producto=" . $fila['id_producto']. "&id_empresa=" . $_SESSION['id_empresa']; ?>"><button class="btn btn-success btn-sm" title="Editar Producto"><i class="fa fa-edit"></i></button></a>
+                                        <a href="<?php echo "mod_producto.php?id_producto=" . $fila['id_producto'] . "&id_empresa=" . $_SESSION['id_empresa']; ?>">
+                                            <button class="btn btn-success btn-sm" title="Editar Producto"><i class="fa fa-edit"></i></button>
+                                        </a>
                                         <a href="ver_productos_compra.php?id_producto=<?php echo $fila['id_producto'] ?>" class="btn btn-success btn-sm" title="Ver Historial de Compra"><i class="fa fa-cart-arrow-down"></i></a>
                                         <a href="ver_kardex_producto.php?id_producto=<?php echo $fila['id_producto'] ?>" class="btn btn-info btn-sm" title="Ver Kardex"><i class="fa fa-bars"></i></a>
-                                        <button type="button" class="btn btn-danger btn-sm" title="Eliminar Producto" onclick="eliminar('<?php echo $fila['id_producto']?>')"><i class="fa fa-trash"></i></button>
+                                        <button type="button" class="btn btn-danger btn-sm" title="Eliminar Producto" onclick="eliminar('<?php echo $fila['id_producto'] ?>')"><i class="fa fa-trash"></i></button>
                                     </td>
                                 </tr>
                                 <?php
@@ -214,6 +230,7 @@ $title = "Ver Mis Productos - Farmacia - Luna Systems Peru";
 <script src="vendor/datatables.net-buttons/js/buttons.print.min.js"></script>
 <script src="vendor/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
 <script src="vendor/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+<script src="vendor/sweetalert/lib/sweet-alert.min.js"></script>
 <!-- App scripts -->
 <script src="scripts/homer.js"></script>
 
@@ -251,7 +268,7 @@ $title = "Ver Mis Productos - Farmacia - Luna Systems Peru";
             closeOnCancel: true
         }, function (isConfirm) {
             if (isConfirm) {
-                window.location.href = 'procesos/del_producto.php?id_producto=' + codigo;
+                window.location.href = 'procesos/del_producto_sucursal.php?id_producto=' + codigo;
             }
         });
     }

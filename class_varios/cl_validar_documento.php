@@ -13,8 +13,8 @@
  */
 class cl_validar_documento {
 
-    private $url_ruc = "http://lunasystemsperu.com/apis/apiruc.php?ruc=";
-    private $url_dni = "http://lunasystemsperu.com/apis/apidni.php?dni=";
+    private $url_ruc = "https://lunasystemsperu.com/apis/apiruc.php?ruc=";
+    private $url_dni = "https://lunasystemsperu.com/apis/apidni.php?dni=";
     private $dni;
     private $ruc;
 

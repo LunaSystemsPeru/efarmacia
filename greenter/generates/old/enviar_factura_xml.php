@@ -34,8 +34,8 @@ if ($id_empresa) {
     $c_venta->setFecha($fecha);
 
 //parametros de archivos xml
-    $url = $_SERVER["HTTP_HOST"];
-    $dominio = "http://" . $url . "/clientes/farmacia/";
+    $url = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+    $rutabase = dirname(dirname($url)) . DIRECTORY_SEPARATOR;
 
     $see = $util->getSee(SunatEndpoints::FE_PRODUCCION);
 
@@ -51,8 +51,7 @@ if ($id_empresa) {
 
         //generar nombres de archivos
         $nombre_archivo = $c_empresa->getRuc() . "-01-" . $fila['serie'] . "-" . $fila['numero'];
-        $nombre_xml = $dominio . "greenter/files/" . $nombre_archivo . ".xml";
-        $archivo_xml = "../files/" . $nombre_archivo . ".xml";
+        $archivo_xml = $rutabase . "../files/" . $nombre_archivo . ".xml";
         $mensaje = $mensaje . "archivo a enviar = " . $archivo_xml . PHP_EOL;
 
         if (file_exists($archivo_xml)) {
@@ -83,15 +82,15 @@ if ($id_empresa) {
     $mensaje = $mensaje . $contar_malas . " de " . $total_filas;
 
     print_r($mensaje);
-/*
-    $to = "info@lunasystemsperu.com";
-    $subject = "Estado del Envio de Facturas Electronica " . $c_empresa->getRuc() . " del dia: " . $fecha;
-    $headers = "MIME-Version: 1.0" . "\r\n";
-    $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+    /*
+        $to = "info@lunasystemsperu.com";
+        $subject = "Estado del Envio de Facturas Electronica " . $c_empresa->getRuc() . " del dia: " . $fecha;
+        $headers = "MIME-Version: 1.0" . "\r\n";
+        $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
-    $message = $mensaje;
+        $message = $mensaje;
 
-    mail($to, $subject, $message, $headers);
-*/
+        mail($to, $subject, $message, $headers);
+    */
 
 }

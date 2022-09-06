@@ -50,7 +50,7 @@ $cl_producto->obtener_datos();
     <link rel="stylesheet" href="fonts/pe-icon-7-stroke/css/helper.css"/>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet"
-          href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/themes/base/minified/jquery-ui.min.css"
+          href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/themes/base/minified/jquery-ui.min.css"
           type="text/css"/>
 </head>
 <body class="fixed-navbar fixed-sidebar">
@@ -70,7 +70,7 @@ $cl_producto->obtener_datos();
 </div>
 <!--[if lt IE 7]>
 <p class="alert alert-danger">You are using an <strong>outdated</strong> browser. Please <a
-        href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
 
 <!-- Header -->
@@ -124,7 +124,7 @@ $cl_producto->obtener_datos();
                                 <div class="col-lg-8">
                                     <input type="text" class="form-control"
                                            name="input_nombre" id="input_nombre"
-                                           max-lenght="245" value="<?php echo $cl_producto->getNombre() ?>" readonly/>
+                                           max-lenght="245" value="<?php echo $cl_producto->getNombre() ?>" />
                                 </div>
                             </div>
 

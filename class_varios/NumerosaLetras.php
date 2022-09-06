@@ -115,7 +115,7 @@ class NumerosaLetras
      * @param $type tipo de dígito (entero/decimal)
      * @return $converted string convertido
      */
-    private function convertNumber($number, $miMoneda = null, $type)
+    private function convertNumber($number, $miMoneda = null, $type = '')
     {
 
         $converted = '';

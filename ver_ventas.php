@@ -47,7 +47,7 @@ $title = "Ver Ventas - Farmacia - Luna Systems Peru";
     <link href="vendor/toast/build/jquery.toast.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet"
-          href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/themes/base/minified/jquery-ui.min.css"
+          href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/themes/base/minified/jquery-ui.min.css"
           type="text/css"/>
 </head>
 <body class="fixed-navbar fixed-sidebar">
@@ -67,7 +67,7 @@ $title = "Ver Ventas - Farmacia - Luna Systems Peru";
 </div>
 <!--[if lt IE 7]>
 <p class="alert alert-danger">You are using an <strong>outdated</strong> browser. Please <a
-        href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
 
 <!-- Header -->
@@ -206,10 +206,9 @@ $title = "Ver Ventas - Farmacia - Luna Systems Peru";
                                     <th width="8%">Fecha</th>
                                     <th width="30%">Cliente</th>
                                     <th width="11%">Usuario</th>
-                                    <th width="10%">Total</th>
-                                    <th width="10%">Cobrado</th>
+                                    <th width="6%">Total</th>
                                     <th width="10%">Estado</th>
-                                    <th width="11%">Acciones</th>
+                                    <th width="15%">Acciones</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -237,7 +236,6 @@ $title = "Ver Ventas - Farmacia - Luna Systems Peru";
                                         <td><?php echo $fila['documento'] . " | " . $fila['nombre'] ?></td>
                                         <td class="text-center"><?php echo $fila['username'] ?></td>
                                         <td class="text-right"><?php echo number_format($total, 2) ?></td>
-                                        <td class="text-right"><?php echo number_format($pagado, 2) ?></td>
                                         <td class="text-center">
                                             <?php echo $estado; ?>
                                         </td>
@@ -246,6 +244,9 @@ $title = "Ver Ventas - Farmacia - Luna Systems Peru";
 
                                             <?php
                                             if ($fila['estado'] == 1) {
+                                                if ($fila['id_documento'] != 1) {
+                                                    echo '<a target="_blank" href="greenter/files/20605162739-'.$fila['cod_sunat'].'-'.$fila['serie'].'-'.$fila['numero'].'.xml" class="btn btn-primary btn-sm"><i class="fa fa-file-pdf-o"></i> XML</a>';
+                                                }
                                                 ?>
                                                 <button class="btn btn-info btn-sm" title="Ver Detalle" onclick="obtener_detalle('<?php echo $fila['id_venta'] ?>', '<?php echo $fila['periodo'] ?>')"><i class="fa fa-eye-slash"></i></button>
                                                 <button onclick="anular_venta(<?php echo $fila["id_venta"] . "," . $fila["periodo"]; ?>)" class="btn btn-danger btn-sm" title="Anular Documento"><i class="fa fa-close"></i></button>
