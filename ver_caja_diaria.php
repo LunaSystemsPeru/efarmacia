@@ -8,20 +8,35 @@ if (is_null($_SESSION['id_empresa'])) {
 require 'class/cl_caja_diaria.php';
 require 'class/cl_caja_movimiento.php';
 require 'class/cl_banco.php';
+require 'class/cl_sucursal.php';
 
 $c_banco = new cl_banco();
 $c_caja = new cl_caja_diaria();
 $cm = new cl_caja_movimiento();
+$sucursal = new cl_sucursal();
 
 $c_caja->setIdEmpresa($_SESSION['id_empresa']);
-$c_caja->setFecha(date("Y-m-d"));
-$c_caja->setIdSucursal($_SESSION['id_sucursal']);
+$fecha = filter_input(INPUT_GET, 'fecha');
+$id_sucursal = filter_input(INPUT_GET, 'sucursal');
+if ($fecha) {
+    $c_caja->setFecha($fecha);
+    $c_caja->setIdSucursal($id_sucursal);
+} else {
+    $c_caja->setFecha(date("Y-m-d"));
+    $c_caja->setIdSucursal($_SESSION['id_sucursal']);
+}
+
 $existe_caja = $c_caja->obtener_datos();
 $c_banco->setIdEmpresa($_SESSION['id_empresa']);
 
 $cm->setFecha($c_caja->getFecha());
 $cm->setIdEmpresa($c_caja->getIdEmpresa());
 $cm->setIdSucursal($c_caja->getIdSucursal());
+
+$sucursal->setIdEmpresa($c_caja->getIdEmpresa());
+$sucursal->setIdSucursal($c_caja->getIdSucursal());
+$sucursal->obtener_datos();
+
 
 $title = "Caja Diaria - Farmacia - Luna Systems Peru";
 ?>
@@ -103,7 +118,7 @@ $title = "Caja Diaria - Farmacia - Luna Systems Peru";
                     </ol>
                 </div>
                 <h2 class="font-light m-b-xs">
-                    inicio
+                    movimiento de dinero de la Tienda: <?php echo $sucursal->getNombre()?> del dia <?php echo $fecha?>
                 </h2>
             </div>
         </div>

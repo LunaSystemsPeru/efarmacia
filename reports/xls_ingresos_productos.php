@@ -8,6 +8,7 @@ use Shuchkin\SimpleXLSXGen;
 $Reporte = new cl_reporte_inventario();
 
 $Reporte->setEmpresaid(filter_input(INPUT_POST, 'empresaid'));
+$Reporte->setEmpresaid(3);
 
 $filai = [
     "",

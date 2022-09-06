@@ -9,6 +9,8 @@ require 'class/cl_caja_diaria.php';
 $c_caja = new cl_caja_diaria();
 $c_caja->setIdEmpresa($_SESSION['id_empresa']);
 
+$periodo = date("Ym");
+
 $title = "Ver Caja Mensual - Farmacia - Luna Systems Peru";
 ?>
 <!DOCTYPE html>
@@ -150,7 +152,7 @@ $title = "Ver Caja Mensual - Farmacia - Luna Systems Peru";
                             </thead>
                             <tbody>
                             <?php
-                            $caja = $c_caja->ver_caja_mensual(date("Ym"));
+                            $caja = $c_caja->ver_caja_mensual($periodo);
                             foreach ($caja as $fila) {
                                 $m_ingreso = $fila['venta_dia']  + $fila['venta_cobro'] + $fila['otros_ingresos'];
                                 $m_egresos = $fila['venta_devolucion']  + $fila['compra_egreso'] + $fila['gastos_varios'];
@@ -166,7 +168,7 @@ $title = "Ver Caja Mensual - Farmacia - Luna Systems Peru";
                                     <td class="text-right"><?php echo number_format($fila['m_sistema'],2) ?></td>
                                     <td class="text-right"><?php echo number_format($m_diferencia, 2) ?></td>
                                     <td class="text-center">
-                                        <button class="btn btn-info btn-sm" title="Ver Detalle de Caja"><i class="fa fa-bar-chart"></i></button>
+                                        <a target="_blank" href="ver_caja_diaria.php?fecha=<?php echo $fila['fecha'] ?>&sucursal=<?php echo $fila['id_sucursal'] ?>" class="btn btn-info btn-sm" title="Ver Detalle de Caja"><i class="fa fa-bar-chart"></i></a>
                                     </td>
                                 </tr>
                                 <?php

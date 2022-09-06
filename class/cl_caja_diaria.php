@@ -267,7 +267,7 @@ class cl_caja_diaria
     function ver_caja_mensual($mes)
     {
         global $conn;
-        $query = "select cd.*, s.nombre as nombresede 
+        $query = "select cd.*, s.nombre as nombresede, s.id_sucursal
             from caja_diaria as cd 
             inner join sucursales s on cd.id_sucursal = s.id_sucursal
             where cd.id_empresa = '" . $this->id_empresa . "' and concat(year(cd.fecha), LPAD(month(cd.fecha), 2, 0)) = '" . $mes . "'
