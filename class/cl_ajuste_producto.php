@@ -191,8 +191,9 @@ class cl_ajuste_producto
     public function insertar()
     {
         global $conn;
-        $query = "insert into invenvario_productos values ('$this->id_ajuste', '$this->id_producto', '$this->id_empresa', '$this->cactual', '$this->cnueva', '$this->costo', '$this->venta', '$this->lote', '$this->vencimiento', '$this->sucuucursal')";
+        $query = "insert into invenvario_productos values ('$this->id_ajuste', '$this->id_producto', '$this->id_empresa', '$this->cactual', '$this->cnueva', '$this->costo', '$this->venta', '$this->lote', '$this->vencimiento')";
         $resultado = $conn->query($query);
+        echo $query;
         if (!$resultado) {
             die('Could not enter data in invenvario_productos: ' . mysqli_error($conn));
         } else {

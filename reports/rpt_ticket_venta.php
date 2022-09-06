@@ -167,8 +167,9 @@ $pdf->Line(4 + $izquierda, $y, 79 + $izquierda, $y);
 //$pdf->SetY(-43);
 //$pdf->SetY(-43-148.5);
 
-$pdf->Image('../greenter/generate_qr/temp/' . $c_recibido->getNombreXml() . '.png', 8 + $izquierda, $y + 4, 30, 30);
-
+if ($c_venta->getIdDocumento() != 1) {
+    $pdf->Image('../greenter/generate_qr/temp/' . $c_recibido->getNombreXml() . '.png', 8 + $izquierda, $y + 4, 30, 30);
+}
 
 $pdf->Ln(25);
 $pdf->SetX(4 + $izquierda);

@@ -19,6 +19,7 @@ $c_ajuste->obtener_codigo();
 if ($c_ajuste->insertar()) {
     $c_detalle->setIdAjuste($c_ajuste->getIdAjuste());
     $c_detalle->setIdEmpresa($c_ajuste->getIdEmpresa());
+    $c_detalle->setIdSucursal($c_ajuste->getIdSucursal());
 
     $a_ajuste = $_SESSION['productos_ajuste'];
     foreach ($a_ajuste as $fila) {
@@ -29,7 +30,6 @@ if ($c_ajuste->insertar()) {
         $c_detalle->setCnueva($fila['cantidad']);
         $c_detalle->setLote($fila['lote']);
         $c_detalle->setVencimiento($fila['vcto']);
-
         $c_detalle->insertar();
     }
 
