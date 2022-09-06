@@ -30,6 +30,8 @@ $c_producto->setIdVenta($c_venta->getIdVenta());
 $c_producto->eliminar();
 
 $c_anulada->setVentaIdVenta($c_venta->getIdVenta());
+$c_anulada->setPeriodo($c_venta->getPeriodo());
+$c_anulada->setIdEmpresa($c_venta->getIdEmpresa());
 $c_anulada->setFecha(date("Y-m-d"));
 $c_anulada->setMotivo("-");
 

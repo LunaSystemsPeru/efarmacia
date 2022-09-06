@@ -95,7 +95,53 @@ $title = "Inicio - Farmacia - Luna Systems Peru";
     <div class="content">
 
 
-       <div class="row">
+        <div class="row">
+            <div class="col-lg-9">
+                <div class="hpanel">
+                    <div class="panel-heading">
+                        <div class="panel-tools">
+                            <a class="showhide"><i class="fa fa-chevron-up"></i></a>
+                            <a class="closebox"><i class="fa fa-times"></i></a>
+                        </div>
+                        Grafica de Ventas vs Utilidad mensual
+                    </div>
+                    <div class="panel-body">
+                        <div>
+                            <canvas id="lineOptions" height="90"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3">
+                <div class="hpanel">
+                    <div class="panel-heading">
+                        <div class="panel-tools">
+                            <a class="showhide"><i class="fa fa-chevron-up"></i></a>
+                            <a class="closebox"><i class="fa fa-times"></i></a>
+                        </div>
+                        Datos Generales
+                    </div>
+                    <div class="panel-body">
+                        <div class="table-responsive">
+                            <table id="table-cantidades" class="table table-striped table-bordered table-hover">
+                                <thead>
+                                <tr>
+                                    <th>Descripcion</th>
+                                    <th>Cantidad</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
             <div class="col-lg-12">
                 <div class="hpanel">
                     <div class="panel-heading">

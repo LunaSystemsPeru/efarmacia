@@ -20,7 +20,7 @@
 
         <ul class="nav" id="side-menu">
             <li class="active">
-                <a href="index.php"> <span class="nav-label">Inicio</span></a>
+                <a href="index_graficas.php"> <span class="nav-label">Inicio</span></a>
             </li>
             <li>
                 <a href="ver_caja_diaria.php"> <span class="nav-label">Caja Diaria</span> (Abierto)</a>

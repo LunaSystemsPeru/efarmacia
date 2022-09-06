@@ -1,3 +1,16 @@
+<?php
+session_start();
+
+$link = $_SERVER['HTTP_HOST'] ;
+if ($link != "alufarma.ml") {
+    //echo "pagina bloqueda, consulte con su administrador para ingresar a la pagina correcta";
+   // exit;
+}
+
+if ($_SESSION['id_empresa']) {
+    header("Location: index_graficas.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
