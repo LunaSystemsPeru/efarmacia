@@ -10,6 +10,10 @@ require 'class/cl_varios.php';
 $c_varios = new cl_varios();
 $c_ingreso = new cl_ingreso();
 $c_ingreso->setIdEmpresa($_SESSION['id_empresa']);
+$periodo = date("Ym");
+if (filter_input(INPUT_GET, 'periodo')) {
+    $periodo = filter_input(INPUT_GET, 'periodo');
+}
 
 $title = "Ver Ingresos de Mercaderia - Farmacia - Luna Systems Peru";
 ?>
@@ -25,7 +29,7 @@ $title = "Ver Ingresos de Mercaderia - Farmacia - Luna Systems Peru";
     <title><?php echo $title; ?></title>
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <link rel="shortcut icon" type="image/ico" href="images/favicon.ico" />
+    <link rel="shortcut icon" type="image/ico" href="images/favicon.ico"/>
 
     <!-- Vendor styles -->
     <link rel="stylesheet" href="vendor/fontawesome/css/font-awesome.css"/>
@@ -40,7 +44,7 @@ $title = "Ver Ingresos de Mercaderia - Farmacia - Luna Systems Peru";
     <link rel="stylesheet" href="fonts/pe-icon-7-stroke/css/helper.css"/>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet"
-          href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/themes/base/minified/jquery-ui.min.css"
+          href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/themes/base/minified/jquery-ui.min.css"
           type="text/css"/>
 </head>
 <body class="fixed-navbar fixed-sidebar">
@@ -60,7 +64,7 @@ $title = "Ver Ingresos de Mercaderia - Farmacia - Luna Systems Peru";
 </div>
 <!--[if lt IE 7]>
 <p class="alert alert-danger">You are using an <strong>outdated</strong> browser. Please <a
-        href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
 
 <!-- Header -->
@@ -163,12 +167,17 @@ $title = "Ver Ingresos de Mercaderia - Farmacia - Luna Systems Peru";
                         <form class="form-horizontal">
                             <div class="form-group">
                                 <div class="col-md-6">
-                                    <select class="form-control">
+                                    <select class="form-control" id="select-anio" onchange="obtener_periodo()">
                                         <option>Seleccionar Año</option>
+                                        <?php
+                                        foreach ($c_ingreso->obteneranios() as $fila) {
+                                            echo '<option value="' . $fila['anio'] . '">' . $fila['anio'] . '</option>';
+                                        }
+                                        ?>
                                     </select>
                                 </div>
                                 <div class="col-md-6">
-                                    <select class="form-control">
+                                    <select class="form-control" id="select-periodo" onchange="ver_periodo()">
                                         <option>Seleccionar Periodo</option>
                                     </select>
                                 </div>
@@ -199,20 +208,20 @@ $title = "Ver Ingresos de Mercaderia - Farmacia - Luna Systems Peru";
                             </thead>
                             <tbody>
                             <?php
-                            $a_ingresos = $c_ingreso->ver_ingresos();
+                            $a_ingresos = $c_ingreso->ver_ingresos($periodo);
                             foreach ($a_ingresos as $fila) {
                                 ?>
                                 <tr>
-                                    <td><?php echo $fila['periodo'] . $c_varios->zerofill($fila['id_ingreso'], 3)?></td>
-                                    <td class="text-center"><?php echo $fila['fecha']?></td>
-                                    <td class="text-center"><?php echo $fila['nombresucursal']?></td>
-                                    <td><?php echo $fila['ruc'] . " | " . $fila['razon_social']?></td>
-                                    <td><?php echo $fila['doc_sunat'] . " | " . $fila['serie'] . " - " . $fila['numero']?></td>
-                                    <td class="text-center"><?php echo $fila['username']?></td>
-                                    <td class="text-right"><?php echo number_format($fila['total'], 2)?></td>
+                                    <td><?php echo $fila['periodo'] . $c_varios->zerofill($fila['id_ingreso'], 3) ?></td>
+                                    <td class="text-center"><?php echo $fila['fecha'] ?></td>
+                                    <td class="text-center"><?php echo $fila['nombresucursal'] ?></td>
+                                    <td><?php echo $fila['ruc'] . " | " . $fila['razon_social'] ?></td>
+                                    <td><?php echo $fila['doc_sunat'] . " | " . $fila['serie'] . " - " . $fila['numero'] ?></td>
+                                    <td class="text-center"><?php echo $fila['username'] ?></td>
+                                    <td class="text-right"><?php echo number_format($fila['total'], 2) ?></td>
                                     <td class="text-center">
-                                        <button class="btn btn-info btn-sm" title="Ver Documento" onclick="obtener_detalle('<?php echo $fila['id_ingreso']?>', '<?php echo $fila['periodo']?>')"><i class="fa fa-eye"></i></button>
-                                        <button class="btn btn-danger btn-sm" title="Eliminar Documento" onclick="eliminar('<?php echo $fila['id_ingreso']?>', '<?php echo $fila['periodo']?>')"><i class="fa fa-close"></i></button>
+                                        <button class="btn btn-info btn-sm" title="Ver Documento" onclick="obtener_detalle('<?php echo $fila['id_ingreso'] ?>', '<?php echo $fila['periodo'] ?>')"><i class="fa fa-eye"></i></button>
+                                        <button class="btn btn-danger btn-sm" title="Eliminar Documento" onclick="eliminar('<?php echo $fila['id_ingreso'] ?>', '<?php echo $fila['periodo'] ?>')"><i class="fa fa-close"></i></button>
                                     </td>
                                 </tr>
                                 <?php
@@ -280,7 +289,7 @@ $title = "Ver Ingresos de Mercaderia - Farmacia - Luna Systems Peru";
 
         // Initialize Example 1
         $('#tabla-ingresos').dataTable({
-            "order": [[ 1, "desc" ]],
+            "order": [[1, "desc"]],
             dom: "<'row'<'col-sm-4'l><'col-sm-4 text-center'B><'col-sm-4'f>>tp",
             "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
             buttons: [
@@ -298,13 +307,42 @@ $title = "Ver Ingresos de Mercaderia - Farmacia - Luna Systems Peru";
             //alert(data);
             jsondata = JSON.parse(data);
             var archivo = jsondata.name;
-            window.location.href = "reports/" + archivo+ '?v=' + Date.now();
+            window.location.href = "reports/" + archivo + '?v=' + Date.now();
         });
     }
 
 </script>
 
 <script>
+    function obtener_periodo() {
+        var anio = $("#select-anio").val();
+        var periodo = $("#select-periodo");
+        var parametros = {
+            anio: anio
+        };
+        $.ajax({
+            data: parametros, //datos que se envian a traves de ajax
+            url: 'ajax_post/obtener_periodos_ingreso.php', //archivo que recibe la peticion
+            type: 'post', //método de envio
+            beforeSend: function () {
+                //$("#select_periodo").html("")
+            },
+            success: function (response) { //una vez que el archivo recibe el request lo procesa y lo devuelve
+                var json_response = JSON.parse(response);
+                periodo.find('option').remove();
+                periodo.append('<option value="">Seleccionar periodo</option>')
+                $(json_response).each(function (i, v) { // indice, valor
+                    periodo.append('<option value="' + v.periodo + '">' + v.periodo + '</option>');
+                });
+                periodo.prop('disabled', false);
+            }
+        });
+    }
+
+    function ver_periodo() {
+        window.location.href = 'ver_ingresos.php?periodo=' + $("#select-periodo").val();
+    }
+
     function obtener_detalle(id_ingreso, periodo) {
         var parametros = {
             id_ingreso: id_ingreso,
@@ -324,7 +362,7 @@ $title = "Ver Ingresos de Mercaderia - Farmacia - Luna Systems Peru";
         });
     }
 
-    function eliminar (id_ingreso,periodo) {
+    function eliminar(id_ingreso, periodo) {
 
         swal({
             title: "Anular Ingreso",
@@ -339,7 +377,7 @@ $title = "Ver Ingresos de Mercaderia - Farmacia - Luna Systems Peru";
             closeOnCancel: true
         }, function (isConfirm) {
             if (isConfirm) {
-                window.location.href = 'procesos/del_ingreso.php?id_ingreso=' + id_ingreso+ '&periodo=' +periodo;
+                window.location.href = 'procesos/del_ingreso.php?id_ingreso=' + id_ingreso + '&periodo=' + periodo;
             }
         });
     }

@@ -93,6 +93,20 @@ class cl_producto_sucursal
         return $grabado;
     }
 
+    public function eliminar()
+    {
+        global $conn;
+        $query = "delete from productos_sucursales where id_sucursal = '$this->id_sucursal' and id_producto = '$this->id_producto' and id_empresa = '$this->id_empresa'";
+        $resultado = $conn->query($query);
+        if (!$resultado) {
+            die('Could not delete data in inventario: ' . mysqli_error($conn));
+        } else {
+            //echo "Entered data successfully";
+            $grabado = true;
+        }
+        return $grabado;
+    }
+
     function ver_productos()
     {
         global $conn;
@@ -101,7 +115,20 @@ class cl_producto_sucursal
             inner join producto as p on p.id_producto = ps.id_producto and p.id_empresa = ps.id_empresa
         inner join laboratorio as l on p.id_laboratorio = l.id_laboratorio 
         inner join presentacion pr on p.id_presentacion = pr.id_presentacion 
-        where ps.id_sucursal = '$this->id_sucursal'";
+        where ps.id_sucursal = '$this->id_sucursal' and ps.id_empresa = '$this->id_empresa' ";
+        $resultado = $conn->query($query);
+        return $resultado->fetch_all(MYSQLI_ASSOC);
+    }
+
+    function buscar_productos($term)
+    {
+        global $conn;
+        $query = "select p.id_producto, p.nombre, p.principio_activo, pr.nombre as npresentacion, l.nombre as nlaboratorio, ps.cantidad, p.precio, p.lote, p.vcto, DATEDIFF(p.vcto, current_date()) as faltantes 
+        from productos_sucursales as ps 
+            inner join producto as p on p.id_producto = ps.id_producto and p.id_empresa = ps.id_empresa
+        inner join laboratorio as l on p.id_laboratorio = l.id_laboratorio 
+        inner join presentacion pr on p.id_presentacion = pr.id_presentacion 
+        where ps.id_sucursal = '$this->id_sucursal' and ps.id_empresa = '$this->id_empresa' and p.nombre like '%$term%' ";
         $resultado = $conn->query($query);
         return $resultado->fetch_all(MYSQLI_ASSOC);
     }

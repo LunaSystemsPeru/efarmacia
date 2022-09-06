@@ -211,7 +211,7 @@ if ($id_empresa) {
 
 //variables generales
     $nombre_archivo = $sum->getName();
-    $dominio = "http://" . $_SERVER["HTTP_HOST"] . "/clientes/farmacia/";
+    $dominio = "https://" . $_SERVER["HTTP_HOST"] . "/clientes/farmacia/";
     $nombre_xml = $dominio . "/greenter/files/" . $sum->getName() . ".xml";
     $nombre_zip_respuesta = $dominio . "/greenter/files/R-" . $sum->getName() . ".zip";
 

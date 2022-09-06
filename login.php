@@ -29,8 +29,8 @@
 <!-- Simple splash screen-->
 <div class="splash">
     <div class="color-line"></div>
-    <div class="splash-title"><h1>Homer - Responsive Admin Theme</h1>
-        <p>Special Admin Theme for small and medium webapp with very clean and aesthetic style and feel. </p>
+    <div class="splash-title"><h1>Alufarma - Software de Inventario y Ventas</h1>
+        <p>Cargando--</p>
         <div class="spinner">
             <div class="rect1"></div>
             <div class="rect2"></div>
@@ -41,7 +41,7 @@
     </div>
 </div>
 <!--[if lt IE 7]>
-<p class="alert alert-danger">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<p class="alert alert-danger">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
 
 <div class="color-line"></div>
@@ -56,11 +56,6 @@
             <div class="hpanel">
                 <div class="panel-body">
                     <form action="procesos/login.php" id="loginForm" method="post">
-                        <div class="form-group">
-                            <label class="control-label" for="username">Empresa (RUC)</label>
-                            <input type="text" placeholder="Numero de RUC" title="Please enter you username" required="" value="" name="input_ruc" id="input_ruc" class="form-control">
-                            <span class="help-block small">Numero de RUC usado para su tienda</span>
-                        </div>
                         <div class="form-group">
                             <label class="control-label" for="username">Username</label>
                             <input type="text" placeholder="Username" title="Please enter you username" required="" value="" name="input_username" id="input_username" class="form-control">
@@ -80,7 +75,7 @@
     </div>
     <div class="row">
         <div class="col-md-12 text-center">
-            <strong>HOMER</strong> - AngularJS Responsive WebApp <br/> 2015 Copyright Company Name
+            <strong>Desarrollado por </strong> - Luna Systems Peru <br/> Desde el 2019
         </div>
     </div>
 </div>

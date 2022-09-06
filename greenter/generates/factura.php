@@ -4,18 +4,16 @@ date_default_timezone_set('America/Lima');
 error_reporting(E_ALL);
 
 
-//ini_set('default_socket_timeout', 600);
-
 use Greenter\Model\Client\Client;
-use Greenter\Model\Company\Address;
 use Greenter\Model\Company\Company;
+use Greenter\Model\Company\Address;
 use Greenter\Model\Sale\FormaPagos\FormaPagoContado;
 use Greenter\Model\Sale\Invoice;
-use Greenter\Model\Sale\Legend;
 use Greenter\Model\Sale\SaleDetail;
-use Greenter\Ws\Services\SunatEndpoints;
+use Greenter\Model\Sale\Legend;
 
 require __DIR__ . '/../vendor/autoload.php';
+require '../src/Config.php';
 
 require __DIR__ . '/../../class/cl_venta.php';
 require __DIR__ . '/../../class/cl_cliente.php';
@@ -26,15 +24,12 @@ require __DIR__ . '/../../class/cl_venta_sunat.php';
 require __DIR__ . '/../../class_varios/NumerosaLetras.php';
 require '../generate_qr/class/GenerarQr.php';
 
-
-
-
-$util = Util::getInstance();
+$NumeroLetras = new NumerosaLetras();
 
 $c_venta = new cl_venta();
-$c_venta->setIdVenta(filter_input(INPUT_POST, 'id_venta'));
-$c_venta->setIdEmpresa(filter_input(INPUT_POST, 'id_empresa'));
-$c_venta->setPeriodo(filter_input(INPUT_POST, 'periodo'));
+$c_venta->setIdVenta(filter_input(INPUT_GET, 'id_venta'));
+$c_venta->setIdEmpresa(filter_input(INPUT_GET, 'id_empresa'));
+$c_venta->setPeriodo(filter_input(INPUT_GET, 'periodo'));
 $c_venta->obtener_datos();
 
 $c_cliente = new cl_cliente();
@@ -53,9 +48,13 @@ $c_empresa = new cl_empresa();
 $c_empresa->setIdEmpresa($c_venta->getIdEmpresa());
 $c_empresa->obtener_datos();
 
-$util->setRuc($c_empresa->getRuc());
-$util->setClave($c_empresa->getClaveSol());
-$util->setUsuario($c_empresa->getUserSol());
+$Config = new Config();
+$Config->setRuc($c_empresa->getRuc());
+$Config->setUsersol($c_empresa->getUserSol());
+$Config->setClavesol($c_empresa->getClaveSol());
+
+$see = $Config->getSee();
+
 
 $empresa = new Company();
 $empresa->setRuc($c_empresa->getRuc())
@@ -70,7 +69,7 @@ $empresa->setRuc($c_empresa->getRuc())
         ->setCodLocal('0000')
         ->setDireccion($c_empresa->getDireccion()));
 
-//$util->setRucEmpresa($c_empresa->getRuc());
+//lista de productos
 
 $invoice = new Invoice();
 
@@ -123,80 +122,94 @@ foreach ($items as $value) {
     $array_items[] = $item;
 }
 
-$invoice->setDetails($array_items);
-
 $c_numeros = new NumerosaLetras();
 $numeros = utf8_decode($c_numeros->to_word(number_format($c_venta->getTotal(), 2, ".", ""), "PEN"));
-$invoice->setLegends([
-    (new Legend())
-        ->setCode('1000')
-        ->setValue($numeros)
-]);
 
+$legend = (new Legend())
+    ->setCode('1000') // Monto en letras - Catalog. 52
+    ->setValue($numeros);
 
-/** Si solo desea enviar un XML ya generado utilice esta función* */
-//$res = $see->sendXml(get_class($invoice), $invoice->getName(), file_get_contents($ruta_XML));
+$invoice->setDetails($array_items)
+    ->setLegends([$legend]);
 
 $nombre_archivo = $invoice->getName();
-$hash = $util->getHash($invoice);
-$url = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
-$rutabase= dirname(dirname($url)) . DIRECTORY_SEPARATOR;
-
-$nombre_xml = $rutabase . "/../files/" . $invoice->getName() . ".xml";
-
+$tipoDoc = 6;
 //generar qr
 $qr = $c_empresa->getRuc() . "|" . "01" . "|" . $c_venta->getSerie() . "-" . $c_venta->getNumero() . "|" . $igv . "|" . $total . "|" . $c_venta->getFecha() . "|" . "06" . "|" . $c_cliente->getDocumento();
-$c_generar = new generarQr();
-$c_generar->setTexto_qr($qr);
-$c_generar->setNombre_archivo($nombre_archivo);
-$c_generar->generar_qr();
+$generarQR = new generarQr();
+$generarQR->setTexto_qr($qr);
+$generarQR->setNombre_archivo($nombre_archivo);
+$generarQR->generar_qr();
 
-//obtener url de qr
-$url_qr =  $rutabase . "/generate_qr/temp/" . $nombre_archivo . ".png";
+$result = $see->send($invoice);
 
-// Envio a SUNAT.
-$see = $util->getSee(SunatEndpoints::FE_PRODUCCION);
-//$res = $see->send($invoice);
-$see->getXmlSigned($invoice);
-$util->writeXml($invoice, $see->getFactory()->getLastXml());
+// Guardar XML firmado digitalmente.
+file_put_contents("../files/" . $invoice->getName() . '.xml',
+    $see->getFactory()->getLastXml());
 
-$c_hash = new cl_venta_sunat();
-$c_hash->setIdVenta($c_venta->getIdVenta());
-$c_hash->setPeriodo($c_venta->getPeriodo());
-$c_hash->setIdEmpresa($c_venta->getIdEmpresa());
-$c_hash->setHash($hash);
-$c_hash->setNombreXml($invoice->getName());
-$c_hash->insertar();
+$aceptadosunat = true;
+$indiceaceptado = 1;
+$observaciones = "";
+$code = "";
 
-$descripcion = "";
-
-$respuesta = array();
-/*
-if ($res->isSuccess()) {
-
-    //obtener cdr y guardar en json
-    $cdr = $res->getCdrResponse();
-    $util->writeCdr($invoice, $res->getCdrZip());
-    $descripcion = $cdr->getDescription();
-    $c_venta->actualizar_envio();
-
-    //$util->getResponseFromCdr($cdr);
-} else {
-//    var_dump($res->getError());
-    $descripcion = $res->getError();
+// Verificamos que la conexión con SUNAT fue exitosa.
+if (!$result->isSuccess()) {
+    $indiceaceptado = 3;
+    // Mostrar error al conectarse a SUNAT.
+    $observaciones = 'Codigo Error: ' . $result->getError()->getMessage();
+    $aceptadosunat = false;
+    echo 'Codigo Error: '.$result->getError()->getCode();
+    echo 'Mensaje Error: '.$result->getError()->getMessage();
+    //exit();
 }
-*/
+
+if ($aceptadosunat) {
+// Guardamos el CDR
+    file_put_contents("../files/" . 'R-' . $invoice->getName() . '.zip', $result->getCdrZip());
+
+    $cdr = $result->getCdrResponse();
+
+    $code = (int)$cdr->getCode();
+
+    if ($code === 0) {
+        // echo 'ESTADO: ACEPTADA'.PHP_EOL;
+        if (count($cdr->getNotes()) > 0) {
+            // echo 'OBSERVACIONES:'.PHP_EOL;
+            // Corregir estas observaciones en siguientes emisiones.
+            // var_dump($cdr->getNotes());
+            $observaciones = $cdr->getNotes();
+            $indiceaceptado = 2;
+        }
+    } else if ($code >= 2000 && $code <= 3999) {
+        // echo 'ESTADO: RECHAZADA'.PHP_EOL;
+        $aceptadosunat = false;
+        $indiceaceptado = 4;
+    } else {
+        /* Esto no debería darse, pero si ocurre, es un CDR inválido que debería tratarse como un error-excepción. */
+        /*code: 0100 a 1999 */
+        $aceptadosunat = false;
+        $indiceaceptado = 4;
+        // echo 'Excepción';
+    }
+
+//echo $cdr->getDescription().PHP_EOL;
+    $c_hash = new cl_venta_sunat();
+    $c_hash->setIdVenta($c_venta->getIdVenta());
+    $c_hash->setPeriodo($c_venta->getPeriodo());
+    $c_hash->setIdEmpresa($c_venta->getIdEmpresa());
+    $c_hash->setHash($Config->getHash($invoice));
+    $c_hash->setNombreXml($invoice->getName());
+    $c_hash->insertar();
+
+}
 
 $respuesta = array(
-    "success" => true,
+    "success" => $aceptadosunat,
     "resultado" => array(
         "nombre_archivo" => $nombre_archivo,
-        "direccion_xml" => $nombre_xml,
-        "direccion_qr" => $url_qr,
-        "hash" => $hash,
-        "descripcion_cdr" => $descripcion
+        "hash" => $Config->getHash($invoice),
+        "observaciones" => $observaciones
     )
 );
 
 echo json_encode($respuesta);
-

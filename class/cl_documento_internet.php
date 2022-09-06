@@ -51,13 +51,13 @@ class cl_documento_internet
 
         //si es ruc
         if ($this->tipo == 1) {
-            $direccion = "http://www.lunasystemsperu.com/apis/apiruc.php?ruc=" . $this->documento;
+            $direccion = "https://www.lunasystemsperu.com/apis/apiruc.php?ruc=" . $this->documento;
         }
 
         //si es dni
         if ($this->tipo == 2) {
-            $direccion = "http://www.lunasystemsperu.com/apis/apidni.php?dni=" . $this->documento;
-            //$direccion = "http://www.lunasystemsperu.com/consultas_json/composer/consultas_dni_JMP.php?dni=" . $this->documento;
+            $direccion = "https://www.lunasystemsperu.com/apis/apidni.php?dni=" . $this->documento;
+            //$direccion = "https://www.lunasystemsperu.com/consultas_json/composer/consultas_dni_JMP.php?dni=" . $this->documento;
         }
 
         $json = file_get_contents($direccion, FALSE);

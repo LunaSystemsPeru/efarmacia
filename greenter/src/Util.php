@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 use Greenter\Data\DocumentGeneratorInterface;
 use Greenter\Data\GeneratorFactory;
 use Greenter\Data\SharedStore;
@@ -13,6 +11,7 @@ use Greenter\Report\PdfReport;
 use Greenter\Report\Resolver\DefaultTemplateResolver;
 use Greenter\Report\XmlUtils;
 use Greenter\See;
+use Greenter\Ws\Services\SunatEndpoints;
 
 final class Util
 {
@@ -90,24 +89,12 @@ final class Util
         return self::$current;
     }
 
-    public function getSee(?string $endpoint)
+    public function getSee()
     {
         $see = new See();
-        $see->setService($endpoint);
-//        $see->setCodeProvider(new XmlErrorCodeProvider());
-        $certificate = file_get_contents(__DIR__ . '/../resources/c' . $this->ruc . '.pem');
-        if ($certificate === false) {
-            throw new Exception('No se pudo cargar el certificado');
-        }
-        $see->setCertificate($certificate);
-        /**
-         * Clave SOL
-         * Ruc     = 20000000001
-         * Usuario = MODDATOS
-         * Clave   = moddatos
-         */
+        $see->setCertificate(file_get_contents(__DIR__ . '/../resources/c' . $this->ruc . '.pem'));
+        $see->setService(SunatEndpoints::FE_BETA);
         $see->setClaveSOL($this->ruc, $this->usuario, $this->clave);
-        $see->setCachePath(__DIR__ . '/../cache');
 
         return $see;
     }
@@ -247,15 +234,21 @@ HTML;
         return strtoupper(substr(PHP_OS, 0, 3)) === 'WIN';
     }
 
-    public function getHash(DocumentInterface $document): ?string
+    public function getHash($xml): ?string
     {
-        $see = $this->getSee('');
-        $xml = $see->getXmlSigned($document);
-
-        return (new XmlUtils())->getHashSign($xml);
+        return $hash = (new Greenter\Report\XmlUtils())->getHashSign($xml);
     }
 
-    /**
+    public function getHashXml($path)
+    {
+        $parser = new XmlReader();
+        $archivoXml = file_get_contents($path);
+        $documento = $parser->getDocument($archivoXml);
+        $hash = $documento->getElementsByTagName('DigestValue')->item(0)->nodeValue;
+        return $hash;
+    }
+
+        /**
      * @return array<string, array>
      */
     private static function getParametersPdf(): array

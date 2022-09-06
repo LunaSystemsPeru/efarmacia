@@ -70,7 +70,7 @@
 
 /**
  * Address Bootstrap 3 control sizing classes
- * @see http://getbootstrap.com/css/#forms-control-sizes
+ * @see https://getbootstrap.com/css/#forms-control-sizes
  */
 .select2-container.input-sm .select2-choice,
 .input-group-sm .select2-container .select2-choice {
@@ -307,7 +307,7 @@
  * to let the contained Select2 widget know which edges should not be rounded as they are
  * directly followed by another element.
  *
- * @see http://getbootstrap.com/components/#input-groups
+ * @see https://getbootstrap.com/components/#input-groups
  */
 .input-group.select2-bootstrap-prepend [class^="select2-choice"] {
     border-bottom-left-radius: 0 !important;
@@ -416,7 +416,7 @@
  * Adjust "no results" and "selection limit" messages to make use
  * of Bootstrap 3's default "Alert" style.
  *
- * @see http://getbootstrap.com/components/#alerts-default
+ * @see https://getbootstrap.com/components/#alerts-default
  */
 .select2-results .select2-no-results,
 .select2-results .select2-searching,
@@ -453,7 +453,7 @@
  *
  * 1. in .select2-search input
  * 2. in Multi Select2's .select2-search-field input
- * 3. in the status-message of infinite-scroll with remote data (@see http://ivaynberg.github.io/select2/#infinite)
+ * 3. in the status-message of infinite-scroll with remote data (@see https://ivaynberg.github.io/select2/#infinite)
  *
  * These styles alter Select2's default background-position of 100%
  * and supply the new background-position syntax to browsers which support it:
@@ -461,7 +461,7 @@
  * 1. Android, Safari < 6/Mobile, IE<9: change to a relative background-position of 99%
  * 2. Chrome 25+, Firefox 13+, IE 9+, Opera 10.5+: use the new CSS3-background-position syntax
  *
- * @see http://www.w3.org/TR/css3-background/#background-position
+ * @see https://www.w3.org/TR/css3-background/#background-position
  *
  * @todo Since both Select2 and Bootstrap 3 only support IE8 and above,
  * we could use the :after-pseudo-element to display the loading indicator.

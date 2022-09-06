@@ -14,7 +14,7 @@ $query = "SELECT
             ON p.id_laboratorio = l.id_laboratorio 
           INNER JOIN presentacion AS pr 
             ON p.id_presentacion = pr.id_presentacion 
-            WHERE ps.id_sucursal= '{$_SESSION['id_sucursal']}' and  p.nombre LIKE '%$searchTerm%'";
+            WHERE ps.id_sucursal= '{$_SESSION['id_sucursal']}' and ps.id_empresa = '{$_SESSION['id_empresa']}' and  p.nombre LIKE '%$searchTerm%'";
            // echo $query;
 $resultado = $conn->query($query);
 $a_json = array();

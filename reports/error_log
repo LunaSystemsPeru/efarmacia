@@ -1,0 +1,841 @@
+[21-May-2022 14:16:12 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/rpt_voucher_venta.php(169): FPDF->Image('../greenter/gen...', 60.5, 88, 22, 22)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[21-May-2022 14:16:16 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/rpt_ticket_venta.php(170): FPDF->Image('../greenter/gen...', 8, 120, 30, 30)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[21-May-2022 14:17:36 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/rpt_voucher_venta.php(169): FPDF->Image('../greenter/gen...', 60.5, 88, 22, 22)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[21-May-2022 14:17:36 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/rpt_ticket_venta.php(170): FPDF->Image('../greenter/gen...', 8, 102, 30, 30)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[21-May-2022 16:45:51 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/rpt_voucher_venta.php(169): FPDF->Image('../greenter/gen...', 60.5, 88, 22, 22)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[21-May-2022 16:45:51 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/rpt_ticket_venta.php(170): FPDF->Image('../greenter/gen...', 8, 114, 30, 30)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[21-May-2022 16:48:10 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/rpt_voucher_venta.php(169): FPDF->Image('../greenter/gen...', 60.5, 88, 22, 22)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[21-May-2022 16:48:10 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/rpt_ticket_venta.php(170): FPDF->Image('../greenter/gen...', 8, 144, 30, 30)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[21-May-2022 16:49:24 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/rpt_voucher_venta.php(169): FPDF->Image('../greenter/gen...', 60.5, 88, 22, 22)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[21-May-2022 16:49:24 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/rpt_ticket_venta.php(170): FPDF->Image('../greenter/gen...', 8, 132, 30, 30)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[21-May-2022 16:50:21 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/rpt_ticket_venta.php(170): FPDF->Image('../greenter/gen...', 8, 99, 30, 30)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[21-May-2022 16:50:21 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/rpt_voucher_venta.php(169): FPDF->Image('../greenter/gen...', 60.5, 88, 22, 22)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[21-May-2022 16:50:39 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/rpt_voucher_venta.php(169): FPDF->Image('../greenter/gen...', 60.5, 88, 22, 22)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[21-May-2022 16:50:39 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/rpt_ticket_venta.php(170): FPDF->Image('../greenter/gen...', 8, 93, 30, 30)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[21-May-2022 16:51:18 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/rpt_voucher_venta.php(169): FPDF->Image('../greenter/gen...', 60.5, 88, 22, 22)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[21-May-2022 16:51:18 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/rpt_ticket_venta.php(170): FPDF->Image('../greenter/gen...', 8, 96, 30, 30)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[23-May-2022 07:58:03 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/rpt_voucher_venta.php(169): FPDF->Image('../greenter/gen...', 60.5, 88, 22, 22)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[23-May-2022 07:58:03 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/rpt_ticket_venta.php(170): FPDF->Image('../greenter/gen...', 8, 120, 30, 30)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[23-May-2022 07:58:11 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/rpt_ticket_venta.php(170): FPDF->Image('../greenter/gen...', 8, 120, 30, 30)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[23-May-2022 07:58:11 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/rpt_voucher_venta.php(169): FPDF->Image('../greenter/gen...', 60.5, 88, 22, 22)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[23-May-2022 07:59:20 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/documento_venta.php(192): FPDF->Image('../greenter/gen...', 130, 108, 22, 22)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[23-May-2022 08:00:04 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/documento_venta.php(192): FPDF->Image('../greenter/gen...', 130, 108, 22, 22)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[23-May-2022 08:00:29 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/documento_venta.php(192): FPDF->Image('../greenter/gen...', 130, 108, 22, 22)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[23-May-2022 08:00:42 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/rpt_voucher_venta.php(169): FPDF->Image('../greenter/gen...', 60.5, 88, 22, 22)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[23-May-2022 08:00:43 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/rpt_ticket_venta.php(170): FPDF->Image('../greenter/gen...', 8, 96, 30, 30)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[23-May-2022 08:05:00 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/rpt_ticket_venta.php(170): FPDF->Image('../greenter/gen...', 8, 99, 30, 30)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[23-May-2022 08:05:00 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/rpt_voucher_venta.php(169): FPDF->Image('../greenter/gen...', 60.5, 88, 22, 22)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[23-May-2022 08:13:21 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/documento_venta.php(192): FPDF->Image('../greenter/gen...', 130, 108, 22, 22)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[23-May-2022 08:17:25 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/documento_venta.php(192): FPDF->Image('../greenter/gen...', 130, 108, 22, 22)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[23-May-2022 08:17:27 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/documento_venta.php(192): FPDF->Image('../greenter/gen...', 130, 108, 22, 22)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[23-May-2022 08:17:32 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/documento_venta.php(192): FPDF->Image('../greenter/gen...', 130, 108, 22, 22)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[23-May-2022 08:21:01 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/rpt_ticket_venta.php(170): FPDF->Image('../greenter/gen...', 8, 99, 30, 30)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[23-May-2022 08:21:01 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/rpt_voucher_venta.php(169): FPDF->Image('../greenter/gen...', 60.5, 88, 22, 22)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[23-May-2022 08:21:42 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/rpt_voucher_venta.php(169): FPDF->Image('../greenter/gen...', 60.5, 88, 22, 22)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[23-May-2022 08:21:42 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/rpt_ticket_venta.php(170): FPDF->Image('../greenter/gen...', 8, 96, 30, 30)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[23-May-2022 08:22:19 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/documento_venta.php(192): FPDF->Image('../greenter/gen...', 130, 108, 22, 22)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[23-May-2022 08:26:00 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/rpt_ticket_venta.php(170): FPDF->Image('../greenter/gen...', 8, 96, 30, 30)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[23-May-2022 08:26:00 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/rpt_voucher_venta.php(169): FPDF->Image('../greenter/gen...', 60.5, 88, 22, 22)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[23-May-2022 08:26:54 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/rpt_ticket_venta.php(170): FPDF->Image('../greenter/gen...', 8, 96, 30, 30)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[23-May-2022 08:26:54 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/rpt_voucher_venta.php(169): FPDF->Image('../greenter/gen...', 60.5, 88, 22, 22)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[23-May-2022 08:31:36 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/documento_venta.php(192): FPDF->Image('../greenter/gen...', 130, 108, 22, 22)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[23-May-2022 08:31:39 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/documento_venta.php(192): FPDF->Image('../greenter/gen...', 130, 108, 22, 22)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[23-May-2022 08:32:02 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/documento_venta.php(192): FPDF->Image('../greenter/gen...', 130, 108, 22, 22)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[23-May-2022 08:32:04 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/documento_venta.php(192): FPDF->Image('../greenter/gen...', 130, 108, 22, 22)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[23-May-2022 08:36:37 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/documento_venta.php(192): FPDF->Image('../greenter/gen...', 130, 108, 22, 22)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[23-May-2022 08:49:43 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/rpt_ticket_venta.php(170): FPDF->Image('../greenter/gen...', 8, 99, 30, 30)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[23-May-2022 08:49:43 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/rpt_voucher_venta.php(169): FPDF->Image('../greenter/gen...', 60.5, 88, 22, 22)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[23-May-2022 08:51:03 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/rpt_ticket_venta.php(170): FPDF->Image('../greenter/gen...', 8, 99, 30, 30)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[23-May-2022 08:51:03 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/rpt_voucher_venta.php(169): FPDF->Image('../greenter/gen...', 60.5, 88, 22, 22)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[23-May-2022 08:57:26 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/rpt_voucher_venta.php(169): FPDF->Image('../greenter/gen...', 60.5, 88, 22, 22)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[23-May-2022 08:57:26 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/rpt_ticket_venta.php(170): FPDF->Image('../greenter/gen...', 8, 108, 30, 30)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[23-May-2022 08:57:31 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/rpt_voucher_venta.php(169): FPDF->Image('../greenter/gen...', 60.5, 88, 22, 22)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[23-May-2022 08:57:31 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/rpt_ticket_venta.php(170): FPDF->Image('../greenter/gen...', 8, 108, 30, 30)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[23-May-2022 08:58:12 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/documento_venta.php(192): FPDF->Image('../greenter/gen...', 130, 108, 22, 22)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[23-May-2022 09:00:57 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/documento_venta.php(192): FPDF->Image('../greenter/gen...', 130, 108, 22, 22)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[23-May-2022 09:01:33 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/rpt_voucher_venta.php(169): FPDF->Image('../greenter/gen...', 60.5, 88, 22, 22)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[23-May-2022 09:01:34 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/rpt_ticket_venta.php(170): FPDF->Image('../greenter/gen...', 8, 99, 30, 30)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[23-May-2022 09:16:49 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/rpt_ticket_venta.php(170): FPDF->Image('../greenter/gen...', 8, 96, 30, 30)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[23-May-2022 09:16:49 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/rpt_voucher_venta.php(169): FPDF->Image('../greenter/gen...', 60.5, 88, 22, 22)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[23-May-2022 09:53:28 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/documento_venta.php(192): FPDF->Image('../greenter/gen...', 130, 108, 22, 22)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[23-May-2022 10:13:18 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/rpt_voucher_venta.php(169): FPDF->Image('../greenter/gen...', 60.5, 88, 22, 22)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[23-May-2022 10:13:18 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/rpt_ticket_venta.php(170): FPDF->Image('../greenter/gen...', 8, 192, 30, 30)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[23-May-2022 10:16:12 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/rpt_ticket_venta.php(170): FPDF->Image('../greenter/gen...', 8, 96, 30, 30)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[23-May-2022 10:16:13 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/rpt_voucher_venta.php(169): FPDF->Image('../greenter/gen...', 60.5, 88, 22, 22)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[23-May-2022 10:20:23 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/rpt_ticket_venta.php(170): FPDF->Image('../greenter/gen...', 8, 96, 30, 30)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[23-May-2022 10:20:23 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/rpt_voucher_venta.php(169): FPDF->Image('../greenter/gen...', 60.5, 88, 22, 22)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[23-May-2022 10:26:15 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/rpt_voucher_venta.php(169): FPDF->Image('../greenter/gen...', 60.5, 88, 22, 22)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[23-May-2022 10:26:15 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/rpt_ticket_venta.php(170): FPDF->Image('../greenter/gen...', 8, 96, 30, 30)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[23-May-2022 10:26:49 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/rpt_ticket_venta.php(170): FPDF->Image('../greenter/gen...', 8, 99, 30, 30)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[23-May-2022 10:26:49 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/rpt_voucher_venta.php(169): FPDF->Image('../greenter/gen...', 60.5, 88, 22, 22)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[23-May-2022 10:33:36 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/rpt_ticket_venta.php(170): FPDF->Image('../greenter/gen...', 8, 105, 30, 30)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[23-May-2022 10:33:36 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/rpt_voucher_venta.php(169): FPDF->Image('../greenter/gen...', 60.5, 88, 22, 22)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[23-May-2022 10:33:59 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/rpt_voucher_venta.php(169): FPDF->Image('../greenter/gen...', 60.5, 88, 22, 22)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[23-May-2022 10:33:59 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/rpt_ticket_venta.php(170): FPDF->Image('../greenter/gen...', 8, 105, 30, 30)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[23-May-2022 10:38:33 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/rpt_voucher_venta.php(169): FPDF->Image('../greenter/gen...', 60.5, 88, 22, 22)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[23-May-2022 10:38:33 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/rpt_ticket_venta.php(170): FPDF->Image('../greenter/gen...', 8, 105, 30, 30)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[23-May-2022 10:38:48 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/rpt_ticket_venta.php(170): FPDF->Image('../greenter/gen...', 8, 105, 30, 30)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[23-May-2022 10:38:48 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/rpt_voucher_venta.php(169): FPDF->Image('../greenter/gen...', 60.5, 88, 22, 22)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[23-May-2022 10:40:01 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/rpt_voucher_venta.php(169): FPDF->Image('../greenter/gen...', 60.5, 88, 22, 22)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[23-May-2022 10:40:01 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/rpt_ticket_venta.php(170): FPDF->Image('../greenter/gen...', 8, 105, 30, 30)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[24-May-2022 07:46:29 America/Los_Angeles] PHP Fatal error:  Uncaught Error: Class "SimpleXLSXGen" not found in /home/goempres/public_html/lsp/clientes/alufarma/reports/xls_mis_productos.php:64
+Stack trace:
+#0 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/reports/xls_mis_productos.php on line 64
+[24-May-2022 14:22:09 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/documento_venta.php(192): FPDF->Image('../greenter/gen...', 130, 108, 22, 22)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[24-May-2022 14:22:49 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error('Not a PNG file:...')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream(Resource id #28, '../greenter/gen...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng('../greenter/gen...')
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/documento_venta.php(192): FPDF->Image('../greenter/gen...', 130, 108, 22, 22)
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[19-Aug-2022 13:49:54 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Unsupported operand types: string * int in /home/goempres/public_html/lsp/clientes/alufarma/includes/SimpleXLSXGen.php:753
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/includes/SimpleXLSXGen.php(589): Shuchkin\SimpleXLSXGen->date2excel(20, 11, '11')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/includes/SimpleXLSXGen.php(281): Shuchkin\SimpleXLSXGen->_sheetToXML(0, '<?xml version="...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/includes/SimpleXLSXGen.php(190): Shuchkin\SimpleXLSXGen->_write(Resource id #8)
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/xls_ingresos_productos.php(73): Shuchkin\SimpleXLSXGen->saveAs('reporte_ingreso...')
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/includes/SimpleXLSXGen.php on line 753
+[19-Aug-2022 13:50:34 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Unsupported operand types: string * int in /home/goempres/public_html/lsp/clientes/alufarma/includes/SimpleXLSXGen.php:753
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/includes/SimpleXLSXGen.php(589): Shuchkin\SimpleXLSXGen->date2excel(20, 11, '11')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/includes/SimpleXLSXGen.php(281): Shuchkin\SimpleXLSXGen->_sheetToXML(0, '<?xml version="...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/includes/SimpleXLSXGen.php(190): Shuchkin\SimpleXLSXGen->_write(Resource id #8)
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/xls_ingresos_productos.php(73): Shuchkin\SimpleXLSXGen->saveAs('reporte_ingreso...')
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/includes/SimpleXLSXGen.php on line 753
+[19-Aug-2022 13:52:09 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Unsupported operand types: string * int in /home/goempres/public_html/lsp/clientes/alufarma/includes/SimpleXLSXGen.php:753
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/includes/SimpleXLSXGen.php(589): Shuchkin\SimpleXLSXGen->date2excel(20, 11, '11')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/includes/SimpleXLSXGen.php(281): Shuchkin\SimpleXLSXGen->_sheetToXML(0, '<?xml version="...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/includes/SimpleXLSXGen.php(190): Shuchkin\SimpleXLSXGen->_write(Resource id #8)
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/xls_ingresos_productos.php(73): Shuchkin\SimpleXLSXGen->saveAs('reporte_ingreso...')
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/includes/SimpleXLSXGen.php on line 753
+[19-Aug-2022 13:52:28 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Unsupported operand types: string * int in /home/goempres/public_html/lsp/clientes/alufarma/includes/SimpleXLSXGen.php:753
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/includes/SimpleXLSXGen.php(589): Shuchkin\SimpleXLSXGen->date2excel(20, 11, '11')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/includes/SimpleXLSXGen.php(281): Shuchkin\SimpleXLSXGen->_sheetToXML(0, '<?xml version="...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/includes/SimpleXLSXGen.php(190): Shuchkin\SimpleXLSXGen->_write(Resource id #8)
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/xls_ingresos_productos.php(73): Shuchkin\SimpleXLSXGen->saveAs('reporte_ingreso...')
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/includes/SimpleXLSXGen.php on line 753
+[19-Aug-2022 13:53:58 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Unsupported operand types: string * int in /home/goempres/public_html/lsp/clientes/alufarma/includes/SimpleXLSXGen.php:753
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/includes/SimpleXLSXGen.php(589): Shuchkin\SimpleXLSXGen->date2excel(20, 11, '11')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/includes/SimpleXLSXGen.php(281): Shuchkin\SimpleXLSXGen->_sheetToXML(0, '<?xml version="...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/includes/SimpleXLSXGen.php(190): Shuchkin\SimpleXLSXGen->_write(Resource id #8)
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/xls_ingresos_productos.php(73): Shuchkin\SimpleXLSXGen->saveAs('reporte_ingreso...')
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/includes/SimpleXLSXGen.php on line 753
+[19-Aug-2022 13:55:53 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: Unsupported operand types: string * int in /home/goempres/public_html/lsp/clientes/alufarma/includes/SimpleXLSXGen.php:753
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/includes/SimpleXLSXGen.php(589): Shuchkin\SimpleXLSXGen->date2excel(20, 11, '11')
+#1 /home/goempres/public_html/lsp/clientes/alufarma/includes/SimpleXLSXGen.php(281): Shuchkin\SimpleXLSXGen->_sheetToXML(0, '<?xml version="...')
+#2 /home/goempres/public_html/lsp/clientes/alufarma/includes/SimpleXLSXGen.php(190): Shuchkin\SimpleXLSXGen->_write(Resource id #8)
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/xls_ingresos_productos.php(73): Shuchkin\SimpleXLSXGen->saveAs('reporte_ingreso...')
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/includes/SimpleXLSXGen.php on line 753
+[19-Aug-2022 16:01:55 America/Lima] PHP Fatal error:  Uncaught Error: Class "cl_reporte_inventario" not found in /home/goempres/public_html/lsp/clientes/alufarma/reports/xls_ingresos_productos.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/reports/xls_ingresos_productos.php on line 8
+[31-Aug-2022 10:01:27 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error()
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream()
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng()
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/rpt_voucher_venta.php(169): FPDF->Image()
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[31-Aug-2022 10:01:27 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error()
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream()
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng()
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/rpt_ticket_venta.php(170): FPDF->Image()
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[31-Aug-2022 10:27:32 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error()
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream()
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng()
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/rpt_voucher_venta.php(169): FPDF->Image()
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[31-Aug-2022 10:27:33 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error()
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream()
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng()
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/rpt_ticket_venta.php(170): FPDF->Image()
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[31-Aug-2022 10:27:38 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error()
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream()
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng()
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/rpt_voucher_venta.php(169): FPDF->Image()
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[31-Aug-2022 10:27:38 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error()
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream()
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng()
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/rpt_ticket_venta.php(170): FPDF->Image()
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[31-Aug-2022 10:28:44 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error()
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream()
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng()
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/rpt_voucher_venta.php(169): FPDF->Image()
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[31-Aug-2022 10:28:44 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Not a PNG file: ../greenter/generate_qr/temp/.png in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1271): FPDF->Error()
+#1 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(1262): FPDF->_parsepngstream()
+#2 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(885): FPDF->_parsepng()
+#3 /home/goempres/public_html/lsp/clientes/alufarma/reports/rpt_ticket_venta.php(170): FPDF->Image()
+#4 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[02-Sep-2022 17:40:11 America/Los_Angeles] PHP Warning:  Undefined array key "id_empresa" in /home/goempres/public_html/lsp/clientes/alufarma/reports/documento_venta.php on line 31
+[02-Sep-2022 17:40:11 America/Los_Angeles] PHP Warning:  Undefined array key "id_empresa" in /home/goempres/public_html/lsp/clientes/alufarma/reports/documento_venta.php on line 41
+[02-Sep-2022 17:40:11 America/Los_Angeles] PHP Deprecated:  str_pad(): Passing null to parameter #1 ($string) of type string is deprecated in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/Varios.php on line 74
+[02-Sep-2022 17:40:11 America/Los_Angeles] PHP Deprecated:  str_pad(): Passing null to parameter #1 ($string) of type string is deprecated in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/Varios.php on line 74
+[02-Sep-2022 17:40:11 America/Los_Angeles] PHP Warning:  Undefined array key "id_empresa" in /home/goempres/public_html/lsp/clientes/alufarma/reports/documento_venta.php on line 54
+[02-Sep-2022 17:40:11 America/Los_Angeles] PHP Warning:  Undefined array key "id_empresa" in /home/goempres/public_html/lsp/clientes/alufarma/reports/documento_venta.php on line 58
+[02-Sep-2022 17:40:11 America/Los_Angeles] PHP Deprecated:  strlen(): Passing null to parameter #1 ($string) of type string is deprecated in /home/goempres/public_html/lsp/clientes/alufarma/reports/documento_venta.php on line 74
+[02-Sep-2022 17:40:11 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Unsupported image type: /images/ in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(884): FPDF->Error()
+#1 /home/goempres/public_html/lsp/clientes/alufarma/reports/documento_venta.php(88): FPDF->Image()
+#2 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[02-Sep-2022 17:40:17 America/Los_Angeles] PHP Warning:  Undefined array key "id_empresa" in /home/goempres/public_html/lsp/clientes/alufarma/reports/documento_venta.php on line 31
+[02-Sep-2022 17:40:17 America/Los_Angeles] PHP Warning:  Undefined array key "id_empresa" in /home/goempres/public_html/lsp/clientes/alufarma/reports/documento_venta.php on line 41
+[02-Sep-2022 17:40:17 America/Los_Angeles] PHP Deprecated:  str_pad(): Passing null to parameter #1 ($string) of type string is deprecated in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/Varios.php on line 74
+[02-Sep-2022 17:40:17 America/Los_Angeles] PHP Deprecated:  str_pad(): Passing null to parameter #1 ($string) of type string is deprecated in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/Varios.php on line 74
+[02-Sep-2022 17:40:17 America/Los_Angeles] PHP Warning:  Undefined array key "id_empresa" in /home/goempres/public_html/lsp/clientes/alufarma/reports/documento_venta.php on line 54
+[02-Sep-2022 17:40:17 America/Los_Angeles] PHP Warning:  Undefined array key "id_empresa" in /home/goempres/public_html/lsp/clientes/alufarma/reports/documento_venta.php on line 58
+[02-Sep-2022 17:40:17 America/Los_Angeles] PHP Deprecated:  strlen(): Passing null to parameter #1 ($string) of type string is deprecated in /home/goempres/public_html/lsp/clientes/alufarma/reports/documento_venta.php on line 74
+[02-Sep-2022 17:40:17 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Unsupported image type: /images/ in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(884): FPDF->Error()
+#1 /home/goempres/public_html/lsp/clientes/alufarma/reports/documento_venta.php(88): FPDF->Image()
+#2 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[02-Sep-2022 17:41:13 America/Los_Angeles] PHP Warning:  Undefined array key "id_empresa" in /home/goempres/public_html/lsp/clientes/alufarma/reports/documento_venta.php on line 31
+[02-Sep-2022 17:41:14 America/Los_Angeles] PHP Warning:  Undefined array key "id_empresa" in /home/goempres/public_html/lsp/clientes/alufarma/reports/documento_venta.php on line 41
+[02-Sep-2022 17:41:14 America/Los_Angeles] PHP Deprecated:  str_pad(): Passing null to parameter #1 ($string) of type string is deprecated in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/Varios.php on line 74
+[02-Sep-2022 17:41:14 America/Los_Angeles] PHP Deprecated:  str_pad(): Passing null to parameter #1 ($string) of type string is deprecated in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/Varios.php on line 74
+[02-Sep-2022 17:41:14 America/Los_Angeles] PHP Warning:  Undefined array key "id_empresa" in /home/goempres/public_html/lsp/clientes/alufarma/reports/documento_venta.php on line 54
+[02-Sep-2022 17:41:14 America/Los_Angeles] PHP Warning:  Undefined array key "id_empresa" in /home/goempres/public_html/lsp/clientes/alufarma/reports/documento_venta.php on line 58
+[02-Sep-2022 17:41:14 America/Los_Angeles] PHP Deprecated:  strlen(): Passing null to parameter #1 ($string) of type string is deprecated in /home/goempres/public_html/lsp/clientes/alufarma/reports/documento_venta.php on line 74
+[02-Sep-2022 17:41:14 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Unsupported image type: /images/ in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(884): FPDF->Error()
+#1 /home/goempres/public_html/lsp/clientes/alufarma/reports/documento_venta.php(88): FPDF->Image()
+#2 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[03-Sep-2022 15:57:48 America/Los_Angeles] PHP Warning:  Undefined array key "id_empresa" in /home/goempres/public_html/lsp/clientes/alufarma/reports/documento_venta.php on line 31
+[03-Sep-2022 15:57:48 America/Los_Angeles] PHP Warning:  Undefined array key "id_empresa" in /home/goempres/public_html/lsp/clientes/alufarma/reports/documento_venta.php on line 41
+[03-Sep-2022 15:57:48 America/Los_Angeles] PHP Deprecated:  str_pad(): Passing null to parameter #1 ($string) of type string is deprecated in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/Varios.php on line 74
+[03-Sep-2022 15:57:48 America/Los_Angeles] PHP Deprecated:  str_pad(): Passing null to parameter #1 ($string) of type string is deprecated in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/Varios.php on line 74
+[03-Sep-2022 15:57:48 America/Los_Angeles] PHP Warning:  Undefined array key "id_empresa" in /home/goempres/public_html/lsp/clientes/alufarma/reports/documento_venta.php on line 54
+[03-Sep-2022 15:57:48 America/Los_Angeles] PHP Warning:  Undefined array key "id_empresa" in /home/goempres/public_html/lsp/clientes/alufarma/reports/documento_venta.php on line 58
+[03-Sep-2022 15:57:48 America/Los_Angeles] PHP Deprecated:  strlen(): Passing null to parameter #1 ($string) of type string is deprecated in /home/goempres/public_html/lsp/clientes/alufarma/reports/documento_venta.php on line 74
+[03-Sep-2022 15:57:48 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Unsupported image type: /images/ in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(884): FPDF->Error()
+#1 /home/goempres/public_html/lsp/clientes/alufarma/reports/documento_venta.php(88): FPDF->Image()
+#2 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271
+[03-Sep-2022 15:57:53 America/Los_Angeles] PHP Warning:  Undefined array key "id_empresa" in /home/goempres/public_html/lsp/clientes/alufarma/reports/documento_venta.php on line 31
+[03-Sep-2022 15:57:53 America/Los_Angeles] PHP Warning:  Undefined array key "id_empresa" in /home/goempres/public_html/lsp/clientes/alufarma/reports/documento_venta.php on line 41
+[03-Sep-2022 15:57:53 America/Los_Angeles] PHP Deprecated:  str_pad(): Passing null to parameter #1 ($string) of type string is deprecated in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/Varios.php on line 74
+[03-Sep-2022 15:57:53 America/Los_Angeles] PHP Deprecated:  str_pad(): Passing null to parameter #1 ($string) of type string is deprecated in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/Varios.php on line 74
+[03-Sep-2022 15:57:53 America/Los_Angeles] PHP Warning:  Undefined array key "id_empresa" in /home/goempres/public_html/lsp/clientes/alufarma/reports/documento_venta.php on line 54
+[03-Sep-2022 15:57:53 America/Los_Angeles] PHP Warning:  Undefined array key "id_empresa" in /home/goempres/public_html/lsp/clientes/alufarma/reports/documento_venta.php on line 58
+[03-Sep-2022 15:57:53 America/Los_Angeles] PHP Deprecated:  strlen(): Passing null to parameter #1 ($string) of type string is deprecated in /home/goempres/public_html/lsp/clientes/alufarma/reports/documento_venta.php on line 74
+[03-Sep-2022 15:57:53 America/Los_Angeles] PHP Fatal error:  Uncaught Exception: FPDF error: Unsupported image type: /images/ in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php:271
+Stack trace:
+#0 /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php(884): FPDF->Error()
+#1 /home/goempres/public_html/lsp/clientes/alufarma/reports/documento_venta.php(88): FPDF->Image()
+#2 {main}
+  thrown in /home/goempres/public_html/lsp/clientes/alufarma/class_varios/fpdf/fpdf.php on line 271

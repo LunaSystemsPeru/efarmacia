@@ -272,7 +272,7 @@ class cl_ingreso
         return $existe;
     }
 
-    function ver_ingresos()
+    function ver_ingresos($periodo)
     {
         global $conn;
         $query = "select i.periodo , i.id_ingreso, i.fecha, ds.abreviatura as doc_sunat, i.serie, i.numero, p.documento as ruc, p.nombre as razon_social, u.username, i.total, sucursales.nombre as nombresucursal "
@@ -281,11 +281,30 @@ class cl_ingreso
             . "inner join sucursales on i.id_sucursal= sucursales.id_sucursal "
             . "inner join proveedor p on i.id_proveedor = p.id_proveedor and i.id_empresa = p.id_empresa "
             . "inner join usuario u on i.id_usuario = u.id_usuario and i.id_empresa = u.id_empresa "
-            . "where i.id_empresa = '".$this->id_empresa."' "
+            . "where i.id_empresa = '".$this->id_empresa."' and i.periodo = '$periodo' "
             . "order by i.fecha asc";
         $resultado = $conn->query($query);
         $fila = $resultado->fetch_all(MYSQLI_ASSOC);
         return $fila;
+    }
+
+    function obteneranios () {
+        global $conn;
+        $query = "select distinct(year(fecha)) as anio from ingreso order by fecha desc";
+        $resultado = $conn->query($query);
+        $fila = $resultado->fetch_all(MYSQLI_ASSOC);
+        return $fila;
+    }
+
+    function ver_periodos($anio)
+    {
+        global $conn;
+        $query = "select distinct(periodo) as periodo 
+        from ingreso 
+        where id_empresa = '$this->id_empresa' and year(fecha) = '$anio'   
+        order by periodo desc";
+        $resultado = $conn->query($query);
+        return $resultado->fetch_all(MYSQLI_ASSOC);
     }
 
 }

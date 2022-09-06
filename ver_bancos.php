@@ -33,11 +33,11 @@ $title = "Ver mis Bancos - Farmacia - Luna Systems Peru";
     <link rel="stylesheet" href="vendor/datatables.net-bs/css/dataTables.bootstrap.min.css"/>
 
     <!-- App styles -->
-    <link rel="stylesheet" href="http://webapplayers.com/homer_admin-v2.0/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css"/>
+    <link rel="stylesheet" href="https://webapplayers.com/homer_admin-v2.0/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css"/>
     <link rel="stylesheet" href="fonts/pe-icon-7-stroke/css/helper.css"/>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet"
-          href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/themes/base/minified/jquery-ui.min.css"
+          href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/themes/base/minified/jquery-ui.min.css"
           type="text/css"/>
 </head>
 <body class="fixed-navbar fixed-sidebar">
@@ -57,7 +57,7 @@ $title = "Ver mis Bancos - Farmacia - Luna Systems Peru";
 </div>
 <!--[if lt IE 7]>
 <p class="alert alert-danger">You are using an <strong>outdated</strong> browser. Please <a
-        href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
 
 <!-- Header -->
