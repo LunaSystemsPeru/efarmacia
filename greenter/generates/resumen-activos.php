@@ -9,8 +9,6 @@ use Greenter\Model\Company\Company;
 use Greenter\Model\Company\Address;
 use Greenter\Model\Summary\Summary;
 use Greenter\Model\Summary\SummaryDetail;
-use Greenter\Model\Summary\SummaryPerception;
-use Greenter\Ws\Services\SunatEndpoints;
 
 require __DIR__ . '/../vendor/autoload.php';
 require '../src/Config.php';
@@ -71,12 +69,6 @@ foreach ($resultado_empresa as $fila) {
     //estado
     $estado = $fila['estado'];
     $estado = "1";
-    if ($fila['estado'] == 1) {
-        $estado = "1";
-    }
-    if ($fila['estado'] == 2) {
-        $estado = "1";
-    }
 
     //totales
     $total = floatval($fila['total']);
@@ -189,15 +181,13 @@ foreach ($resultado_anuladas as $fila) {
     $array_items[] = $item;
 }
 
-echo "nro de items = " . $contar_items . "<br>";
-
 if ($contar_items > 0) {
 
     // Emisor
     $empresa = new Company();
     $empresa->setRuc($c_empresa->getRuc())
-        ->setNombreComercial($c_empresa->getRazonSocial())
-        ->setRazonSocial($c_empresa->getRazonSocial())
+        ->setNombreComercial(addslashes($c_empresa->getNombreComercial()))
+        ->setRazonSocial(addslashes($c_empresa->getRazonSocial()))
         ->setAddress((new Address())
             ->setUbigueo($c_empresa->getUbigeo())
             ->setDistrito($c_empresa->getDistrito())
@@ -205,9 +195,10 @@ if ($contar_items > 0) {
             ->setDepartamento($c_empresa->getDepartamento())
             ->setUrbanizacion('-')
             ->setCodLocal('0000')
-            ->setDireccion($c_empresa->getDireccion()));
+            ->setDireccion(addslashes($c_empresa->getDireccion())));
 
 //$util->setRucEmpresa($c_empresa->getRuc());
+    echo "nro de items = " . count($array_items) . "<br>";
 
     $sum = new Summary();
     $sum->setFecGeneracion(\DateTime::createFromFormat('Y-m-d', $fecha))
@@ -218,7 +209,10 @@ if ($contar_items > 0) {
 
     // Envio a SUNAT.
     $res = $see->send($sum);
-// Guardar XML firmado digitalmente.
+
+    echo $sum->getName() . "<br>";
+
+    // Guardar XML firmado digitalmente.
     file_put_contents("../RC/" . $sum->getName() . '.xml',
         $see->getFactory()->getLastXml());
     $c_resumen = new cl_resumen_diario();
@@ -227,7 +221,7 @@ if ($contar_items > 0) {
     if (!$res->isSuccess()) {
         echo "<br> error al enviar ";
         print_r($res->getError());
-        //  return;
+        return;
     }
 
     /**@var $res SummaryResult */
@@ -240,7 +234,7 @@ if ($contar_items > 0) {
     $c_resumen->setCantidadItems($contar_items);
     $c_resumen->setTipo(1);
 
-    $c_resumen->insertar();
+    //$c_resumen->insertar();
 
     $res = $see->getStatus($ticket);
     if (!$res->isSuccess()) {
@@ -250,6 +244,8 @@ if ($contar_items > 0) {
     }
 
     $cdr = $res->getCdrResponse();
+    print_r($cdr->getDescription());
+    //print_r($cdr->getNotes());
     //$util->writeCdr($sum, $res->getCdrZip());
     // Guardamos el CDR
     file_put_contents("../RC/" . 'R-' . $sum->getName() . '.zip', $res->getCdrZip());

@@ -161,7 +161,7 @@ class cl_caja_movimiento {
                 '$this->id_usuario',
                 '$this->id_sucursal'
                 );";
-        echo $query;
+       // echo $query;
         $resultado = $conn->query($query);
         if (!$resultado) {
             die('Could not enter data in caja movimiento: ' . mysqli_error($conn));

@@ -45,7 +45,8 @@ class Config
     {
         $see = new See();
         $see->setCertificate(file_get_contents(__DIR__ . '/c'.$this->ruc.'.pem'));
-        $see->setService(SunatEndpoints::FE_BETA);
+        //echo __DIR__ . '/c'.$this->ruc.'.pem' . "<br>";
+        $see->setService(SunatEndpoints::FE_PRODUCCION);
         $see->setClaveSOL($this->ruc, $this->usersol, $this->clavesol);
         return $see;
     }
