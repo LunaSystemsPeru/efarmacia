@@ -420,9 +420,9 @@ class cl_venta
     public function verFechasPendientes()
     {
         global $conn;
-        $query = "select v.id_documento, v.fecha, count(*)
+        $query = "select v.id_documento, v.fecha, count(*) as cantidad
                 from venta as v 
-                where v.fecha > '2022-05-31' and v.id_documento = 2 and month(v.fecha) = 6
+                where v.id_documento = 2 and month(v.fecha) = 9 and year(v.fecha) = 2022
                 GROUP by v.fecha";
         return $conn->query($query);
     }
