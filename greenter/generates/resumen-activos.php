@@ -109,7 +109,10 @@ foreach ($resultado_empresa as $fila) {
 
 
         //obtener laa serie y el numero y mostrar
-        $item->setDocReferencia($c_venta_afecta->getSerie() . "-" . $c_venta_afecta->getNumero());
+        $Document = new Document();
+        $Document->setNroDoc($c_venta_afecta->getSerie() . "-" . $c_venta_afecta->getNumero());
+        $Document->setTipoDoc("03");
+        $item->setDocReferencia($Document);
     }
 
     $c_venta->setIdEmpresa($id_empresa);
@@ -212,17 +215,18 @@ if ($contar_items > 0) {
     $sum = new Summary();
     $sum->setFecGeneracion(\DateTime::createFromFormat('Y-m-d', $fecha))
         ->setFecResumen(\DateTime::createFromFormat('Y-m-d', $fecha))
-        ->setCorrelativo('001')
+        ->setCorrelativo('002')
         ->setCompany($empresa)
         ->setDetails($array_items);
 
     // Envio a SUNAT.
     $res = $see->send($sum);
-// Guardar XML firmado digitalmente.
+    // Guardar XML firmado digitalmente.
     file_put_contents("../RC/" . $sum->getName() . '.xml',
         $see->getFactory()->getLastXml());
     $c_resumen = new cl_resumen_diario();
-
+    $hash = $Config->getHash($sum);
+    echo $hash;
 
     if (!$res->isSuccess()) {
         echo "<br> error al enviar ";

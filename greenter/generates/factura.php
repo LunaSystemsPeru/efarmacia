@@ -27,9 +27,9 @@ require '../generate_qr/class/GenerarQr.php';
 $NumeroLetras = new NumerosaLetras();
 
 $c_venta = new cl_venta();
-$c_venta->setIdVenta(filter_input(INPUT_GET, 'id_venta'));
-$c_venta->setIdEmpresa(filter_input(INPUT_GET, 'id_empresa'));
-$c_venta->setPeriodo(filter_input(INPUT_GET, 'periodo'));
+$c_venta->setIdVenta(filter_input(INPUT_POST, 'id_venta'));
+$c_venta->setIdEmpresa(filter_input(INPUT_POST, 'id_empresa'));
+$c_venta->setPeriodo(filter_input(INPUT_POST, 'periodo'));
 $c_venta->obtener_datos();
 
 $c_cliente = new cl_cliente();
