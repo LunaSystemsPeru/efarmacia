@@ -6,10 +6,12 @@ if ($link != "alufarma.ml") {
     //echo "pagina bloqueda, consulte con su administrador para ingresar a la pagina correcta";
    // exit;
 }
-
-if ($_SESSION['id_empresa']) {
-    header("Location: index_graficas.php");
+if (isset($_SESSION['id_empresa'])) {
+    if ($_SESSION['id_empresa']) {
+        header("Location: index_graficas.php");
+    }
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
