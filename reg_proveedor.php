@@ -228,16 +228,16 @@ $title = "Registro de Proveedor - Farmacia - Luna Systems Peru";
                         $("#error_ruc").html("<div class=\"alert alert-warning\"><strong> Alerta! </strong> Esta empresa ya esta registrada.</div>");
                         $("#input_ruc").prop('readonly', true);
                         $("#btn_comprueba_ruc").prop('disabled', true);
-                        $("#input_razon_social").val(json_ruc.result.RazonSocial);
+                        $("#input_razon_social").val(json_ruc.result.razonSocial);
                     }
 
                     if (success === true) {
-                        var estado = json_ruc.result.Estado;
-                        var condicion = json_ruc.result.Condicion;
+                        var estado = json_ruc.result.estado;
+                        var condicion = json_ruc.result.condicion;
 
                         if (condicion === "NO HABIDO" || estado === "BAJA DE OFICIO" || estado === "BAJA PROV. POR OFICI") {
                             $("#error_ruc").html("<div class=\"alert alert-warning\"><strong> Alerta! </strong> NO PODEMOS REGISTRAR A ESTA EMPRESA.</div>");
-                            $("#input_razon_social").val(json_ruc.result.RazonSocial);
+                            $("#input_razon_social").val(json_ruc.result.razonSocial);
                             $("#input_estado").val(estado);
                             $("#input_condicion").val(condicion);
                             $("#input_ruc").prop('readonly', true);
@@ -247,9 +247,9 @@ $title = "Registro de Proveedor - Farmacia - Luna Systems Peru";
                             $("#btn_comprueba_ruc").prop('disabled', true);
                             $("#input_comercial").prop('readonly', false);
                             $("#input_comercial").focus();
-                            $("#input_comercial").val(json_ruc.result.NombreComercial);
-                            $("#input_razon_social").val(json_ruc.result.RazonSocial);
-                            $("#input_direccion").val(json_ruc.result.Direccion);
+                            $("#input_comercial").val(json_ruc.result.nombreComercial);
+                            $("#input_razon_social").val(json_ruc.result.razonSocial);
+                            $("#input_direccion").val(json_ruc.result.direccion);
                             $("#input_estado").val(estado);
                             $("#input_condicion").val(condicion);
                         }

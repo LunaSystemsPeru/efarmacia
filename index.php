@@ -5,4 +5,3 @@ if ($link == "alufarma.ml") {
 } else {
     echo "pagina bloqueda, consulte con su administrador para ingresar a la pagina correcta";
 }
-

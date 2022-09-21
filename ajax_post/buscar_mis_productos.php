@@ -1,6 +1,7 @@
 <?php
 session_start();
 require '../class/cl_conectar.php';
+global $conn;
 mysqli_set_charset($conn, "utf8");
 $searchTerm = mysqli_real_escape_string($conn, (filter_input(INPUT_GET, 'term')));
 $query = "SELECT 

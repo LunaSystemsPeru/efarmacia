@@ -116,7 +116,6 @@ class cl_inicio
             where p.id_empresa = '$this->id_empresa' and ps.id_sucursal = '$this->id_sucursal' and ps.cantidad > 0 and curdate() > date_sub(p.vcto, INTERVAL 121 day )
             group by year(p.vcto), month(p.vcto)
             order by year(p.vcto) asc, month(p.vcto) asc";
-        //echo $sql;
         $resultado = $conn->query($sql);
         $i = 0;
         $registros = array();
