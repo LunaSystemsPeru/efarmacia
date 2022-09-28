@@ -96,7 +96,8 @@ class cl_producto_sucursal
     public function eliminar()
     {
         global $conn;
-        $query = "delete from productos_sucursales where id_sucursal = '$this->id_sucursal' and id_producto = '$this->id_producto' and id_empresa = '$this->id_empresa'";
+        $query = "delete from productos_sucursales 
+                    where id_sucursal = '$this->id_sucursal' and id_producto = '$this->id_producto' and id_empresa = '$this->id_empresa'";
         $resultado = $conn->query($query);
         if (!$resultado) {
             die('Could not delete data in inventario: ' . mysqli_error($conn));
@@ -110,7 +111,7 @@ class cl_producto_sucursal
     function ver_productos()
     {
         global $conn;
-        $query = "select p.id_producto, p.nombre, p.principio_activo, pr.nombre as npresentacion, l.nombre as nlaboratorio, ps.cantidad, p.precio, p.lote, p.vcto, DATEDIFF(p.vcto, current_date()) as faltantes 
+        $query = "select p.id_producto, p.nombre, p.principio_activo, pr.nombre as npresentacion, l.nombre as nlaboratorio, ps.cantidad, ps.pventa as precio, ps.lote, ps.vcto, DATEDIFF(ps.vcto, current_date()) as faltantes 
         from productos_sucursales as ps 
             inner join producto as p on p.id_producto = ps.id_producto and p.id_empresa = ps.id_empresa
         inner join laboratorio as l on p.id_laboratorio = l.id_laboratorio 
@@ -123,7 +124,7 @@ class cl_producto_sucursal
     function buscar_productos($term)
     {
         global $conn;
-        $query = "select p.id_producto, p.nombre, p.principio_activo, pr.nombre as npresentacion, l.nombre as nlaboratorio, ps.cantidad, p.precio, p.lote, p.vcto, DATEDIFF(p.vcto, current_date()) as faltantes 
+        $query = "select p.id_producto, p.nombre, p.principio_activo, pr.nombre as npresentacion, l.nombre as nlaboratorio, ps.cantidad, ps.pventa as precio, ps.lote, ps.vcto, DATEDIFF(ps.vcto, current_date()) as faltantes 
         from productos_sucursales as ps 
             inner join producto as p on p.id_producto = ps.id_producto and p.id_empresa = ps.id_empresa
         inner join laboratorio as l on p.id_laboratorio = l.id_laboratorio 
@@ -133,27 +134,44 @@ class cl_producto_sucursal
         return $resultado->fetch_all(MYSQLI_ASSOC);
     }
 
-    function verVencidos () {
+    function verSinStock()
+    {
         global $conn;
-        $query = "select p.id_producto, p.nombre, l.nombre as laboratorio, p.precio, p2.nombre as presentacion, p.vcto, (p.vcto - curdate()) as faltantes
-        from producto as p
+        $query = "select p.id_producto, p.nombre, l.nombre as laboratorio, ps.pventa as precio, p2.nombre as presentacion, ps.cantidad
+        from productos_sucursales as ps 
+            inner join producto as p on p.id_producto = ps.id_producto and p.id_empresa = ps.id_empresa 
         inner join laboratorio l on p.id_laboratorio = l.id_laboratorio
         inner join presentacion p2 on p.id_presentacion = p2.id_presentacion
-        where p.id_empresa = '$this->id_empresa' and curdate() >= date_sub(p.vcto, interval 121 day ) and cantidad > 0
+        where ps.id_empresa = '$this->id_empresa' and ps.id_sucursal = '$this->id_sucursal' and ps.cantidad <= 0
         order by p.vcto asc";
         $resultado = $conn->query($query);
         return $resultado->fetch_all(MYSQLI_ASSOC);
     }
 
-    function verVencidosPeriodo ($periodo) {
+    function verVencidos()
+    {
         global $conn;
-        $query = "select p.id_producto, p.nombre, l.nombre as laboratorio, p.precio, p2.nombre as presentacion, p.vcto, (p.vcto - curdate()) as faltantes, p3.nombre as nproveedor, ps.cantidad, p.lote, p.costo
+        $query = "select p.nombre, ps.lote, ps.vcto, ps.cantidad, ps.pventa, ps.pcompra, l.nombre as nlaboratorio, p2.nombre as npresentacion, p.principio_activo, p.id_producto, TIMESTAMPDIFF(day , ps.vcto, current_date()) as faltantes
+                    from productos_sucursales as ps 
+                    inner join producto p on ps.id_empresa = p.id_empresa and ps.id_producto = p.id_producto 
+                    inner join laboratorio l on p.id_laboratorio = l.id_laboratorio 
+                    inner join presentacion p2 on p.id_presentacion = p2.id_presentacion
+                    where ps.id_empresa = '$this->id_empresa' and ps.id_sucursal = '$this->id_sucursal' and ps.vcto < current_date() 
+                    order by ps.vcto asc, p.nombre asc";
+        $resultado = $conn->query($query);
+        return $resultado->fetch_all(MYSQLI_ASSOC);
+    }
+
+    function verVencidosPeriodo($periodo)
+    {
+        global $conn;
+        $query = "select p.id_producto, p.nombre, l.nombre as laboratorio, ps.pventa as precio, p2.nombre as presentacion, ps.vcto, (ps.vcto - curdate()) as faltantes, p3.nombre as nproveedor, ps.cantidad, ps.lote, ps.pcompra as costo
         from productos_sucursales as ps 
         inner join producto p on ps.id_producto = p.id_producto and ps.id_empresa = p.id_empresa 
         inner join laboratorio l on p.id_laboratorio = l.id_laboratorio
         inner join presentacion p2 on p.id_presentacion = p2.id_presentacion
         inner join proveedor p3 on p.id_proveedor = p3.id_proveedor and p.id_empresa = p3.id_empresa
-        where p.id_empresa = '$this->id_empresa' and ps.id_sucursal = '$this->id_sucursal' and concat(year(p.vcto),'-',month(p.vcto)) = '$periodo' and ps.cantidad > 0
+        where p.id_empresa = '$this->id_empresa' and ps.id_sucursal = '$this->id_sucursal' and concat(year(ps.vcto),'-',month(ps.vcto)) = '$periodo' and ps.cantidad > 0
         order by p.vcto asc";
         $resultado = $conn->query($query);
         return $resultado->fetch_all(MYSQLI_ASSOC);

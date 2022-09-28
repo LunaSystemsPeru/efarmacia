@@ -347,21 +347,6 @@ class cl_producto
         return $resultado->fetch_all(MYSQLI_ASSOC);
     }
 
-    function verSinStock()
-    {
-        global $conn;
-        $query = "select p.id_producto, p.nombre, l.nombre as laboratorio, p.precio, p2.nombre as presentacion
-        from producto as p
-        inner join laboratorio l on p.id_laboratorio = l.id_laboratorio
-        inner join presentacion p2 on p.id_presentacion = p2.id_presentacion
-        inner join productos_sucursales ps on p.id_producto = ps.id_producto
-        where p.id_empresa = '$this->id_empresa' and ps.cantidad <= 0
-        order by p.vcto asc";
-        $resultado = $conn->query($query);
-        return $resultado->fetch_all(MYSQLI_ASSOC);
-    }
-
-
     function actualizar_productos()
     {
         global $conn;
