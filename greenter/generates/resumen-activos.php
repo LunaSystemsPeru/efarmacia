@@ -215,7 +215,7 @@ if ($contar_items > 0) {
     $sum = new Summary();
     $sum->setFecGeneracion(\DateTime::createFromFormat('Y-m-d', $fecha))
         ->setFecResumen(\DateTime::createFromFormat('Y-m-d', $fecha))
-        ->setCorrelativo('002')
+        ->setCorrelativo('001')
         ->setCompany($empresa)
         ->setDetails($array_items);
 
