@@ -7,6 +7,10 @@ class cl_producto_sucursal
     private $id_producto;
     private $id_empresa;
     private $cantidad;
+    private $pventa;
+    private $pcosto;
+    private $lote;
+    private $vcto;
 
     /**
      * cl_producto_sucursal constructor.
@@ -77,6 +81,70 @@ class cl_producto_sucursal
     public function setCantidad($cantidad)
     {
         $this->cantidad = $cantidad;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPventa()
+    {
+        return $this->pventa;
+    }
+
+    /**
+     * @param mixed $pventa
+     */
+    public function setPventa($pventa): void
+    {
+        $this->pventa = $pventa;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPcosto()
+    {
+        return $this->pcosto;
+    }
+
+    /**
+     * @param mixed $pcosto
+     */
+    public function setPcosto($pcosto): void
+    {
+        $this->pcosto = $pcosto;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLote()
+    {
+        return $this->lote;
+    }
+
+    /**
+     * @param mixed $lote
+     */
+    public function setLote($lote): void
+    {
+        $this->lote = $lote;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getVcto()
+    {
+        return $this->vcto;
+    }
+
+    /**
+     * @param mixed $vcto
+     */
+    public function setVcto($vcto): void
+    {
+        $this->vcto = $vcto;
     }
 
     public function insertar()
