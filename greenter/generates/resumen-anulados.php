@@ -109,7 +109,7 @@ foreach ($resultado_empresa as $fila) {
     $c_venta->setIdVenta($fila["id_venta"]);
     $c_venta->actualizar_envio();
 
-    $array_items[] = $item;
+    //$array_items[] = $item;
 
 }
 
@@ -178,7 +178,7 @@ foreach ($resultado_anuladas as $fila) {
     $c_venta->setIdVenta($fila["id_venta"]);
     $c_venta->actualizar_envio();
 
-   // $array_items[] = $item;
+    $array_items[] = $item;
 }
 
 if ($contar_items > 0) {
@@ -203,7 +203,7 @@ if ($contar_items > 0) {
     $sum = new Summary();
     $sum->setFecGeneracion(\DateTime::createFromFormat('Y-m-d', $fecha))
         ->setFecResumen(\DateTime::createFromFormat('Y-m-d', $fecha))
-        ->setCorrelativo('001')
+        ->setCorrelativo('002')
         ->setCompany($empresa)
         ->setDetails($array_items);
 

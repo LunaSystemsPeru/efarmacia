@@ -4,7 +4,7 @@ session_start();
 if (is_null($_SESSION['id_empresa'])) {
     header("Location: login.php");
 }
-$_SESSION['productos_ajuste'] = Array();
+$_SESSION['productos_ajuste'] = array();
 
 $title = "Registro de Ajuste de Mercaderia - Farmacia - Luna Systems Peru";
 ?>
@@ -20,7 +20,7 @@ $title = "Registro de Ajuste de Mercaderia - Farmacia - Luna Systems Peru";
     <title><?php echo $title; ?></title>
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <link rel="shortcut icon" type="image/ico" href="images/favicon.ico" />
+    <link rel="shortcut icon" type="image/ico" href="images/favicon.ico"/>
 
     <!-- Vendor styles -->
     <link rel="stylesheet" href="vendor/fontawesome/css/font-awesome.css"/>
@@ -33,6 +33,7 @@ $title = "Registro de Ajuste de Mercaderia - Farmacia - Luna Systems Peru";
     <link rel="stylesheet" href="fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css"/>
     <link rel="stylesheet" href="fonts/pe-icon-7-stroke/css/helper.css"/>
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="vendor/sweetalert/lib/sweet-alert.css">
     <link rel="stylesheet"
           href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/themes/base/minified/jquery-ui.min.css"
           type="text/css"/>
@@ -217,6 +218,7 @@ $title = "Registro de Ajuste de Mercaderia - Farmacia - Luna Systems Peru";
 <script src="vendor/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
 <!-- App scripts -->
 <script src="scripts/homer.js"></script>
+<script src="vendor/sweetalert/lib/sweet-alert.min.js"></script>
 <script lang="javascript">
     function cargar_editar_proveedor() {
         window.open("mod_proveedor.php?id=" + $("#input_id_proveedor").val());
@@ -235,9 +237,9 @@ $title = "Registro de Ajuste de Mercaderia - Farmacia - Luna Systems Peru";
                 $('#input_lote').val(ui.item.lote);
                 $('#input_vencimiento').val(ui.item.vcto);
                 $('#hidden_id_producto').val(ui.item.id);
-                $('#hidden_descripcion_producto').val(ui.item.nombre);
+                $('#hidden_descripcion_producto').val(ui.item.nombre + " | " + ui.item.presentacion + " | " + ui.item.laboratorio);
                 $('#hidden_lote_producto').val(ui.item.vcto + " - " + ui.item.lote);
-                $('#input_producto').val(ui.item.nombre);
+                $('#input_producto').val(ui.item.nombre + " | " + ui.item.presentacion + " | " + ui.item.laboratorio);
                 $('#btn_add_producto').prop("disabled", false);
                 $('#input_cnueva').focus();
             }
@@ -253,11 +255,53 @@ $title = "Registro de Ajuste de Mercaderia - Farmacia - Luna Systems Peru";
         if (contar_filas > 1) {
             document.location.href = "procesos/reg_ajuste.php";
         } else {
-            alert("FALTA COMPLETAR DATOS");
+            swal("FALTA COMPLETAR DATOS");
         }
     }
 
     function addProductos() {
+        var input_id_producto = $('#hidden_id_producto').val()
+        var input_descripcion_producto = $('#hidden_descripcion_producto').val()
+        var input_costo_producto = $('#input_costo').val()
+        var input_precio_producto = $('#input_precio').val()
+        var input_cnueva_producto = $('#input_cnueva').val()
+        var input_cactual_producto = $('#input_cactual').val()
+        var input_lote_producto = $('#input_lote').val()
+        var input_vcto_producto = $('#input_vencimiento').val()
+
+        if (input_costo_producto == '' || parseFloat(input_costo_producto) == 0) {
+            swal("Falta indicar costo del producto")
+            return;
+        }
+        if (input_precio_producto == '' || parseFloat(input_precio_producto) == 0) {
+            swal("Falta indicar precio del producto")
+            return;
+        }
+
+        if (input_cnueva_producto == '') {
+            swal("Falta indicar cantidad del producto")
+            return;
+        }
+
+        if (input_lote_producto == '') {
+            swal("Falta indicar el lote del producto")
+            return;
+        }
+
+        if (input_vcto_producto == '') {
+            swal("Falta indicar el vencimiento del producto")
+            return;
+        } else {
+            var first = new Date(input_vcto_producto);
+            var second = new Date();
+
+            if (first < second) {
+                swal("Fecha de vencimiento es menor a fecha actual, revisar!")
+                return;
+            }
+        }
+
+
         $.ajax({
             data: {
                 input_id_producto: $('#hidden_id_producto').val(),
@@ -277,13 +321,13 @@ $title = "Registro de Ajuste de Mercaderia - Farmacia - Luna Systems Peru";
                 $('table tbody').html("");
             },
             success: function (r) {
-                //alert(r);
+                //swal(r);
                 $('table tbody').append(r);
                 clean();
                 //$('#body_detalle_pedido').html(r);
             },
             error: function () {
-                alert('Ocurrio un error en el servidor ..');
+                swal('Ocurrio un error en el servidor ..');
                 $('table tbody').html("");
                 //$('#body_detalle_pedido').html("");
             }

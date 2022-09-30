@@ -1,14 +1,14 @@
 function obtenerDatos() {
-    var datoSelect=$("#select_documento").val();
+    var datoSelect = $("#select_documento").val();
 
-    if (datoSelect!=1){
+    if (datoSelect != 1) {
         $('#input_documento_cliente').prop("readonly", false);
         $('#input_cliente').prop("disabled", false);
         $('#input_direccion').prop("disabled", false);
         $('#button_comprobar').prop("disabled", false);
         $('#input_cliente').val("");
         $('#input_documento_cliente').val("");
-    }else{
+    } else {
         $('#input_documento_cliente').val("0");
         $('#input_documento_cliente').prop("readonly", true);
         $('#input_cliente').val("CLIENTE NO ESPECIFADO");
@@ -60,49 +60,117 @@ function comprobarCliente() {
 }
 
 function validar_detalle() {
-    var permitir = false;
-    var cantidad = $('#input_cventa').val();
-    if (cantidad === "") {
+    var input_id_producto = $('#hidden_id_producto').val()
+    var input_descripcion_producto = $('#hidden_descripcion_producto').val()
+    var input_costo_producto = $('#hidden_costo').val()
+    var input_precio_producto = $('#input_precio').val()
+    var input_cantidad_producto = $('#input_cventa').val()
+    var input_lote_producto = $('#input_lote').val()
+    var input_vcto_producto = $('#input_vencimiento').val()
+
+    if (input_precio_producto == "") {
+        swal("NO HA INGRESADO PRECIO DEL PRODUCTO A VENDER!");
+        $('#input_precio').focus();
+        return;
+    }
+
+    if (input_cantidad_producto == "") {
         swal("NO HA INGRESADO CANTIDAD DEL PRODUCTO A VENDER!");
         $('#input_cventa').focus();
-    } else {
-        permitir = true;
+        return;
     }
-    return permitir;
+
+    if (input_lote_producto == "") {
+        swal("NO HA INGRESADO LOTE DEL PRODUCTO A VENDER!");
+        $('#input_lote').focus();
+        return;
+    }
+    if (input_vcto_producto == "") {
+        swal("NO HA INGRESADO VENCIMIENTO DEL PRODUCTO A VENDER!");
+        $('#input_vencimiento').focus();
+        return;
+    } else {
+        var first = new Date(input_vcto_producto);
+        var second = new Date();
+
+        if (first < second) {
+            swal("Fecha de vencimiento es menor a fecha actual, revisar!")
+            $('#input_vencimiento').focus();
+            return;
+        }
+    }
 }
 
 function addProductos() {
-    if (validar_detalle()) {
-        $.ajax({
-            data: {
-                input_id_producto: $('#hidden_id_producto').val(),
-                input_descripcion_producto: $('#hidden_descripcion_producto').val(),
-                input_costo_producto: $('#hidden_costo').val(),
-                input_precio_producto: $('#input_precio').val(),
-                input_cantidad_producto: $('#input_cventa').val(),
-                input_lote_producto: $('#input_lote').val(),
-                input_vcto_producto: $('#input_vencimiento').val()
-            },
-            url: 'ajax_post/add_productos_ventas.php',
-            type: 'GET',
-            //dataType: 'json',
-            beforeSend: function () {
-                //$('#body_detalle_pedido').html("");
-                $('table tbody').html("");
-            },
-            success: function (r) {
-                //alert(r);
-                $('table tbody').append(r);
-                clean();
-                //$('#body_detalle_pedido').html(r);
-            },
-            error: function () {
-                alert('Ocurrio un error en el servidor ..');
-                $('table tbody').html("");
-                //$('#body_detalle_pedido').html("");
-            }
-        });
+    var input_id_producto = $('#hidden_id_producto').val()
+    var input_descripcion_producto = $('#hidden_descripcion_producto').val()
+    var input_costo_producto = $('#hidden_costo').val()
+    var input_precio_producto = $('#input_precio').val()
+    var input_cantidad_producto = $('#input_cventa').val()
+    var input_lote_producto = $('#input_lote').val()
+    var input_vcto_producto = $('#input_vencimiento').val()
+
+    if (input_precio_producto == "") {
+        swal("NO HA INGRESADO PRECIO DEL PRODUCTO A VENDER!");
+        $('#input_precio').focus();
+        return;
     }
+
+    if (input_cantidad_producto == "") {
+        swal("NO HA INGRESADO CANTIDAD DEL PRODUCTO A VENDER!");
+        $('#input_cventa').focus();
+        return;
+    }
+
+    if (input_lote_producto == "") {
+        swal("NO HA INGRESADO LOTE DEL PRODUCTO A VENDER!");
+        $('#input_lote').focus();
+        return;
+    }
+    if (input_vcto_producto == "") {
+        swal("NO HA INGRESADO VENCIMIENTO DEL PRODUCTO A VENDER!");
+        $('#input_vencimiento').focus();
+        return;
+    } else {
+        var first = new Date(input_vcto_producto);
+        var second = new Date();
+
+        if (first < second) {
+            swal("Fecha de vencimiento es menor a fecha actual, revisar!")
+            $('#input_vencimiento').focus();
+            return;
+        }
+    }
+
+    $.ajax({
+        data: {
+            input_id_producto: $('#hidden_id_producto').val(),
+            input_descripcion_producto: $('#hidden_descripcion_producto').val(),
+            input_costo_producto: $('#hidden_costo').val(),
+            input_precio_producto: $('#input_precio').val(),
+            input_cantidad_producto: $('#input_cventa').val(),
+            input_lote_producto: $('#input_lote').val(),
+            input_vcto_producto: $('#input_vencimiento').val()
+        },
+        url: 'ajax_post/add_productos_ventas.php',
+        type: 'GET',
+        //dataType: 'json',
+        beforeSend: function () {
+            //$('#body_detalle_pedido').html("");
+            $('table tbody').html("");
+        },
+        success: function (r) {
+            //alert(r);
+            $('table tbody').append(r);
+            clean();
+            //$('#body_detalle_pedido').html(r);
+        },
+        error: function () {
+            alert('Ocurrio un error en el servidor ..');
+            $('table tbody').html("");
+            //$('#body_detalle_pedido').html("");
+        }
+    });
 }
 
 function eliminar_item(id_producto) {
@@ -148,6 +216,7 @@ function clean() {
     $('#input_precio').prop("readonly", true);
     $('#input_producto').focus();
 }
+
 function isJsonStructure(str) {
     if (typeof str !== 'string') return false;
     try {
@@ -159,32 +228,32 @@ function isJsonStructure(str) {
         return false;
     }
 }
+
 function enviar_formulario() {
     var total = $("#hidden_total").val();
     var contar_filas = $("#tabla-detalle tr").length;
-    var selectOption= $("#select_documento").val();
-    var num_documento= $("#input_documento_cliente").val();
-    var direccion= $("#input_direccion").val();
-    var nombreCliente= $("#input_cliente").val();
-    var condicion=true;
-   // console.log(contar_filas);
+    var selectOption = $("#select_documento").val();
+    var num_documento = $("#input_documento_cliente").val();
+    var direccion = $("#input_direccion").val();
+    var nombreCliente = $("#input_cliente").val();
+    var condicion = true;
+    // console.log(contar_filas);
     //enviar form
     //console.log(num_documento.length + "<>" + direccion.length+ "<>" +nombreCliente);
-    if (selectOption==3){
-        condicion=(num_documento.length==11&&direccion.length>0&&nombreCliente.length>2);
+    if (selectOption == 3) {
+        condicion = (num_documento.length == 11 && direccion.length > 0 && nombreCliente.length > 2);
     }
-    if (selectOption==2){
-        condicion=(nombreCliente.length>0);
+    if (selectOption == 2) {
+        condicion = (nombreCliente.length > 0);
     }
     if (total > 0 && contar_filas > 1 && condicion) {
         $.ajax({
             type: "POST",
             url: "procesos/reg_venta.php",
             data: $("#frm_venta").serialize(),
-            success: function(data)
-            {
+            success: function (data) {
                 console.log(data);
-                if (isJsonStructure(data)){
+                if (isJsonStructure(data)) {
                     var obj = JSON.parse(data);
                     swal({
                         title: "Venta Registrada",
@@ -200,10 +269,10 @@ function enviar_formulario() {
                     }, function (isConfirm) {
                         if (isConfirm) {
 
-                            window.location.href = 'ver_preimpresion_venta.php?id_venta=' + obj.venta+ "&periodo="+obj.periodo;
+                            window.location.href = 'ver_preimpresion_venta.php?id_venta=' + obj.venta + "&periodo=" + obj.periodo;
                         }
                     });
-                }else{
+                } else {
                     swal("Error en el servidor,  contacte con soporte");
                 }
             }

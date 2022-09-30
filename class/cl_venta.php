@@ -29,28 +29,32 @@ class cl_venta
     /**
      * @return mixed
      */
-    public function getEnviadoSunat() {
+    public function getEnviadoSunat()
+    {
         return $this->enviado_sunat;
     }
 
     /**
      * @param mixed $enviado_sunat
      */
-    public function setEnviadoSunat($enviado_sunat) {
+    public function setEnviadoSunat($enviado_sunat)
+    {
         $this->enviado_sunat = $enviado_sunat;
     }
 
     /**
      * @return mixed
      */
-    public function getIdSucursal() {
+    public function getIdSucursal()
+    {
         return $this->id_sucursal;
     }
 
     /**
      * @param mixed $id_sucursal
      */
-    public function setIdSucursal($id_sucursal) {
+    public function setIdSucursal($id_sucursal)
+    {
         $this->id_sucursal = $id_sucursal;
     }
 
@@ -315,16 +319,16 @@ class cl_venta
         if ($resultado->num_rows > 0) {
             $existe = true;
             while ($fila = $resultado->fetch_assoc()) {
-                $this->fecha=$fila["fecha"];
-                $this->id_documento=$fila["id_documento"];
-                $this->serie=$fila["serie"];
-                $this->numero=$fila["numero"];
-                $this->id_cliente=$fila["id_cliente"];
-                $this->total=$fila["total"];
-                $this->pagado=$fila["pagado"];
-                $this->estado=$fila["estado"];
-                $this->id_usuario=$fila["id_usuario"];
-                $this->id_sucursal=$fila["id_sucursal"];
+                $this->fecha = $fila["fecha"];
+                $this->id_documento = $fila["id_documento"];
+                $this->serie = $fila["serie"];
+                $this->numero = $fila["numero"];
+                $this->id_cliente = $fila["id_cliente"];
+                $this->total = $fila["total"];
+                $this->pagado = $fila["pagado"];
+                $this->estado = $fila["estado"];
+                $this->id_usuario = $fila["id_usuario"];
+                $this->id_sucursal = $fila["id_sucursal"];
             }
         }
         return $existe;
@@ -389,6 +393,7 @@ class cl_venta
             INNER JOIN documentos_sunat ds ON v.id_documento = ds.id_documento
             INNER JOIN cliente c ON v.id_cliente = c.id_cliente AND  c.id_empresa=v.id_empresa
         where v.id_empresa = '$this->id_empresa' and v.fecha = '$this->fecha' and v.id_documento in (2,5)";
+        //echo $query ."<br>";
         return $conn->query($query);
     }
 
@@ -409,6 +414,16 @@ class cl_venta
         $query = "update venta 
         set enviado_sunat = 1 
         where id_venta = '$this->id_venta'";
+        return $conn->query($query);
+    }
+
+    public function verFechasPendientes()
+    {
+        global $conn;
+        $query = "select v.id_documento, v.fecha, count(*) as cantidad
+                from venta as v 
+                where v.id_documento = 2 and month(v.fecha) = 9 and year(v.fecha) = 2022
+                GROUP by v.fecha";
         return $conn->query($query);
     }
 }

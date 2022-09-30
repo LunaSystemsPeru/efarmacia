@@ -7,8 +7,10 @@ if (is_null($_SESSION['id_empresa'])) {
 
 require 'class/cl_laboratorio.php';
 require 'class/cl_presentacion.php';
+require 'class/cl_producto_sucursal.php';
 require 'class/cl_producto.php';
 
+$c_sucursal = new cl_producto_sucursal();
 $c_presentacion = new cl_presentacion();
 $c_laboratorio = new cl_laboratorio();
 $cl_producto=new cl_producto();
@@ -22,7 +24,10 @@ $cl_producto->setIdEmpresa($id_empresa);
 $cl_producto->setIdProducto($id_producto);
 $cl_producto->obtener_datos();
 
-
+$c_sucursal->setIdSucursal($_SESSION['id_sucursal']);
+$c_sucursal->setIdEmpresa($_SESSION['id_empresa']);
+$c_sucursal->setIdProducto($cl_producto->getIdProducto());
+$c_sucursal->obtener_datos();
 ?>
 <!DOCTYPE html>
 <html>
@@ -172,7 +177,7 @@ $cl_producto->obtener_datos();
                             <div class="form-group">
                                 <label class="col-lg-2 control-label">COSTO: </label>
                                 <div class="col-lg-2">
-                                    <input value="<?php echo $cl_producto->getCosto() ?>" type="text" class="form-control text-right" name="input_costo"
+                                    <input value="<?php echo $c_sucursal->ge() ?>" type="text" class="form-control text-right" name="input_costo"
                                            id="input_costo" max-lenght="15" required/>
                                 </div>
 

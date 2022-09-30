@@ -166,6 +166,9 @@ $title = "Registro de Ingreso de Mercaderia - Farmacia - Luna Systems Peru";
                                     <input class="form-control" id="input_producto" name="input_producto" placeholder="Ingrese Medicamento">
                                     <input type="hidden" name="hidden_id_producto" id="hidden_id_producto"/>
                                     <input type="hidden" name="hidden_descripcion_producto" id="hidden_descripcion_producto"/>
+                                    <input type="hidden" name="input_lote" id="input_lote"/>
+                                    <input type="hidden" name="input_vencimiento" id="input_vencimiento"/>
+                                    <input type="hidden" name="hidden_lote_producto" id="hidden_lote_producto"/>
                                 </div>
                                 <div class="col-md-2">
                                     <a href="reg_producto.php" target="_blank" class="btn btn-info btn-sm"><i class="fa fa-plus"></i> Crear Producto</a>
@@ -298,7 +301,7 @@ $title = "Registro de Ingreso de Mercaderia - Farmacia - Luna Systems Peru";
         });
 
         $("#input_producto").autocomplete({
-            source: "ajax_post/buscar_productos.php",
+            source: "ajax_post/buscar_mis_productos.php",
             minLength: 2,
             select: function (event, ui) {
                 event.preventDefault();
@@ -308,6 +311,8 @@ $title = "Registro de Ingreso de Mercaderia - Farmacia - Luna Systems Peru";
                 $('#hidden_id_producto').val(ui.item.id);
                 $('#hidden_descripcion_producto').val(ui.item.nombre);
                 $('#hidden_lote_producto').val(ui.item.vcto + " - " + ui.item.lote);
+                $('#input_vencimiento').val(ui.item.vcto);
+                $('#input_lote').val(ui.item.lote);
                 $('#input_producto').val(ui.item.nombre);
                 $('#btn_add_producto').prop("disabled", false);
                 $('#input_costo').prop("readonly", false);

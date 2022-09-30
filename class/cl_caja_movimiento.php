@@ -138,7 +138,7 @@ class cl_caja_movimiento {
         global $conn;
         $query = "select ifnull(max(id_movimiento) + 1, 1) as codigo "
                 . "from caja_movimiento "
-                . "where id_empresa = '" . $this->id_empresa . "'  and fecha= " . $this->fecha;
+                . "where id_empresa = '" . $this->id_empresa . "'  and fecha= '$this->fecha'";
         //echo $query;
         $resultado = $conn->query($query);
         if ($resultado->num_rows > 0) {
@@ -161,7 +161,7 @@ class cl_caja_movimiento {
                 '$this->id_usuario',
                 '$this->id_sucursal'
                 );";
-        echo $query;
+       // echo $query;
         $resultado = $conn->query($query);
         if (!$resultado) {
             die('Could not enter data in caja movimiento: ' . mysqli_error($conn));

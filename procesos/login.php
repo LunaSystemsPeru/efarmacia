@@ -36,7 +36,7 @@ if ($existe_usuario) {
         $_SESSION['nombre_usuario'] = $c_usuario->getNombre();
         $_SESSION['id_sucursal'] = $c_usuario->getIdSucursal();
         $_SESSION['nombre_sucursal'] = $c_sucursal->getNombre();
-        header("Location: ../index.php");
+        header("Location: ../index_graficas.php");
     } else {
         header("Location: ../login.php?error=2");
     }

@@ -36,6 +36,7 @@ $title = "Registro de Ingreso de Mercaderia - Farmacia - Luna Systems Peru";
     <link rel="stylesheet" href="fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css"/>
     <link rel="stylesheet" href="fonts/pe-icon-7-stroke/css/helper.css"/>
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="vendor/sweetalert/lib/sweet-alert.css">
     <link rel="stylesheet"
           href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/themes/base/minified/jquery-ui.min.css"
           type="text/css"/>
@@ -320,7 +321,9 @@ $title = "Registro de Ingreso de Mercaderia - Farmacia - Luna Systems Peru";
 <script src="vendor/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
 <script src="vendor/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
 <!-- App scripts -->
+<script src="vendor/sweetalert/lib/sweet-alert.min.js"></script>
 <script src="scripts/homer.js"></script>
+
 <script lang="javascript">
     function cargar_editar_proveedor() {
         window.open("mod_proveedor.php?id=" + $("#input_id_proveedor").val());
@@ -394,7 +397,7 @@ $title = "Registro de Ingreso de Mercaderia - Farmacia - Luna Systems Peru";
             document.getElementById("frm_ingreso").submit();
             return false;
         } else {
-            alert("FALTA COMPLETAR DATOS");
+            swal("FALTA COMPLETAR DATOS");
         }
     }
 
@@ -404,39 +407,68 @@ $title = "Registro de Ingreso de Mercaderia - Farmacia - Luna Systems Peru";
         var cantidad = $('#input_ccompra').val();
         var lote = $('#input_lote').val();
         var vcto = $('#input_vencimiento').val();
-        if (costo != "" & precio != "" & cantidad != "" & lote != "" & vcto != "") {
-            $.ajax({
-                data: {
-                    input_id_producto: $('#hidden_id_producto').val(),
-                    input_descripcion_producto: $('#hidden_descripcion_producto').val(),
-                    input_costo_producto: $('#input_costo').val(),
-                    input_precio_producto: $('#input_precio').val(),
-                    input_cantidad_producto: $('#input_ccompra').val(),
-                    input_lote_producto: $('#input_lote').val(),
-                    input_vcto_producto: $('#input_vencimiento').val()
-                },
-                url: 'ajax_post/add_productos_ingresos.php',
-                type: 'GET',
-                //dataType: 'json',
-                beforeSend: function () {
-                    //$('#body_detalle_pedido').html("");
-                    $('table tbody').html("");
-                },
-                success: function (r) {
-                    //alert(r);
-                    $('table tbody').append(r);
-                    clean();
-                    //$('#body_detalle_pedido').html(r);
-                },
-                error: function () {
-                    alert('Ocurrio un error en el servidor ..');
-                    $('table tbody').html("");
-                    //$('#body_detalle_pedido').html("");
-                }
-            });
-        } else {
-            alert("Faltan ingresar datos");
+
+        if (costo == '' || parseFloat(costo) == 0) {
+            swal("Falta indicar costo del producto")
+            return;
         }
+        if (precio == '' || parseFloat(precio) == 0) {
+            swal("Falta indicar precio del producto")
+            return;
+        }
+
+        if (cantidad == '' || parseInt(cantidad) < 1) {
+            swal("Falta indicar cantidad del producto")
+            return;
+        }
+
+        if (lote == '') {
+            swal("Falta indicar el lote del producto")
+            return;
+        }
+
+        if (vcto == '') {
+            swal("Falta indicar el vencimiento del producto")
+            return;
+        } else {
+            var first = new Date(vcto);
+            var second = new Date();
+
+            if (first < second) {
+                swal("Fecha de vencimiento es menor a fecha actual, revisar!")
+                return;
+            }
+        }
+
+        $.ajax({
+            data: {
+                input_id_producto: $('#hidden_id_producto').val(),
+                input_descripcion_producto: $('#hidden_descripcion_producto').val(),
+                input_costo_producto: $('#input_costo').val(),
+                input_precio_producto: $('#input_precio').val(),
+                input_cantidad_producto: $('#input_ccompra').val(),
+                input_lote_producto: $('#input_lote').val(),
+                input_vcto_producto: $('#input_vencimiento').val()
+            },
+            url: 'ajax_post/add_productos_ingresos.php',
+            type: 'GET',
+            //dataType: 'json',
+            beforeSend: function () {
+                //$('#body_detalle_pedido').html("");
+                $('table tbody').html("");
+            },
+            success: function (r) {
+                //swal(r);
+                $('table tbody').append(r);
+                clean();
+                //$('#body_detalle_pedido').html(r);
+            },
+            error: function () {
+                swal('Ocurrio un error en el servidor ..');
+                $('table tbody').html("");
+                //$('#body_detalle_pedido').html("");
+            }
+        });
     }
 
     function eliminar_item(id_producto) {
@@ -452,13 +484,13 @@ $title = "Registro de Ingreso de Mercaderia - Farmacia - Luna Systems Peru";
                 $('table tbody').html("");
             },
             success: function (r) {
-                //alert(r);
+                //swal(r);
                 $('table tbody').append(r);
                 clean();
                 //$('#body_detalle_pedido').html(r);
             },
             error: function () {
-                alert('Ocurrio un error en el servidor ..');
+                swal('Ocurrio un error en el servidor ..');
                 $('table tbody').html("");
                 //$('#body_detalle_pedido').html("");
             }

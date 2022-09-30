@@ -5,9 +5,10 @@ if (is_null($_SESSION['id_empresa'])) {
     header("Location: login.php");
 }
 
-require 'class/cl_producto.php';
-$c_producto = new cl_producto();
+require 'class/cl_producto_sucursal.php';
+$c_producto = new cl_producto_sucursal();
 $c_producto->setIdEmpresa($_SESSION['id_empresa']);
+$c_producto->setIdSucursal($_SESSION['id_sucursal']);
 
 $title = "Ver Reporte de Medicamentos - Farmacia - Luna Systems Peru";
 ?>
@@ -133,6 +134,7 @@ $title = "Ver Reporte de Medicamentos - Farmacia - Luna Systems Peru";
                                 <th>Laboratorio</th>
                                 <th>Cant.</th>
                                 <th>Precio</th>
+                                <th>Lote</th>
                                 <th>F. Venc.</th>
                                 <th>Dias Faltantes.</th>
                             </tr>
@@ -148,10 +150,11 @@ $title = "Ver Reporte de Medicamentos - Farmacia - Luna Systems Peru";
                                 ?>
                                 <tr>
                                     <td><?php echo $fila['id_producto']?></td>
-                                    <td><?php echo $fila['nombre'] . " - " . $fila['presentacion']?></td>
-                                    <td class="text-center"><?php echo $fila['laboratorio']?></td>
+                                    <td><?php echo $fila['nombre'] . " - " . $fila['npresentacion']?></td>
+                                    <td class="text-center"><?php echo $fila['nlaboratorio']?></td>
                                     <td class="text-center"><?php echo $fila['cantidad']?></td>
-                                    <td class="text-center"><?php echo $fila['precio']?></td>
+                                    <td class="text-center"><?php echo $fila['pventa']?></td>
+                                    <td class="text-right"><?php echo $fila['lote']?></td>
                                     <td class="text-right"><?php echo $fila['vcto']?></td>
                                     <td class="text-center"><span class="label <?php echo $label?>"><?php echo $fila['faltantes']?></span></td>
                                 </tr>
@@ -246,7 +249,7 @@ $title = "Ver Reporte de Medicamentos - Farmacia - Luna Systems Peru";
 
         // Initialize Example 1
         $('#tabla-clientes').dataTable({
-            "order": [[5, "asc"]],
+            "order": [[6, "asc"]],
             dom: "<'row'<'col-sm-4'l><'col-sm-4 text-center'B><'col-sm-4'f>>tp",
             "lengthMenu": [[50, 100, 200, -1], [50, 100, 200, "All"]],
             buttons: [

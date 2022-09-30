@@ -40,13 +40,13 @@ class cl_validar_documento {
                 $array_ruc = json_decode($json_ruc, true);
                 $json_ruc = (object) array(
                     "success" => true,
-                    "entity" => $array_ruc
+                    "result" => $array_ruc
                 );
             }
         } else {
             $json_ruc = (object) array(
                         "success" => false,
-                        "entity" => "LA CANTIDAD DE DIGITOS NO ES 11"
+                        "result" => "LA CANTIDAD DE DIGITOS NO ES 11"
             );
         }
 
@@ -63,13 +63,13 @@ class cl_validar_documento {
                 $array_dni = json_decode($json, true);
                 $json = (object) array(
                     "success" => true,
-                    "entity" => $array_dni
+                    "result" => $array_dni
                 );
             }
         } else {
             $json = (object) array(
                         "success" => false,
-                        "entity" => "LA CANTIDAD DE DIGITOS NO ES 8"
+                        "result" => "LA CANTIDAD DE DIGITOS NO ES 8"
             );
         }
 
