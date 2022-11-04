@@ -1,18 +1,19 @@
 <?php
 require '../class_graficas/cl_reporte_inventario.php';
 require '../includes/SimpleXLSXGen.php';
+
 use Shuchkin\SimpleXLSXGen;
 
 $Reporte = new cl_reporte_inventario();
 
-$Reporte->setIdsucursal(filter_input(INPUT_POST, 'tiendaid'));
-$Reporte->setIdempresa(filter_input(INPUT_POST, 'empresaid'));
+$Reporte->setSucursalid(filter_input(INPUT_POST, 'tiendaid'));
+$Reporte->setEmpresaid(filter_input(INPUT_POST, 'empresaid'));
+$Reporte->setSucursalid(1);
+$Reporte->setEmpresaid(3);
 
 $books = array();
 
-$filai = [
-    ['<center>MIS PRODUCTOS EN STOCK</center>', null]
-];
+$filai = ['MIS PRODUCTOS EN STOCK', '', '', '', '', '', '', '', '', '', ''];
 $books[] = $filai;
 
 //estructura titulos tabla
@@ -29,12 +30,12 @@ $fila = ['Item',
     'Utilidad'];
 $books[] = $fila;
 
-$array_lista = $Reporte->verMisProductos();
+$array_lista = $Reporte->verMisProductosValorizados();
 $nrofila = 0;
 //var_dump($array_lista);
 
 foreach ($array_lista as $fila) {
-    
+
 
     $nrofila++;
 
@@ -47,8 +48,8 @@ foreach ($array_lista as $fila) {
         $fila['npresentacion'],
         $fila['lote'],
         $fila['vcto'],
-        number_format($fila['pcompra'],2),
-        number_format($fila['pventa'],2),
+        number_format($fila['pcompra'], 2),
+        number_format($fila['pventa'], 2),
         $fila['cantidad'],
         number_format($costototal, 2),
         number_format($preciototal, 2),
@@ -59,8 +60,8 @@ foreach ($array_lista as $fila) {
 
 
 $xlsx = SimpleXLSXGen::fromArray($books);
-$xlsx->saveAs('reporte_mis_productos_' . $Reporte->getIdempresa() . "_" . $Reporte->getIdsucursal() . '.xlsx');
+$xlsx->saveAs('reporte_mis_productos_' . $Reporte->getEmpresaid() . "_" . $Reporte->getSucursalid() . '.xlsx');
 
 //echo "hola";
 
-echo json_encode(['name' => 'reporte_mis_productos_' . $Reporte->getIdempresa(). "_" . $Reporte->getIdsucursal() . '.xlsx']);
+echo json_encode(['name' => 'reporte_mis_productos_' . $Reporte->getEmpresaid() . "_" . $Reporte->getSucursalid() . '.xlsx']);
