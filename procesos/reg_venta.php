@@ -21,8 +21,11 @@ $id_sucursal = $_SESSION['id_sucursal'];
 
 $c_cliente->setIdEmpresa($id_empresa);
 $c_cliente->setDocumento(filter_input(INPUT_POST, 'input_documento_cliente'));
-$c_cliente->setNombre(addslashes(filter_input(INPUT_POST, 'input_cliente')));
-$c_cliente->setDireccion(addslashes(filter_input(INPUT_POST, 'input_direccion')));
+if (filter_input(INPUT_POST, 'input_cliente')) {
+    $c_cliente->setNombre(addslashes(filter_input(INPUT_POST, 'input_cliente')));
+    $c_cliente->setDireccion(addslashes(filter_input(INPUT_POST, 'input_direccion')));
+}
+
 
 $tipo_doc = filter_input(INPUT_POST, 'select_documento');
 
