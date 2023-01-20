@@ -26,7 +26,6 @@ if (filter_input(INPUT_POST, 'input_cliente')) {
     $c_cliente->setDireccion(addslashes(filter_input(INPUT_POST, 'input_direccion')));
 }
 
-
 $tipo_doc = filter_input(INPUT_POST, 'select_documento');
 
 if ($tipo_doc == 1) {
