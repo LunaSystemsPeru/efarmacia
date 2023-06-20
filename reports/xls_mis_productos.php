@@ -18,6 +18,7 @@ $books[] = $filai;
 
 //estructura titulos tabla
 $fila = ['Item',
+    'Cod. Producto',
     'Producto',
     'Presentacion',
     'Lote',
@@ -44,6 +45,7 @@ foreach ($array_lista as $fila) {
     $utilidad = $preciototal - $costototal;
     $fila = [
         $nrofila,
+        $fila['id_producto'],
         $fila['nproducto'],
         $fila['npresentacion'],
         $fila['lote'],

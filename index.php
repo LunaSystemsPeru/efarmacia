@@ -1,4 +1,5 @@
 <?php
+header("Location: login.php");
 $link = $_SERVER['HTTP_HOST'] ;
 if ($link == "alufarma.ml") {
     header("Location: login.php");
