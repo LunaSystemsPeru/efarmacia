@@ -150,7 +150,7 @@ class cl_producto_sucursal
     public function actualizar()
     {
         global $conn;
-        $query = "update productos_sucursales set pventa = '$this->pventa' 
+        $query = "update productos_sucursales set pventa = '$this->pventa', pcompra = '$this->pcosto'
                 where id_producto = '$this->id_producto' and id_sucursal = '$this->id_sucursal' and id_empresa = '$this->id_empresa'";
         $resultado = $conn->query($query);
         if (!$resultado) {

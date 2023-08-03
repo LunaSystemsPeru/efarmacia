@@ -187,7 +187,7 @@ $c_sucursal->obtener_datos();
                             <div class="form-group">
                                 <label class="col-lg-2 control-label">PRECIO: </label>
                                 <div class="col-lg-2">
-                                    <input value="<?php echo $cl_producto->getPrecio() ?>" type="text" class="form-control text-right" name="input_precio"
+                                    <input value="<?php echo $c_sucursal->getPventa() ?>" type="text" class="form-control text-right" name="input_precio"
                                            id="input_precio" max-lenght="9" required/>
                                 </div>
                             </div>
@@ -196,7 +196,7 @@ $c_sucursal->obtener_datos();
                                 <label class="col-lg-2 control-label">PRECIO x CAJA: </label>
                                 <div class="col-lg-2">
                                     <input value="<?php echo $cl_producto->getPrecioCaja() ?>" type="text" class="form-control text-right" name="input_precio_caja"
-                                           id="input_precio_caja" max-lenght="9" readonly/>
+                                           id="input_precio_caja" max-lenght="9" />
                                 </div>
                             </div>
 
