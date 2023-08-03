@@ -4,7 +4,7 @@ ini_set('display_errors', '1');
 
 session_start();
 
-if (is_null($_SESSION['id_empresa'])) {
+if (!isset($_SESSION['id_empresa'])) {
     header("Location: login.php");
 }
 

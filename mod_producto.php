@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (is_null($_SESSION['id_empresa'])) {
+if (!isset($_SESSION['id_empresa'])) {
     header("Location: login.php");
 }
 
@@ -122,7 +122,8 @@ $c_sucursal->obtener_datos();
                 <div class="hpanel">
                     <form class="form-horizontal" name="frm_reg_producto" id="frm_reg_producto"
                           action="procesos/mod_producto.php" method="post">
-                        <input type="hidden" name="id_producto" value="<?php echo $cl_producto->getIdProducto();?>">
+                        <input type="hidden" name="id_producto" value="<?php echo $cl_producto->getIdProducto();?>" >
+                        <input type="hidden" name="id_sucursal" value="<?php echo $c_sucursal->getIdSucursal();?>" >
                         <div class="panel-body">
                             <div class="form-group">
                                 <label class="col-lg-2 control-label">NOMBRE: </label>
@@ -177,7 +178,7 @@ $c_sucursal->obtener_datos();
                             <div class="form-group">
                                 <label class="col-lg-2 control-label">COSTO: </label>
                                 <div class="col-lg-2">
-                                    <input value="<?php echo $c_sucursal->ge() ?>" type="text" class="form-control text-right" name="input_costo"
+                                    <input value="<?php echo $c_sucursal->getPcosto() ?>" type="text" class="form-control text-right" name="input_costo"
                                            id="input_costo" max-lenght="15" required/>
                                 </div>
 
@@ -195,7 +196,7 @@ $c_sucursal->obtener_datos();
                                 <label class="col-lg-2 control-label">PRECIO x CAJA: </label>
                                 <div class="col-lg-2">
                                     <input value="<?php echo $cl_producto->getPrecioCaja() ?>" type="text" class="form-control text-right" name="input_precio_caja"
-                                           id="input_precio_caja" max-lenght="9" required/>
+                                           id="input_precio_caja" max-lenght="9" readonly/>
                                 </div>
                             </div>
 

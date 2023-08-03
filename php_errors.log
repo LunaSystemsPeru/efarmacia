@@ -1,0 +1,25 @@
+[20-Jun-2023 08:33:42 America/Los_Angeles] PHP Fatal error:  Uncaught Error: Call to undefined method cl_producto_sucursal::ge() in C:\xampp\htdocs\clientes\alufarma\mod_producto.php:180
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\clientes\alufarma\mod_producto.php on line 180
+[20-Jun-2023 08:33:48 America/Los_Angeles] PHP Fatal error:  Uncaught Error: Call to undefined method cl_producto_sucursal::ge() in C:\xampp\htdocs\clientes\alufarma\mod_producto.php:180
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\clientes\alufarma\mod_producto.php on line 180
+[23-Jun-2023 08:50:35 America/Lima] PHP Warning:  Undefined array key "id_empresa" in C:\xampp\htdocs\clientes\alufarma\mod_producto.php on line 4
+[23-Jun-2023 08:50:35 America/Lima] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\clientes\alufarma\mod_producto.php:4) in C:\xampp\htdocs\clientes\alufarma\mod_producto.php on line 5
+[23-Jun-2023 06:50:35 America/Los_Angeles] PHP Warning:  Undefined array key "id_sucursal" in C:\xampp\htdocs\clientes\alufarma\mod_producto.php on line 27
+[23-Jun-2023 06:50:35 America/Los_Angeles] PHP Warning:  Undefined array key "id_empresa" in C:\xampp\htdocs\clientes\alufarma\mod_producto.php on line 28
+[23-Jun-2023 06:50:35 America/Los_Angeles] PHP Warning:  Undefined array key "nombre_comercial" in C:\xampp\htdocs\clientes\alufarma\includes\header.php on line 16
+[23-Jun-2023 06:50:35 America/Los_Angeles] PHP Warning:  Undefined array key "nombre_sucursal" in C:\xampp\htdocs\clientes\alufarma\includes\header.php on line 16
+[23-Jun-2023 06:50:35 America/Los_Angeles] PHP Warning:  Undefined array key "nombre_usuario" in C:\xampp\htdocs\clientes\alufarma\includes\header.php on line 16
+[23-Jun-2023 06:50:54 America/Los_Angeles] PHP Warning:  Undefined array key "id_sucursal" in C:\xampp\htdocs\clientes\alufarma\mod_producto.php on line 27
+[23-Jun-2023 06:50:54 America/Los_Angeles] PHP Warning:  Undefined array key "id_empresa" in C:\xampp\htdocs\clientes\alufarma\mod_producto.php on line 28
+[23-Jun-2023 06:50:54 America/Los_Angeles] PHP Warning:  Undefined array key "nombre_comercial" in C:\xampp\htdocs\clientes\alufarma\includes\header.php on line 16
+[23-Jun-2023 06:50:54 America/Los_Angeles] PHP Warning:  Undefined array key "nombre_sucursal" in C:\xampp\htdocs\clientes\alufarma\includes\header.php on line 16
+[23-Jun-2023 06:50:54 America/Los_Angeles] PHP Warning:  Undefined array key "nombre_usuario" in C:\xampp\htdocs\clientes\alufarma\includes\header.php on line 16
+[23-Jun-2023 06:51:11 America/Los_Angeles] PHP Warning:  Undefined array key "id_sucursal" in C:\xampp\htdocs\clientes\alufarma\mod_producto.php on line 27
+[23-Jun-2023 06:51:11 America/Los_Angeles] PHP Warning:  Undefined array key "id_empresa" in C:\xampp\htdocs\clientes\alufarma\mod_producto.php on line 28
+[23-Jun-2023 06:51:11 America/Los_Angeles] PHP Warning:  Undefined array key "nombre_comercial" in C:\xampp\htdocs\clientes\alufarma\includes\header.php on line 16
+[23-Jun-2023 06:51:11 America/Los_Angeles] PHP Warning:  Undefined array key "nombre_sucursal" in C:\xampp\htdocs\clientes\alufarma\includes\header.php on line 16
+[23-Jun-2023 06:51:11 America/Los_Angeles] PHP Warning:  Undefined array key "nombre_usuario" in C:\xampp\htdocs\clientes\alufarma\includes\header.php on line 16
