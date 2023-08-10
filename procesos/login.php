@@ -27,7 +27,7 @@ if ($existe_usuario) {
     $c_usuario->obtener_datos();
     $c_sucursal->setIdSucursal($c_usuario->getIdSucursal());
     $c_sucursal->obtener_datos();
-    echo $c_usuario->getPassword();
+    //echo $c_usuario->getPassword();
     if ($password == $c_usuario->getPassword()) {
         $c_usuario->actualizarFecha();
         $_SESSION['id_empresa'] = $c_empresa->getIdEmpresa();

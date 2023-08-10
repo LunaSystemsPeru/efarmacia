@@ -30,14 +30,6 @@
                 <ul class="nav nav-second-level">
                     <li><a href="ver_clientes.php">Ver Clientes</a></li>
                     <li><a href="ver_ventas.php">Ver Ventas</a></li>
-                    <li>
-                        <a href="#"><span class="nav-label">Reportes Ventas</span><span class="fa arrow"></span> </a>
-                        <ul class="nav nav-third-level">
-                            <li><a href="ver_reportes_ventas.php">Otros Reportes</a></li>
-                            <li><a href="ver_ventas_mensual.php">Ventas x Mes</a></li>
-                            <li><a href="ver_utilidad_venta.php">Utilidad x Mes</a></li>
-                        </ul>
-                    </li>
                 </ul>
             </li>
             <li>
@@ -78,6 +70,14 @@
                     <li><a href="ver_salidas.php">Ver Salidas de Mercaderia</a></li>
                     <li><a href="ver_ajustes.php">Ver Ajustes de Inventario</a></li>
                     <li><a href="ver_kardex_diario.php">Ver Kardex Diario</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#"><span class="nav-label">Reportes</span><span class="fa arrow"></span> </a>
+                <ul class="nav nav-second-level">
+                    <li><a href="ver_reportes_productos.php">de Productos</a></li>
+                    <li><a href="ver_reportes_ventas">de Ventas</a></li>
+                    <li><a href="ver_ajustes.php">de Ingreso</a></li>
                 </ul>
             </li>
             <li>

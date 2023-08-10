@@ -1,0 +1,1 @@
+[20-Jun-2023 08:32:40 America/Los_Angeles] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\clientes\alufarma\procesos\login.php:30) in C:\xampp\htdocs\clientes\alufarma\procesos\login.php on line 39

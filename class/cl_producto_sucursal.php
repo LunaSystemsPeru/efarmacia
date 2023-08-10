@@ -147,6 +147,21 @@ class cl_producto_sucursal
         $this->vcto = $vcto;
     }
 
+    public function actualizar()
+    {
+        global $conn;
+        $query = "update productos_sucursales set pventa = '$this->pventa', pcompra = '$this->pcosto'
+                where id_producto = '$this->id_producto' and id_sucursal = '$this->id_sucursal' and id_empresa = '$this->id_empresa'";
+        $resultado = $conn->query($query);
+        if (!$resultado) {
+            die('Could not enter data in inventario: ' . mysqli_error($conn));
+        } else {
+            //echo "Entered data successfully";
+            $grabado = true;
+        }
+        return $grabado;
+    }
+
     public function insertar()
     {
         global $conn;

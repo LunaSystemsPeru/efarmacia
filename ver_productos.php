@@ -1,13 +1,17 @@
 <?php
 session_start();
 
-if (is_null($_SESSION['id_empresa'])) {
+if (!isset($_SESSION['id_empresa'])) {
     header("Location: login.php");
 }
 
 require 'class/cl_producto.php';
 $c_producto = new cl_producto();
 $c_producto->setIdEmpresa($_SESSION['id_empresa']);
+$texto = "";
+if (filter_input(INPUT_GET, 'busqueda')) {
+    $texto = filter_input(INPUT_GET, 'busqueda');
+}
 $title = "Ver Productos - Farmacia - Luna Systems Peru";
 ?>
 <!DOCTYPE html>
@@ -88,7 +92,7 @@ $title = "Ver Productos - Farmacia - Luna Systems Peru";
                     </ol>
                 </div>
                 <h2 class="font-light m-b-xs">
-                    Mis Productos
+                    Relacion Total de Productos
                 </h2>
             </div>
         </div>
@@ -110,10 +114,12 @@ $title = "Ver Productos - Farmacia - Luna Systems Peru";
                                 <a href="procesos/precios_mimsa.php" class="btn btn-info"><i class="fa fa-file-excel-o"></i> Ver Precios MIMSA</a>
                             </div>
                         </div>
-                        <div class="col-md-5 ">
-                            <form class="form-horizontal">
+                        <div class="col-5">
+                            <form method="get" class="form-inline">
                                 <div class="form-group">
-
+                                    <input class="form-control" type="text" name="busqueda">
+                                    <input type="hidden" value="0" name="tipo">
+                                    <input class="btn btn-success btn-sm" type="submit" value="Buscar">
                                 </div>
                             </form>
                         </div>
@@ -140,7 +146,7 @@ $title = "Ver Productos - Farmacia - Luna Systems Peru";
                             </thead>
                             <tbody>
                             <?php
-                            $a_productos = $c_producto->ver_productos();
+                            $a_productos = $c_producto->ver_productos($texto);
                             foreach ($a_productos as $fila) {
                                 if ($fila['faltantes'] >= 120) {
                                     $color_texto = "text-primary";

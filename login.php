@@ -1,10 +1,11 @@
 <?php
 session_start();
 
+/*
 $link = $_SERVER['HTTP_HOST'] ;
 if ($link != "alufarma.ml") {
-   echo "pagina bloqueda, consulte con su administrador para ingresar a la pagina correcta";
-   //exit;
+   printf("pagina bloqueda, consulte con su administrador para ingresar a la pagina correcta");
+   exit;
 }
 if (isset($_SESSION['id_empresa'])) {
     if ($_SESSION['id_empresa']) {
@@ -12,6 +13,7 @@ if (isset($_SESSION['id_empresa'])) {
     }
 }
 
+*/
 ?>
 <!DOCTYPE html>
 <html lang="es">

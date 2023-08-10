@@ -3,7 +3,7 @@ session_start();
 
 require 'class/cl_venta.php';
 
-if (is_null($_SESSION['id_empresa'])) {
+if (!isset($_SESSION['id_empresa'])) {
     header("Location: login.php");
 }
 $title = "Inicio - Farmacia - Luna Systems Peru";

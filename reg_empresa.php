@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (is_null($_SESSION['id_empresa'])) {
+if (!isset($_SESSION['id_empresa'])) {
     header("Location: login.php");
 }
 $title = "Registro de Empresa - Farmacia - Luna Systems Peru";

@@ -325,14 +325,18 @@ class cl_producto
         return $existe;
     }
 
-    function ver_productos()
+    function ver_productos($texto = '')
     {
+        $string = 'DATEDIFF(p.vcto, current_date()) < 120 and p.vcto != "2000-01-01" ';
+        if ($texto) {
+            $string = "p.nombre like '%$texto%' ";
+        }
         global $conn;
         $query = "select p.id_producto, p.nombre, p.principio_activo, pr.nombre as npresentacion, l.nombre as nlaboratorio, p.costo, p.precio, p.lote, p.vcto, DATEDIFF(p.vcto, current_date()) as faltantes 
         from producto as p 
         inner join laboratorio as l on p.id_laboratorio = l.id_laboratorio 
         inner join presentacion pr on p.id_presentacion = pr.id_presentacion 
-        where p.id_empresa = '$this->id_empresa'";
+        where p.id_empresa = '$this->id_empresa' and $string ";
         $resultado = $conn->query($query);
         return $resultado->fetch_all(MYSQLI_ASSOC);
     }
