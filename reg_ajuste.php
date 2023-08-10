@@ -122,7 +122,7 @@ $title = "Registro de Ajuste de Mercaderia - Farmacia - Luna Systems Peru";
                                 </div>
                                 <label class="col-md-1 control-label">Precio Venta</label>
                                 <div class="col-md-2">
-                                    <input type="text" class="form-control text-right" id="input_precio" name="input_precio" required readonly>
+                                    <input type="text" class="form-control text-right" id="input_precio" name="input_precio" required>
                                 </div>
                             </div>
                             <div class="form-group">

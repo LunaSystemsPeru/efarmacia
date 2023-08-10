@@ -177,7 +177,7 @@ $c_sucursal->obtener_datos();
                             <div class="form-group">
                                 <label class="col-lg-2 control-label">COSTO: </label>
                                 <div class="col-lg-2">
-                                    <input value="<?php echo $c_sucursal->ge() ?>" type="text" class="form-control text-right" name="input_costo"
+                                    <input value="<?php echo $c_sucursal->getPcosto() ?>" type="text" class="form-control text-right" name="input_costo"
                                            id="input_costo" max-lenght="15" required/>
                                 </div>
 
@@ -186,7 +186,7 @@ $c_sucursal->obtener_datos();
                             <div class="form-group">
                                 <label class="col-lg-2 control-label">PRECIO: </label>
                                 <div class="col-lg-2">
-                                    <input value="<?php echo $cl_producto->getPrecio() ?>" type="text" class="form-control text-right" name="input_precio"
+                                    <input value="<?php echo $c_sucursal->getPventa() ?>" type="text" class="form-control text-right" name="input_precio"
                                            id="input_precio" max-lenght="9" required/>
                                 </div>
                             </div>
