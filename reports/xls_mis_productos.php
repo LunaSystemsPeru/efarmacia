@@ -8,8 +8,6 @@ $Reporte = new cl_reporte_inventario();
 
 $Reporte->setSucursalid(filter_input(INPUT_POST, 'tiendaid'));
 $Reporte->setEmpresaid(filter_input(INPUT_POST, 'empresaid'));
-$Reporte->setSucursalid(1);
-$Reporte->setEmpresaid(3);
 
 $books = array();
 
