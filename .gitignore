@@ -4,6 +4,6 @@
 !/greenter/src/
 !/greenter/resources/
 /nbproject/private/
-*.xlsx
-error_log
+reports/*.xlsx
+*error_log*
 *.log
