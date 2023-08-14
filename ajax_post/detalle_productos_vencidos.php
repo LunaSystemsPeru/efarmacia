@@ -14,6 +14,7 @@ $a_vencidos = $c_producto->verVencidosPeriodo($periodo);
     <thead>
     <tr>
         <th>Item</th>
+        <th>Vcto</th>
         <th>Producto</th>
         <th>Laboratorio</th>
         <th>Proveedor</th>
@@ -24,23 +25,24 @@ $a_vencidos = $c_producto->verVencidosPeriodo($periodo);
     </tr>
     </thead>
     <tbody>
-<?php
-$item = 1;
-foreach ($a_vencidos as $value) {
-    ?>
-    <tr>
-        <td><?php echo $item ?></td>
-        <td><?php echo $value['id_producto'] . " | " . $value['nombre'] . " | " . $value['vcto'] . " | " . $value['lote'] ?></td>
-        <td><?php echo $value['laboratorio'] ?></td>
-        <td><?php echo $value['nproveedor'] ?></td>
-        <td class="text-center"><?php echo $value['costo'] ?></td>
-        <td class="text-center"><?php echo $value['cantidad'] ?></td>
-        <td class="text-right"><?php echo number_format($value['precio'], 2) ?></td>
-        <td class="text-right"><?php echo number_format($value['precio'] * $value['cantidad'], 2) ?></td>
-    </tr>
     <?php
-    $item++;
-}
-?>
+    $item = 1;
+    foreach ($a_vencidos as $value) {
+        ?>
+        <tr>
+            <td><?php echo $item ?></td>
+            <td><?php echo $value['vcto'] ?></td>
+            <td><?php echo $value['id_producto'] . " | " . $value['nombre'] . " | " . $value['lote'] ?></td>
+            <td><?php echo $value['laboratorio'] ?></td>
+            <td><?php echo $value['nproveedor'] ?></td>
+            <td class="text-center"><?php echo $value['costo'] ?></td>
+            <td class="text-center"><?php echo $value['cantidad'] ?></td>
+            <td class="text-right"><?php echo number_format($value['precio'], 2) ?></td>
+            <td class="text-right"><?php echo number_format($value['precio'] * $value['cantidad'], 2) ?></td>
+        </tr>
+        <?php
+        $item++;
+    }
+    ?>
     </tbody>
 </table>

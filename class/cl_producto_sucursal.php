@@ -176,22 +176,6 @@ class cl_producto_sucursal
         return $grabado;
     }
 
-    public function actualizar()
-    {
-        global $conn;
-        $query = "update productos_sucursales 
-                    set pventa = '$this->pventa' 
-                    where id_producto = '$this->id_producto' and id_empresa = '$this->id_empresa' and id_sucursal = '$this->id_sucursal'";
-        $resultado = $conn->query($query);
-        if (!$resultado) {
-            die('Could not update data in productos_sucursales: ' . mysqli_error($conn));
-        } else {
-            //echo "Entered data successfully";
-            $grabado = true;
-        }
-        return $grabado;
-    }
-
     public function eliminar()
     {
         global $conn;
@@ -268,10 +252,11 @@ class cl_producto_sucursal
         from productos_sucursales as ps 
         inner join producto p on ps.id_producto = p.id_producto and ps.id_empresa = p.id_empresa 
         inner join laboratorio l on p.id_laboratorio = l.id_laboratorio
-        inner join presentacion p2 on p.id_presentacion = p2.id_presentacion
-        inner join proveedor p3 on p.id_proveedor = p3.id_proveedor and p.id_empresa = p3.id_empresa
-        where p.id_empresa = '$this->id_empresa' and ps.id_sucursal = '$this->id_sucursal' and concat(year(ps.vcto),'-',month(ps.vcto)) = '$periodo' and ps.cantidad > 0
-        order by p.vcto asc";
+        inner join presentacion p2 on p.id_presentacion = p2.id_presentacion 
+        inner join proveedor p3 on p.id_proveedor = p3.id_proveedor and p.id_empresa = p3.id_empresa 
+        where ps.id_empresa = '$this->id_empresa' and ps.id_sucursal = '$this->id_sucursal' and concat(year(ps.vcto),'-',month(ps.vcto)) = '$periodo' and ps.cantidad > 0
+        order by ps.vcto asc";
+        //echo $query;
         $resultado = $conn->query($query);
         return $resultado->fetch_all(MYSQLI_ASSOC);
     }

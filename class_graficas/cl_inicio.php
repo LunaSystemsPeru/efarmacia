@@ -110,12 +110,12 @@ class cl_inicio
         public function verTotalVencimientos()
     {
         global $conn;
-        $sql = "select year(p.vcto) as anio_vcto, month(p.vcto) as mes_vcto, count(*) as stock_vence
+        $sql = "select year(ps.vcto) as anio_vcto, month(ps.vcto) as mes_vcto, count(*) as stock_vence
             from productos_sucursales as ps 
             inner join producto p on ps.id_producto = p.id_producto and ps.id_empresa = p.id_empresa
-            where p.id_empresa = '$this->id_empresa' and ps.id_sucursal = '$this->id_sucursal' and ps.cantidad > 0 and curdate() > date_sub(p.vcto, INTERVAL 121 day )
-            group by year(p.vcto), month(p.vcto)
-            order by year(p.vcto) asc, month(p.vcto) asc";
+            where ps.id_empresa = '$this->id_empresa' and ps.id_sucursal = '$this->id_sucursal' and ps.cantidad > 0 and curdate() > date_sub(ps.vcto, INTERVAL 121 day )
+            group by year(ps.vcto), month(ps.vcto)
+            order by year(ps.vcto) asc, month(ps.vcto) asc";
         $resultado = $conn->query($sql);
         $i = 0;
         $registros = array();
