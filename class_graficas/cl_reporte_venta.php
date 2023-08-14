@@ -82,7 +82,7 @@ class cl_reporte_venta
     public function verReporteVentaProductos()
     {
         global $conn;
-        $sql = "select v.fecha, ds.abreviatura, v.serie, v.numero, s.nombre as nsucursal, c.nombre as ncliente, c.documento, p.nombre as nproducto, vp.lote, vp.cantidad, vp.costo, vp.precio, v.estado 
+        $sql = "select v.fecha, ds.abreviatura, v.serie, v.numero, s.nombre as nsucursal, c.nombre as ncliente, c.documento, p.nombre as nproducto, vp.lote, vp.cantidad, p.costo, vp.precio, v.estado 
                 from venta_producto as vp
                 inner join producto as p on p.id_producto = vp.id_producto and p.id_empresa = vp.id_empresa
                 inner join venta as v on v.id_venta = vp.id_venta and v.periodo = vp.periodo and v.id_empresa = vp.id_empresa
@@ -98,7 +98,7 @@ class cl_reporte_venta
 
     public function verVentasProductos () {
         global $conn;
-        $sql = "select s.nombre as ntienda, p.nombre as nproducto, vp.lote, vp.vcto, sum(vp.cantidad) as cantidad, vp.costo, vp.precio
+        $sql = "select s.nombre as ntienda, p.nombre as nproducto, vp.lote, vp.vcto, sum(vp.cantidad) as cantidad, p.costo, vp.precio
                 from venta_producto as vp
                 inner join venta as v on v.id_venta = vp.id_venta and v.periodo = vp.periodo and v.id_empresa = vp.id_empresa
                 inner join producto as p on p.id_producto = vp.id_producto and p.id_empresa = vp.id_empresa
