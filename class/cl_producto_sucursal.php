@@ -176,6 +176,22 @@ class cl_producto_sucursal
         return $grabado;
     }
 
+    public function actualizar()
+    {
+        global $conn;
+        $query = "update productos_sucursales 
+                    set pventa = '$this->pventa' 
+                    where id_producto = '$this->id_producto' and id_empresa = '$this->id_empresa' and id_sucursal = '$this->id_sucursal'";
+        $resultado = $conn->query($query);
+        if (!$resultado) {
+            die('Could not update data in productos_sucursales: ' . mysqli_error($conn));
+        } else {
+            //echo "Entered data successfully";
+            $grabado = true;
+        }
+        return $grabado;
+    }
+
     public function eliminar()
     {
         global $conn;
