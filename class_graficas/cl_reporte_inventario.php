@@ -48,7 +48,7 @@ class cl_reporte_inventario
     function verIngresosProductosIndividuales()
     {
         global $conn;
-        $query = "select i.fecha, i.id_documento, p.documento, p.nombre as proveedor, ds.nombre as documentos_sunat, i.serie, i.numero, u.username, ip.id_producto, pr.nombre, pr.id_laboratorio, lb.nombre as laboratorio, pr.id_presentacion, ps.nombre as presentacion, ip.lote, ip.vcto, ip.cantidad, ip.costo, ip.precio
+        $query = "select i.fecha, i.id_documento, p.documento, p.nombre as proveedor, ds.nombre as documentos_sunat, i.serie, i.numero, u.username, ip.id_producto, pr.nombre, pr.id_laboratorio, lb.nombre as laboratorio, pr.id_presentacion, ps.nombre as presentacion, ip.lote, ip.vcto, ip.cantidad, p.costo, ip.precio
                 from ingreso_producto as ip 
                 inner join ingreso as i on i.periodo = ip.periodo and i.id_ingreso = ip.id_ingreso and i.id_empresa = ip.id_empresa
                 inner join producto as pr on pr.id_producto = ip.id_producto and pr.id_empresa = ip.id_empresa
@@ -67,7 +67,7 @@ class cl_reporte_inventario
     function verMisProductosValorizados()
     {
         global $conn;
-        $query = "select ps.id_producto, p.nombre as nproducto, p.principio_activo, ps.pcompra, ps.pventa, ps.cantidad, ps.vcto, ps.lote, l.nombre as nlabotario, p.principio_activo, p2.nombre as npresentacion
+        $query = "select ps.id_producto, p.nombre as nproducto, p.principio_activo, p.costo as pcompra, ps.pventa, ps.cantidad, ps.vcto, ps.lote, l.nombre as nlabotario, p.principio_activo, p2.nombre as npresentacion
                 from productos_sucursales as ps 
                 inner join producto p on ps.id_empresa = p.id_empresa and p.id_producto = ps.id_producto
                 inner join laboratorio l on p.id_laboratorio = l.id_laboratorio
