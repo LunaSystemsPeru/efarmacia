@@ -7,3 +7,8 @@
 [05-May-2021 12:36:05 America/Los_Angeles] PHP Notice:  Undefined index: id_empresa in /home/lunasystems/public_html/clientes/farmacia/modals_php/m_ingreso_productos.php on line 13
 [03-Sep-2021 10:01:09 America/Los_Angeles] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/lunasystems/public_html/clientes/farmacia/class/cl_varios.php on line 88
 [03-Sep-2021 10:01:28 America/Los_Angeles] PHP Deprecated:  Array and string offset access syntax with curly braces is deprecated in /home/lunasystems/public_html/clientes/farmacia/class/cl_varios.php on line 88
+[10-Jul-2023 16:29:20 America/Los_Angeles] PHP Warning:  Undefined array key "id_empresa" in /home/goempres/public_html/lsp/clientes/alufarma/modals_php/m_venta_productos.php on line 6
+[26-Jul-2023 15:06:55 America/Los_Angeles] PHP Warning:  Undefined array key "id_empresa" in /home/goempres/public_html/lsp/clientes/alufarma/modals_php/m_ingreso_productos.php on line 13
+[26-Jul-2023 15:06:55 America/Los_Angeles] PHP Deprecated:  strtoupper(): Passing null to parameter #1 ($string) of type string is deprecated in /home/goempres/public_html/lsp/clientes/alufarma/modals_php/m_ingreso_productos.php on line 34
+[26-Jul-2023 15:07:07 America/Los_Angeles] PHP Warning:  Undefined array key "id_empresa" in /home/goempres/public_html/lsp/clientes/alufarma/modals_php/m_ingreso_productos.php on line 13
+[26-Jul-2023 15:07:07 America/Los_Angeles] PHP Deprecated:  strtoupper(): Passing null to parameter #1 ($string) of type string is deprecated in /home/goempres/public_html/lsp/clientes/alufarma/modals_php/m_ingreso_productos.php on line 34

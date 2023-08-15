@@ -1,17 +1,24 @@
 <?php
 require '../class_graficas/cl_reporte_inventario.php';
+require '../class/cl_sucursal.php';
 require '../includes/SimpleXLSXGen.php';
 
 use Shuchkin\SimpleXLSXGen;
 
 $Reporte = new cl_reporte_inventario();
+$Sucursal = new cl_sucursal();
 
 $Reporte->setSucursalid(filter_input(INPUT_POST, 'tiendaid'));
 $Reporte->setEmpresaid(filter_input(INPUT_POST, 'empresaid'));
 
+$Sucursal->setIdEmpresa($Reporte->getEmpresaid());
+$Sucursal->setIdSucursal($Reporte->getSucursalid());
+$Sucursal->obtener_datos();
+
 $books = array();
 
-$filai = ['MIS PRODUCTOS EN STOCK', '', '', '', '', '', '', '', '', '', ''];
+$filai = ['', '', '<b>VER STOCK ACTUAL VALORIZADO DE MIS PRODUCTOS EN STOCK EN TIENDA: ' . $Sucursal->getNombre() . '</b>', null, '', '', '', '', '', '', ''];
+//$filai = ['<b>VER STOCK ACTUAL VALORIZADO DE MIS PRODUCTOS EN STOCK EN TIENDA: ' . $Sucursal->getNombre() . '</b>', null, null, null, '', '', '', '', '', '', ''];
 $books[] = $filai;
 
 //estructura titulos tabla

@@ -38,3 +38,8 @@ Stack trace:
 [03-Aug-2023 09:05:31 America/Los_Angeles] PHP Warning:  Undefined array key "nombre_comercial" in C:\xampp\htdocs\clientes\alufarma\includes\header.php on line 16
 [03-Aug-2023 09:05:31 America/Los_Angeles] PHP Warning:  Undefined array key "nombre_sucursal" in C:\xampp\htdocs\clientes\alufarma\includes\header.php on line 16
 [03-Aug-2023 09:05:31 America/Los_Angeles] PHP Warning:  Undefined array key "nombre_usuario" in C:\xampp\htdocs\clientes\alufarma\includes\header.php on line 16
+[14-Aug-2023 07:08:04 America/Los_Angeles] PHP Warning:  Undefined array key "id_sucursal" in C:\xampp\htdocs\clientes\alufarma\mod_producto.php on line 27
+[14-Aug-2023 07:08:04 America/Los_Angeles] PHP Warning:  Undefined array key "id_empresa" in C:\xampp\htdocs\clientes\alufarma\mod_producto.php on line 28
+[14-Aug-2023 07:08:04 America/Los_Angeles] PHP Warning:  Undefined array key "nombre_comercial" in C:\xampp\htdocs\clientes\alufarma\includes\header.php on line 16
+[14-Aug-2023 07:08:04 America/Los_Angeles] PHP Warning:  Undefined array key "nombre_sucursal" in C:\xampp\htdocs\clientes\alufarma\includes\header.php on line 16
+[14-Aug-2023 07:08:04 America/Los_Angeles] PHP Warning:  Undefined array key "nombre_usuario" in C:\xampp\htdocs\clientes\alufarma\includes\header.php on line 16
