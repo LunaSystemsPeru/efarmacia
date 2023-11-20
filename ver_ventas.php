@@ -204,7 +204,8 @@ $title = "Ver Ventas - Farmacia - Luna Systems Peru";
                                 <tr>
                                     <th width="10%">Documento</th>
                                     <th width="8%">Fecha</th>
-                                    <th width="30%">Cliente</th>
+                                    <th width="10%">Doc. Cliente</th>
+                                    <th>Datos Cliente</th>
                                     <th width="11%">Usuario</th>
                                     <th width="6%">Total</th>
                                     <th width="10%">Estado</th>
@@ -233,7 +234,8 @@ $title = "Ver Ventas - Farmacia - Luna Systems Peru";
                                             </a>
                                         </td>
                                         <td class="text-center"><?php echo $fila['fecha'] ?></td>
-                                        <td><?php echo $fila['documento'] . " | " . $fila['nombre'] ?></td>
+                                        <td><?php echo $fila['documento'] ?></td>
+                                        <td><?php echo $fila['nombre'] ?></td>
                                         <td class="text-center"><?php echo $fila['username'] ?></td>
                                         <td class="text-right"><?php echo number_format($total, 2) ?></td>
                                         <td class="text-center">

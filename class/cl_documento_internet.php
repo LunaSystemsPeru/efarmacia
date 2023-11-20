@@ -51,16 +51,16 @@ class cl_documento_internet
 
         //si es ruc
         if ($this->tipo == 1) {
-            $direccion = "https://www.lunasystemsperu.com/apis/apiruc.php?ruc=" . $this->documento;
+            $direccion = "https://goempresarial.com/apis/peru-consult-api/public/api/v1/ruc/".$this->documento."?token=abcxyz";
         }
 
         //si es dni
         if ($this->tipo == 2) {
-            $direccion = "https://www.lunasystemsperu.com/apis/apidni.php?dni=" . $this->documento;
+            $direccion = "https://goempresarial.com/apis/peru-consult-api/public/api/v1/dni/".$this->documento."?token=abcxyz";
             //$direccion = "https://www.lunasystemsperu.com/consultas_json/composer/consultas_dni_JMP.php?dni=" . $this->documento;
         }
 
-        $json = file_get_contents($direccion, FALSE);
+        $json = file_get_contents($direccion);
         // Check for errors
         if ($json === FALSE) {
             die('Error');

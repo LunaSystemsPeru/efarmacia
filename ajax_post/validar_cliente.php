@@ -19,7 +19,7 @@ if (strlen($documento) == 8) {
     }
     if ($success == true) {
         $array_result = array(
-            "nombre" => $decodificado['entity']['nombre'],
+            "nombre" => $decodificado['result']['apellidoPaterno'] . " " . $decodificado['result']['apellidoMaterno'] . " " . $decodificado['result']['nombres'],
             "direccion" => "-"
         );
     }
@@ -39,8 +39,8 @@ if (strlen($documento) == 11) {
     }
     if ($success == true) {
         $array_result = array(
-            "nombre" => $decodificado['entity']['razonSocial'],
-            "direccion" => $decodificado['entity']['direccion']
+            "nombre" => $decodificado['result']['razonSocial'],
+            "direccion" => $decodificado['result']['direccion']
         );
     }
     $resultado = (object)array(

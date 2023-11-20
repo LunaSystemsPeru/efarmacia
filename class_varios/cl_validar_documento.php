@@ -11,65 +11,73 @@
  *
  * @author luis
  */
-class cl_validar_documento {
+class cl_validar_documento
+{
 
-    private $url_ruc = "https://lunasystemsperu.com/apis/apiruc.php?ruc=";
-    private $url_dni = "https://lunasystemsperu.com/apis/apidni.php?dni=";
+    private $url_ruc = "https://goempresarial.com/apis/peru-consult-api/public/api/v1/ruc/%s?token=abcxyz";
+    private $url_dni = "https://goempresarial.com/apis/peru-consult-api/public/api/v1/dni/%s?token=abcxyz";
     private $dni;
     private $ruc;
 
-    function __construct() {
-        
+    function __construct()
+    {
+
     }
 
-    function setDni($dni) {
+    function setDni($dni)
+    {
         $this->dni = $dni;
     }
 
-    function setRuc($ruc) {
+    function setRuc($ruc)
+    {
         $this->ruc = $ruc;
     }
 
-    public function obtener_ruc() {
+    public function obtener_ruc()
+    {
         if (strlen($this->ruc) == 11) {
-            $json_ruc = file_get_contents($this->url_ruc . $this->ruc, FALSE);
+            $urlfinal = sprintf($this->url_ruc, $this->ruc);
+            $json_ruc = file_get_contents($urlfinal);
             // Check for errors
             if ($json_ruc === FALSE) {
                 die('Error');
             } else {
                 $array_ruc = json_decode($json_ruc, true);
-                $json_ruc = (object) array(
+                $json_ruc = (object)array(
                     "success" => true,
                     "result" => $array_ruc
                 );
             }
         } else {
-            $json_ruc = (object) array(
-                        "success" => false,
-                        "result" => "LA CANTIDAD DE DIGITOS NO ES 11"
+            $json_ruc = (object)array(
+                "success" => false,
+                "result" => "LA CANTIDAD DE DIGITOS NO ES 11"
             );
         }
 
         return json_encode($json_ruc);
     }
 
-    public function obtener_dni() {
+    public function obtener_dni()
+    {
         if (strlen($this->dni) == 8) {
-            $json = file_get_contents($this->url_dni . $this->dni, FALSE);
+            $urlfinal = sprintf($this->url_dni, $this->dni);
+            $json = file_get_contents($urlfinal, FALSE);
             // Check for errors
             if ($json === FALSE) {
                 die('Error');
             } else {
                 $array_dni = json_decode($json, true);
-                $json = (object) array(
+                $json = (object)array(
                     "success" => true,
                     "result" => $array_dni
                 );
             }
         } else {
-            $json = (object) array(
-                        "success" => false,
-                        "result" => "LA CANTIDAD DE DIGITOS NO ES 8"
+            $json = (object)array(
+                "success" => false,
+                "result" => "LA CANTIDAD DE DIGITOS NO ES 8"
             );
         }
 

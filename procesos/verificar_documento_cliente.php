@@ -38,13 +38,13 @@ if ($c_cliente->buscar_documento()) {
         if ($c_internet->getTipo() == 2) {
             $resultado["success"] = "nuevo";
             $resultado["documento"] = $respuesta["dni"];
-            $resultado["datos"] = $respuesta["nombre"];
+            $resultado["datos"] = $respuesta["apellidoPaterno"] . " " . $respuesta["apellidoMaterno"] . " " . $respuesta["nombres"];
             $resultado["direccion"] = "";
         }
 
         if ($c_internet->getTipo() == 1) {
             $resultado["success"] = "nuevo";
-            $resultado["documento"] = $respuesta["ruc"];
+            $resultado["documento"] = $documento;
             $resultado["datos"] = $respuesta["razonSocial"];
             $resultado["direccion"] = $respuesta["direccion"];
         }
