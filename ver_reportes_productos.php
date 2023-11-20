@@ -183,7 +183,8 @@ $title = "Reportes de Inventario - Farmacia - Luna Systems Peru";
     function verStockValorizado() {
         var tiendaid = $("#select-tienda").val();
         $.post("reports/xls_mis_productos.php", {tiendaid: tiendaid, empresaid: '3'}, function (data) {
-           // alert(data);
+           
+            67// alert(data);
             jsondata = JSON.parse(data);
             var archivo = jsondata.name;
             window.location.href = "reports/" + archivo + '?v=' + Date.now();
