@@ -427,6 +427,7 @@ $title = "Ver Ventas - Farmacia - Luna Systems Peru";
         tienda = document.getElementById('input-tienda').value
         $.get('reports/xls_ventas_fechas.php', {'periodo': periodo, 'tienda': tienda, 'empresa': empresa}, function (data) {
             console.log(data)
+            window.location.href = data;
         })
     }
 
