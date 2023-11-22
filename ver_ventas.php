@@ -125,6 +125,13 @@ $title = "Ver Ventas - Farmacia - Luna Systems Peru";
                                 <a href="ver_utilidad_venta.php?periodo=<?php echo date("Ym") ?>" class="btn btn-info">Ver Utilidad del mes</a>
                             </div>
 
+                            <div class="btn-group">
+                                <input type="hidden" id="input-periodo" value="<?php echo $c_venta->getPeriodo()?>" >
+                                <input type="hidden" id="input-empresa"value="<?php echo $c_venta->getIdEmpresa() ?>" >
+                                <input type="hidden" id="input-tienda" value="<?php echo $c_venta->getIdSucursal() ?>" >
+                                <button type="button" onclick="cargarXLS()" class="btn btn-info">Ver EXCEL</button>
+                            </div>
+
                             <div class="modal fade" id="modalbuscar" tabindex="-1" role="dialog" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
@@ -204,7 +211,8 @@ $title = "Ver Ventas - Farmacia - Luna Systems Peru";
                                 <tr>
                                     <th width="10%">Documento</th>
                                     <th width="8%">Fecha</th>
-                                    <th width="30%">Cliente</th>
+                                    <th width="10%">Doc. Cliente</th>
+                                    <th>Datos Cliente</th>
                                     <th width="11%">Usuario</th>
                                     <th width="6%">Total</th>
                                     <th width="10%">Estado</th>
@@ -233,7 +241,8 @@ $title = "Ver Ventas - Farmacia - Luna Systems Peru";
                                             </a>
                                         </td>
                                         <td class="text-center"><?php echo $fila['fecha'] ?></td>
-                                        <td><?php echo $fila['documento'] . " | " . $fila['nombre'] ?></td>
+                                        <td><?php echo $fila['documento'] ?></td>
+                                        <td><?php echo $fila['nombre'] ?></td>
                                         <td class="text-center"><?php echo $fila['username'] ?></td>
                                         <td class="text-right"><?php echo number_format($total, 2) ?></td>
                                         <td class="text-center">
@@ -245,7 +254,7 @@ $title = "Ver Ventas - Farmacia - Luna Systems Peru";
                                             <?php
                                             if ($fila['estado'] == 1) {
                                                 if ($fila['id_documento'] != 1) {
-                                                    echo '<a target="_blank" href="greenter/files/20605162739-'.$fila['cod_sunat'].'-'.$fila['serie'].'-'.$fila['numero'].'.xml" class="btn btn-primary btn-sm"><i class="fa fa-file-pdf-o"></i> XML</a>';
+                                                    echo '<a target="_blank" href="greenter/files/20605162739-' . $fila['cod_sunat'] . '-' . $fila['serie'] . '-' . $fila['numero'] . '.xml" class="btn btn-primary btn-sm"><i class="fa fa-file-pdf-o"></i> XML</a>';
                                                 }
                                                 ?>
                                                 <button class="btn btn-info btn-sm" title="Ver Detalle" onclick="obtener_detalle('<?php echo $fila['id_venta'] ?>', '<?php echo $fila['periodo'] ?>')"><i class="fa fa-eye-slash"></i></button>
@@ -410,6 +419,15 @@ $title = "Ver Ventas - Farmacia - Luna Systems Peru";
                 window.location.href = 'procesos/del_venta.php?id_venta=' + id_venta + '&periodo=' + periodo;
             }
         });
+    }
+
+    function cargarXLS() {
+        periodo = document.getElementById('input-periodo').value
+        empresa = document.getElementById('input-empresa').value
+        tienda = document.getElementById('input-tienda').value
+        $.get('reports/xls_ventas_fechas.php', {'periodo': periodo, 'tienda': tienda, 'empresa': empresa}, function (data) {
+            console.log(data)
+        })
     }
 
 
