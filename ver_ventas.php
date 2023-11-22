@@ -126,9 +126,9 @@ $title = "Ver Ventas - Farmacia - Luna Systems Peru";
                             </div>
 
                             <div class="btn-group">
-                                <input type="hidden" id="input-periodo" value="<?php echo $c_venta->getPeriodo()?>" >
-                                <input type="hidden" id="input-empresa"value="<?php echo $c_venta->getIdEmpresa() ?>" >
-                                <input type="hidden" id="input-tienda" value="<?php echo $c_venta->getIdSucursal() ?>" >
+                                <input type="hidden" id="input-periodo" value="<?php echo $c_venta->getPeriodo() ?>">
+                                <input type="hidden" id="input-empresa" value="<?php echo $c_venta->getIdEmpresa() ?>">
+                                <input type="hidden" id="input-tienda" value="<?php echo $c_venta->getIdSucursal() ?>">
                                 <button type="button" onclick="cargarXLS()" class="btn btn-info">Ver EXCEL</button>
                             </div>
 
@@ -272,6 +272,11 @@ $title = "Ver Ventas - Farmacia - Luna Systems Peru";
                                 ?>
                                 </tbody>
                             </table>
+                        </div>
+                    </div>
+                    <div class="panel-footer">
+                        <div class="btn-group">
+                            <button type="button" onclick="obtenerTXTComparativa()" class="btn btn-info">generar TXT consulta MASIVA</button>
                         </div>
                     </div>
                 </div>
@@ -429,6 +434,35 @@ $title = "Ver Ventas - Farmacia - Luna Systems Peru";
             console.log(data)
             window.location.href = data;
         })
+    }
+
+    function obtenerTXTComparativa() {
+        let periodo = document.getElementById('input-periodo').value
+        let tienda = document.getElementById('input-tienda').value
+        $.get('reports/txt_consulta_masiva_sunat.php', {'periodo': periodo, 'tienda': tienda}, function (data) {
+            let array_archivos = JSON.parse(data)
+            let archivos = array_archivos.archivos
+            for (var i = 0; i < archivos.length; i++) {
+                //console.log(archivos[i]);
+                generarLink(archivos[i] + ".txt", 'reports/tmp/')
+            }
+        })
+    }
+
+    function generarLink(file, carpeta) {
+        var downloadLink = document.createElement("a");
+        downloadLink.download = file;
+        downloadLink.innerHTML = "Download File";
+        if (window.webkitURL != null) {
+            downloadLink.href = carpeta + file + "?v=" + Date.now();
+        } else {
+            downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
+            downloadLink.onclick = destroyClickedElement;
+            downloadLink.style.display = "none";
+            document.body.appendChild(downloadLink);
+        }
+
+        downloadLink.click();
     }
 
 

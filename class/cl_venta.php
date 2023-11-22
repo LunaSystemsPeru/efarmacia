@@ -27,6 +27,13 @@ class cl_venta
     private $id_sucursal;
 
     /**
+     * cl_venta constructor.
+     */
+    public function __construct()
+    {
+    }
+
+    /**
      * @return mixed
      */
     public function getEnviadoSunat()
@@ -56,13 +63,6 @@ class cl_venta
     public function setIdSucursal($id_sucursal)
     {
         $this->id_sucursal = $id_sucursal;
-    }
-
-    /**
-     * cl_venta constructor.
-     */
-    public function __construct()
-    {
     }
 
     /**
@@ -344,7 +344,7 @@ class cl_venta
             inner join usuario u on v.id_empresa = u.id_empresa and u.id_usuario = v.id_usuario 
             where v.id_empresa = '$this->id_empresa' and v.periodo = '$this->periodo' and v.id_sucursal = '$this->id_sucursal' 
             order by v.fecha asc, v.numero asc";
-       // echo $query;
+        // echo $query;
         $resultado = $conn->query($query);
         return $resultado->fetch_all(MYSQLI_ASSOC);
     }
@@ -425,6 +425,17 @@ class cl_venta
                 from venta as v 
                 where v.id_documento = 2 and month(v.fecha) = 9 and year(v.fecha) = 2022
                 GROUP by v.fecha";
+        return $conn->query($query);
+    }
+
+    public function verComprobantesMensual()
+    {
+        global $conn;
+        $query = "select e.ruc, ds.cod_sunat, v.serie, v.numero, v.fecha, v.total
+                from venta as v
+                    inner join documentos_sunat ds on v.id_documento = ds.id_documento
+                    inner join empresa e on v.id_empresa = e.id_empresa
+                where v.id_sucursal = '$this->id_sucursal' and v.periodo = '$this->periodo' and v.id_documento in (3,5,2)";
         return $conn->query($query);
     }
 }
