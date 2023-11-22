@@ -54,7 +54,7 @@ foreach ($array_lista as $fila) {
         $fila['fecha'],
         $fila['documentos_sunat'] . " | " . $fila['serie'] . "-" . $fila['numero'],
         $fila['documento']. " - " . $fila['proveedor'],
-        "-",
+        $fila['nsucursal'],
         $fila['username'],
         $fila['nombre'],
         $fila['presentacion'],

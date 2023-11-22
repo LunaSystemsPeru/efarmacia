@@ -48,9 +48,10 @@ class cl_reporte_inventario
     function verIngresosProductosIndividuales()
     {
         global $conn;
-        $query = "select i.fecha, i.id_documento, p.documento, p.nombre as proveedor, ds.nombre as documentos_sunat, i.serie, i.numero, u.username, ip.id_producto, pr.nombre, pr.id_laboratorio, lb.nombre as laboratorio, pr.id_presentacion, ps.nombre as presentacion, ip.lote, ip.vcto, ip.cantidad, p.costo, ip.precio
+        $query = "select i.fecha, i.id_documento, p.documento, p.nombre as proveedor, ds.nombre as documentos_sunat, i.serie, i.numero, u.username, ip.id_producto, pr.nombre, pr.id_laboratorio, lb.nombre as laboratorio, pr.id_presentacion, ps.nombre as presentacion, ip.lote, ip.vcto, ip.cantidad, ip.costo , ip.precio, s.nombre as nsucursal
                 from ingreso_producto as ip 
                 inner join ingreso as i on i.periodo = ip.periodo and i.id_ingreso = ip.id_ingreso and i.id_empresa = ip.id_empresa
+                inner join sucursales s on i.id_empresa = s.id_empresa and i.id_sucursal = s.id_sucursal 
                 inner join producto as pr on pr.id_producto = ip.id_producto and pr.id_empresa = ip.id_empresa
                 inner join documentos_sunat as ds on ds.id_documento = i.id_documento
                 inner join proveedor as p on p.id_proveedor = i.id_proveedor and p.id_empresa = i.id_empresa
@@ -75,7 +76,7 @@ class cl_reporte_inventario
                 where ps.id_sucursal = '$this->sucursalid' and ps.id_empresa = '$this->empresaid' 
                 order by p.nombre asc";
         $resultado = $conn->query($query);
-        $fila = $resultado->fetch_all(MYSQLI_ASSOC );
+        $fila = $resultado->fetch_all(MYSQLI_ASSOC);
         return $fila;
     }
 
