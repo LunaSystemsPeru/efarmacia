@@ -216,13 +216,16 @@ $title = "Ver Ventas - Farmacia - Luna Systems Peru";
                                     <th width="11%">Usuario</th>
                                     <th width="6%">Total</th>
                                     <th width="10%">Estado</th>
+                                    <th>Sunat</th>
                                     <th width="15%">Acciones</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <?php
                                 $a_ventas = $c_venta->ver_ventas();
-                                foreach ($a_ventas as $fila) {
+                                foreach ($a_ventas
+
+                                         as $fila) {
                                     $estado = "";
                                     if ($fila['estado'] == 1) {
                                         $total = $fila['total'];
@@ -247,6 +250,19 @@ $title = "Ver Ventas - Farmacia - Luna Systems Peru";
                                         <td class="text-right"><?php echo number_format($total, 2) ?></td>
                                         <td class="text-center">
                                             <?php echo $estado; ?>
+                                        </td>
+                                        <td class="text-center">
+                                            <?php
+                                            if ($fila['id_documento'] != 1) {
+                                                if ($fila['enviado_sunat'] == 1) {
+                                                    echo "<label class='label label-info'>Enviado</label>";
+                                                } else {
+                                                    echo "<label class='label label-warning'>Pendiente</label>";
+                                                }
+                                            } else {
+                                                echo "";
+                                            }
+                                            ?>
                                         </td>
                                         <td class="text-center">
 
@@ -278,6 +294,9 @@ $title = "Ver Ventas - Farmacia - Luna Systems Peru";
                         <div class="btn-group">
                             <button type="button" onclick="obtenerTXTComparativa()" class="btn btn-info">generar TXT consulta MASIVA</button>
                         </div>
+                        <div class="btn-group">
+                            <button class="btn btn-warning" data-toggle="modal" data-target="#modalLoadTXT">Cargar Resultado</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -296,6 +315,32 @@ $title = "Ver Ventas - Farmacia - Luna Systems Peru";
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
                     </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MODAL PARA CARGAR RESULTAO DE SUNAT -->
+        <div class="modal fade" id="modalLoadTXT" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form class="form-horizontal" action="procesos/cargar_txt_sunat.php" method="post" enctype="multipart/form-data">
+                        <div class="color-line"></div>
+                        <div class="modal-header text-center">
+                            <h4 class="modal-title">Actualizar Estado</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">seleccionar TXT </label>
+                                <div class="col-lg-10">
+                                    <input type="file" name="file_txt" class="form-control" accept="text/plain">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                            <button type="submit" class="btn btn-primary">Guardar</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

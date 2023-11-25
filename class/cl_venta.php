@@ -337,7 +337,7 @@ class cl_venta
     function ver_ventas()
     {
         global $conn;
-        $query = "select v.periodo, v.id_venta, v.fecha, ds.abreviatura, v.serie, v.numero, c.documento, c.nombre, v.total, v.pagado, v.estado, u.username, v.id_documento, ds.cod_sunat   
+        $query = "select v.periodo, v.id_venta, v.fecha, ds.abreviatura, v.serie, v.numero, c.documento, c.nombre, v.total, v.pagado, v.estado, u.username, v.id_documento, ds.cod_sunat, v.enviado_sunat   
             from venta v 
             inner join documentos_sunat ds on v.id_documento = ds.id_documento 
             inner join cliente c on v.id_cliente = c.id_cliente and v.id_empresa = c.id_empresa 
@@ -393,8 +393,8 @@ class cl_venta
         FROM venta AS v 
             INNER JOIN documentos_sunat ds ON v.id_documento = ds.id_documento
             INNER JOIN cliente c ON v.id_cliente = c.id_cliente AND  c.id_empresa=v.id_empresa
-        where v.id_empresa = '$this->id_empresa' and v.fecha = '$this->fecha' and v.id_documento in (2,5)";
-        //echo $query ."<br>";
+        where v.id_empresa = '$this->id_empresa' and v.fecha = '$this->fecha' and v.id_documento in (2,5) and v.enviado_sunat = 0";
+        echo $query ."<br>";
         return $conn->query($query);
     }
 
@@ -414,7 +414,7 @@ class cl_venta
         global $conn;
         $query = "update venta 
         set enviado_sunat = 1 
-        where id_venta = '$this->id_venta'";
+        where id_venta = '$this->id_venta' and periodo = '$this->periodo'";
         return $conn->query($query);
     }
 
@@ -435,7 +435,34 @@ class cl_venta
                 from venta as v
                     inner join documentos_sunat ds on v.id_documento = ds.id_documento
                     inner join empresa e on v.id_empresa = e.id_empresa
-                where v.id_sucursal = '$this->id_sucursal' and v.periodo = '$this->periodo' and v.id_documento in (3,5,2)";
+                where v.periodo = '$this->periodo' and v.id_documento in (3,5,2)";
+        return $conn->query($query);
+    }
+
+    public function actualizarEstadoSUNAT()
+    {
+        global $conn;
+        $query = "update venta set enviado_sunat = '$this->enviado_sunat' where serie = '$this->serie' and numero = '$this->numero'";
+        echo $query;
+        return $conn->query($query);
+    }
+
+    public function verResumenPendiente()
+    {
+        global $conn;
+        $query = "select COUNT(*) as nroitems, v.fecha, v.id_empresa, v.id_documento, ds.nombre, 1 as estado
+                    from venta as v 
+                        inner join documentos_sunat as ds on ds.id_documento = v.id_documento 
+                    where v.enviado_sunat != 1 and v.fecha > '2023-09-30' and v.id_documento in (2, 3, 5) 
+                    group by v.fecha, v.id_documento 
+                    union all 
+                   select COUNT(*) as nroitems, v.fecha, v.id_empresa, v.id_documento, ds.nombre, 2 as estado
+                    from venta as v 
+                        inner join documentos_sunat as ds on ds.id_documento = v.id_documento 
+                    where v.enviado_sunat != 1 and v.fecha > '2023-09-30' and v.id_documento in (2, 3, 5) and v.estado = 2
+                    group by v.fecha, v.id_documento 
+                    order by fecha desc ";
+      //  echo $query;
         return $conn->query($query);
     }
 }

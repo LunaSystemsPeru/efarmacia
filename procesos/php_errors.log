@@ -1,2 +1,36 @@
 [20-Jun-2023 08:32:40 America/Los_Angeles] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\clientes\alufarma\procesos\login.php:30) in C:\xampp\htdocs\clientes\alufarma\procesos\login.php on line 39
 [20-Nov-2023 14:36:33 America/Los_Angeles] PHP Warning:  Undefined array key "id_empresa" in C:\xampp\htdocs\clientes\alufarma\procesos\verificar_documento_cliente.php on line 14
+[25-Nov-2023 06:31:37 America/Los_Angeles] PHP Deprecated:  fopen(): Passing null to parameter #1 ($filename) of type string is deprecated in C:\xampp\htdocs\clientes\alufarma\procesos\cargar_txt_sunat.php on line 11
+[25-Nov-2023 06:31:37 America/Los_Angeles] PHP Fatal error:  Uncaught ValueError: Path cannot be empty in C:\xampp\htdocs\clientes\alufarma\procesos\cargar_txt_sunat.php:11
+Stack trace:
+#0 C:\xampp\htdocs\clientes\alufarma\procesos\cargar_txt_sunat.php(11): fopen('', 'r')
+#1 {main}
+  thrown in C:\xampp\htdocs\clientes\alufarma\procesos\cargar_txt_sunat.php on line 11
+[25-Nov-2023 06:32:05 America/Los_Angeles] PHP Deprecated:  fopen(): Passing null to parameter #1 ($filename) of type string is deprecated in C:\xampp\htdocs\clientes\alufarma\procesos\cargar_txt_sunat.php on line 11
+[25-Nov-2023 06:32:05 America/Los_Angeles] PHP Fatal error:  Uncaught ValueError: Path cannot be empty in C:\xampp\htdocs\clientes\alufarma\procesos\cargar_txt_sunat.php:11
+Stack trace:
+#0 C:\xampp\htdocs\clientes\alufarma\procesos\cargar_txt_sunat.php(11): fopen('', 'r')
+#1 {main}
+  thrown in C:\xampp\htdocs\clientes\alufarma\procesos\cargar_txt_sunat.php on line 11
+[25-Nov-2023 06:33:21 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: fopen(): Argument #1 ($filename) must be of type string, array given in C:\xampp\htdocs\clientes\alufarma\procesos\cargar_txt_sunat.php:12
+Stack trace:
+#0 C:\xampp\htdocs\clientes\alufarma\procesos\cargar_txt_sunat.php(12): fopen(Array, 'r')
+#1 {main}
+  thrown in C:\xampp\htdocs\clientes\alufarma\procesos\cargar_txt_sunat.php on line 12
+[25-Nov-2023 06:33:40 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: fopen(): Argument #1 ($filename) must be of type string, array given in C:\xampp\htdocs\clientes\alufarma\procesos\cargar_txt_sunat.php:13
+Stack trace:
+#0 C:\xampp\htdocs\clientes\alufarma\procesos\cargar_txt_sunat.php(13): fopen(Array, 'r')
+#1 {main}
+  thrown in C:\xampp\htdocs\clientes\alufarma\procesos\cargar_txt_sunat.php on line 13
+[25-Nov-2023 06:33:52 America/Los_Angeles] PHP Warning:  fopen(CONSULTA_20605162739_202311_0_Resultado.txt): Failed to open stream: No such file or directory in C:\xampp\htdocs\clientes\alufarma\procesos\cargar_txt_sunat.php on line 13
+[25-Nov-2023 06:33:52 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: feof(): Argument #1 ($stream) must be of type resource, bool given in C:\xampp\htdocs\clientes\alufarma\procesos\cargar_txt_sunat.php:14
+Stack trace:
+#0 C:\xampp\htdocs\clientes\alufarma\procesos\cargar_txt_sunat.php(14): feof(false)
+#1 {main}
+  thrown in C:\xampp\htdocs\clientes\alufarma\procesos\cargar_txt_sunat.php on line 14
+[25-Nov-2023 06:37:57 America/Los_Angeles] PHP Warning:  fopen(CONSULTA_20605162739_202311_0_Resultado.txt): Failed to open stream: No such file or directory in C:\xampp\htdocs\clientes\alufarma\procesos\cargar_txt_sunat.php on line 23
+[25-Nov-2023 06:37:57 America/Los_Angeles] PHP Fatal error:  Uncaught TypeError: feof(): Argument #1 ($stream) must be of type resource, bool given in C:\xampp\htdocs\clientes\alufarma\procesos\cargar_txt_sunat.php:24
+Stack trace:
+#0 C:\xampp\htdocs\clientes\alufarma\procesos\cargar_txt_sunat.php(24): feof(false)
+#1 {main}
+  thrown in C:\xampp\htdocs\clientes\alufarma\procesos\cargar_txt_sunat.php on line 24
