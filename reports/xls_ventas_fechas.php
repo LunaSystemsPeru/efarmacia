@@ -15,7 +15,12 @@ $periodo = filter_input(INPUT_GET, 'periodo');
 $tienda = filter_input(INPUT_GET, 'tienda');
 $empresa = filter_input(INPUT_GET, 'empresa');
 
-unlink('reporte_venta_' . $periodo . '.xlsx');
+$nombre_xls = 'reporte_venta_' . $periodo . '.xlsx';
+
+if (file_exists($nombre_xls)) {
+    unlink($nombre_xls);
+}
+
 
 $Sucursal->setIdEmpresa($empresa);
 $Sucursal->setIdSucursal($tienda);
@@ -43,7 +48,7 @@ $fila1 = [
     "",
     ""
 ];
-$books[] = $fila1;
+//$books[] = $fila1;
 //$books[] = ['', ''];
 
 $titulos = ['#', 'FECHA', 'TIPO DOCUMENTO', 'SERIE COMPROBANTE', 'NUMERO COMPROBANTE', 'DOCUMENTO CLIENTE', 'DATOS CLIENTE', 'SUB TOTAL', 'IGV', 'TOTAL', 'TIENDA', 'USUARIO', 'ESTADO COMPROBANTE', 'ESTADO SUNAT', 'IDSISTEMA'];
@@ -65,7 +70,7 @@ foreach ($array_ventas as $item) {
     $fila[] = "<center>" . $item['serie'] . "</center>";
     $fila[] = "<center>" . $item['numero'] . "</center>";
     $fila[] = "<center>" . $item['documento'] . "</center>";
-    $fila[] = addslashes($item['nombre']);
+    $fila[] = $nrofila . "\0" . $item['nombre'];
     $fila[] = number_format($subtotal, 2);
     $fila[] = number_format($igv, 2);
     $fila[] = number_format($total, 2);
@@ -75,11 +80,14 @@ foreach ($array_ventas as $item) {
     $fila[] = $item['estado'];
     $fila[] = $item['id_venta'];
     $books[] = $fila;
+
+    // ECHO "\0" . $item['nombre'] .PHP_EOL;
 }
+
 
 try {
     $xlsx = SimpleXLSXGen::fromArray($books);
-    $xlsx->saveAs('reporte_venta_' . $periodo . '.xlsx');
+    $xlsx->saveAs($nombre_xls);
 } catch (Exception $exception) {
     print_r($exception);
 }
@@ -87,4 +95,4 @@ try {
 $host = $_SERVER["HTTP_HOST"];
 $url = $_SERVER["REQUEST_URI"];
 
-echo "https://" . $host . dirname($_SERVER["REQUEST_URI"]) . '/reporte_venta_' . $periodo . '.xlsx';
+echo "https://" . $host . dirname($_SERVER["REQUEST_URI"]) . '/' . $nombre_xls;

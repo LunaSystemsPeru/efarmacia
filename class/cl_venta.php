@@ -344,7 +344,7 @@ class cl_venta
             inner join usuario u on v.id_empresa = u.id_empresa and u.id_usuario = v.id_usuario 
             where v.id_empresa = '$this->id_empresa' and v.periodo = '$this->periodo' and v.id_sucursal = '$this->id_sucursal' 
             order by v.fecha asc, v.numero asc";
-       // echo $query;
+        //echo $query;
         $resultado = $conn->query($query);
         return $resultado->fetch_all(MYSQLI_ASSOC);
     }
