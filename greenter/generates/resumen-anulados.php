@@ -3,10 +3,9 @@ declare(strict_types=1);
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
 
-use Greenter\Model\Response\SummaryResult;
-use Greenter\Model\Sale\Document;
-use Greenter\Model\Company\Company;
 use Greenter\Model\Company\Address;
+use Greenter\Model\Company\Company;
+use Greenter\Model\Response\SummaryResult;
 use Greenter\Model\Summary\Summary;
 use Greenter\Model\Summary\SummaryDetail;
 
@@ -232,6 +231,7 @@ if ($contar_items > 0) {
     $c_resumen->setIdEmpresa($c_empresa->getIdEmpresa());
     $c_resumen->setFecha($fecha);
     $c_resumen->setCantidadItems($contar_items);
+    $c_resumen->setTicket($ticket);
     $c_resumen->setTipo(1);
 
     $c_resumen->insertar();

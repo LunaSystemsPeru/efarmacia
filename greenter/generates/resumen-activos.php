@@ -23,6 +23,8 @@ require __DIR__ . '/../../class/cl_ventas_referencias.php';
 $id_empresa = filter_input(INPUT_GET, 'id_empresa');
 $fecha = filter_input(INPUT_GET, 'fecha');
 
+$c_resumen = new cl_resumen_diario();
+
 $c_empresa = new cl_empresa();
 $c_empresa->setIdEmpresa($id_empresa);
 $c_empresa->obtener_datos();
@@ -50,6 +52,7 @@ $resultado_anuladas = $c_anulada->verResumenAnuladas();
 
 //enviar documento del dia solo activos
 $contar_items = 0;
+echo $contar_items;
 $array_items = array();
 foreach ($resultado_empresa as $fila) {
     $contar_items++;
@@ -203,7 +206,7 @@ if ($contar_items > 0) {
     $sum = new Summary();
     $sum->setFecGeneracion(\DateTime::createFromFormat('Y-m-d', $fecha))
         ->setFecResumen(\DateTime::createFromFormat('Y-m-d', $fecha))
-        ->setCorrelativo('001')
+        ->setCorrelativo($c_resumen->obtenerNroResumen())
         ->setCompany($empresa)
         ->setDetails($array_items);
 
@@ -215,7 +218,6 @@ if ($contar_items > 0) {
     // Guardar XML firmado digitalmente.
     file_put_contents("../RC/" . $sum->getName() . '.xml',
         $see->getFactory()->getLastXml());
-    $c_resumen = new cl_resumen_diario();
 
 
     if (!$res->isSuccess()) {
@@ -232,6 +234,7 @@ if ($contar_items > 0) {
     $c_resumen->setIdEmpresa($c_empresa->getIdEmpresa());
     $c_resumen->setFecha($fecha);
     $c_resumen->setCantidadItems($contar_items);
+    $c_resumen->setTicket($ticket);
     $c_resumen->setTipo(1);
 
     $c_resumen->insertar();

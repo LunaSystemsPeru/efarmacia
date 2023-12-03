@@ -121,7 +121,7 @@ class cl_resumen_diario
         $resultado = $conn->query($query);
         if ($resultado->num_rows > 0) {
             while ($fila = $resultado->fetch_assoc()) {
-                $this->id_resumen_diario= $fila ['codigo'];
+                $this->id_resumen_diario = $fila ['codigo'];
             }
         }
 
@@ -134,5 +134,18 @@ class cl_resumen_diario
         values ('$this->id_resumen_diario', '$this->id_empresa', '$this->fecha', '$this->ticket', '$this->cantidad_items', '$this->tipo')";
         echo $sql;
         return $conn->query($sql);
+    }
+
+    public function obtenerNroResumen()
+    {
+        global $conn;
+        $query = "select count(*) + 1 as nro from resumen_diario 
+                    where fecha = '$this->fecha'";
+        $resultado = $conn->query($query);
+        if ($resultado->num_rows > 0) {
+            if ($fila = $resultado->fetch_assoc()) {
+                return $fila['nro'];
+            }
+        }
     }
 }

@@ -1,9 +1,10 @@
 /.idea/*
-/greenter/*
-!/greenter/generates/
-!/greenter/src/
-!/greenter/resources/
-/nbproject/private/
-reports/*.xlsx
+/greenter/vendor
+/nbproject/
 *error_log*
 *.log
+*.txt
+*.xml
+*.zip
+*.xls
+*.xlsx

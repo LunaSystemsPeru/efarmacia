@@ -1,6 +1,12 @@
 <?php
 session_start();
 
+if (isset($_SESSION['id_empresa'])) {
+    if ($_SESSION['id_empresa']) {
+        header("Location: index_graficas.php");
+    }
+}
+
 /*
 $link = $_SERVER['HTTP_HOST'] ;
 if ($link != "alufarma.ml") {

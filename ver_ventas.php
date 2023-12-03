@@ -126,9 +126,9 @@ $title = "Ver Ventas - Farmacia - Luna Systems Peru";
                             </div>
 
                             <div class="btn-group">
-                                <input type="hidden" id="input-periodo" value="<?php echo $c_venta->getPeriodo()?>" >
-                                <input type="hidden" id="input-empresa"value="<?php echo $c_venta->getIdEmpresa() ?>" >
-                                <input type="hidden" id="input-tienda" value="<?php echo $c_venta->getIdSucursal() ?>" >
+                                <input type="hidden" id="input-periodo" value="<?php echo $c_venta->getPeriodo() ?>">
+                                <input type="hidden" id="input-empresa" value="<?php echo $c_venta->getIdEmpresa() ?>">
+                                <input type="hidden" id="input-tienda" value="<?php echo $c_venta->getIdSucursal() ?>">
                                 <button type="button" onclick="cargarXLS()" class="btn btn-info">Ver EXCEL</button>
                             </div>
 
@@ -216,13 +216,16 @@ $title = "Ver Ventas - Farmacia - Luna Systems Peru";
                                     <th width="11%">Usuario</th>
                                     <th width="6%">Total</th>
                                     <th width="10%">Estado</th>
+                                    <th>Sunat</th>
                                     <th width="15%">Acciones</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <?php
                                 $a_ventas = $c_venta->ver_ventas();
-                                foreach ($a_ventas as $fila) {
+                                foreach ($a_ventas
+
+                                         as $fila) {
                                     $estado = "";
                                     if ($fila['estado'] == 1) {
                                         $total = $fila['total'];
@@ -247,6 +250,19 @@ $title = "Ver Ventas - Farmacia - Luna Systems Peru";
                                         <td class="text-right"><?php echo number_format($total, 2) ?></td>
                                         <td class="text-center">
                                             <?php echo $estado; ?>
+                                        </td>
+                                        <td class="text-center">
+                                            <?php
+                                            if ($fila['id_documento'] != 1) {
+                                                if ($fila['enviado_sunat'] == 1) {
+                                                    echo "<label class='label label-info'>Enviado</label>";
+                                                } else {
+                                                    echo "<label class='label label-warning'>Pendiente</label>";
+                                                }
+                                            } else {
+                                                echo "";
+                                            }
+                                            ?>
                                         </td>
                                         <td class="text-center">
 
@@ -274,6 +290,14 @@ $title = "Ver Ventas - Farmacia - Luna Systems Peru";
                             </table>
                         </div>
                     </div>
+                    <div class="panel-footer">
+                        <div class="btn-group">
+                            <button type="button" onclick="obtenerTXTComparativa()" class="btn btn-info">generar TXT consulta MASIVA</button>
+                        </div>
+                        <div class="btn-group">
+                            <button class="btn btn-warning" data-toggle="modal" data-target="#modalLoadTXT">Cargar Resultado</button>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -291,6 +315,32 @@ $title = "Ver Ventas - Farmacia - Luna Systems Peru";
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
                     </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MODAL PARA CARGAR RESULTAO DE SUNAT -->
+        <div class="modal fade" id="modalLoadTXT" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form class="form-horizontal" action="procesos/cargar_txt_sunat.php" method="post" enctype="multipart/form-data">
+                        <div class="color-line"></div>
+                        <div class="modal-header text-center">
+                            <h4 class="modal-title">Actualizar Estado</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">seleccionar TXT </label>
+                                <div class="col-lg-10">
+                                    <input type="file" name="file_txt" class="form-control" accept="text/plain">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                            <button type="submit" class="btn btn-primary">Guardar</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -427,7 +477,37 @@ $title = "Ver Ventas - Farmacia - Luna Systems Peru";
         tienda = document.getElementById('input-tienda').value
         $.get('reports/xls_ventas_fechas.php', {'periodo': periodo, 'tienda': tienda, 'empresa': empresa}, function (data) {
             console.log(data)
+            window.location.href = data;
         })
+    }
+
+    function obtenerTXTComparativa() {
+        let periodo = document.getElementById('input-periodo').value
+        let tienda = document.getElementById('input-tienda').value
+        $.get('reports/txt_consulta_masiva_sunat.php', {'periodo': periodo, 'tienda': tienda}, function (data) {
+            let array_archivos = JSON.parse(data)
+            let archivos = array_archivos.archivos
+            for (var i = 0; i < archivos.length; i++) {
+                //console.log(archivos[i]);
+                generarLink(archivos[i] + ".txt", 'reports/tmp/')
+            }
+        })
+    }
+
+    function generarLink(file, carpeta) {
+        var downloadLink = document.createElement("a");
+        downloadLink.download = file;
+        downloadLink.innerHTML = "Download File";
+        if (window.webkitURL != null) {
+            downloadLink.href = carpeta + file + "?v=" + Date.now();
+        } else {
+            downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
+            downloadLink.onclick = destroyClickedElement;
+            downloadLink.style.display = "none";
+            document.body.appendChild(downloadLink);
+        }
+
+        downloadLink.click();
     }
 
 
