@@ -23,31 +23,6 @@ foreach ($array_empresas as $fila) {
         echo "----ID EMPRESA: " . $fila['id_empresa'] . " nombre " . $fila['razon_social'] . PHP_EOL;
         $id_empresa = $fila['id_empresa'];
 
-
-        //enviar resumen de boletas
-        $ruta = $rutabase . "enviar_factura_xml.php";
-        echo $ruta . PHP_EOL;
-        $post = [
-            'id_empresa' => $id_empresa,
-            'fecha' => $fecha
-        ];
-        print_r($post);
-
-        /*
-        $ch_factura = curl_init();
-        curl_setopt($ch_factura, CURLOPT_URL, $ruta);
-        curl_setopt($ch_factura, CURLOPT_POST, 1);
-        curl_setopt($ch_factura, CURLOPT_SSL_VERIFYPEER, false);
-        curl_setopt($ch_factura, CURLOPT_POSTFIELDS, $post);
-        curl_setopt($ch_factura, CURLOPT_RETURNTRANSFER, true);
-        $respuesta_factura = curl_exec($ch_factura);
-        curl_close($ch_factura);
-
-        echo PHP_EOL . " respuesta factura " . PHP_EOL;
-        print_r($respuesta_factura);
-        echo PHP_EOL;
-        */
-
         $ruta = $rutabase . "resumen-activos.php?id_empresa=" . $id_empresa . '&fecha=' . $fecha;
         //enviar resumen de facturas
         $ch_resumen = curl_init();

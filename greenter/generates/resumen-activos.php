@@ -44,16 +44,12 @@ $c_referencia = new cl_ventas_referencias();
 
 $resultado_empresa = $c_venta->verDocumentosResumen();
 
-$c_anulada = new cl_ventas_anuladas();
-$c_anulada->setIdEmpresa($id_empresa);
-$c_anulada->setFecha($fecha);
-
-$resultado_anuladas = $c_anulada->verResumenAnuladas();
-
 //enviar documento del dia solo activos
 $contar_items = 0;
-echo $contar_items;
 $array_items = array();
+
+$array_comprobantes = [];
+
 foreach ($resultado_empresa as $fila) {
     $contar_items++;
     //tipo cliente
@@ -92,100 +88,27 @@ foreach ($resultado_empresa as $fila) {
         ->setMtoOtrosCargos(0)
         ->setMtoIGV($igv);
 
+    //si es nota de credito
     if ($fila['id_documento'] == 5) {
-        //si es nota de credito
         $c_referencia->setIdNota($fila['id_venta']);
         $c_referencia->obtenerDatos();
-        //obtener el i dde la venta amarrada
 
+        //obtener laa serie y el numero y mostrar
         $c_venta_afecta = new cl_venta();
         $c_venta_afecta->setIdVenta($c_referencia->getIdVenta());
         $c_venta_afecta->obtener_datos();
 
-
-        //obtener laa serie y el numero y mostrar
-        $item->setDocReferencia($c_venta_afecta->getSerie() . "-" . $c_venta_afecta->getNumero());
+        $item->setDocReferencia((new Document())
+            ->setTipoDoc('03')
+            ->setNroDoc($c_venta_afecta->getSerie() . "-" . $c_venta_afecta->getNumero()));
     }
 
-    $c_venta->setIdEmpresa($id_empresa);
-    $c_venta->setPeriodo($fila["periodo"]);
-    $c_venta->setIdVenta($fila["id_venta"]);
-    $c_venta->actualizar_envio();
-
+    $array_comprobantes[] = ["periodo" => $fila['periodo'], "id_venta" => $fila['id_venta']];
     $array_items[] = $item;
 
 }
 
-//enviar documentos anulados en el dia
-foreach ($resultado_anuladas as $fila) {
-    $contar_items++;
-    //tipo cliente
-    $tipo_doc = "1";
-    $doc_cliente = "00000000";
-    if (strlen($fila['documento']) == 8) {
-        $tipo_doc = "1";
-        $doc_cliente = $fila['documento'];
-    } else if (strlen($fila['documento']) == 11) {
-        $tipo_doc = "6";
-        $doc_cliente = $fila['documento'];
-    } else {
-        $tipo_doc = "0";
-    }
-
-    //estado
-    $estado = $fila['estado'];
-    $estado = "3";
-    if ($fila['estado'] == 1) {
-        $estado = "3";
-    }
-    if ($fila['estado'] == 2) {
-        $estado = "3";
-    }
-
-    //totales
-    $total = floatval($fila['total']);
-    $subtotal = $total / 1.18;
-    $igv = $total / 1.18 * 0.18;
-
-
-    $item = new SummaryDetail();
-    $item->setTipoDoc($fila['cod_sunat'])
-        ->setSerieNro($fila['serie'] . "-" . $fila['numero'])
-        ->setEstado($estado)
-        ->setClienteTipo($tipo_doc)
-        ->setClienteNro($doc_cliente)
-        ->setTotal($total)
-        ->setMtoOperGravadas($subtotal)
-        ->setMtoOperInafectas(0)
-        ->setMtoOperExoneradas(0)
-        ->setMtoOtrosCargos(0)
-        ->setMtoIGV($igv);
-
-    if ($fila['id_documento'] == 5) {
-        //si es nota de credito
-        $c_referencia->setIdNota($fila['id_venta']);
-        $c_referencia->obtenerDatos();
-        //obtener el i dde la venta amarrada
-
-        $c_venta_afecta = new cl_venta();
-        $c_venta_afecta->setIdVenta($c_referencia->getIdVenta());
-        $c_venta_afecta->obtener_datos();
-
-
-        //obtener laa serie y el numero y mostrar
-        $item->setDocReferencia($c_venta_afecta->getSerie() . "-" . $c_venta_afecta->getNumero());
-    }
-
-    $c_venta->setIdEmpresa($id_empresa);
-    $c_venta->setPeriodo($fila["periodo"]);
-    $c_venta->setIdVenta($fila["id_venta"]);
-    $c_venta->actualizar_envio();
-
-   // $array_items[] = $item;
-}
-
 if ($contar_items > 0) {
-
     // Emisor
     $empresa = new Company();
     $empresa->setRuc($c_empresa->getRuc())
@@ -200,8 +123,13 @@ if ($contar_items > 0) {
             ->setCodLocal('0000')
             ->setDireccion(addslashes($c_empresa->getDireccion())));
 
-//$util->setRucEmpresa($c_empresa->getRuc());
+    //$util->setRucEmpresa($c_empresa->getRuc());
     echo "nro de items = " . count($array_items) . "<br>";
+
+    $c_resumen->obtenerId();
+    $c_resumen->setIdEmpresa($c_empresa->getIdEmpresa());
+    $c_resumen->setFecha($fecha);
+    $c_resumen->setCantidadItems($contar_items);
 
     $sum = new Summary();
     $sum->setFecGeneracion(\DateTime::createFromFormat('Y-m-d', $fecha))
@@ -221,19 +149,24 @@ if ($contar_items > 0) {
 
 
     if (!$res->isSuccess()) {
-        echo "<br> error al enviar ";
+        echo "<br> error al enviar <br>";
         print_r($res->getError());
         return;
+    }
+
+    //modificar estado suant
+    for ($x = 0; $x < count($array_comprobantes); $x++) {
+        $array_linea = $array_comprobantes[$x];
+        $c_venta->setIdEmpresa($id_empresa);
+        $c_venta->setPeriodo($array_linea["periodo"]);
+        $c_venta->setIdVenta($array_linea["id_venta"]);
+        $c_venta->actualizar_envio();
     }
 
     /**@var $res SummaryResult */
     $ticket = $res->getTicket();
     echo '<br>Ticket :<strong>' . $ticket . '</strong><br>';
 
-    $c_resumen->obtenerId();
-    $c_resumen->setIdEmpresa($c_empresa->getIdEmpresa());
-    $c_resumen->setFecha($fecha);
-    $c_resumen->setCantidadItems($contar_items);
     $c_resumen->setTicket($ticket);
     $c_resumen->setTipo(1);
 

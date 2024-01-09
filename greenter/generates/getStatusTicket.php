@@ -16,20 +16,26 @@ $Config->setRuc($c_empresa->getRuc());
 $Config->setUsersol($c_empresa->getUserSol());
 $Config->setClavesol($c_empresa->getClaveSol());
 
+echo "<pre>";
 
 $see = $Config->getSee();
 $ticket = filter_input(INPUT_GET,'ticket');
 $res = $see->getStatus($ticket);
 if (!$res->isSuccess()) {
-    echo "<br> error al obtener estado de ticket ";
+    echo "error al obtener estado de ticket" . PHP_EOL;
     print_r($res->getError());
     return;
 }
 
+echo PHP_EOL;
+
 $cdr = $res->getCdrResponse();
-print $cdr->getDescription();
-print $cdr->getNotes();
+echo $cdr->getCode() . PHP_EOL;
+echo $cdr->getDescription() . PHP_EOL;
+//echo $cdr->getNotes();
 //$util->writeCdr($sum, $res->getCdrZip());
 // Guardamos el CDR
 
 //$util->showResponse($sum, $cdr);
+
+echo "</pre>";

@@ -20,6 +20,7 @@ require __DIR__ . '/../../class/cl_cliente.php';
 require __DIR__ . '/../../class/cl_empresa.php';
 require __DIR__ . '/../../class/cl_venta_productos.php';
 require __DIR__ . '/../../class/cl_venta_sunat.php';
+require __DIR__ . '/../../class/cl_sucursal.php';
 
 require __DIR__ . '/../../class_varios/NumerosaLetras.php';
 require '../generate_qr/class/GenerarQr.php';
@@ -31,6 +32,11 @@ $c_venta->setIdVenta(filter_input(INPUT_POST, 'id_venta'));
 $c_venta->setIdEmpresa(filter_input(INPUT_POST, 'id_empresa'));
 $c_venta->setPeriodo(filter_input(INPUT_POST, 'periodo'));
 $c_venta->obtener_datos();
+
+$c_sucursal = new cl_sucursal();
+$c_sucursal->setIdSucursal($c_venta->getIdSucursal());
+$c_sucursal->setIdEmpresa($c_venta->getIdEmpresa());
+$c_sucursal->obtener_datos();
 
 $c_cliente = new cl_cliente();
 $c_cliente->setIdCliente($c_venta->getIdCliente());
@@ -61,13 +67,13 @@ $empresa->setRuc($c_empresa->getRuc())
     ->setNombreComercial($c_empresa->getRazonSocial())
     ->setRazonSocial($c_empresa->getRazonSocial())
     ->setAddress((new Address())
-        ->setUbigueo($c_empresa->getUbigeo())
-        ->setDistrito($c_empresa->getDistrito())
-        ->setProvincia($c_empresa->getProvincia())
-        ->setDepartamento($c_empresa->getDepartamento())
+        ->setUbigueo($c_sucursal->getUbigeo())
+        ->setDistrito($c_sucursal->getDistrito())
+        ->setProvincia($c_sucursal->getProvincia())
+        ->setDepartamento($c_sucursal->getDepartamento())
         ->setUrbanizacion('-')
-        ->setCodLocal('0000')
-        ->setDireccion($c_empresa->getDireccion()));
+        ->setCodLocal($c_sucursal->getCodsunat())
+        ->setDireccion($c_sucursal->getDireccion()));
 
 //lista de productos
 
@@ -123,7 +129,7 @@ foreach ($items as $value) {
 }
 
 $c_numeros = new NumerosaLetras();
-$numeros = utf8_decode($c_numeros->to_word(number_format($c_venta->getTotal(), 2, ".", ""), "PEN"));
+$numeros = htmlentities($c_numeros->to_word(number_format($c_venta->getTotal(), 2, ".", ""), "PEN"));
 
 $legend = (new Legend())
     ->setCode('1000') // Monto en letras - Catalog. 52
@@ -156,10 +162,10 @@ $code = "";
 if (!$result->isSuccess()) {
     $indiceaceptado = 3;
     // Mostrar error al conectarse a SUNAT.
-    $observaciones = 'Codigo Error: ' . $result->getError()->getMessage();
+    $observaciones = 'Codigo Error: ' . $result->getError()->getCode() . " - " . $result->getError()->getMessage() ;
     $aceptadosunat = false;
-    echo 'Codigo Error: '.$result->getError()->getCode();
-    echo 'Mensaje Error: '.$result->getError()->getMessage();
+    //echo 'Codigo Error: '.$result->getError()->getCode();
+    //echo 'Mensaje Error: '.$result->getError()->getMessage();
     //exit();
 }
 

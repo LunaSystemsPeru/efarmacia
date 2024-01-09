@@ -9,6 +9,7 @@ class cl_ventas_anuladas
     private $id_empresa;
     private $fecha;
     private $motivo;
+    private $enviado_sunat;
 
     /**
      * VentaAnulada constructor.
@@ -113,10 +114,13 @@ class cl_ventas_anuladas
 
         $sql = "SELECT v.id_venta, v.periodo, v.fecha, va.fecha AS fecha_anulado, ds.cod_sunat, ds.abreviatura, v.serie, v.numero, c.documento, c.nombre, v.total, v.estado, v.id_documento, v.enviado_sunat, v.estado
         FROM ventas_anuladas AS va 
-            INNER JOIN venta AS v ON v.id_venta = va.venta_id_venta 
+            INNER JOIN venta AS v ON v.id_venta = va.venta_id_venta and va.id_empresa = v.id_empresa and va.periodo = v.periodo
             INNER JOIN documentos_sunat ds ON v.id_documento = ds.id_documento
-            INNER JOIN cliente c ON v.id_cliente = c.id_cliente 
-        where v.id_empresa = '$this->id_empresa' and v.fecha = '$this->fecha' and v.id_documento = 2 and v.estado = 2 ";
+            INNER JOIN cliente c ON v.id_cliente = c.id_cliente and v.id_empresa = c.id_empresa
+        where v.id_empresa = '$this->id_empresa' and v.fecha = '$this->fecha' and v.serie like 'B%' and v.estado = 2 
+         order by fecha_anulado asc";
+
+        echo $sql;
         $resultado = $conn->query($sql);
         $fila = $resultado->fetch_all(MYSQLI_ASSOC);
         return $fila;
@@ -125,15 +129,25 @@ class cl_ventas_anuladas
     public function verFacturasAnuladas($id_empresa)
     {
         global $conn;
-
         $sql = "SELECT v.id_venta, v.fecha, va.fecha AS fecha_anulado, ds.cod_sunat, ds.abreviatura, v.serie, v.numero, c.documento, c.nombre, v.total, v.estado, v.id_documento, v.enviado_sunat, v.estado
         FROM ventas_anuladas AS va 
-            INNER JOIN venta AS v ON v.id_venta = va.venta_id_venta 
+            INNER JOIN venta AS v ON v.id_venta = va.venta_id_venta and va.periodo = v.periodo and v.id_empresa = va.id_empresa
             INNER JOIN documentos_sunat ds ON v.id_documento = ds.id_documento
-            INNER JOIN cliente c ON v.id_cliente = c.id_cliente 
+            INNER JOIN cliente c ON v.id_cliente = c.id_cliente and v.id_empresa = c.id_empresa
         where v.id_empresa = '$id_empresa' and v.fecha = '$this->fecha' and v.id_documento = 3 and v.estado = 2 ";
         $resultado = $conn->query($sql);
-        $fila = $resultado->fetch_all(MYSQLI_ASSOC);
-        return $fila;
+        return $resultado->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function verComprobantesAnuladosFecha()
+    {
+        global $conn;
+        $sql = "select count(*) as cantidad_comprobantes, va.fecha as fecha_anulacion, v.fecha as fecha_venta, va.id_empresa, v.id_documento
+                from ventas_anuladas va 
+                inner join venta as v on v.id_empresa = va.id_empresa and v.periodo = va.periodo and v.id_venta = va.venta_id_venta
+                where va.fecha = '$this->fecha'  and v.id_documento != '1'
+                group by va.fecha, v.fecha, va.id_empresa, v.id_documento;";
+        $resultado = $conn->query($sql);
+        return $resultado->fetch_all(MYSQLI_ASSOC);
     }
 }

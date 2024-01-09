@@ -38,9 +38,9 @@ if ($existe_usuario) {
         $_SESSION['nombre_sucursal'] = $c_sucursal->getNombre();
         header("Location: ../index_graficas.php");
     } else {
-        header("Location: ../login.php?error=2");
+        header("Location: ../login.php?error=contraseña incorrecta");
     }
 } else {
-    header("Location: ../login.php?error=2");
+    header("Location: ../login.php?error=no existe");
 }
 

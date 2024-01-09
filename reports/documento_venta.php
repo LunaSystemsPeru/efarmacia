@@ -133,17 +133,17 @@ $pdf->Cell(93, 4, $c_cliente->getDocumento(), 0, 0, 'L');
 $pdf->Cell(32, 4, "FECHA EMISION:", 0, 0, 'R');
 $pdf->Cell(40, 4, $c_varios->fecha_tabla($c_venta->getFecha()), 0, 1, 'C');
 
-$pdf->Cell(118, 4, utf8_decode($c_cliente->getNombre()), 0, 0, 'L');
+$pdf->Cell(118, 4, htmlentities($c_cliente->getNombre()), 0, 0, 'L');
 $pdf->Cell(32, 4, "MONEDA:", 0, 0, 'R');
 $pdf->Cell(40, 4, $nmoneda, 0, 1, 'C');
 
 $pdf->Cell(25, 4, "DIRECCION:", 0, 0, 'L');
-//$pdf->Cell(130, 5, utf8_decode($c_entidad->getDireccion()), 0, 0, 'L');
+//$pdf->Cell(130, 5, htmlentities($c_entidad->getDireccion()), 0, 0, 'L');
 $pdf->SetX(128);
 $pdf->Cell(32, 4, "IGV:", 0, 0, 'R');
 $pdf->Cell(40, 4, "18.00 %", 0, 0, 'C');
 $pdf->SetX(35);
-$pdf->MultiCell(90, 4, utf8_decode(trim($c_cliente->getDireccion())));
+$pdf->MultiCell(90, 4, htmlentities(trim($c_cliente->getDireccion())));
 
 
 $pdf->Ln(1);
@@ -177,7 +177,7 @@ foreach ($a_productos as $value) {
     $pdf->Cell(20, 4, number_format($precio, 2), 0, 0, 'R');
     $pdf->Cell(20, 4, number_format($subtotal, 2), 0, 0, 'R');
     $pdf->SetX(25);
-    $pdf->MultiCell(135, 4, utf8_decode($value['nombre'] . "-" . $value["laboratorio"] . "-" . $value["presentacion"]), 0, 'J');
+    $pdf->MultiCell(135, 4, htmlentities($value['nombre'] . "-" . $value["laboratorio"] . "-" . $value["presentacion"]), 0, 'J');
     //$pdf->Ln(2);
 }
 
@@ -213,7 +213,7 @@ $pdf->Ln(3);
 $pdf->Cell(70, 4, "Importe en Letras", 0, 0, 'L');
 $pdf->Cell(100, 4, "IGV: ", 0, 0, 'R');
 $pdf->Cell(20, 4, number_format($c_venta->getTotal() / 1.18 * 0.18, 2), 0, 1, 'R');
-$pdf->Cell(120, 4, utf8_decode($c_numeros_letras->to_word($total_final, $ncorto)), 0, 0, 'L');
+$pdf->Cell(120, 4, htmlentities($c_numeros_letras->to_word($total_final, $ncorto)), 0, 0, 'L');
 $pdf->Cell(50, 4, "TOTAL: ", 0, 0, 'R');
 $pdf->Cell(20, 4, number_format($c_venta->getTotal(), 2), 0, 1, 'R');
 
@@ -221,8 +221,8 @@ $pdf->Ln(3);
 $y = $pdf->GetY();
 $pdf->Line(10, $y, 200, $y);
 $pdf->Ln(2);
-$pdf->MultiCell(190, 4, utf8_decode("Representacion Impresa de la " . $c_tido->getNombre() . " ELECTRONICA, visite efarmacia.lunasystemsperu.com"), 0, 'C');
-$pdf->MultiCell(190, 4, utf8_decode("Resumen: " . $c_recibido->getHash()), 0, 'C');
+$pdf->MultiCell(190, 4, htmlentities("Representacion Impresa de la " . $c_tido->getNombre() . " ELECTRONICA, visite efarmacia.lunasystemsperu.com"), 0, 'C');
+$pdf->MultiCell(190, 4, htmlentities("Resumen: " . $c_recibido->getHash()), 0, 'C');
 
 $nombre_archivo = $c_recibido->getNombreXml() . ".pdf";
 

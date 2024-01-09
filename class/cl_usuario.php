@@ -287,13 +287,15 @@ class cl_usuario
     {
         $existe = false;
         global $conn;
-        $query = "select id_usuario from usuario "
-            . "where username = '" . $this->username . "' and id_empresa = '" . $this->id_empresa . "'";
+        $query = "select id_usuario, id_empresa from usuario "
+            . "where username = '" . $this->username . "'";
+        //echo $query;
         $resultado = $conn->query($query);
         if ($resultado->num_rows > 0) {
             $existe = true;
             while ($fila = $resultado->fetch_assoc()) {
                 $this->id_usuario = $fila['id_usuario'];
+                $this->id_empresa = $fila['id_empresa'];
             }
         }
         return $existe;

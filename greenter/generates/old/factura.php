@@ -126,7 +126,7 @@ foreach ($items as $value) {
 $invoice->setDetails($array_items);
 
 $c_numeros = new NumerosaLetras();
-$numeros = utf8_decode($c_numeros->to_word(number_format($c_venta->getTotal(), 2, ".", ""), "PEN"));
+$numeros = htmlentities($c_numeros->to_word(number_format($c_venta->getTotal(), 2, ".", ""), "PEN"));
 $invoice->setLegends([
     (new Legend())
         ->setCode('1000')

@@ -72,7 +72,7 @@ class cl_cliente
      */
     public function setNombre($nombre)
     {
-        $this->nombre = utf8_decode(strtoupper($nombre));
+        $this->nombre = htmlentities(strtoupper($nombre));
     }
 
     /**

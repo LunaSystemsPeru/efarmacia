@@ -30,7 +30,7 @@ $Venta->setPeriodo($periodo);
 $Venta->setIdSucursal($tienda);
 $Venta->setIdEmpresa($empresa);
 
-$array_ventas = $Venta->ver_ventas();
+$array_ventas = $Venta->ver_ventas_total();
 
 $books = array();
 
@@ -69,11 +69,11 @@ foreach ($array_ventas as $item) {
     $fila[] = "<center>" . $item['serie'] . "</center>";
     $fila[] = "<center>" . $item['numero'] . "</center>";
     $fila[] = "<center>" . $item['documento'] . "</center>";
-    $fila[] = utf8_decode($item['nombre']);
+    $fila[] = htmlentities($item['nombre']);
     $fila[] = number_format($subtotal, 2);
     $fila[] = number_format($igv, 2);
     $fila[] = number_format($total, 2);
-    $fila[] = "<center>" . $Sucursal->getNombre() . "</center>";
+    $fila[] = "<center>" . $item['nombresede'] . "</center>";
     $fila[] = "<center>" . $item['username'] . "</center>";
     $fila[] = $item['estado'];
     $fila[] = $item['estado'];

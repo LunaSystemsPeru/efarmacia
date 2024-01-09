@@ -47,7 +47,7 @@ if (strlen($c_cliente->getDocumento()) == 8) {
 $client = new Client();
 $client->setTipoDoc($tipo_doc)
     ->setNumDoc($c_cliente->getDocumento())
-    ->setRznSocial(utf8_decode($c_cliente->getNombre()));
+    ->setRznSocial(htmlentities($c_cliente->getNombre()));
 
 $c_empresa = new cl_empresa();
 $c_empresa->setIdEmpresa($c_venta->getIdEmpresa());
@@ -64,13 +64,13 @@ $see = $Config->getSee();
 $client = new Client();
 $client->setTipoDoc($tipo_doc)
     ->setNumDoc($c_cliente->getDocumento())
-    ->setRznSocial(utf8_decode($c_cliente->getNombre()));
+    ->setRznSocial(htmlentities($c_cliente->getNombre()));
 
 // Emisor
 $empresa = new Company();
 $empresa->setRuc($c_empresa->getRuc())
-    ->setNombreComercial(utf8_decode($c_empresa->getRazonSocial()))
-    ->setRazonSocial(utf8_decode($c_empresa->getRazonSocial()))
+    ->setNombreComercial(htmlentities($c_empresa->getRazonSocial()))
+    ->setRazonSocial(htmlentities($c_empresa->getRazonSocial()))
     ->setAddress((new Address())
         ->setUbigueo($c_empresa->getUbigeo())
         ->setDistrito($c_empresa->getDistrito())
@@ -133,7 +133,7 @@ foreach ($items as $value) {
 }
 
 $c_numeros = new NumerosaLetras();
-$numeros = utf8_decode($c_numeros->to_word(number_format($c_venta->getTotal(), 2, ".", ""), "PEN"));
+$numeros = htmlentities($c_numeros->to_word(number_format($c_venta->getTotal(), 2, ".", ""), "PEN"));
 $legend = (new Legend())
     ->setCode('1000') // Monto en letras - Catalog. 52
     ->setValue($numeros);

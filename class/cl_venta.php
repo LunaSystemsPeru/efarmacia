@@ -352,13 +352,13 @@ class cl_venta
     function ver_ventas_total()
     {
         global $conn;
-        $query = "select v.periodo, v.id_venta, v.fecha, ds.abreviatura, v.serie, v.numero, c.documento, c.nombre, v.total, v.enviado_sunat, v.estado, u.username, s.nombre as nombresede    
+        $query = "select v.periodo, v.id_venta, v.fecha, ds.abreviatura, v.serie, v.numero, c.documento, c.nombre, v.total, v.pagado, v.id_documento, ds.cod_sunat, v.enviado_sunat, v.estado, u.username, s.nombre as nombresede    
             from venta v
             inner join sucursales s on v.id_empresa = s.id_empresa and v.id_sucursal = s.id_sucursal
             inner join documentos_sunat ds on v.id_documento = ds.id_documento 
             inner join cliente c on v.id_cliente = c.id_cliente and v.id_empresa = c.id_empresa 
             inner join usuario u on v.id_empresa = u.id_empresa and u.id_usuario = v.id_usuario
-            where v.id_empresa = '$this->id_empresa' and v.periodo = '$this->periodo' ";
+            where v.id_empresa = '$this->id_empresa' and v.periodo = '$this->periodo' and v.id_documento != '1' ";
         $resultado = $conn->query($query);
         return $resultado->fetch_all(MYSQLI_ASSOC);
     }
@@ -393,8 +393,8 @@ class cl_venta
         FROM venta AS v 
             INNER JOIN documentos_sunat ds ON v.id_documento = ds.id_documento
             INNER JOIN cliente c ON v.id_cliente = c.id_cliente AND  c.id_empresa=v.id_empresa
-        where v.id_empresa = '$this->id_empresa' and v.fecha = '$this->fecha' and v.id_documento in (2,5) and v.enviado_sunat = 0";
-        echo $query ."<br>";
+        where v.id_empresa = '$this->id_empresa' and v.fecha = '$this->fecha' and v.serie like 'B%' and v.enviado_sunat = 0";
+        //echo $query ."<br>";
         return $conn->query($query);
     }
 
