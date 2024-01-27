@@ -60,6 +60,8 @@ class cl_documento_internet
             //$direccion = "https://www.lunasystemsperu.com/consultas_json/composer/consultas_dni_JMP.php?dni=" . $this->documento;
         }
 
+       // echo $direccion;
+
         $json = file_get_contents($direccion);
         // Check for errors
         if ($json === FALSE) {
