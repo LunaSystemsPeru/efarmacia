@@ -72,7 +72,7 @@ class cl_cliente
      */
     public function setNombre($nombre)
     {
-        $this->nombre = htmlentities(strtoupper($nombre));
+        $this->nombre = htmlspecialchars(strtoupper($nombre));
     }
 
     /**
@@ -229,8 +229,8 @@ class cl_cliente
             $existe = true;
             while ($fila = $resultado->fetch_assoc()) {
                 $this->documento = $fila['documento'];
-                $this->nombre = $fila['nombre'];
-                $this->direccion = $fila['direccion'];
+                $this->nombre = htmlentities($fila['nombre']);
+                $this->direccion = htmlentities($fila['direccion']);
                 $this->telefono = $fila['telefono'];
                 $this->ultima_venta = $fila['ultima_venta'];
                 $this->total_venta = $fila['total_venta'];
