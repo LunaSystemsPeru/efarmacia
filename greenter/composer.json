@@ -20,7 +20,8 @@
         "ext-gd": "*",
         "greenter/greenter": "^4.3",
         "greenter/ws": "^4.3",
-        "greenter/data": "^4.3"
+        "greenter/data": "^4.3",
+      "ext-mysqli": "*"
     },
     "config": {
         "optimize-autoloader": true,
