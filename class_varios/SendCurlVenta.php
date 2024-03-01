@@ -66,7 +66,7 @@ class SendCurlVenta
             $archivo = "boleta";
         }
         $ruta = $this->ruta . "greenter/generates/" . $archivo . ".php";
-        print_r($ruta);
+        //print_r($ruta);
 
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $ruta);

@@ -290,9 +290,10 @@ class cl_venta
 
     public function insertar()
     {
+        $fec_registrado = date("Y-m-d H:i:s");
         global $conn;
         $query = "insert into venta values ('" . $this->id_venta . "', '" . $this->periodo . "', '" . $this->id_empresa . "', '" . $this->fecha . "', '" . $this->id_documento . "', '" . $this->serie . "', "
-            . "'" . $this->numero . "', '" . $this->id_cliente . "', '" . $this->total . "', '0', '0', NOW(), '" . $this->id_usuario . "', '0','$this->id_sucursal')";
+            . "'" . $this->numero . "', '" . $this->id_cliente . "', '" . $this->total . "', '0', '0', '$fec_registrado', '" . $this->id_usuario . "', '0','$this->id_sucursal')";
         //echo $query;
         $resultado = $conn->query($query);
         if (!$resultado) {
@@ -462,7 +463,7 @@ class cl_venta
                     where v.enviado_sunat != 1 and v.fecha > '2023-09-30' and v.id_documento in (2, 3, 5) and v.estado = 2
                     group by v.fecha, v.id_documento 
                     order by fecha desc ";
-      //  echo $query;
+        //  echo $query;
         return $conn->query($query);
     }
 }
