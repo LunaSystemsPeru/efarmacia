@@ -6,6 +6,7 @@ ini_set('session.cookie_lifetime', 2000000);
 ini_set('session.gc_maxlifetime', 200000); //el mas importante
 
 session_start();
+
 require '../class/cl_usuario.php';
 require '../class/cl_empresa.php';
 require '../class/cl_sucursal.php';
@@ -14,19 +15,21 @@ $c_empresa = new cl_empresa();
 $c_usuario = new cl_usuario();
 $c_sucursal = new cl_sucursal();
 
-
-$c_empresa->setRuc("");
 $c_usuario->setUsername(filter_input(INPUT_POST, 'input_username'));
 $password = filter_input(INPUT_POST, 'input_password');
 
-$c_empresa->setIdEmpresa(3);
-$c_empresa->obtener_datos();
-$c_usuario->setIdEmpresa($c_empresa->getIdEmpresa());
 $existe_usuario = $c_usuario->validar_username();
 if ($existe_usuario) {
     $c_usuario->obtener_datos();
+
     $c_sucursal->setIdSucursal($c_usuario->getIdSucursal());
+    $c_sucursal->setIdSucursal($c_usuario->getIdEmpresa());
     $c_sucursal->obtener_datos();
+
+    $c_empresa->setIdEmpresa($c_usuario->getIdEmpresa());
+    $c_empresa->obtener_datos();
+
+
     //echo $c_usuario->getPassword();
     if ($password == $c_usuario->getPassword()) {
         $c_usuario->actualizarFecha();
