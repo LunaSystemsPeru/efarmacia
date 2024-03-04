@@ -23,7 +23,7 @@ if ($existe_usuario) {
     $c_usuario->obtener_datos();
 
     $c_sucursal->setIdSucursal($c_usuario->getIdSucursal());
-    $c_sucursal->setIdSucursal($c_usuario->getIdEmpresa());
+    $c_sucursal->setIdEmpresa($c_usuario->getIdEmpresa());
     $c_sucursal->obtener_datos();
 
     $c_empresa->setIdEmpresa($c_usuario->getIdEmpresa());

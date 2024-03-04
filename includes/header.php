@@ -1,6 +1,6 @@
 <?php
 if (!isset($_SESSION['nombre_comercial'])) {
-    header('Location: ../login.php');
+    header('Location: login.php');
 }
 ?>
 <div id="header">
