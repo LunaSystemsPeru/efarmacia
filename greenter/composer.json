@@ -22,7 +22,8 @@
         "greenter/ws": "^4.3",
         "greenter/data": "^4.3",
       "ext-mysqli": "*",
-      "ext-curl": "*"
+      "ext-curl": "*",
+        "tecnickcom/tc-lib-barcode": "1.15"
     },
     "config": {
         "optimize-autoloader": true,

@@ -308,7 +308,7 @@ if (!class_exists('QRcode', false)) {
 	class QRcode {
 
 		/**
-		 * @var barcode array to be returned which is readable by TCPDF
+		 * @var codigoBarra array to be returned which is readable by TCPDF
 		 * @access protected
 		 */
 		protected $barcode_array = array();
