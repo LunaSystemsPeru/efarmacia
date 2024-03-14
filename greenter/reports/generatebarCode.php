@@ -19,7 +19,7 @@ $pdf->SetMargins(8, 10, 8);
 $pdf->SetAutoPageBreak(true, 10);
 $pdf->AddPage();
 
-$pdf->SetFont('Arial', '', 9);
+$pdf->SetFont('Arial', '', 6);
 $pdf->SetTextColor(0, 0, 0);
 
 
@@ -30,7 +30,11 @@ $cuentalineas = 0;
 $idproducto = 0;
 $nombreproducto = "";
 $xactual = $pdf->GetX();
-$yactual = $pdf->GetY();
+$yactual = $pdf->GetY() + 8;
+
+$nroitemsxproducto = 12;
+$nrocolumnas = 7;
+$nrofilas = 17;
 
 foreach ($lista_productos as $item) {
     $nombreproducto = $item['nombre'];
@@ -41,19 +45,19 @@ foreach ($lista_productos as $item) {
     $CodigoBarra->setData($datasku);
     $CodigoBarra->generate();
 
-    for ($x = 0; $x < 5; $x++) {
-        if ($reseteoitems == 5) {
+    for ($x = 0; $x < $nroitemsxproducto; $x++) {
+        if ($reseteoitems == $nrocolumnas) {
             $reseteoitems = 1;
             $rompelinea = 1;
             $cuentalineas++;
-            $yactual = 23 * $cuentalineas + 8;
+            $yactual = 15 * $cuentalineas + 16;
             $pdf->SetY($yactual);
             $pdf->SetX($xactual);
 
         } else {
             $pdf->SetY($yactual);
 
-            $xnuevo = 48.6 * ($reseteoitems - 1);
+            $xnuevo = 32.3 * ($reseteoitems - 1);
             if ($xnuevo == 0) {
                 $pdf->SetX(8);
             } else {
@@ -65,14 +69,15 @@ foreach ($lista_productos as $item) {
 
         //echo $idproducto;
         //$pdf->Cell(48.6, 35, $nombreproducto, 1, $rompelinea, 'C');
-        $pdf->Image('temp/' . $idproducto . '.png', $pdf->GetX() + 5, $pdf->GetY() + 8, 40, 10);
-        $pdf->MultiCell(48.60, 3, $nombreproducto, 0, 'C');
+        $pdf->Image('temp/' . $idproducto . '.png', $pdf->GetX() + 1, $pdf->GetY() - 6, 30, 5);
+        $largotexto = 100;
+        $pdf->MultiCell(32.3, 2.2, (strlen($nombreproducto) > $largotexto ? substr($nombreproducto, 0, $largotexto-1) : $nombreproducto), 0, 'C');
         //$pdf->Image('barcode.png', $pdf->GetX(), $pdf->GetY(), 40, 10);
 
 
         $reseteoitems++;
 
-        if ($cuentalineas == 11 & $reseteoitems == 5) {
+        if ($cuentalineas == $nrofilas & $reseteoitems == $nrocolumnas) {
             $pdf->AddPage();
             $cuentalineas = -1;
         }
@@ -80,9 +85,10 @@ foreach ($lista_productos as $item) {
 
     $contaritems++;
 
-    if ($contaritems == 35) {
+    if ($contaritems == 15) {
         break;
     }
+
 }
 
 $pdf->Output("hola.pdf", "I");
