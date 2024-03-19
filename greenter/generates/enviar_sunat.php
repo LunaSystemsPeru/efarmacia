@@ -16,6 +16,17 @@ $fecha = date("Y-m-d");
 //$fecha = filter_input(INPUT_GET, 'fecha');
 //$fecha = '2021-11-07';
 
+$ruta = 'https://lunasystemsperu.com/clientes/alufarma/greenter/functions/validarCPE.php';
+//enviar resumen de facturas
+$ch_resumen = curl_init();
+curl_setopt($ch_resumen, CURLOPT_URL, $ruta);
+curl_setopt($ch_resumen, CURLOPT_POST, 0);
+curl_setopt($ch_resumen, CURLOPT_SSL_VERIFYPEER, false);
+//curl_setopt($ch_resumen, CURLOPT_POSTFIELDS, $post);
+curl_setopt($ch_resumen, CURLOPT_RETURNTRANSFER, true);
+$respuesta_resumen = curl_exec($ch_resumen);
+curl_close($ch_resumen);
+
 //recorrer lista de empresas
 $array_empresas = $c_empresa->ver_empresas();
 foreach ($array_empresas as $fila) {
@@ -29,7 +40,7 @@ foreach ($array_empresas as $fila) {
         curl_setopt($ch_resumen, CURLOPT_URL, $ruta);
         curl_setopt($ch_resumen, CURLOPT_POST, 0);
         curl_setopt($ch_resumen, CURLOPT_SSL_VERIFYPEER, false);
-        curl_setopt($ch_resumen, CURLOPT_POSTFIELDS, $post);
+        //curl_setopt($ch_resumen, CURLOPT_POSTFIELDS, $post);
         curl_setopt($ch_resumen, CURLOPT_RETURNTRANSFER, true);
         $respuesta_resumen = curl_exec($ch_resumen);
         curl_close($ch_resumen);
@@ -44,7 +55,7 @@ foreach ($array_empresas as $fila) {
         curl_setopt($ch_resumen, CURLOPT_URL, $ruta);
         curl_setopt($ch_resumen, CURLOPT_POST, 0);
         curl_setopt($ch_resumen, CURLOPT_SSL_VERIFYPEER, false);
-        curl_setopt($ch_resumen, CURLOPT_POSTFIELDS, $post);
+        //curl_setopt($ch_resumen, CURLOPT_POSTFIELDS, $post);
         curl_setopt($ch_resumen, CURLOPT_RETURNTRANSFER, true);
         $respuesta_resumen = curl_exec($ch_resumen);
         curl_close($ch_resumen);
@@ -53,24 +64,22 @@ foreach ($array_empresas as $fila) {
         print_r($respuesta_resumen);
         echo PHP_EOL;
 
-        /*
-    //enviar notificacion de bajas
-    $ruta = $rutabase . "comunicacion-baja.php";
-    //$ruta = $url . "greenter/generates/comunicacion-baja.php";
-    //enviar resumen de facturas
-    $ch_baja= curl_init();
-    curl_setopt($ch_baja, CURLOPT_URL, $ruta);
-    curl_setopt($ch_baja, CURLOPT_POST, 1);
-    curl_setopt($ch_baja, CURLOPT_SSL_VERIFYPEER, false);
-    curl_setopt($ch_baja, CURLOPT_POSTFIELDS, $post);
-    curl_setopt($ch_baja, CURLOPT_RETURNTRANSFER, true);
-    $respuesta_baja= curl_exec($ch_baja);
-    curl_close($ch_baja);
 
-    echo PHP_EOL . " respuesta comunicacion baja " . PHP_EOL;
-    print_r($respuesta_baja);
-    echo PHP_EOL;
-         */
+        $ruta = $rutabase . "comunicacion-baja.php?id_empresa=" . $id_empresa . '&fecha=' . $fecha;
+        //enviar resumen de facturas
+        $ch_resumen = curl_init();
+        curl_setopt($ch_resumen, CURLOPT_URL, $ruta);
+        curl_setopt($ch_resumen, CURLOPT_POST, 0);
+        curl_setopt($ch_resumen, CURLOPT_SSL_VERIFYPEER, false);
+        //curl_setopt($ch_resumen, CURLOPT_POSTFIELDS, $post);
+        curl_setopt($ch_resumen, CURLOPT_RETURNTRANSFER, true);
+        $respuesta_resumen = curl_exec($ch_resumen);
+        curl_close($ch_resumen);
+
+        echo PHP_EOL . " respuesta comunicacion baja " . PHP_EOL;
+        print_r($respuesta_resumen);
+        echo PHP_EOL;
+
     }
 
 }

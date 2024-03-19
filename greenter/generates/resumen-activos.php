@@ -23,6 +23,11 @@ require __DIR__ . '/../../class/cl_ventas_referencias.php';
 $id_empresa = filter_input(INPUT_GET, 'id_empresa');
 $fecha = filter_input(INPUT_GET, 'fecha');
 
+if (!$id_empresa || !$fecha) {
+    echo "falta informacion ";
+    return;
+}
+
 $c_resumen = new cl_resumen_diario();
 
 $c_empresa = new cl_empresa();
@@ -133,7 +138,7 @@ if ($contar_items > 0) {
 
     $sum = new Summary();
     $sum->setFecGeneracion(\DateTime::createFromFormat('Y-m-d', $fecha))
-        ->setFecResumen(\DateTime::createFromFormat('Y-m-d', $fecha))
+        ->setFecResumen(\DateTime::createFromFormat('Y-m-d', date('Y-m-d')))
         ->setCorrelativo($c_resumen->obtenerNroResumen())
         ->setCompany($empresa)
         ->setDetails($array_items);

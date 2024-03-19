@@ -131,7 +131,7 @@ class cl_resumen_diario
     {
         global $conn;
         $sql = "insert into resumen_diario 
-        values ('$this->id_resumen_diario', '$this->id_empresa', '$this->fecha', '$this->ticket', '$this->cantidad_items', '$this->tipo')";
+        values ('$this->id_resumen_diario', '$this->id_empresa', '$this->fecha', '$this->ticket', '$this->cantidad_items', '$this->tipo', current_date())";
         echo $sql;
         return $conn->query($sql);
     }
@@ -140,7 +140,7 @@ class cl_resumen_diario
     {
         global $conn;
         $query = "select count(*) + 1 as nro from resumen_diario 
-                    where fecha = '$this->fecha'";
+                    where fecha_envio = current_date() and id_empresa = '$this->id_empresa'";
         $resultado = $conn->query($query);
         if ($resultado->num_rows > 0) {
             if ($fila = $resultado->fetch_assoc()) {
