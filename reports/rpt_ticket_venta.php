@@ -73,7 +73,7 @@ if (strlen($c_cliente->getDocumento()) == 7) {
     $c_cliente->setDocumento("00000000");
 }
 
-$pdf = new FPDF('P', 'mm', array(290,80));
+$pdf = new FPDF('P', 'mm', array(350,80));
 //$pdf = new FPDF('P', 'mm', 'a4');
 //$pdf->SetMargins(52.5, 8, 52.5);
 $pdf->SetMargins(4, 4, 4);
@@ -93,10 +93,11 @@ $pdf->SetFont('Arial', '', 10);
 $pdf->SetTextColor(0, 0, 0);
 */
 
-$izquierda = 0;
-//$izquierda = 52.5;
+$largoimagen = 40;
+$anchoimagen = 35;
+$izquierda=0;
 
-$pdf->Image('../images/' . $imagen, 12.5 + $izquierda, 8, 40, 35);
+$pdf->Image('../images/' . $imagen, (80-$largoimagen)/2, 8, $largoimagen, $anchoimagen);
 //$pdf->Ln(22);
 
 
@@ -197,7 +198,8 @@ $pdf->Cell(15, 3, number_format($c_venta->getTotal(), 2), 0, 1, 'R');
 */
 
 $pdf->Cell(72, 3, "Importe en Letras", 0, 1, 'L');
-$pdf->Cell(72, 3, htmlentities($c_numeros_letras->to_word($total_final, $ncorto)), 0, 1, 'L');
+//$pdf->Cell(72, 3, htmlentities($c_numeros_letras->to_word($total_final, $ncorto)), 0, 1, 'L');
+$pdf->MultiCell(72, 3, htmlentities($c_numeros_letras->to_word($total_final, $ncorto)), 0, 'L');
 
 $pdf->Ln(3);
 $y = $pdf->GetY();

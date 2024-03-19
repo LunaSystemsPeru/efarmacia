@@ -290,9 +290,10 @@ class cl_venta
 
     public function insertar()
     {
+        $fec_registrado = date("Y-m-d H:i:s");
         global $conn;
         $query = "insert into venta values ('" . $this->id_venta . "', '" . $this->periodo . "', '" . $this->id_empresa . "', '" . $this->fecha . "', '" . $this->id_documento . "', '" . $this->serie . "', "
-            . "'" . $this->numero . "', '" . $this->id_cliente . "', '" . $this->total . "', '0', '0', NOW(), '" . $this->id_usuario . "', '0','$this->id_sucursal')";
+            . "'" . $this->numero . "', '" . $this->id_cliente . "', '" . $this->total . "', '0', '0', '$fec_registrado', '" . $this->id_usuario . "', '0','$this->id_sucursal')";
         //echo $query;
         $resultado = $conn->query($query);
         if (!$resultado) {

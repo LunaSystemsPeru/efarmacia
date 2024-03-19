@@ -16,7 +16,7 @@ class Varios
 
     public function __construct()
     {
-        date_default_timezone_set('America/Los_Angeles');
+        date_default_timezone_set('America/Lima');
     }
 
     function mesactual()
@@ -64,7 +64,7 @@ class Varios
 
     function fecha_actual_corta()
     {
-        date_default_timezone_set('America/Los_Angeles');
+        date_default_timezone_set('America/Lima');
         $fecha_actual = date("Y-m-d");
         return $fecha_actual;
     }

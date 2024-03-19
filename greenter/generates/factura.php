@@ -31,6 +31,11 @@ $c_venta = new cl_venta();
 $c_venta->setIdVenta(filter_input(INPUT_POST, 'id_venta'));
 $c_venta->setIdEmpresa(filter_input(INPUT_POST, 'id_empresa'));
 $c_venta->setPeriodo(filter_input(INPUT_POST, 'periodo'));
+
+if (!$c_venta->getIdVenta() || !$c_venta->getPeriodo() || !$c_venta->getIdEmpresa() ){
+    echo "no recibo parametros";
+    return;
+}
 $c_venta->obtener_datos();
 
 $c_sucursal = new cl_sucursal();
@@ -158,6 +163,15 @@ $indiceaceptado = 1;
 $observaciones = "";
 $code = "";
 
+$c_hash = new cl_venta_sunat();
+$c_hash->setIdVenta($c_venta->getIdVenta());
+$c_hash->setPeriodo($c_venta->getPeriodo());
+$c_hash->setIdEmpresa($c_venta->getIdEmpresa());
+$c_hash->setHash($Config->getHash($invoice));
+$c_hash->setNombreXml($invoice->getName());
+$c_hash->insertar();
+
+
 // Verificamos que la conexión con SUNAT fue exitosa.
 if (!$result->isSuccess()) {
     $indiceaceptado = 3;
@@ -199,13 +213,6 @@ if ($aceptadosunat) {
     }
 
 //echo $cdr->getDescription().PHP_EOL;
-    $c_hash = new cl_venta_sunat();
-    $c_hash->setIdVenta($c_venta->getIdVenta());
-    $c_hash->setPeriodo($c_venta->getPeriodo());
-    $c_hash->setIdEmpresa($c_venta->getIdEmpresa());
-    $c_hash->setHash($Config->getHash($invoice));
-    $c_hash->setNombreXml($invoice->getName());
-    $c_hash->insertar();
 
 }
 

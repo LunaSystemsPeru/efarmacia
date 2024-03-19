@@ -2,7 +2,7 @@
 
 class cl_varios {
     
-	//date_default_timezone_set('America/Los_Angeles');
+	//date_default_timezone_set('America/Lima');
 	
     public function __construct() 
     { 
@@ -66,12 +66,12 @@ class cl_varios {
     }
     
     function fecha_actual_completa() {
-        date_default_timezone_set('America/Los_Angeles');
+        date_default_timezone_set('America/Lima');
         return date("Y-m-d H:i:s");
     }
 
     function fecha_actual_corta() {
-		date_default_timezone_set('America/Los_Angeles');
+		date_default_timezone_set('America/Lima');
         return date("Y-m-d");
     }
 

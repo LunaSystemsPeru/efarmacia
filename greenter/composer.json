@@ -1,35 +1,32 @@
 {
-  "name": "greenter/sample",
-  "description": "Greenter Samples",
-  "keywords": [
-    "samples",
-    "greenter",
-    "facturacion electronica",
-    "sunat"
-  ],
-  "license": "MIT",
-  "authors": [
-    {
-      "name": "Giancarlos Salas",
-      "email": "giansalex@gmail.com"
+    "name": "greenter/sample",
+    "description": "Greenter Samples",
+    "keywords": ["samples", "greenter", "facturacion electronica", "sunat"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Giancarlos Salas",
+            "email": "giansalex@gmail.com"
+        }
+    ],
+    "homepage": "https://github.com/giansalex/greenter-sample",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "": "src/"
+        }
+    },
+    "require": {
+        "ext-gd": "*",
+        "greenter/greenter": "^4.3",
+        "greenter/ws": "^4.3",
+        "greenter/data": "^4.3",
+      "ext-mysqli": "*",
+      "ext-curl": "*",
+        "tecnickcom/tc-lib-barcode": "1.15"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "classmap-authoritative": true
     }
-  ],
-  "homepage": "https://github.com/giansalex/greenter-sample",
-  "type": "project",
-  "autoload": {
-    "psr-4": {
-      "": "src/"
-    }
-  },
-  "require": {
-    "ext-gd": "*",
-    "greenter/greenter": "^4.3",
-    "greenter/ws": "^4.3",
-    "greenter/data": "^4.3",
-    "ext-curl": "*"
-  },
-  "config": {
-    "optimize-autoloader": true,
-    "classmap-authoritative": true
-  }
 }

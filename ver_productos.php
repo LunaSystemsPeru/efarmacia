@@ -113,6 +113,9 @@ $title = "Ver Productos - Farmacia - Luna Systems Peru";
                             <div class="btn-group">
                                 <a href="procesos/precios_mimsa.php" class="btn btn-info"><i class="fa fa-file-excel-o"></i> Ver Precios MIMSA</a>
                             </div>
+                            <div class="btn-group">
+                                <a target="_blank" href="greenter/reports/generatebarCode.php" class="btn btn-default"><i class="fa fa-file-pdf-o"></i> Generar Codigos de Barra</a>
+                            </div>
                         </div>
                         <div class="col-5">
                             <form method="get" class="form-inline">

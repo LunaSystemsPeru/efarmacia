@@ -103,11 +103,12 @@ class cl_venta_sunat
     {
         global $conn;
         $query = "INSERT INTO ventas_sunat 
-                         VALUES ($this->id_venta,
-                                 $this->periodo ,
-                                $this->id_empresa,
-                                '$this->hash',
-                                '$this->nombre_xml')";
+                    VALUES ('$this->id_venta',
+                    '$this->periodo',
+                    '$this->id_empresa',
+                    '$this->hash',
+                    '$this->nombre_xml')
+                ON DUPLICATE KEY UPDATE hash = '$this->hash'";
 
         //echo $query;
         $resultado = $conn->query($query);
@@ -122,20 +123,21 @@ class cl_venta_sunat
         return $grabado;
     }
 
-    public function obtener_datos() {
+    public function obtener_datos()
+    {
         $existe = false;
         global $conn;
         $query = "select * from ventas_sunat 
                     WHERE id_venta= '$this->id_venta' AND 
                           periodo= '$this->periodo'   AND 
                           id_empresa='$this->id_empresa'";
-       // echo $query;
+        // echo $query;
         $resultado = $conn->query($query);
         if ($resultado->num_rows > 0) {
             $existe = true;
             while ($fila = $resultado->fetch_assoc()) {
-                $this->hash=$fila["hash"];
-                $this->nombre_xml=$fila["nombre_xml"];
+                $this->hash = $fila["hash"];
+                $this->nombre_xml = $fila["nombre_xml"];
             }
         }
         return $existe;
