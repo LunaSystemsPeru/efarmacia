@@ -117,7 +117,7 @@ class cl_ventas_anuladas
             INNER JOIN venta AS v ON v.id_venta = va.venta_id_venta and va.id_empresa = v.id_empresa and va.periodo = v.periodo
             INNER JOIN documentos_sunat ds ON v.id_documento = ds.id_documento
             INNER JOIN cliente c ON v.id_cliente = c.id_cliente and v.id_empresa = c.id_empresa
-        where v.id_empresa = '$this->id_empresa' and v.fecha = '$this->fecha' and v.serie like 'B%' and v.estado = 2 
+        where v.id_empresa = '$this->id_empresa' and va.fecha = '$this->fecha' and v.serie like 'B%' and v.estado = 2 
          order by fecha_anulado asc";
 
         echo $sql;
@@ -126,7 +126,7 @@ class cl_ventas_anuladas
         return $fila;
     }
 
-    public function verFacturasAnuladas($id_empresa)
+    public function verFacturasAnuladas()
     {
         global $conn;
         $sql = "SELECT v.id_venta, v.fecha, va.fecha AS fecha_anulado, ds.cod_sunat, ds.abreviatura, v.serie, v.numero, c.documento, c.nombre, v.total, v.estado, v.id_documento, v.enviado_sunat, v.estado
@@ -134,7 +134,17 @@ class cl_ventas_anuladas
             INNER JOIN venta AS v ON v.id_venta = va.venta_id_venta and va.periodo = v.periodo and v.id_empresa = va.id_empresa
             INNER JOIN documentos_sunat ds ON v.id_documento = ds.id_documento
             INNER JOIN cliente c ON v.id_cliente = c.id_cliente and v.id_empresa = c.id_empresa
-        where v.id_empresa = '$id_empresa' and v.fecha = '$this->fecha' and v.id_documento = 3 and v.estado = 2 ";
+        where v.id_empresa = '$this->id_empresa' and va.fecha = '$this->fecha' and v.serie like 'F%' and v.estado = 2 ";
+        $resultado = $conn->query($sql);
+        return $resultado->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function verFechasAnuladasPendientes()
+    {
+        global $conn;
+        $sql = "select distinct(v.fecha) as fecha 
+                from venta as v 
+                where v.estado = '2' and v.enviado_sunat = '2' and v.id_empresa = '$this->id_empresa'";
         $resultado = $conn->query($sql);
         return $resultado->fetch_all(MYSQLI_ASSOC);
     }

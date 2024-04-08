@@ -415,7 +415,7 @@ class cl_venta
         global $conn;
         $query = "update venta 
         set enviado_sunat = 1 
-        where id_venta = '$this->id_venta' and periodo = '$this->periodo'";
+        where id_venta = '$this->id_venta' and periodo = '$this->periodo' and id_empresa = '$this->id_empresa'";
         return $conn->query($query);
     }
 
@@ -432,7 +432,7 @@ class cl_venta
     public function verComprobantesMensual()
     {
         global $conn;
-        $query = "select e.ruc, ds.cod_sunat, v.serie, v.numero, v.fecha, v.total
+        $query = "select e.ruc, ds.cod_sunat, v.serie, v.numero, v.fecha, v.total, v.periodo, v.id_empresa, v.id_venta
                 from venta as v
                     inner join documentos_sunat ds on v.id_documento = ds.id_documento
                     inner join empresa e on v.id_empresa = e.id_empresa
@@ -440,10 +440,23 @@ class cl_venta
         return $conn->query($query);
     }
 
+    public function verComprobantesCPEFechas($fechainicio, $fechafin)
+    {
+        global $conn;
+        $query = "select e.ruc, ds.cod_sunat, v.serie, v.numero, v.fecha, v.total, v.periodo, v.id_empresa, v.id_venta, v.estado 
+                from venta as v
+                    inner join documentos_sunat ds on v.id_documento = ds.id_documento
+                    inner join empresa e on v.id_empresa = e.id_empresa
+                where (v.fecha between '$fechainicio' and '$fechafin') and v.id_documento in (3,5,2)";
+        return $conn->query($query);
+    }
+
     public function actualizarEstadoSUNAT()
     {
         global $conn;
-        $query = "update venta set enviado_sunat = '$this->enviado_sunat' where serie = '$this->serie' and numero = '$this->numero'";
+        $query = "update venta 
+                    set enviado_sunat = '$this->enviado_sunat' 
+                    where serie = '$this->serie' and numero = '$this->numero' and id_empresa = '$this->id_empresa' and id_documento = '$this->id_documento' ";
         echo $query;
         return $conn->query($query);
     }
