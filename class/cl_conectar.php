@@ -2,10 +2,15 @@
 date_default_timezone_set('America/Lima');
 
 $servidor = "localhost";
+$bd = "goempres_alufarma";
+$usu = "goempres_root";
+$pass = "k;6?6,m{7ePs";
+/*
+$servidor = "localhost";
 $bd = "goempres_zstore";
 $usu = "goempres_user_zstore";
 $pass = "%SA$#+6BM4R4";
-
+*/
 /*
  * $usu = "goempres_root";
  * $pass = "k;6?6,m{7ePs";
