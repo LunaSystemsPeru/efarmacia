@@ -56,7 +56,8 @@ class cl_documento_internet
 
         //si es dni
         if ($this->tipo == 2) {
-            $direccion = "https://goempresarial.com/apis/peru-consult-api/public/api/v1/dni/".$this->documento."?token=abcxyz";
+            //$direccion = "https://goempresarial.com/apis/peru-consult-api/public/api/v1/dni/".$this->documento."?token=abcxyz";
+            $direccion = "https://goempresarial.com/apis/luna-consult/public/index.php?dni=" . $this->documento;
             //$direccion = "https://www.lunasystemsperu.com/consultas_json/composer/consultas_dni_JMP.php?dni=" . $this->documento;
         }
 

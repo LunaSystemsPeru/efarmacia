@@ -15,7 +15,7 @@ class cl_validar_documento
 {
 
     private $url_ruc = "https://goempresarial.com/apis/peru-consult-api/public/api/v1/ruc/%s?token=abcxyz";
-    private $url_dni = "https://goempresarial.com/apis/peru-consult-api/public/api/v1/dni/%s?token=abcxyz";
+    private $url_dni = "https://goempresarial.com/apis/luna-consult/public/index.php?dni=%s";
     private $dni;
     private $ruc;
 
