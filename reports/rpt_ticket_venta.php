@@ -7,6 +7,7 @@ session_start();
 //require('../includes/fpdf.php');
 
 require '../class/cl_empresa.php';
+require '../class/cl_sucursal.php';
 require '../class/cl_venta.php';
 require '../class/cl_venta_productos.php';
 require '../class/cl_cliente.php';
@@ -29,6 +30,10 @@ $c_venta->setIdVenta($id_venta);
 $c_venta->setIdEmpresa($_SESSION['id_empresa']);
 $c_venta->setPeriodo($periodo);
 $c_venta->obtener_datos();
+
+$c_sucursal = new cl_sucursal();
+$c_sucursal->setIdSucursal($c_venta->getIdSucursal());
+$c_sucursal->obtener_datos();
 
 $c_empresa = new cl_empresa();
 $c_empresa->setIdEmpresa($c_venta->getIdEmpresa());
@@ -73,7 +78,7 @@ if (strlen($c_cliente->getDocumento()) == 7) {
     $c_cliente->setDocumento("00000000");
 }
 
-$pdf = new FPDF('P', 'mm', array(350,80));
+$pdf = new FPDF('P', 'mm', array(350, 80));
 //$pdf = new FPDF('P', 'mm', 'a4');
 //$pdf->SetMargins(52.5, 8, 52.5);
 $pdf->SetMargins(4, 4, 4);
@@ -93,11 +98,11 @@ $pdf->SetFont('Arial', '', 10);
 $pdf->SetTextColor(0, 0, 0);
 */
 
-$largoimagen = 40;
-$anchoimagen = 35;
-$izquierda=0;
+$largoimagen = 35;
+$anchoimagen = 30;
+$izquierda = 0;
 
-$pdf->Image('../images/' . $imagen, (80-$largoimagen)/2, 8, $largoimagen, $anchoimagen);
+$pdf->Image('../images/' . $imagen, (80 - $largoimagen) / 2, 8, $largoimagen, $anchoimagen);
 //$pdf->Ln(22);
 
 
@@ -111,13 +116,13 @@ $pdf->MultiCell(72, $altura_linea, htmlentities($c_empresa->getRuc() . " | " . $
 //$pdf->SetX(30 + $izquierda );
 $pdf->Cell(72, $altura_linea, "Cel/Tel: 937375363", 0, 1, 'C');
 //$pdf->SetX(30  + $izquierda);
-$pdf->MultiCell(72, $altura_linea, htmlentities($c_empresa->getDireccion()), 0, 'C');
+$pdf->MultiCell(72, $altura_linea, htmlentities($c_sucursal->getDireccion()), 0, 'C');
 //$pdf->SetX(30);
 
 //$pdf->SetX($izquierda);
 $pdf->SetFont('Arial', 'B', 9);
 $pdf->Cell(72, $altura_linea, $c_tido->getNombre() . " ELECTRONICA", 0, 1, 'C');
-$pdf->Cell(72, $altura_linea,$c_venta->getSerie() . " - " . $c_varios->zerofill($c_venta->getNumero(),5), 0, 1, 'C');
+$pdf->Cell(72, $altura_linea, $c_venta->getSerie() . " - " . $c_varios->zerofill($c_venta->getNumero(), 5), 0, 1, 'C');
 $pdf->Ln();
 $pdf->SetFont('Arial', '', 9);
 //$pdf->SetX(8 + $izquierda);
@@ -154,7 +159,7 @@ foreach ($a_productos as $value) {
     $pdf->SetX(63 + $izquierda);
     $pdf->Cell(12, 3, number_format($subtotal, 2), 0, 0, 'R');
     $pdf->SetX(4 + $izquierda);
-    $pdf->MultiCell(60, 3, $cantidad . " " .$value["presentacion"] . " | " . strtoupper(htmlentities($value['nombre'] . " | " . $value["laboratorio"] )), 0, 'J');
+    $pdf->MultiCell(60, 3, $cantidad . " " . $value["presentacion"] . " | " . strtoupper(htmlentities($value['nombre'] . " | " . $value["laboratorio"])), 0, 'J');
     //$pdf->Ln(2);
 }
 
@@ -170,9 +175,12 @@ $pdf->Line(4 + $izquierda, $y, 79 + $izquierda, $y);
 
 if ($c_venta->getIdDocumento() != 1) {
     $pdf->Image('../greenter/generate_qr/temp/' . $c_recibido->getNombreXml() . '.png', 8 + $izquierda, $y + 4, 30, 30);
+    $pdf->Ln(25);
+} else {
+    $pdf->Ln(5);
 }
 
-$pdf->Ln(25);
+
 $pdf->SetX(4 + $izquierda);
 $pdf->Cell(60, 3, "SUB TOTAL: ", 0, 0, 'R');
 $pdf->Cell(12, 3, number_format($c_venta->getTotal() / 1.18, 2), 0, 1, 'R');
@@ -181,7 +189,7 @@ $total_final = number_format($c_venta->getTotal(), 2, ".", "");
 
 $pdf->SetX(4 + $izquierda);
 $pdf->Cell(60, 3, "IGV: ", 0, 0, 'R');
-$pdf->Cell(12, 3, number_format($c_venta->getTotal() / 1.18 * 0.18 , 2), 0, 1, 'R');
+$pdf->Cell(12, 3, number_format($c_venta->getTotal() / 1.18 * 0.18, 2), 0, 1, 'R');
 $pdf->SetX(4 + $izquierda);
 $pdf->Cell(60, 3, "TOTAL: ", 0, 0, 'R');
 $pdf->Cell(12, 3, number_format($c_venta->getTotal(), 2), 0, 1, 'R');
@@ -211,6 +219,10 @@ $pdf->SetX(4 + $izquierda);
 $pdf->MultiCell(72, 3, htmlentities("Resumen: " . $c_recibido->getHash()), 0, 'C');
 
 $nombre_archivo = $c_recibido->getNombreXml() . ".pdf";
+
+if (!$c_recibido->getNombreXml()) {
+    $nombre_archivo = $c_empresa->getRuc() . "-" . $c_tido->getAbreviatura() . "-" . $c_venta->getSerie() . "-" . $c_venta->getNumero() . ".pdf";
+}
 
 //$pdf->Output();
 //para descargar automatica

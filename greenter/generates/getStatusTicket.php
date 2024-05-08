@@ -19,12 +19,14 @@ $Config->setClavesol($c_empresa->getClaveSol());
 echo "<pre>";
 
 $see = $Config->getSee();
-$ticket = filter_input(INPUT_GET,'ticket');
+$ticket = filter_input(INPUT_GET, 'ticket');
 $res = $see->getStatus($ticket);
 if (!$res->isSuccess()) {
     echo "error al obtener estado de ticket" . PHP_EOL;
     print_r($res->getError());
     return;
+} else {
+    print_r($res);
 }
 
 echo PHP_EOL;

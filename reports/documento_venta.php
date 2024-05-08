@@ -9,6 +9,7 @@ session_start();
 //require('../includes/fpdf.php');
 
 require '../class/cl_empresa.php';
+require '../class/cl_sucursal.php';
 require '../class/cl_venta.php';
 require '../class/cl_venta_productos.php';
 require '../class/cl_cliente.php';
@@ -31,6 +32,10 @@ $c_venta->setIdVenta($id_venta);
 $c_venta->setIdEmpresa($_SESSION['id_empresa']);
 $c_venta->setPeriodo($periodo);
 $c_venta->obtener_datos();
+
+$c_sucursal = new cl_sucursal();
+$c_sucursal->setIdSucursal($c_venta->getIdSucursal());
+$c_sucursal->obtener_datos();
 
 $c_empresa = new cl_empresa();
 $c_empresa->setIdEmpresa($c_venta->getIdEmpresa());
@@ -85,7 +90,7 @@ $r = 100;
 $g = 100;
 $b = 100;
 
-$pdf->Image('../images/' . $imagen, 10, 10, 36, 20);
+$pdf->Image('../images/' . $imagen, 10, 10, 29, 25);
 $pdf->Ln(5);
 $pdf->SetFont('Arial', '', 10);
 $pdf->SetTextColor(0, 0, 0);
@@ -114,7 +119,7 @@ $pdf->SetFont('Arial', 'B', 9);
 $pdf->Cell(110, 4, $c_empresa->getRazonSocial(), 0, 1, 'L');
 $pdf->SetX(53);
 $pdf->SetFont('Arial', '', 9);
-$pdf->MultiCell(75, 4, $c_empresa->getDireccion(), 0, "L");
+$pdf->MultiCell(75, 4, $c_sucursal->getDireccion(), 0, "L");
 $pdf->SetX(53);
 $pdf->Cell(75, 4, "Telefono: ", 0, 1, 'L');
 
