@@ -331,6 +331,9 @@ class cl_producto
         if ($texto) {
             $string = "p.nombre like '%$texto%' ";
         }
+        if ($texto == 'XYZ') {
+            $string = " 1 = 1 ";
+        }
         global $conn;
         $query = "select p.id_producto, p.id_laboratorio, p.id_empresa, p.id_presentacion, p.nombre, p.principio_activo, pr.nombre as npresentacion, l.nombre as nlaboratorio, p.costo, p.precio, p.lote, p.vcto, DATEDIFF(p.vcto, current_date()) as faltantes 
         from producto as p 
