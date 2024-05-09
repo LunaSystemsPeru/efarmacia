@@ -394,7 +394,7 @@ class cl_venta
         FROM venta AS v 
             INNER JOIN documentos_sunat ds ON v.id_documento = ds.id_documento
             INNER JOIN cliente c ON v.id_cliente = c.id_cliente AND  c.id_empresa=v.id_empresa
-        where v.id_empresa = '$this->id_empresa' and v.fecha = '$this->fecha' and v.serie like 'B%' and v.enviado_sunat = 0 and estado != 1";
+        where v.id_empresa = '$this->id_empresa' and v.fecha = '$this->fecha' and v.serie like 'B%' and v.enviado_sunat = 0 and estado = 1";
         //echo $query ."<br>";
         return $conn->query($query);
     }

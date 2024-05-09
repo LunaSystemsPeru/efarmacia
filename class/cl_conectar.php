@@ -3,8 +3,8 @@ date_default_timezone_set('America/Lima');
 
 $servidor = "localhost";
 $bd = "goempres_alufarma";
-$usu = "goempres_root";
-$pass = "k;6?6,m{7ePs";
+$usu = "goempres_user_alufarma";
+$pass = "Z9?7PUlxUE^2";
 /*
 $servidor = "localhost";
 $bd = "goempres_zstore";

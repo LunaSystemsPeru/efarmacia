@@ -8,6 +8,7 @@ class cl_resumen_diario
     private $fecha;
     private $ticket;
     private $cantidad_items;
+    private $nombre_archivo;
     private $tipo;
 
     /**
@@ -113,6 +114,22 @@ class cl_resumen_diario
         $this->tipo = $tipo;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getNombreArchivo()
+    {
+        return $this->nombre_archivo;
+    }
+
+    /**
+     * @param mixed $nombre_archivo
+     */
+    public function setNombreArchivo($nombre_archivo): void
+    {
+        $this->nombre_archivo = $nombre_archivo;
+    }
+
     public function obtenerId()
     {
         global $conn;
@@ -131,7 +148,7 @@ class cl_resumen_diario
     {
         global $conn;
         $sql = "insert into resumen_diario 
-        values ('$this->id_resumen_diario', '$this->id_empresa', '$this->fecha', '$this->ticket', '$this->cantidad_items', '$this->tipo', current_date())";
+        values ('$this->id_resumen_diario', '$this->id_empresa', '$this->fecha', '$this->ticket', '$this->cantidad_items', '$this->tipo', current_date(), '$this->nombre_archivo')";
         echo $sql;
         return $conn->query($sql);
     }

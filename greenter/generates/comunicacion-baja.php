@@ -58,6 +58,11 @@ foreach ($lista_anulados as $value) {
     $contar_items++;
 }
 
+if ($contar_items == 0) {
+    print_r("no hay documentos para comunicar la baja");
+    return;
+}
+
 $empresa = new Company();
 $empresa->setRuc($c_empresa->getRuc())
     ->setNombreComercial(addslashes($c_empresa->getNombreComercial()))

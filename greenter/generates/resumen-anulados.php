@@ -157,8 +157,10 @@ if ($contar_items > 0) {
         ->setDetails($array_items);
 
     // Envio a SUNAT.
+
     $res = $see->send($sum);
 
+    $c_resumen->setNombreArchivo($sum->getName());
     echo $sum->getName() . "<br>";
 
     // Guardar XML firmado digitalmente.
@@ -174,27 +176,28 @@ if ($contar_items > 0) {
 
     /**@var $res SummaryResult */
     $ticket = $res->getTicket();
-    echo '<br>Ticket :<strong>' . $ticket . '</strong><br>';
+    print_r('<br>Ticket :<strong>' . $ticket . '</strong><br>');
 
     $c_resumen->setTicket($ticket);
     $c_resumen->setTipo(2);
 
     $c_resumen->insertar();
+    /*
+        $res = $see->getStatus($ticket);
+        if (!$res->isSuccess()) {
+            echo "<br> error al obtener estado de ticket ";
+            print_r($res->getError());
+            return;
+        }
 
-    $res = $see->getStatus($ticket);
-    if (!$res->isSuccess()) {
-        echo "<br> error al obtener estado de ticket ";
-        print_r($res->getError());
-        return;
-    }
-
-    $cdr = $res->getCdrResponse();
-    print_r($cdr->getDescription());
-    //print_r($cdr->getNotes());
-    //$util->writeCdr($sum, $res->getCdrZip());
-    // Guardamos el CDR
-    file_put_contents("../RC/" . 'R-' . $sum->getName() . '.zip', $res->getCdrZip());
-    //$util->showResponse($sum, $cdr);
+        $cdr = $res->getCdrResponse();
+        print_r($cdr->getDescription());
+        //print_r($cdr->getNotes());
+        //$util->writeCdr($sum, $res->getCdrZip());
+        // Guardamos el CDR
+        file_put_contents("../RC/" . 'R-' . $sum->getName() . '.zip', $res->getCdrZip());
+        //$util->showResponse($sum, $cdr);
+    */
 }
 
 echo "</pre>";

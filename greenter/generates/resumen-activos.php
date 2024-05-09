@@ -146,6 +146,8 @@ if ($contar_items > 0) {
     // Envio a SUNAT.
     $res = $see->send($sum);
 
+    $c_resumen->setNombreArchivo($sum->getName());
+
     echo $sum->getName() . "<br>";
 
     // Guardar XML firmado digitalmente.
@@ -159,6 +161,10 @@ if ($contar_items > 0) {
         return;
     }
 
+    /**@var $res SummaryResult */
+    $ticket = $res->getTicket();
+    print_r('<br>Ticket :<strong>' . $ticket . '</strong><br>');
+
     //modificar estado suant
     for ($x = 0; $x < count($array_comprobantes); $x++) {
         $array_linea = $array_comprobantes[$x];
@@ -167,10 +173,6 @@ if ($contar_items > 0) {
         $c_venta->setIdVenta($array_linea["id_venta"]);
         $c_venta->actualizar_envio();
     }
-
-    /**@var $res SummaryResult */
-    $ticket = $res->getTicket();
-    echo '<br>Ticket :<strong>' . $ticket . '</strong><br>';
 
     $c_resumen->setTicket($ticket);
     $c_resumen->setTipo(1);
@@ -191,4 +193,6 @@ if ($contar_items > 0) {
     // Guardamos el CDR
     file_put_contents("../RC/" . 'R-' . $sum->getName() . '.zip', $res->getCdrZip());
     //$util->showResponse($sum, $cdr);
+} else {
+    print_r("no hay documentos a enviar por resumen");
 }
