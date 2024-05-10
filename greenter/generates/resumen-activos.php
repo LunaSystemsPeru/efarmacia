@@ -3,10 +3,10 @@ declare(strict_types=1);
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
 
+use Greenter\Model\Company\Address;
+use Greenter\Model\Company\Company;
 use Greenter\Model\Response\SummaryResult;
 use Greenter\Model\Sale\Document;
-use Greenter\Model\Company\Company;
-use Greenter\Model\Company\Address;
 use Greenter\Model\Summary\Summary;
 use Greenter\Model\Summary\SummaryDetail;
 
@@ -179,6 +179,7 @@ if ($contar_items > 0) {
 
     $c_resumen->insertar();
 
+    /*
     $res = $see->getStatus($ticket);
     if (!$res->isSuccess()) {
         echo "<br> error al obtener estado de ticket ";
@@ -193,6 +194,7 @@ if ($contar_items > 0) {
     // Guardamos el CDR
     file_put_contents("../RC/" . 'R-' . $sum->getName() . '.zip', $res->getCdrZip());
     //$util->showResponse($sum, $cdr);
+    */
 } else {
     print_r("no hay documentos a enviar por resumen");
 }
