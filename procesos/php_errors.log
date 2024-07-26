@@ -34,3 +34,23 @@ Stack trace:
 #0 C:\xampp\htdocs\clientes\alufarma\procesos\cargar_txt_sunat.php(24): feof(false)
 #1 {main}
   thrown in C:\xampp\htdocs\clientes\alufarma\procesos\cargar_txt_sunat.php on line 24
+[13-Jun-2024 11:21:29 America/Lima] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in C:\xampp\htdocs\clientes\alufarma\class\cl_usuario.php:293
+Stack trace:
+#0 C:\xampp\htdocs\clientes\alufarma\procesos\login.php(21): cl_usuario->validar_username()
+#1 {main}
+  thrown in C:\xampp\htdocs\clientes\alufarma\class\cl_usuario.php on line 293
+[13-Jun-2024 11:21:34 America/Lima] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in C:\xampp\htdocs\clientes\alufarma\class\cl_usuario.php:293
+Stack trace:
+#0 C:\xampp\htdocs\clientes\alufarma\procesos\login.php(21): cl_usuario->validar_username()
+#1 {main}
+  thrown in C:\xampp\htdocs\clientes\alufarma\class\cl_usuario.php on line 293
+[13-Jun-2024 11:21:42 America/Lima] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in C:\xampp\htdocs\clientes\alufarma\class\cl_usuario.php:293
+Stack trace:
+#0 C:\xampp\htdocs\clientes\alufarma\procesos\login.php(21): cl_usuario->validar_username()
+#1 {main}
+  thrown in C:\xampp\htdocs\clientes\alufarma\class\cl_usuario.php on line 293
+[13-Jun-2024 11:21:56 America/Lima] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in C:\xampp\htdocs\clientes\alufarma\class\cl_usuario.php:293
+Stack trace:
+#0 C:\xampp\htdocs\clientes\alufarma\procesos\login.php(21): cl_usuario->validar_username()
+#1 {main}
+  thrown in C:\xampp\htdocs\clientes\alufarma\class\cl_usuario.php on line 293

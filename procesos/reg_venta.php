@@ -101,10 +101,12 @@ if ($c_venta->insertar()) {
     $c_cobros->obtener_codigo();
     $c_cobros->insertar();
 
+    sleep(2);
     $sendCurlVenta->setIdTido($c_mis_documentos->getIdDocumento());
     $sendCurlVenta->setIdVenta($c_venta->getIdVenta());
     $sendCurlVenta->setPeriodo($c_varios->fecha_periodo($c_venta->getFecha()));
     $sendCurlVenta->enviar_json();
+    sleep(2);
 
     echo "{\"venta\":" . $c_venta->getIdVenta() . ",\"periodo\":" . $c_venta->getPeriodo() . "}";
     // header("Location: ../ver_ventas.php");

@@ -6,6 +6,9 @@ if (!isset($_SESSION['id_empresa'])) {
 }
 
 require 'class/cl_documentos_sunat.php';
+require 'class_varios/SendCurlVenta.php';
+require 'class/cl_venta_sunat.php';
+require 'class/cl_venta.php';
 
 $c_documentos = new cl_documentos_sunat();
 
@@ -13,6 +16,29 @@ $title = "Ver Mis Documentos SUNAT - Farmacia - Luna Systems Peru";
 
 $id_venta = filter_input(INPUT_GET, 'id_venta');
 $periodo = filter_input(INPUT_GET, 'periodo');
+
+$c_venta = new cl_venta();
+$c_venta->setIdVenta($id_venta);
+$c_venta->setPeriodo($periodo);
+$c_venta->setIdEmpresa($_SESSION['id_empresa']);
+$c_venta->obtener_datos();
+
+$c_recibido = new cl_venta_sunat();
+$c_recibido->setIdVenta($id_venta);
+$c_recibido->setIdEmpresa($_SESSION['id_empresa']);
+$c_recibido->setPeriodo($periodo);
+$c_recibido->obtener_datos();
+
+if (trim($c_recibido->getNombreXml()) == '') {
+  //  echo "generar";
+    $sendCurlVenta = new SendCurlVenta();
+    $sendCurlVenta->setIdTido($c_venta->getIdDocumento());
+    $sendCurlVenta->setIdVenta($c_venta->getIdVenta());
+    $sendCurlVenta->setPeriodo($c_venta->getPeriodo());
+    $respnse = $sendCurlVenta->enviar_json();
+   // print_r($respnse);
+}
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -114,10 +140,10 @@ $periodo = filter_input(INPUT_GET, 'periodo');
                             </div>
                             <?php ?>
                             <div class="col-lg-5">
-                                <iframe class="col-lg-12" id="idframe1" height="500px" src="reports/rpt_voucher_venta.php?id_venta=<?php echo $id_venta . "&periodo=" . $periodo;?>"></iframe>
+                                <iframe class="col-lg-12" id="idframe1" height="500px" src="reports/rpt_voucher_venta.php?id_venta=<?php echo $id_venta . "&periodo=" . $periodo; ?>"></iframe>
                             </div>
                             <div class="col-lg-4">
-                                <iframe class="col-lg-12" id="idframe2" height="500px" src="reports/rpt_ticket_venta.php?id_venta=<?php echo $id_venta . "&periodo=" . $periodo;?>"></iframe>
+                                <iframe class="col-lg-12" id="idframe2" height="500px" src="reports/rpt_ticket_venta.php?id_venta=<?php echo $id_venta . "&periodo=" . $periodo; ?>"></iframe>
                             </div>
                         </div>
 

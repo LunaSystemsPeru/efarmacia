@@ -17,6 +17,7 @@ require '../class/cl_documentos_sunat.php';
 require '../class_varios/NumerosaLetras.php';
 require '../class/cl_venta_sunat.php';
 require '../class_varios/Varios.php';
+require '../class_varios/SendCurlVenta.php';
 
 require('../class_varios/fpdf/fpdf.php');
 define('FPDF_FONTPATH', '../class_varios/fpdf/font/');
@@ -63,6 +64,16 @@ $c_recibido->setIdVenta($c_venta->getIdVenta());
 $c_recibido->setIdEmpresa($_SESSION['id_empresa']);
 $c_recibido->setPeriodo($periodo);
 $c_recibido->obtener_datos();
+
+if ($c_recibido->getNombreXml() == '') {
+    //  echo "generar";
+    $sendCurlVenta = new SendCurlVenta();
+    $sendCurlVenta->setIdTido($c_venta->getIdDocumento());
+    $sendCurlVenta->setIdVenta($c_venta->getIdVenta());
+    $sendCurlVenta->setPeriodo($c_venta->getPeriodo());
+    $respnse = $sendCurlVenta->enviar_json();
+    print_r($respnse);
+}
 
 $id_moneda = 1;
 $nmoneda = "";

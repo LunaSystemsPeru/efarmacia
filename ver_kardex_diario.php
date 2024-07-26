@@ -6,9 +6,16 @@ if (!isset($_SESSION['id_empresa'])) {
 }
 
 require 'class/cl_kardex.php';
+
+$fecha = date("Y-m-d");
+
+if (filter_input(INPUT_GET, 'fecha')) {
+    $fecha = filter_input(INPUT_GET, 'fecha');
+}
+
 $c_kardex = new cl_kardex();
 $c_kardex->setIdEmpresa($_SESSION['id_empresa']);
-$c_kardex->setFecha(date("Y-m-d"));
+$c_kardex->setFecha($fecha);
 
 $title = "Ver Kardex Diario - Farmacia - Luna Systems Peru";
 ?>
@@ -24,7 +31,7 @@ $title = "Ver Kardex Diario - Farmacia - Luna Systems Peru";
     <title><?php echo $title; ?></title>
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <link rel="shortcut icon" type="image/ico" href="images/favicon.ico" />
+    <link rel="shortcut icon" type="image/ico" href="images/favicon.ico"/>
 
     <!-- Vendor styles -->
     <link rel="stylesheet" href="vendor/fontawesome/css/font-awesome.css"/>
@@ -136,9 +143,9 @@ $title = "Ver Kardex Diario - Farmacia - Luna Systems Peru";
                                     <td class="text-center"><?php echo $fila['id_registro'] ?></td>
                                     <td class="text-center"><?php echo $fila['doc_sunat'] . " / " . $fila['serie_doc'] . " - " . $fila['numero_doc'] ?></td>
                                     <td class="text-right"><?php echo $fila['c_ingresa'] ?></td>
-                                    <td class="text-right"><?php echo $fila['c_sale']  ?></td>
+                                    <td class="text-right"><?php echo $fila['c_sale'] ?></td>
                                     <td class="text-right"><?php echo number_format($fila['cu_ingresa'] * $fila['c_ingresa'], 2) ?></td>
-                                    <td class="text-right"><?php echo number_format($fila['cu_sale'] * $fila['c_sale'],2) ?></td>
+                                    <td class="text-right"><?php echo number_format($fila['cu_sale'] * $fila['c_sale'], 2) ?></td>
                                 </tr>
                                 <?php
                                 $item++;

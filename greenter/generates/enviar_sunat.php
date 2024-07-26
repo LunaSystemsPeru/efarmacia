@@ -16,7 +16,7 @@ $fecha = date("Y-m-d");
 //$fecha = filter_input(INPUT_GET, 'fecha');
 //$fecha = '2021-11-07';
 
-$ruta = 'https://lunasystemsperu.com/clientes/alufarma/greenter/functions/validarCPE.php';
+$ruta = 'https://goempresarial.com/lsp/clientes/alufarma/greenter/functions/validarCPE.php';
 //enviar resumen de facturas
 $ch_resumen = curl_init();
 curl_setopt($ch_resumen, CURLOPT_URL, $ruta);

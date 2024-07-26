@@ -13,9 +13,17 @@ class SendCurlVenta
      */
     public function __construct()
     {
-        $url = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
-        $rutabase= dirname(dirname($url)) . DIRECTORY_SEPARATOR;
-        $this->ruta = $rutabase;
+        $url = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'];
+
+        $urlhost = $_SERVER['HTTP_HOST'];
+        if ($urlhost == 'goempresarial.com') {
+            $url = $url . '/lsp';
+        }
+        $url .= '/clientes/alufarma/';
+        //$rutabase= dirname($url) . DIRECTORY_SEPARATOR;
+        $this->ruta = $url;
+        //echo $url;
+        //echo $this->ruta;
     }
 
     /**
@@ -50,11 +58,12 @@ class SendCurlVenta
         $this->id_venta = $id_venta;
     }
 
-    function enviar_json() {
+    function enviar_json()
+    {
         //$this->llenar_venta();
         $post = [
             'id_venta' => $this->id_venta,
-            'periodo'=>$this->periodo,
+            'periodo' => $this->periodo,
             'id_empresa' => $_SESSION["id_empresa"],
         ];
 
@@ -83,7 +92,8 @@ class SendCurlVenta
         return $respuesta;
     }
 
-    function generar_pdf() {
+    function generar_pdf()
+    {
         $post = [
             'id_venta' => $this->id_venta,
         ];

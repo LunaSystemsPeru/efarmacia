@@ -35,7 +35,7 @@ foreach ($lista_cpes as $item) {
 
     $jsoncpe = json_encode($array_CPE);
 
-    $response = file_get_contents('https://lunasystemsperu.com/clientes/lunafact/intranet/composer/functions/consulta_comprobantes_cpe.php?json=' . $jsoncpe);
+    $response = file_get_contents('https://goempresarial.com/lsp/clientes/lunafact/intranet/composer/functions/consulta_comprobantes_cpe.php?json=' . $jsoncpe);
     $json_response = json_decode($response, false);
 
     $object = (object)$json_response;
